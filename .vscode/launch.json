@@ -9,6 +9,16 @@
       "type": "coreclr",
       "request": "attach",
       "processId": "${command:pickProcess}"
+    },
+    {
+      "name": "Play",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${env:GODOT4}",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
     }
   ]
 }

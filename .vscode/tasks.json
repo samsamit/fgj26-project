@@ -13,6 +13,15 @@
         "dev_build=yes"
       ],
       "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "build",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build"
+      ],
+      "problemMatcher": "$msCompile"
     }
   ]
 }
