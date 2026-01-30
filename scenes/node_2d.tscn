@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://iv1onl6kbhyd"]
 
-[ext_resource type="Script" uid="uid://bk7d6j88oh40d" path="res://scripts/GlobalStateManager.cs" id="2_4dvvg"]
+[ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="1_4dvvg"]
+[ext_resource type="Script" uid="uid://bk7d6j88oh40d" path="res://Scripts/GlobalStateManager.cs" id="2_4dvvg"]
 [ext_resource type="Script" uid="uid://cjt6ljd4qqsaa" path="res://Icon.cs" id="2_epypp"]
+[ext_resource type="PackedScene" uid="uid://d3l1n6ced68u3" path="res://scenes/Goal.tscn" id="4_4vge2"]
 
 [node name="Node2D" type="Node2D" unique_id=1655138295]
 
@@ -11,3 +13,8 @@ script = ExtResource("2_epypp")
 
 [node name="GlobalStateManager" type="Node" parent="." unique_id=1293238467]
 script = ExtResource("2_4dvvg")
+
+[node name="Player" parent="." unique_id=380924559 instance=ExtResource("1_4dvvg")]
+
+[node name="Area2D" parent="." unique_id=1034903633 instance=ExtResource("4_4vge2")]
+position = Vector2(262, -227)

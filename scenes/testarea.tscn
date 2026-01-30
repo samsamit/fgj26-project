@@ -2,6 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="1_dudvv"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="2_qfrji"]
+[ext_resource type="Script" uid="uid://cobrtnj7bp1uj" path="res://Scripts/LightPuzzle.cs" id="3_5mpgw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwtsj"]
+size = Vector2(241, 258)
 
 [node name="Node2D" type="Node2D" unique_id=1277091583]
 
@@ -10,3 +14,12 @@ position = Vector2(818, 230)
 
 [node name="Mask" parent="." unique_id=1868398740 instance=ExtResource("2_qfrji")]
 position = Vector2(669, 195)
+
+[node name="LightPuzzle" type="Node" parent="." unique_id=895644048]
+script = ExtResource("3_5mpgw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1145451888]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1679920691]
+position = Vector2(399, 166)
+shape = SubResource("RectangleShape2D_xwtsj")
