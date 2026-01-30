@@ -9,6 +9,12 @@ gradient = SubResource("Gradient_in0c2")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0d8jk"]
 
+[sub_resource type="Gradient" id="Gradient_rv8xw"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0d8jk"]
+gradient = SubResource("Gradient_rv8xw")
+width = 256
+
 [node name="Mask" type="CharacterBody2D" unique_id=1868398740]
 position = Vector2(4, 0)
 script = ExtResource("1_in0c2")
@@ -18,3 +24,7 @@ texture = SubResource("GradientTexture2D_rv8xw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=267261679]
 shape = SubResource("RectangleShape2D_0d8jk")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2145790926]
+color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+texture = SubResource("GradientTexture2D_0d8jk")

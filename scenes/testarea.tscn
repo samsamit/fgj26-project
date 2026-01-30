@@ -6,7 +6,11 @@
 [node name="Node2D" type="Node2D" unique_id=1277091583]
 
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("1_dudvv")]
-position = Vector2(818, 230)
+position = Vector2(353, 232)
 
 [node name="Mask" parent="." unique_id=1868398740 instance=ExtResource("2_qfrji")]
 position = Vector2(669, 195)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=384848205]
+position = Vector2(12, 15)
+color = Color(0, 0, 0, 1)
