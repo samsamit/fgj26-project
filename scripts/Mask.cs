@@ -3,7 +3,7 @@ using System;
 
 public partial class Mask : CharacterBody2D
 {
-	public const float Speed = 50.0f;
+	public const float Speed = 200.0f;
 
 	private const string MoveRight = "arrow_right";
 	private const string MoveLeft = "arrow_left";

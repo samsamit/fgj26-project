@@ -1,5 +1,6 @@
 using Godot;
 using System.Collections.Generic;
+using System;
 
 public partial class GlobalStateManager : Node
 {
@@ -10,9 +11,18 @@ public partial class GlobalStateManager : Node
 
     public override void _Ready()
     {
-        PuzzleCompleted += puzzleName => CompletedPuzzle.Add(puzzleName);
+        PuzzleCompleted += puzzleName => {
+            GD.Print("hey");
+            CompletedPuzzle.Add(puzzleName);
+            };
     }
 
     [Signal]
     public delegate void PuzzleCompletedEventHandler(string puzzleName);
+
+    public static Action<string> onPuzzleCompleted;
+    public static void OnPuzzleCompleted()
+    {
+        
+    }
 }
