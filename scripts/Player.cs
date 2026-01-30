@@ -2,7 +2,7 @@ using Godot;
 
 public partial class Player : CharacterBody2D
 {
-	public const float Speed = 50.0f;
+	public const float Speed = 200.0f;
 
 	private const string MoveRight = "move_right";
 	private const string MoveLeft = "move_left";
