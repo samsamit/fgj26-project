@@ -1,0 +1,30 @@
+# Initial idea
+
+- Topdown perspective
+- 2 main game entities
+  - Main character
+    - Movable with w a s d
+    - Has sprite
+  - Mask entity
+    - Movable with arrow keys
+    - Has a mask that layers everything
+    - Mask has a center position that defines the movement
+- one game map
+  - can have multiple states/layers/levels
+  - state depends on mask in use
+- mask logic
+  - game has multiple different masks
+  - masks can give abilities to character
+  - masks can change what the character sees
+- puzzles
+  - game can have multiple puzzles
+  - puzzles can be different in different state of game
+  - puzzles can require other puzzle completion first
+  - puzzle can be completed
+  - puzzle can contain puzze spesific game entities
+  - puzzle can require one or many completion conditions
+  - puzzle might require the use of one or many different masks
+- game loop
+  - character moves and finds puzzles
+  - mask moves and aids character with the mask abilities
+  - puzzles are solved in any order available
