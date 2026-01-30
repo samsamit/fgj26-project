@@ -13,8 +13,8 @@ position = Vector2(353, 232)
 position = Vector2(669, 195)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=384848205]
-position = Vector2(12, 15)
-color = Color(0, 0, 0, 1)
+position = Vector2(11, 15)
+color = Color(0.029506557, 0.029506557, 0.029506572, 0.84313726)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=809056905]
 offset_left = -1.0

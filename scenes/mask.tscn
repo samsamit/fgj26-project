@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://0pv7euviudkv" path="res://scripts/Mask.cs" id="1_in0c2"]
 
 [sub_resource type="Gradient" id="Gradient_in0c2"]
+offsets = PackedFloat32Array(0, 0.99044585, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.06369427, 0.06369427, 0.06369427, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_rv8xw"]
 gradient = SubResource("Gradient_in0c2")
