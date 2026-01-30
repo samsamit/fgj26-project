@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="1_dudvv"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="2_qfrji"]
-[ext_resource type="Script" uid="uid://cobrtnj7bp1uj" path="res://Scripts/LightPuzzle.cs" id="3_5mpgw"]
+[ext_resource type="Script" uid="uid://cobrtnj7bp1uj" path="res://scripts/LightPuzzle.cs" id="3_5mpgw"]
 [ext_resource type="PackedScene" uid="uid://d3l1n6ced68u3" path="res://scenes/Goal.tscn" id="4_xwtsj"]
 
 [node name="Node2D" type="Node2D" unique_id=1277091583]

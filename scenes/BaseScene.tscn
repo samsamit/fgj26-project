@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://iv1onl6kbhyd"]
 
-[ext_resource type="Script" uid="uid://bk7d6j88oh40d" path="res://Scripts/GlobalStateManager.cs" id="1_kqv0a"]
+[ext_resource type="Script" uid="uid://bk7d6j88oh40d" path="res://scripts/GlobalStateManager.cs" id="1_kqv0a"]
 [ext_resource type="Script" uid="uid://cjt6ljd4qqsaa" path="res://Icon.cs" id="2_54rco"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
 [ext_resource type="PackedScene" uid="uid://d3l1n6ced68u3" path="res://scenes/Goal.tscn" id="4_tt3em"]
