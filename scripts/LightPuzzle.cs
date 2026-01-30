@@ -5,7 +5,7 @@ public partial class LightPuzzle : Puzzle
 {
     public override void CompletePuzzle()
     {
-        GlobalSettings.levelsBeaten.Add(GetType().Name);
+        //GlobalSettings.levelsBeaten.Add(GetType().Name);
     }
     public override void _Ready()
     {

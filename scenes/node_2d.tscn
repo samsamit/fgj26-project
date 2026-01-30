@@ -16,5 +16,6 @@ script = ExtResource("2_4dvvg")
 
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("1_4dvvg")]
 
-[node name="Area2D" parent="." unique_id=1034903633 instance=ExtResource("4_4vge2")]
-position = Vector2(262, -227)
+[node name="Goal" parent="." unique_id=1034903633 node_paths=PackedStringArray("stateManager") instance=ExtResource("4_4vge2")]
+position = Vector2(517, -119)
+stateManager = NodePath("../GlobalStateManager")
