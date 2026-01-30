@@ -26,7 +26,6 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
 [node name="Mask" type="CharacterBody2D" unique_id=1868398740]
-position = Vector2(4, 0)
 script = ExtResource("1_in0c2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1669607711]

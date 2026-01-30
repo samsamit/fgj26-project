@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="FGJ26-LPR"
-run/main_scene="uid://iv1onl6kbhyd"
+run/main_scene="uid://b6iqhr8s8v87j"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 

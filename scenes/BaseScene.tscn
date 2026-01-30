@@ -1,16 +1,11 @@
 [gd_scene format=3 uid="uid://b6iqhr8s8v87j"]
 
-[ext_resource type="Script" uid="uid://cjt6ljd4qqsaa" path="res://Icon.cs" id="2_54rco"]
 [ext_resource type="Script" uid="uid://cpx3jfx2uu1uf" path="res://roni/MainCamera.cs" id="2_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
 [ext_resource type="PackedScene" path="res://scenes/Goal.tscn" id="4_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
 
 [node name="World" type="Node" unique_id=1516675657]
-
-[node name="Icon" type="Node2D" parent="." unique_id=670987074]
-position = Vector2(386, 323)
-script = ExtResource("2_54rco")
 
 [node name="Goal" parent="." unique_id=1034903633 instance=ExtResource("4_tt3em")]
 position = Vector2(215, 9)
@@ -24,10 +19,12 @@ position = Vector2(353, 232)
 position = Vector2(669, 195)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1630761669]
+visible = false
 position = Vector2(11, 15)
 color = Color(0.029506557, 0.029506557, 0.029506572, 0.84313726)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1387221867]
+visible = false
 offset_left = -1.0
 offset_top = 1.0
 offset_right = 1140.0
