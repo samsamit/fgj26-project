@@ -1,0 +1,54 @@
+---
+description: Project development guidelines - C# language and composed architecture
+alwaysApply: true
+---
+
+# Project Development Guidelines
+
+## Language
+
+All scripts must be written in **C#** (not GDScript).
+
+## Architecture: Composition Over Inheritance
+
+Follow composed/component-based architecture:
+
+### Principles
+
+- **Small, focused components**: Each node/script handles one responsibility
+- **Composition over inheritance**: Build complex behaviors by combining simple components
+- **Signals for communication**: Decouple components using Godot signals
+- **Resources for shared data**: Use `.tres` resources for data that multiple nodes need
+
+### Example Structure
+
+```csharp
+// ❌ BAD - Monolithic class with multiple responsibilities
+public partial class Player : CharacterBody3D
+{
+    // Health, movement, inventory, combat all in one class
+}
+
+// ✅ GOOD - Composed from focused components
+public partial class Player : CharacterBody3D
+{
+    // Player just coordinates child components
+}
+
+// Separate component nodes:
+// - HealthComponent.cs
+// - MovementComponent.cs
+// - InventoryComponent.cs
+// - CombatComponent.cs
+```
+
+### Component Communication
+
+```csharp
+// ✅ Use signals for loose coupling
+[Signal]
+public delegate void HealthChangedEventHandler(int newHealth);
+
+// Emit when state changes
+EmitSignal(SignalName.HealthChanged, currentHealth);
+```
