@@ -23,10 +23,12 @@ public partial class Mask : CharacterBody2D
 		
 		direction.Y = Input.GetActionStrength(MoveBack)
 					  - Input.GetActionStrength(MoveForward);
-		
-		if (direction != Vector2.Zero)
-			GD.Print("Mask moving: ", direction);
 
+		if (direction != Vector2.Zero)
+		{
+			GD.Print("Mask moving: ", direction);
+		}
+		
 		Velocity = direction.Normalized() * Speed;
 		MoveAndSlide();
 	}
