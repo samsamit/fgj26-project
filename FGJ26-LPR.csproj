@@ -5,4 +5,7 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>FGJ26LPR</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="scenes\" />
+  </ItemGroup>
 </Project>

@@ -5,7 +5,6 @@
 
 [node name="Node2D" type="Node2D" unique_id=1655138295]
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=670987074]
+[node name="Icon" type="Node2D" parent="." unique_id=670987074]
 position = Vector2(386, 323)
-texture = ExtResource("1_0e48y")
 script = ExtResource("2_epypp")
