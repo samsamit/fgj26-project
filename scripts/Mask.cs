@@ -4,11 +4,6 @@ using System;
 public partial class Mask : CharacterBody2D
 {
 	public const float Speed = 200.0f;
-
-	private const string MoveRight = "arrow_right";
-	private const string MoveLeft = "arrow_left";
-	private const string MoveBack = "arrow_back";
-	private const string MoveForward = "arrow_forward";
 	
 	public override void _Ready()
 	{
@@ -17,19 +12,16 @@ public partial class Mask : CharacterBody2D
 	
 	public override void _PhysicsProcess(double delta)
 	{
-		Vector2 direction = Vector2.Zero;
-		direction.X = Input.GetActionStrength(MoveRight)
-					  - Input.GetActionStrength(MoveLeft);
+		Vector2 velocity = Vector2.Zero;
 		
-		direction.Y = Input.GetActionStrength(MoveBack)
-					  - Input.GetActionStrength(MoveForward);
-
-		if (direction != Vector2.Zero)
+		if (Input.IsMouseButtonPressed(MouseButton.Left))
 		{
-			GD.Print("Mask moving: ", direction);
+			Vector2 mousePosition = GetGlobalMousePosition();
+			Vector2 direction = (mousePosition - GlobalPosition).Normalized();
+			velocity = direction * Speed;
 		}
 		
-		Velocity = direction.Normalized() * Speed;
+		Velocity = velocity;
 		MoveAndSlide();
 	}
 }
