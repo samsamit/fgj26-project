@@ -1,40 +1,33 @@
 using Godot;
-using System;
 
 public partial class Player : CharacterBody2D
 {
 	public const float Speed = 300.0f;
-	public const float JumpVelocity = -400.0f;
 
+	private const string MoveRight = "move_right";
+	private const string MoveLeft = "move_left";
+	private const string MoveBack = "move_back";
+	private const string MoveForward = "move_forward";
+	
+	public override void _Ready()
+	{
+		GD.Print("Player script is active!");
+	}
+
+	
 	public override void _PhysicsProcess(double delta)
 	{
-		Vector2 velocity = Velocity;
-
-		// Add the gravity.
-		if (!IsOnFloor())
-		{
-			velocity += GetGravity() * (float)delta;
-		}
-
-		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
-		{
-			velocity.Y = JumpVelocity;
-		}
-
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		Vector2 direction = Vector2.Zero;
+		direction.X = Input.GetActionStrength(MoveRight)
+					  - Input.GetActionStrength(MoveLeft);
+		
+		direction.Y = Input.GetActionStrength(MoveBack)
+			- Input.GetActionStrength(MoveForward);
+		
 		if (direction != Vector2.Zero)
-		{
-			velocity.X = direction.X * Speed;
-		}
-		else
-		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
-		}
+		GD.Print("Moving: ", direction);
 
-		Velocity = velocity;
+		Velocity = direction.Normalized() * Speed;
 		MoveAndSlide();
 	}
 }
