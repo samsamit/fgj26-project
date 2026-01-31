@@ -129,8 +129,6 @@ position = Vector2(693, -100)
 texture = ExtResource("8_0fufx")
 
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("9_0v7be")]
-SpriteFrames = null
-CharacterRotationSpeed = 10.0
 
 [node name="MaskSystem" type="Node" parent="." unique_id=1425651829 node_paths=PackedStringArray("MaskViewport", "MaskCircleInViewport", "PlayerCircle", "MaskCamera")]
 script = ExtResource("7_byq77")
