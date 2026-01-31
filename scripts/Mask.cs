@@ -24,6 +24,9 @@ public partial class Mask : Node2D
 	[Export]
 	public Texture2D Triangle;
 
+	[Export]
+	public Area2D ViewArea;
+
 	private PointLight2D Light;
 
 	public override void _Ready()

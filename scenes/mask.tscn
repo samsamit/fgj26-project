@@ -8,12 +8,13 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uscli"]
 
-[node name="Mask" type="Node2D" unique_id=1770994779]
+[node name="Mask" type="Node2D" unique_id=1770994779 node_paths=PackedStringArray("ViewArea")]
 script = ExtResource("1_in0c2")
 Round = ExtResource("2_uscli")
 Square = ExtResource("3_2a672")
 Star = ExtResource("4_2a672")
 Triangle = ExtResource("5_8u57e")
+ViewArea = NodePath("Area2D")
 
 [node name="Light" type="PointLight2D" parent="." unique_id=2145790926]
 texture = ExtResource("2_uscli")

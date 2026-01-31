@@ -6,6 +6,13 @@ public partial class GlobalStateManager : Node
 {
 	public HashSet<string> CompletedPuzzle = [];
 
+	[Export]
+	public Player Player;
+
+	[Export]
+	public Mask Mask;
+
+
 	public Vector2 PlayerPosition = Vector2.Zero;
 	public Vector2 MaskPosition = Vector2.Zero;
 	public Observable<MaskEnum> CurrentMask = new(MaskEnum.Round);
@@ -14,6 +21,8 @@ public partial class GlobalStateManager : Node
 
 	public override void _Ready()
 	{
+		base._Ready();
+
 		PuzzleCompleted += puzzleName =>
 		{
 			GD.Print("hey");

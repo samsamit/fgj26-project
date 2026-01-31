@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bnaodtvgrp7ei"]
+
+[ext_resource type="Script" uid="uid://bot6p5ntvxilg" path="res://scripts/HiddenBridge.cs" id="1_7uqqq"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wyphu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mfja"]
+size = Vector2(256, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7uqqq"]
+size = Vector2(256, 5)
+
+[node name="HiddenBridge" type="Area2D" unique_id=1094509827]
+script = ExtResource("1_7uqqq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=895720636]
+scale = Vector2(256, 32)
+texture = SubResource("PlaceholderTexture2D_wyphu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1021281764]
+shape = SubResource("RectangleShape2D_6mfja")
+
+[node name="Railing1" type="StaticBody2D" parent="." unique_id=232421459]
+position = Vector2(0, -18)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Railing1" unique_id=2033512884]
+rotation = 3.1415927
+shape = SubResource("RectangleShape2D_7uqqq")
+one_way_collision = true
+
+[node name="Railing2" type="StaticBody2D" parent="." unique_id=1086148300]
+position = Vector2(0, 18)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Railing2" unique_id=483131606]
+shape = SubResource("RectangleShape2D_7uqqq")
+one_way_collision = true

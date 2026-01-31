@@ -15,6 +15,10 @@ run/main_scene="uid://iv1onl6kbhyd"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalStateManager="*uid://bk7d6j88oh40d"
+
 [display]
 
 window/size/viewport_width=1280
@@ -73,7 +77,9 @@ arrow_left={
 
 [layer_names]
 
-2d_physics/layer_1="Water"
+2d_physics/layer_1="Static"
+2d_physics/layer_2="Dynamic"
+2d_physics/layer_3="Water"
 
 [physics]
 
