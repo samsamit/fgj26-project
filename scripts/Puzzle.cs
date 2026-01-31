@@ -13,6 +13,7 @@ public abstract partial class Puzzle : Node
 
 	private void InitializeConditionSignals()
 	{
+		if (Conditions == null) return;
 		foreach (var condition in Conditions)
 		{
 			if (condition != null)
@@ -25,6 +26,7 @@ public abstract partial class Puzzle : Node
 	private void OnConditionCompleted()
 	{
 		GD.Print("Checking puzzle completion conditions");
+		if (Conditions == null) return;
 		foreach (var condition in Conditions)
 		{
             if (condition == null) continue;

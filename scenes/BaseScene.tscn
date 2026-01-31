@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bojdshqdxsu4v" path="res://scenes/puzzle/puzzle_1.tscn" id="11_a63bb"]
 [ext_resource type="PackedScene" uid="uid://cbt0rsob2udoe" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
 [ext_resource type="PackedScene" uid="uid://d3f7vny6bd8nb" path="res://scenes/PressurePlate.tscn" id="12_qsgjr"]
+[ext_resource type="Script" uid="uid://bafry42335jrg" path="res://scripts/DarknessManager.cs" id="13_darkness"]
 
 [node name="World" type="Node" unique_id=1516675657 node_paths=PackedStringArray("Conditions")]
 script = ExtResource("1_3ubpw")
@@ -22,7 +23,7 @@ Conditions = []
 position = Vector2(993, -212)
 
 [node name="Darkness Manager" type="Node" parent="." unique_id=1658980287]
-script = ExtResource("1_gp54n")
+script = ExtResource("13_darkness")
 
 [node name="Goal" parent="." unique_id=1034903633 instance=ExtResource("4_tt3em")]
 position = Vector2(234, 73)
