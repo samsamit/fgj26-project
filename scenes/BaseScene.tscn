@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bejw0xx3r05qa" path="res://puzzles/Puzzle1.cs" id="1_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="1_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
-[ext_resource type="PackedScene" uid="uid://b51pun1aqo473" path="res://scenes/Goal.tscn" id="4_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://bkyppfbrkinr2" path="res://scenes/camera.tscn" id="6_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="8_3ubpw"]
@@ -20,10 +19,6 @@ Conditions = []
 
 [node name="Darkness Manager" type="Node" parent="." unique_id=1658980287]
 script = ExtResource("13_darkness")
-
-[node name="Goal" parent="." unique_id=1034903633 instance=ExtResource("4_tt3em")]
-position = Vector2(234, 73)
-script = null
 
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("3_gp54n")]
 z_index = 101
