@@ -27,10 +27,9 @@ public partial class Mask : Node2D
 	[Export]
 	public Area2D ViewArea;
 
-	[Export]
-	public CanvasModulate darkness;
 
 	private PointLight2D Light;
+	private CanvasModulate Background;
 
 	// Tracks if the current mouse press started on a UI element
 	private bool _clickStartedOnUi = false;
@@ -40,6 +39,8 @@ public partial class Mask : Node2D
 	{
 		GD.Print("Mask script is active!");
 		Light = (PointLight2D)GetNode("./Light");
+		Background = (CanvasModulate)GetNode("./MaskBackground");
+
 
 		GlobalStateManager.Instance.CurrentMask.RegisterObserver(
 			newMask => SetMask(newMask, 0.2f, new Color("white")));
@@ -93,6 +94,8 @@ public partial class Mask : Node2D
 
 	public void SetMask(MaskEnum mask, float maskSize, Color maskColor)
 	{
+
+		GD.Print("MASK SET");
 		Light.TextureScale = maskSize;
 		Light.Color = maskColor;
 		Light.Texture = mask switch
@@ -104,7 +107,7 @@ public partial class Mask : Node2D
 			_ => Round,
 		};
 
-		darkness.Visible = mask == MaskEnum.Flashlite;
+		Background.Visible = mask == MaskEnum.Flashlite;
 
 		// Dynamic scaling for the collision shape, so that it matches the mask
 		CollisionShape2D collisionShape = GetNode<CollisionShape2D>("./Area2D/CollisionShape2D");

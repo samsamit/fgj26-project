@@ -29,5 +29,6 @@ public class Observable<T>
 	public void RegisterObserver(Action<T> observer)
 	{
 		Observers.Add(observer);
+		observer.Invoke(value);  // Invoke immediately with current value
 	}
 }
