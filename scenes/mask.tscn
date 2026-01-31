@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dm6mlowkc7k5o"]
 
-[ext_resource type="Script" uid="uid://0pv7euviudkv" path="res://Scripts/Mask.cs" id="1_in0c2"]
+[ext_resource type="Script" uid="uid://0pv7euviudkv" path="res://scripts/Mask.cs" id="1_in0c2"]
 
 [sub_resource type="Gradient" id="Gradient_rv8xw"]
 offsets = PackedFloat32Array(0.99647886, 1)
