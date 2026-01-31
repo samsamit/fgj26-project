@@ -36,7 +36,7 @@ public partial class Mask : Node2D
 	public override void _Process(double delta)
 	{
 		Vector2 mousePosition = GetGlobalMousePosition();
-
+		
 		if (Input.IsMouseButtonPressed(MouseButton.Left))
 		{
 
@@ -45,6 +45,16 @@ public partial class Mask : Node2D
 
 			_stateManager.MaskPosition = GlobalPosition;
 		}
+	}
+	
+	private void Area2DBodyEntered(Node body)
+	{
+		GD.Print("Body entered: " + body.Name);
+	}
+
+	private void Area2DBodyExited(Node body)
+	{
+		GD.Print("Body exited: " + body.Name);
 	}
 
 	public void SetMask(MaskEnum mask, float maskSize, Color maskColor)
@@ -59,5 +69,39 @@ public partial class Mask : Node2D
 			MaskEnum.Triangle => Triangle,
 			_ => Round,
 		};
+		
+		// Dynamic scaling for the collision shape, so that it matches the mask
+		CollisionShape2D collisionShape = GetNode<CollisionShape2D>("./Area2D/CollisionShape2D");
+		
+		if (collisionShape?.Shape == null)
+		{
+			GD.PrintErr("CollisionShape or its Shape is null!");
+			return;
+		}
+		
+		switch (collisionShape.Shape)
+		{
+			case CircleShape2D circle:
+				circle.Radius = maskSize / 2f;
+				break;
+
+			case RectangleShape2D rect:
+				rect.Size = new Vector2(maskSize, maskSize);
+				break;
+
+			case ConvexPolygonShape2D polygon:
+				Vector2[] points = polygon.Points;
+				for (int i = 0; i < points.Length; i++)
+				{
+					points[i] = points[i].Normalized() * (maskSize / 2f);
+				}
+				polygon.Points = points;
+				break;
+
+			default:
+				GD.Print("Unhandled shape type: " + collisionShape.Shape.GetType());
+				break;
+		}
+
 	}
 }

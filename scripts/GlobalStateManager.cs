@@ -4,7 +4,7 @@ using System;
 
 public partial class GlobalStateManager : Node
 {
-	public static HashSet<string> CompletedPuzzle = [];
+	public HashSet<string> CompletedPuzzle = [];
 
 	public Vector2 PlayerPosition = Vector2.Zero;
 	public Vector2 MaskPosition = Vector2.Zero;
@@ -19,10 +19,4 @@ public partial class GlobalStateManager : Node
 
 	[Signal]
 	public delegate void PuzzleCompletedEventHandler(string puzzleName);
-
-	public static Action<string> onPuzzleCompleted;
-	public static void OnPuzzleCompleted()
-	{
-		
-	}
 }
