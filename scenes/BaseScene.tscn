@@ -37,6 +37,9 @@ position = Vector2(669, 195)
 [node name="Camera" parent="." unique_id=947783170 node_paths=PackedStringArray("MainPlayer", "MaskPlayer") instance=ExtResource("6_tt3em")]
 MainPlayer = NodePath("../Player")
 MaskPlayer = NodePath("../Mask")
+Speed = 50.0
+MaxZoom = 2.0
+ZoomSpeed = 1.0
 
 [node name="BoxGroup" type="Node2D" parent="." unique_id=2102585491]
 
