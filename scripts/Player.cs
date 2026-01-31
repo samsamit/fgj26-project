@@ -13,7 +13,6 @@ public partial class Player : CharacterBody2D
 	private const string MoveBack = "move_back";
 	private const string MoveForward = "move_forward";
 	private AudioStreamPlayer2D _walkingSFXplayer;
-	private GlobalStateManager _stateManager;
 	private AnimationController _animationController;
 	public int ModulationInterval { get; set; } = 10;
 	private int _frameCounter = 0;
@@ -23,7 +22,6 @@ public partial class Player : CharacterBody2D
 		GD.Print("Player script is active!");
 		//_animationController = GetNode<AnimationController>("AnimationController");
 		InitializeAnimation(AnimationEnum.Idle);
-		_stateManager = GetNode<GlobalStateManager>("/root/World");
 		_walkingSFXplayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_Walking");
 	}
 
@@ -113,7 +111,7 @@ public partial class Player : CharacterBody2D
 		float randomVol = (float)GD.RandRange(-2.0, 0.0);
 		_walkingSFXplayer.VolumeDb = randomVol;
 
-		GlobalStateManager.PlayerPosition = GlobalPosition;
+		GlobalStateManager.Instance.PlayerPosition = GlobalPosition;
 	}
 
 	private void ResetAudioParams()
