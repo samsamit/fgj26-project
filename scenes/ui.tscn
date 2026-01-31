@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://clxgyjqpglkcr"]
 
-[ext_resource type="Script" path="res://Scripts/Health.cs" id="1_8dubc"]
+[ext_resource type="Script" path="res://scripts/Health.cs" id="1_8dubc"]
 [ext_resource type="Texture2D" uid="uid://dg6bnsnk7avne" path="res://maskTextures/starTexture.svg" id="1_nt7q6"]
-[ext_resource type="Script" path="res://Scripts/MaskUI.cs" id="3_p7vwb"]
+[ext_resource type="Script" path="res://scripts/MaskUI.cs" id="3_p7vwb"]
 [ext_resource type="Texture2D" uid="uid://b8j14yqgv6dv5" path="res://assets/perusmaskielieimaskiaUI.png" id="3_wm3ai"]
 [ext_resource type="Texture2D" uid="uid://bd2kyp3xw0e0m" path="res://assets/StrengthMaskiUI.png" id="4_8dubc"]
 [ext_resource type="Texture2D" uid="uid://dofodv0g6flhf" path="res://assets/X-RayMaskiUI.png" id="5_p7vwb"]

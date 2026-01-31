@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dm6mlowkc7k5o"]
 
-[ext_resource type="Script" uid="uid://0pv7euviudkv" path="res://Scripts/Mask.cs" id="1_in0c2"]
+[ext_resource type="Script" uid="uid://0pv7euviudkv" path="res://scripts/Mask.cs" id="1_in0c2"]
 [ext_resource type="Texture2D" uid="uid://d3ac0iaierd1l" path="res://maskTextures/roundTexture.svg" id="2_uscli"]
 [ext_resource type="Texture2D" uid="uid://c5yjlq342qqqx" path="res://maskTextures/squareTexture.svg" id="3_2a672"]
 [ext_resource type="Texture2D" uid="uid://dg6bnsnk7avne" path="res://maskTextures/starTexture.svg" id="4_2a672"]
