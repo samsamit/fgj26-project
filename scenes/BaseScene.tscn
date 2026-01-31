@@ -3,12 +3,10 @@
 [ext_resource type="Script" uid="uid://bejw0xx3r05qa" path="res://puzzles/Puzzle1.cs" id="1_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="1_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
-[ext_resource type="PackedScene" uid="uid://d3l1n6ced68u3" path="res://scenes/Goal.tscn" id="4_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://bkyppfbrkinr2" path="res://scenes/camera.tscn" id="6_tt3em"]
+[ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="8_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://bojdshqdxsu4v" path="res://scenes/puzzle/puzzle_1.tscn" id="11_a63bb"]
-[ext_resource type="PackedScene" uid="uid://cbt0rsob2udoe" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
-[ext_resource type="PackedScene" uid="uid://sdnhw3s62pbc" path="res://scenes/movable_box.tscn" id="11_rp473"]
 [ext_resource type="PackedScene" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
 [ext_resource type="PackedScene" uid="uid://bb3d8ms8wak8w" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="12_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://d3f7vny6bd8nb" path="res://scenes/PressurePlate.tscn" id="12_qsgjr"]
@@ -64,41 +62,38 @@ position = Vector2(718, -173)
 [node name="PressurePlate" parent="Puzzle2" unique_id=1842410292 instance=ExtResource("12_qsgjr")]
 position = Vector2(1031, -215)
 
-[node name="MovableBox" parent="Puzzle2" unique_id=1071985089 instance=ExtResource("11_rp473")]
-position = Vector2(917, -210)
+[node name="StaticBox7" parent="Puzzle2" unique_id=782728776 instance=ExtResource("8_3ubpw")]
+position = Vector2(916, -209)
 
-[node name="MovableBox2" parent="Puzzle2" unique_id=1806421886 instance=ExtResource("11_rp473")]
-position = Vector2(916, -246)
+[node name="StaticBox" parent="Puzzle2" unique_id=831261941 instance=ExtResource("8_3ubpw")]
+position = Vector2(919, -246)
 
-[node name="MovableBox3" parent="Puzzle2" unique_id=1387694178 instance=ExtResource("11_rp473")]
-position = Vector2(915, -175)
+[node name="StaticBox2" parent="Puzzle2" unique_id=513098996 instance=ExtResource("8_3ubpw")]
+position = Vector2(1033, -252)
 
-[node name="MovableBox4" parent="Puzzle2" unique_id=943881760 instance=ExtResource("11_rp473")]
-position = Vector2(950, -175)
+[node name="StaticBox3" parent="Puzzle2" unique_id=1774640426 instance=ExtResource("8_3ubpw")]
+position = Vector2(918, -174)
 
-[node name="MovableBox5" parent="Puzzle2" unique_id=318145412 instance=ExtResource("11_rp473")]
-position = Vector2(1030, -180)
+[node name="StaticBox4" parent="Puzzle2" unique_id=1145891337 instance=ExtResource("8_3ubpw")]
+position = Vector2(955, -175)
 
-[node name="MovableBox6" parent="Puzzle2" unique_id=1670223275 instance=ExtResource("11_rp473")]
-position = Vector2(996, -215)
+[node name="StaticBox5" parent="Puzzle2" unique_id=937147374 instance=ExtResource("8_3ubpw")]
+position = Vector2(1031, -177)
 
-[node name="MovableBox7" parent="Puzzle2" unique_id=280504732 instance=ExtResource("11_rp473")]
-position = Vector2(1028, -251)
+[node name="StaticBox8" parent="Puzzle2" unique_id=1916861608 instance=ExtResource("8_3ubpw")]
+position = Vector2(1067, -213)
 
-[node name="MovableBox8" parent="Puzzle2" unique_id=501651883 instance=ExtResource("11_rp473")]
-position = Vector2(1067, -211)
+[node name="StaticBox6" parent="Puzzle2" unique_id=1746917911 instance=ExtResource("8_3ubpw")]
+position = Vector2(1120, -244)
 
-[node name="MovableBox9" parent="Puzzle2" unique_id=1870999193 instance=ExtResource("11_rp473")]
-position = Vector2(1118, -250)
+[node name="StaticBox9" parent="Puzzle2" unique_id=786711554 instance=ExtResource("8_3ubpw")]
+position = Vector2(1121, -210)
 
-[node name="MovableBox10" parent="Puzzle2" unique_id=1531311794 instance=ExtResource("11_rp473")]
-position = Vector2(1119, -215)
+[node name="StaticBox10" parent="Puzzle2" unique_id=11602314 instance=ExtResource("8_3ubpw")]
+position = Vector2(1122, -174)
 
-[node name="MovableBox11" parent="Puzzle2" unique_id=2051008263 instance=ExtResource("11_rp473")]
-position = Vector2(1118, -179)
-
-[node name="MovableBox13" parent="Puzzle2" unique_id=1179524575 instance=ExtResource("11_rp473")]
-position = Vector2(972, -117)
+[node name="StaticBox11" parent="Puzzle2" unique_id=712419548 instance=ExtResource("8_3ubpw")]
+position = Vector2(1159, -173)
 
 [node name="Puzzle3" type="Node" parent="." unique_id=1826246720]
 
