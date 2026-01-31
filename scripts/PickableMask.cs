@@ -32,8 +32,6 @@ public partial class PickableMask : Node2D
 			case MaskEnum.XRay:
 				sprite.Texture = XRayMask;
 				break;
-			default:
-				break;
 		}
 	}
 

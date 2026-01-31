@@ -7,15 +7,33 @@ public partial class MaskUI : VBoxContainer
 	private TextureButton FlashliteMask;
 	private TextureButton StrengthMask;
 	private TextureButton XRayMask;
+
+	// Visual styling for selection state
+	private static readonly Color SelectedColor = new Color(1f, 1f, 1f, 1f);      // Full brightness
+	private static readonly Color UnselectedColor = new Color(0.5f, 0.5f, 0.5f, 0.7f); // Dimmed
+	private static readonly Vector2 SelectedScale = new Vector2(1.2f, 1.2f);      // Slightly larger
+	private static readonly Vector2 UnselectedScale = new Vector2(1f, 1f);        // Normal size
 	private Control PowerMinigame;
 	private ProgressBar MaskPower;
 
 	public override void _Ready()
 	{
-		BasicMask = (TextureButton)GetNode("./MaskContainer/Basic");
-		FlashliteMask = (TextureButton)GetNode("./MaskContainer/Flashlite");
-		StrengthMask = (TextureButton)GetNode("./MaskContainer/Strength");
-		XRayMask = (TextureButton)GetNode("./MaskContainer/XRay");
+		BasicMask = GetNode<TextureButton>("MaskContainer/Basic");
+		FlashliteMask = GetNode<TextureButton>("MaskContainer/Flashlite");
+		StrengthMask = GetNode<TextureButton>("Strength");
+		XRayMask = GetNode<TextureButton>("XRay");
+
+		// Connect button signals programmatically to ensure they work
+		BasicMask.Pressed += OnClickBasicMask;
+		FlashliteMask.Pressed += OnClickFlashlite;
+		MaskContainer / StrengthMask.Pressed += OnClickStrength;
+		XRayMask.Pressed += OnClickXRay;
+
+		// Set mouse filter to Stop to prevent click-through to game objects
+		BasicMask.MouseFilter = Control.MouseFilterEnum.Stop;
+		FlashliteMask.MouseFilter = Control.MouseFilterEnum.Stop;
+		StrengthMask.MouseFilter = Control.MouseFilterEnum.Stop;
+		MaskContainer / XRayMask.MouseFilter = Control.MouseFilterEnum.Stop;
 		PowerMinigame = (Control)GetNode("./PowerMiniGame");
 		MaskPower = (ProgressBar)GetNode("./MaskPower");
 
@@ -25,6 +43,19 @@ public partial class MaskUI : VBoxContainer
 			UpdateMaskPower);
 		GlobalStateManager.Instance.CurrentMask.RegisterObserver(SetMask);
 		SetMask(GlobalStateManager.Instance.CurrentMask.Get());
+
+		// Register observer for current mask selection
+		GlobalStateManager.Instance.CurrentMask.RegisterObserver(
+			mask => UpdateSelectedMask(mask));
+	}
+
+	public override void _ExitTree()
+	{
+		// Clean up signal connections
+		BasicMask.Pressed -= OnClickBasicMask;
+		FlashliteMask.Pressed -= OnClickFlashlite;
+		StrengthMask.Pressed -= OnClickStrength;
+		XRayMask.Pressed -= OnClickXRay;
 	}
 
 	private void UpdateAvailableMasks(List<MaskEnum> masks)
@@ -83,22 +114,53 @@ public partial class MaskUI : VBoxContainer
 	}
 
 	public void OnClickBasicMask()
-	{
-		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Basic);
+			}
+		}
+
+		// Refresh selection styling after visibility changes
+		UpdateSelectedMask(GlobalStateManager.Instance.CurrentMask.Get());
 	}
 
-	public void OnClickFlashlite()
-	{
-		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Flashlite);
-	}
+	private void UpdateSelectedMask(MaskEnum selectedMask)
+{
+	// Apply visual styling to each button based on selection state
+	SetButtonSelectionState(BasicMask, selectedMask == MaskEnum.Basic);
+	SetButtonSelectionState(FlashliteMask, selectedMask == MaskEnum.Flashlite);
+	SetButtonSelectionState(StrengthMask, selectedMask == MaskEnum.Strength);
+	SetButtonSelectionState(XRayMask, selectedMask == MaskEnum.XRay);
+}
 
-	public void OnClickStrength()
+private void SetButtonSelectionState(TextureButton button, bool isSelected)
+{
+	if (isSelected)
 	{
-		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Strength);
+		button.Modulate = SelectedColor;
+		button.Scale = SelectedScale;
 	}
+	else
+	{
+		button.Modulate = UnselectedColor;
+		button.Scale = UnselectedScale;
+	}
+}
 
-	public void OnClickXRay()
-	{
-		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.XRay);
-	}
+private void OnClickBasicMask()
+{
+	GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Basic);
+}
+
+private void OnClickFlashlite()
+{
+	GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Flashlite);
+}
+
+private void OnClickStrength()
+{
+	GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Strength);
+}
+
+private void OnClickXRay()
+{
+	GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.XRay);
+}
 }

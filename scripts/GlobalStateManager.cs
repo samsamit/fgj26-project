@@ -19,12 +19,18 @@ public partial class GlobalStateManager : Node
 
 	public Vector2 PlayerPosition = Vector2.Zero;
 	public Vector2 MaskPosition = Vector2.Zero;
-	public Observable<List<MaskEnum>> AvailableMasks = new([]);
+	public Observable<List<MaskEnum>> AvailableMasks = new([MaskEnum.Flashlite]);
 	public Observable<MaskEnum> CurrentMask = new(MaskEnum.Flashlite);
 	public Observable<float> MaskPower = new(1f);
 	public Observable<int> Health = new(3);
 
 	public static GlobalStateManager Instance;
+
+	public override void _EnterTree()
+	{
+		base._EnterTree();
+		Instance = this;
+	}
 
 	public override void _Ready()
 	{

@@ -6,4 +6,5 @@ public enum AnimationEnum
     Idle,
     Walk,
     Run,
+    Push,
 }

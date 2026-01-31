@@ -1,24 +1,21 @@
 using Godot;
 using System;
 
-public partial class Goal : Area2D 
+public partial class Goal : Area2D
 {
-	[Export] GlobalStateManager stateManager;
-	[Export] string puzzleId;
 	public override void _Ready()
 	{
-		stateManager.PuzzleCompleted += SomethingHappened;
-		base._Ready();
-		BodyEntered += OnBodyEntered;
+		BodyEntered += OnPlayerEntered;
 	}
-	void SomethingHappened(string value)
+
+	public void OnPlayerEntered(Node body)
 	{
-		GD.Print(value);
-	}
-	public void OnBodyEntered(Node body)
-	{
+		if (body is not Player) return;
 		GD.Print("goal");
-		stateManager.EmitSignal(GlobalStateManager.SignalName.PuzzleCompleted, puzzleId);
-		BodyEntered -= OnBodyEntered;
+		EmitSignal(SignalName.PlayerEntered);
+		BodyEntered -= OnPlayerEntered;
 	}
+
+	[Signal]
+	public delegate void PlayerEnteredEventHandler();
 }

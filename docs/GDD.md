@@ -118,15 +118,15 @@ To avoid scope creep, we are NOT building:
 
 **Sound Effects Needed:**
 
-- [ ] Character footsteps (subtle, not distracting)
-- [ ] Mask activation/deactivation sound (ethereal whoosh)
-- [ ] Mask movement ambient hum
-- [ ] Reality shift sound (when mask reveals alternate layer)
+- [X] Character footsteps (subtle, not distracting)
+- [x] Mask pickup / switching sound (ethereal whoosh)
+- [x] Mask movement ambient hum
+- [X] Box scraping (while moving)
 - [ ] Puzzle element interaction (switches, doors)
 - [ ] Puzzle completion chime (satisfying, mysterious)
 - [ ] Puzzle reset sound (soft, non-punishing)
 - [ ] UI navigation clicks
-- [ ] Ambient environmental sounds
+- [X] Ambient environmental sounds
 
 **Audio Sources:** [Where will audio come from?]
 
