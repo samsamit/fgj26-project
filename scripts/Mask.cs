@@ -12,10 +12,12 @@ public partial class Mask : CharacterBody2D
 	
 	public override void _PhysicsProcess(double delta)
 	{
+		return;
 		Vector2 velocity = Vector2.Zero;
 		
 		if (Input.IsMouseButtonPressed(MouseButton.Left))
 		{
+			
 			Vector2 mousePosition = GetGlobalMousePosition();
 			Vector2 direction = (mousePosition - GlobalPosition).Normalized();
 			velocity = direction * Speed;
@@ -24,4 +26,11 @@ public partial class Mask : CharacterBody2D
 		Velocity = velocity;
 		MoveAndSlide();
 	}
+
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+		GlobalPosition = GetGlobalMousePosition();
+    }
+
 }
