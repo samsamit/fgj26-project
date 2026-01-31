@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cnnnx4j3hwa37"]
+
+[ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="1_hjdt0"]
+
+[node name="Puzzle2" type="Node2D" unique_id=1313777123]
+
+[node name="StaticBox2" parent="." unique_id=1283738957 instance=ExtResource("1_hjdt0")]
+position = Vector2(174, -191)
+
+[node name="StaticBox" parent="." unique_id=1736477184 instance=ExtResource("1_hjdt0")]
+position = Vector2(160, -153)

@@ -74,8 +74,6 @@ public partial class MaskUI : HBoxContainer
 				case MaskEnum.XRay:
 					XRayMask.Visible = true;
 					break;
-				default:
-					break;
 			}
 		}
 

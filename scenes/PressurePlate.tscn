@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d3f7vny6bd8nb"]
+
+[ext_resource type="Texture2D" uid="uid://dofodv0g6flhf" path="res://assets/X-RayMaskiUI.png" id="1_3d7tj"]
+[ext_resource type="Script" uid="uid://35qbl10bsb31" path="res://scripts/PressurePlate.cs" id="1_g1nay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1nay"]
+size = Vector2(32, 32)
+
+[node name="PressurePlate" type="Area2D" unique_id=1570528986]
+script = ExtResource("1_g1nay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1979964504]
+shape = SubResource("RectangleShape2D_g1nay")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=654027908]
+texture = ExtResource("1_3d7tj")
