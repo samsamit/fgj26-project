@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
 [ext_resource type="PackedScene" uid="uid://b51pun1aqo473" path="res://scenes/Goal.tscn" id="4_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
+[ext_resource type="SpriteFrames" uid="uid://tni847h81xid" path="res://assets/resources/player_sprite_frames.tres" id="6_l3ckk"]
 [ext_resource type="PackedScene" uid="uid://dy8cye72lk8wq" path="res://scenes/camera.tscn" id="6_tt3em"]
 
 [node name="World" type="Node" unique_id=1516675657]
@@ -13,9 +14,8 @@ script = ExtResource("1_54rco")
 
 [node name="World" parent="." unique_id=577538569 instance=ExtResource("1_tt3em")]
 
-[node name="Darkness Manager" type="Node" parent="." unique_id=1658980287 node_paths=PackedStringArray("darknessOverlay")]
+[node name="Darkness Manager" type="Node" parent="." unique_id=1658980287]
 script = ExtResource("1_gp54n")
-darknessOverlay = NodePath("")
 
 [node name="Goal" parent="." unique_id=1034903633 instance=ExtResource("4_tt3em")]
 position = Vector2(234, 73)
@@ -24,6 +24,7 @@ script = null
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("3_gp54n")]
 z_index = 101
 position = Vector2(426, 147)
+spriteFrames = ExtResource("6_l3ckk")
 
 [node name="Mask" parent="." unique_id=1868398740 instance=ExtResource("6_3ubpw")]
 position = Vector2(458, 153)
