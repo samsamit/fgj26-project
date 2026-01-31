@@ -18,10 +18,10 @@ CharacterSpriteScaleMultiplier = 0.25
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=90283918]
 shape = SubResource("CircleShape2D_qhqgy")
 
+[node name="AnimationController" parent="." unique_id=1487013025 instance=ExtResource("4_dqkch")]
+
 [node name="AudioStreamPlayer2D_Walking" type="AudioStreamPlayer2D" parent="." unique_id=1745833923]
 stream = ExtResource("3_qhqgy")
-
-[node name="AnimationController" parent="." unique_id=1487013025 instance=ExtResource("4_dqkch")]
 
 [node name="AudioStreamPlayer2D_BoxScraping" type="AudioStreamPlayer2D" parent="." unique_id=1546406888]
 stream = ExtResource("6_tuyoq")
