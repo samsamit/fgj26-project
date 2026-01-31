@@ -15,7 +15,10 @@ public abstract partial class Puzzle : Node
 	{
 		foreach (var condition in Conditions)
 		{
-			condition.ConditionCompleted += OnConditionCompleted;
+			if (condition != null)
+			{
+				condition.ConditionCompleted += OnConditionCompleted;
+			} 
 		}
 	}
 
