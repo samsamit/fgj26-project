@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://bk7d6j88oh40d" path="res://scripts/GlobalStateManager.cs" id="1_54rco"]
 [ext_resource type="Script" uid="uid://bafry42335jrg" path="res://scripts/DarknessManager.cs" id="1_gp54n"]
 [ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="1_tt3em"]
-[ext_resource type="PackedScene" uid="uid://7tay4r2c5wts" path="res://scenes/GlobalCoordinate.tscn" id="2_a63bb"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
-[ext_resource type="PackedScene" uid="uid://b51pun1aqo473" path="res://scenes/Goal.tscn" id="4_tt3em"]
+[ext_resource type="PackedScene" uid="uid://d3l1n6ced68u3" path="res://scenes/Goal.tscn" id="4_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://dy8cye72lk8wq" path="res://scenes/camera.tscn" id="6_tt3em"]
 [ext_resource type="PackedScene" uid="uid://bhjqnnj8hi3sk" path="res://scenes/static_box.tscn" id="7_tt3em"]
@@ -15,14 +14,10 @@
 [node name="World" type="Node" unique_id=1516675657]
 script = ExtResource("1_54rco")
 
-[node name="GlobalCoordinate" parent="." unique_id=97524353 instance=ExtResource("2_a63bb")]
-position = Vector2(600, 40)
-
 [node name="World" parent="." unique_id=577538569 instance=ExtResource("1_tt3em")]
 
-[node name="Darkness Manager" type="Node" parent="." unique_id=1658980287 node_paths=PackedStringArray("darknessOverlay")]
+[node name="Darkness Manager" type="Node" parent="." unique_id=1658980287]
 script = ExtResource("1_gp54n")
-darknessOverlay = NodePath("")
 
 [node name="Goal" parent="." unique_id=1034903633 instance=ExtResource("4_tt3em")]
 position = Vector2(234, 73)
