@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" path="res://scenes/camera.tscn" id="1_8j6ov"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="1_dudvv"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="2_qfrji"]
-[ext_resource type="Script" path="res://Scripts/MainCamera.cs" id="2_xwtsj"]
+[ext_resource type="Script" path="res://scripts/MainCamera.cs" id="2_xwtsj"]
 
 [node name="Node2D" type="Node2D" unique_id=1277091583]
 
