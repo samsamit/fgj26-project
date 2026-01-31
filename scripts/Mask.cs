@@ -55,6 +55,7 @@ public partial class Mask : Node2D
 	private void Area2DBodyExited(Node body)
 	{
 		GD.Print("Body exited: " + body.Name);
+	}
 
 	public void SetMask(MaskEnum mask, float maskSize, Color maskColor)
 	{
