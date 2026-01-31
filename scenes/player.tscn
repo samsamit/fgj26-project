@@ -5,6 +5,7 @@
 [ext_resource type="SpriteFrames" uid="uid://tni847h81xid" path="res://assets/resources/player_sprite_frames.tres" id="2_qlg0r"]
 [ext_resource type="AudioStream" uid="uid://b66xvasbalx7b" path="res://audio/effects/Wood_walking.mp3" id="3_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://mq5e5ahpk48l" path="res://systems/AnimationController.tscn" id="4_dqkch"]
+[ext_resource type="AudioStream" uid="uid://dmd3vke7eniyb" path="res://audio/effects/WoodenBoxScrapingOnWood.ogg" id="6_tuyoq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 
@@ -12,9 +13,11 @@
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_g2els")
-spriteFrames = ExtResource("2_qlg0r")
+SpriteFrames = ExtResource("2_qlg0r")
+CharacterSpriteScaleMultiplier = 0.25
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1525898870]
+visible = false
 scale = Vector2(0.165, 0.165)
 texture = ExtResource("1_3vyb7")
 
@@ -25,3 +28,7 @@ shape = SubResource("CircleShape2D_qhqgy")
 stream = ExtResource("3_qhqgy")
 
 [node name="AnimationController" parent="." unique_id=1487013025 instance=ExtResource("4_dqkch")]
+
+[node name="AudioStreamPlayer2D_BoxScraping" type="AudioStreamPlayer2D" parent="." unique_id=1546406888]
+stream = ExtResource("6_tuyoq")
+bus = &"Effects"
