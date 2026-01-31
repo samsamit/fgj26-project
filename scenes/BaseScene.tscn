@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b6iqhr8s8v87j"]
+[gd_scene format=3 uid="uid://tcecjgv6t403"]
 
 [ext_resource type="Script" uid="uid://cpx3jfx2uu1uf" path="res://roni/MainCamera.cs" id="2_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
