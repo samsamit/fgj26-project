@@ -1,24 +1,20 @@
 [gd_scene format=3 uid="uid://iv1onl6kbhyd"]
 
-[ext_resource type="Script" uid="uid://bk7d6j88oh40d" path="res://scripts/GlobalStateManager.cs" id="1_54rco"]
+[ext_resource type="Script" uid="uid://bejw0xx3r05qa" path="res://puzzles/Puzzle1.cs" id="1_3ubpw"]
 [ext_resource type="Script" uid="uid://bafry42335jrg" path="res://scripts/DarknessManager.cs" id="1_gp54n"]
 [ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="1_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
 [ext_resource type="PackedScene" uid="uid://b51pun1aqo473" path="res://scenes/Goal.tscn" id="4_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
-[ext_resource type="PackedScene" uid="uid://dy8cye72lk8wq" path="res://scenes/camera.tscn" id="6_tt3em"]
+[ext_resource type="PackedScene" uid="uid://bkyppfbrkinr2" path="res://scenes/camera.tscn" id="6_tt3em"]
 
 [node name="World" type="Node" unique_id=1516675657]
-script = ExtResource("1_54rco")
+script = ExtResource("1_3ubpw")
 
 [node name="World" parent="." unique_id=577538569 instance=ExtResource("1_tt3em")]
 
 [node name="Darkness Manager" type="Node" parent="." unique_id=1658980287]
 script = ExtResource("1_gp54n")
-
-[node name="Goal" parent="." unique_id=1034903633 instance=ExtResource("4_tt3em")]
-position = Vector2(234, 73)
-script = null
 
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("3_gp54n")]
 z_index = 101
@@ -43,3 +39,10 @@ MaxZoom = 2.0
 ZoomSpeed = 0.3
 
 [node name="BoxGroup" type="Node2D" parent="." unique_id=2102585491]
+
+[node name="Puzzle1" type="Node" parent="." unique_id=963432743]
+script = ExtResource("1_3ubpw")
+
+[node name="Goal 1" parent="Puzzle1" unique_id=1034903633 instance=ExtResource("4_tt3em")]
+position = Vector2(1070, 115.00001)
+scale = Vector2(1.7010515, 1.4317722)
