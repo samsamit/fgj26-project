@@ -9,6 +9,12 @@ public partial class MaskUI : HBoxContainer
 	private TextureButton StrengthMask;
 	private TextureButton XRayMask;
 
+	// Visual styling for selection state
+	private static readonly Color SelectedColor = new Color(1f, 1f, 1f, 1f);      // Full brightness
+	private static readonly Color UnselectedColor = new Color(0.5f, 0.5f, 0.5f, 0.7f); // Dimmed
+	private static readonly Vector2 SelectedScale = new Vector2(1.2f, 1.2f);      // Slightly larger
+	private static readonly Vector2 UnselectedScale = new Vector2(1f, 1f);        // Normal size
+
 	public override void _Ready()
 	{
 		BasicMask = GetNode<TextureButton>("Basic");
@@ -30,6 +36,10 @@ public partial class MaskUI : HBoxContainer
 
 		GlobalStateManager.Instance.AvailableMasks.RegisterObserver(
 			masks => UpdateAvailableMasks(masks));
+
+		// Register observer for current mask selection
+		GlobalStateManager.Instance.CurrentMask.RegisterObserver(
+			mask => UpdateSelectedMask(mask));
 	}
 
 	public override void _ExitTree()
@@ -67,6 +77,32 @@ public partial class MaskUI : HBoxContainer
 				default:
 					break;
 			}
+		}
+
+		// Refresh selection styling after visibility changes
+		UpdateSelectedMask(GlobalStateManager.Instance.CurrentMask.Get());
+	}
+
+	private void UpdateSelectedMask(MaskEnum selectedMask)
+	{
+		// Apply visual styling to each button based on selection state
+		SetButtonSelectionState(BasicMask, selectedMask == MaskEnum.Basic);
+		SetButtonSelectionState(FlashliteMask, selectedMask == MaskEnum.Flashlite);
+		SetButtonSelectionState(StrengthMask, selectedMask == MaskEnum.Strength);
+		SetButtonSelectionState(XRayMask, selectedMask == MaskEnum.XRay);
+	}
+
+	private void SetButtonSelectionState(TextureButton button, bool isSelected)
+	{
+		if (isSelected)
+		{
+			button.Modulate = SelectedColor;
+			button.Scale = SelectedScale;
+		}
+		else
+		{
+			button.Modulate = UnselectedColor;
+			button.Scale = UnselectedScale;
 		}
 	}
 
