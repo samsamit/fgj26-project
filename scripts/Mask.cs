@@ -30,4 +30,14 @@ public partial class Mask : Node2D
 		_stateManager.MaskPosition = GlobalPosition;
 		}
 	}
+	
+	private void Area2DBodyEntered(Node body)
+	{
+		GD.Print("Body entered: " + body.Name);
+	}
+
+	private void Area2DBodyExited(Node body)
+	{
+		GD.Print("Body exited: " + body.Name);
+	}
 }
