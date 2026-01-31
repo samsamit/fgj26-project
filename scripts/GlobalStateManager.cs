@@ -41,11 +41,8 @@ public partial class GlobalStateManager : Node
 	[Signal]
 	public delegate void PuzzleCompletedEventHandler(string puzzleName);
 
-	public static Action<string> onPuzzleCompleted;
-	public static void OnPuzzleCompleted()
-	{
-
-	}
+	[Signal]
+	public delegate void PlayerHitEventHandler();
 
 	public void AddMask(MaskEnum maskEnum)
 	{
