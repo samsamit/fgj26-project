@@ -1,14 +1,12 @@
 [gd_scene format=3 uid="uid://blyc1yqg8r6rf"]
 
-[ext_resource type="PackedScene" path="res://scenes/camera.tscn" id="1_8j6ov"]
+[ext_resource type="PackedScene" uid="uid://dy8cye72lk8wq" path="res://scenes/camera.tscn" id="1_8j6ov"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="1_dudvv"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="2_qfrji"]
-[ext_resource type="Script" path="res://scripts/MainCamera.cs" id="2_xwtsj"]
 
 [node name="Node2D" type="Node2D" unique_id=1277091583]
 
 [node name="Camera" parent="." unique_id=947783170 node_paths=PackedStringArray("MainPlayer", "MaskPlayer") instance=ExtResource("1_8j6ov")]
-script = ExtResource("2_xwtsj")
 MainPlayer = NodePath("../Player")
 MaskPlayer = NodePath("../Mask")
 

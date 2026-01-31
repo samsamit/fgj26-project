@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" path="res://scenes/camera.tscn" id="6_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="7_tt3em"]
 [ext_resource type="PackedScene" uid="uid://vrirrln0ydm6" path="res://scenes/movable_box.tscn" id="9_l3ckk"]
-[ext_resource type="Script" uid="uid://cpx3jfx2uu1uf" path="res://scripts/MainCamera.cs" id="8_l3ckk"]
 
 [node name="World" type="Node" unique_id=1516675657]
 script = ExtResource("1_54rco")
@@ -41,16 +40,11 @@ position = Vector2(354, 234)
 [node name="Camera" parent="." unique_id=947783170 node_paths=PackedStringArray("MainPlayer", "MaskPlayer") instance=ExtResource("6_tt3em")]
 position = Vector2(350, 222)
 zoom = Vector2(2, 2)
-script = ExtResource("8_l3ckk")
 MainPlayer = NodePath("../Player")
 MaskPlayer = NodePath("../Mask")
 Speed = 50.0
-MinZoom = 0.5
 MaxZoom = 2.0
 ZoomSpeed = 0.3
-BeginCameraMove = 50.0
-TooFar = 310.0
-Close = 250.0
 
 [node name="BoxGroup" type="Node2D" parent="." unique_id=2102585491]
 
