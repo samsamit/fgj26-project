@@ -32,8 +32,9 @@ Conditions = []
 z_index = 101
 position = Vector2(426, 147)
 
-[node name="Mask" parent="." unique_id=1868398740 instance=ExtResource("6_3ubpw")]
+[node name="Mask" parent="." unique_id=1868398740 node_paths=PackedStringArray("xRayMaskSprite") instance=ExtResource("6_3ubpw")]
 position = Vector2(458, 153)
+xRayMaskSprite = NodePath("../Puzzle3/MaskSystem/SubViewport/Node2D/Mask Circle")
 
 [node name="Camera" parent="." unique_id=947783170 node_paths=PackedStringArray("MainPlayer", "MaskPlayer") instance=ExtResource("6_tt3em")]
 position = Vector2(350, 222)

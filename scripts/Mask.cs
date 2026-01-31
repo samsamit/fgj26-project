@@ -23,6 +23,7 @@ public partial class Mask : Node2D
 
 	private PointLight2D Light;
 	private CanvasModulate Background;
+	[Export] public Node2D xRayMaskSprite;
 
 	// Tracks if the current mouse press started on a UI element
 	private bool _clickStartedOnUi = false;
@@ -124,7 +125,7 @@ public partial class Mask : Node2D
 		};
 
 		Background.Visible = mask == MaskEnum.Flashlite;
-
+		xRayMaskSprite.Visible = mask == MaskEnum.XRay;
 		// Dynamic scaling for the collision shape, so that it matches the mask
 		CollisionShape2D collisionShape = GetNode<CollisionShape2D>("./Area2D/CollisionShape2D");
 
