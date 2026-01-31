@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://dboxp11r86320" path="res://scripts/GlobalCoordinateManager.cs" id="1_ypsrk"]
 
-[node name="GlobalCoordinatesManager" type="Node2D" unique_id=1958662909]
+[node name="GlobalCoordinateManager" type="Node2D" unique_id=1958662909]
 script = ExtResource("1_ypsrk")

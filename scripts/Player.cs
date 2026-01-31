@@ -16,6 +16,10 @@ public partial class Player : CharacterBody2D
 	private const string MoveForward = "move_forward";
 
 	private AudioStreamPlayer2D _walkingSFXplayer, _scrapingSFXPlayer;
+	
+	private AudioStreamPlayer2D _walkingSFXplayer;
+	private GlobalStateManager _stateManager;
+	private GlobalCoordinateManager _globalCoordinateManager;
 	private AnimationController _animationController;
 	private TileMapLayer _groundLayer;
 
@@ -39,6 +43,12 @@ public partial class Player : CharacterBody2D
 		_walkingSFXplayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_Walking");
 		_scrapingSFXPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_BoxScraping");
 		_groundLayer = GetNode<TileMapLayer>("../World/TileMapController/Ground");
+		_stateManager = GetNode<GlobalStateManager>("/root/World");
+		_globalCoordinateManager = GetNode<GlobalCoordinateManager>("/root/World");
+		_walkingSFXplayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_Walking");
+
+		GlobalPosition = _globalCoordinateManager.GetRandomSpawnPoint();
+		_stateManager.PlayerPosition = GlobalPosition;
 	}
 
 	public override void _PhysicsProcess(double delta)

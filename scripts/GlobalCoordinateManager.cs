@@ -4,37 +4,29 @@ using System.Collections.Generic;
 
 public partial class GlobalCoordinateManager : Node2D
 {
-	private List<Node> spawnPoints = new List<Node>();
+	private List<Node2D> _spawnPoints = new List<Node2D>();
 
 	public override void _Ready()
 	{
-		// Automatically gather spawn points from children
-		spawnPoints.Clear();
+		_spawnPoints.Clear();
 		foreach (Node node in GetTree().GetNodesInGroup("spawn_points"))
 		{
-			spawnPoints.Add(node);
+			if (node is Node2D node2D)
+				_spawnPoints.Add(node2D);
 		}
 
-		GD.Print("Found spawn points: ", spawnPoints.Count);
+		GD.Print("Found spawn points: ", _spawnPoints.Count);
 	}
-
-	// Get a random spawn point's global position
-	public Vector3 GetRandomSpawnPoint()
+	
+	public Vector2 GetRandomSpawnPoint()
 	{
-		if (spawnPoints.Count == 0)
+		if (_spawnPoints.Count == 0)
 		{
 			GD.PushError("No spawn points found!");
-			return Vector3.Zero;
+			return Vector2.Zero;
 		}
 
-		var randomIndex = (int)GD.Randi() % spawnPoints.Count;
-		var spawnNode = spawnPoints[randomIndex] as Node3D;
-		if (spawnNode == null)
-		{
-			GD.PushError("Spawn point is not a Node3D!");
-			return Vector3.Zero;
-		}
-
-		return spawnNode.GlobalTransform.Origin;
+	//	int randomIndex = (int)GD.Randi() % _spawnPoints.Count;
+		return _spawnPoints[0].GlobalPosition;
 	}
 }
