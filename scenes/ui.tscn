@@ -3,9 +3,11 @@
 [node name="Ui" type="CanvasLayer" unique_id=770015140]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=896534072]
+visible = false
 color = Color(0.03137255, 0.03137255, 0.03137255, 0.9254902)
 
 [node name="Control" type="Control" parent="." unique_id=666134107]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
