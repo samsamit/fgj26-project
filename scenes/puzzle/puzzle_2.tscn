@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://d2qod3f41ge1g"]
 
-[ext_resource type="PackedScene" uid="uid://d3f7vny6bd8nb" path="res://scenes/PressurePlate.tscn" id="1_1tdta"]
 [ext_resource type="Script" uid="uid://ccrbot2xfsy4p" path="res://puzzles/Puzzle2.cs" id="1_fr6yp"]
 [ext_resource type="PackedScene" uid="uid://b8erdqmxs24ka" path="res://scenes/CompletionConditions/PressurePlateDown.tscn" id="2_0d3ae"]
 [ext_resource type="PackedScene" uid="uid://sdnhw3s62pbc" path="res://scenes/movable_box.tscn" id="2_1tdta"]
@@ -8,21 +7,6 @@
 [node name="Puzzle2" type="Node" unique_id=664420405 node_paths=PackedStringArray("Conditions")]
 script = ExtResource("1_fr6yp")
 Conditions = [NodePath("PressurePlateDown"), NodePath("PressurePlateDown2"), NodePath("PressurePlateDown3")]
-
-[node name="PressurePlateDown3" parent="." unique_id=1750007365 instance=ExtResource("2_0d3ae")]
-
-[node name="PressurePlateDown2" parent="." unique_id=747243644 instance=ExtResource("2_0d3ae")]
-
-[node name="PressurePlateDown" parent="." unique_id=665553443 instance=ExtResource("2_0d3ae")]
-
-[node name="PressurePlate3" parent="." unique_id=1570528986 instance=ExtResource("1_1tdta")]
-position = Vector2(918, -354)
-
-[node name="PressurePlate2" parent="." unique_id=296030380 instance=ExtResource("1_1tdta")]
-position = Vector2(718, -173)
-
-[node name="PressurePlate" parent="." unique_id=130014758 instance=ExtResource("1_1tdta")]
-position = Vector2(1031, -215)
 
 [node name="MovableBox" parent="." unique_id=1071985089 instance=ExtResource("2_1tdta")]
 position = Vector2(918, -244)
@@ -59,3 +43,12 @@ position = Vector2(1119, -180)
 
 [node name="MovableBox12" parent="." unique_id=79443814 instance=ExtResource("2_1tdta")]
 position = Vector2(1155, -180)
+
+[node name="PressurePlateDown" parent="." unique_id=1788132455 instance=ExtResource("2_0d3ae")]
+position = Vector2(726, -178)
+
+[node name="PressurePlateDown2" parent="." unique_id=573583263 instance=ExtResource("2_0d3ae")]
+position = Vector2(1031, -215)
+
+[node name="PressurePlateDown3" parent="." unique_id=565024762 instance=ExtResource("2_0d3ae")]
+position = Vector2(887, -357)
