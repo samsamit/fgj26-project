@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b0qw3cofrat17"]
+
+[ext_resource type="Shader" uid="uid://dy82oggt8e023" path="res://assets/Juuson Mask Jutut/BoxShader.gdshader" id="1_whmsq"]
+
+[resource]
+shader = ExtResource("1_whmsq")
+shader_parameter/threshold = 0.01
+shader_parameter/softness = 0.02
