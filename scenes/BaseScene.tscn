@@ -19,7 +19,7 @@ script = ExtResource("1_3ubpw")
 [node name="World" parent="." unique_id=577538569 instance=ExtResource("1_tt3em")]
 
 [node name="StaticBox3" parent="World" unique_id=1283738957 instance=ExtResource("8_3ubpw")]
-position = Vector2(1003, -213)
+position = Vector2(993, -212)
 
 [node name="Darkness Manager" type="Node" parent="." unique_id=1658980287]
 script = ExtResource("1_gp54n")
@@ -106,8 +106,13 @@ position = Vector2(-15, 9)
 [node name="Puzzle2" type="Node" parent="." unique_id=1010493297]
 
 [node name="PressurePlate3" parent="Puzzle2" unique_id=1570528986 instance=ExtResource("12_qsgjr")]
-z_index = 0
-position = Vector2(709, -148)
+position = Vector2(918, -354)
+
+[node name="PressurePlate2" parent="Puzzle2" unique_id=486739261 instance=ExtResource("12_qsgjr")]
+position = Vector2(718, -173)
+
+[node name="PressurePlate" parent="Puzzle2" unique_id=1842410292 instance=ExtResource("12_qsgjr")]
+position = Vector2(1031, -215)
 
 [node name="StaticBox7" parent="Puzzle2" unique_id=782728776 instance=ExtResource("8_3ubpw")]
 position = Vector2(916, -209)
@@ -116,7 +121,7 @@ position = Vector2(916, -209)
 position = Vector2(919, -246)
 
 [node name="StaticBox2" parent="Puzzle2" unique_id=513098996 instance=ExtResource("8_3ubpw")]
-position = Vector2(1033, -247)
+position = Vector2(1033, -252)
 
 [node name="StaticBox3" parent="Puzzle2" unique_id=1774640426 instance=ExtResource("8_3ubpw")]
 position = Vector2(918, -174)
@@ -128,7 +133,7 @@ position = Vector2(955, -175)
 position = Vector2(1031, -177)
 
 [node name="StaticBox8" parent="Puzzle2" unique_id=1916861608 instance=ExtResource("8_3ubpw")]
-position = Vector2(1066, -212)
+position = Vector2(1067, -213)
 
 [node name="StaticBox6" parent="Puzzle2" unique_id=1746917911 instance=ExtResource("8_3ubpw")]
 position = Vector2(1120, -244)
@@ -141,6 +146,3 @@ position = Vector2(1122, -174)
 
 [node name="StaticBox11" parent="Puzzle2" unique_id=712419548 instance=ExtResource("8_3ubpw")]
 position = Vector2(1159, -173)
-
-[node name="PressurePlate" parent="Puzzle2" unique_id=1632399397 instance=ExtResource("12_qsgjr")]
-position = Vector2(767, -31)

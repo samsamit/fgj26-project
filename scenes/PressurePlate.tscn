@@ -7,7 +7,6 @@
 size = Vector2(32, 32)
 
 [node name="PressurePlate" type="Area2D" unique_id=1570528986]
-z_index = 999
 script = ExtResource("1_g1nay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1979964504]
