@@ -89,12 +89,15 @@ position = Vector2(1067, -211)
 position = Vector2(1118, -250)
 
 [node name="MovableBox10" parent="Puzzle2" unique_id=1531311794 instance=ExtResource("11_rp473")]
-position = Vector2(1119, -215)
+position = Vector2(1119, -216)
 
 [node name="MovableBox11" parent="Puzzle2" unique_id=2051008263 instance=ExtResource("11_rp473")]
 position = Vector2(1118, -179)
 
 [node name="MovableBox13" parent="Puzzle2" unique_id=1179524575 instance=ExtResource("11_rp473")]
 position = Vector2(972, -117)
+
+[node name="MovableBox12" parent="Puzzle2" unique_id=1960971345 instance=ExtResource("11_rp473")]
+position = Vector2(1155, -180)
 
 [editable path="Puzzle1"]
