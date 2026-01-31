@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://iv1onl6kbhyd"]
 
-[ext_resource type="Script" uid="uid://bafry42335jrg" path="res://Scripts/DarknessManager.cs" id="1_gp54n"]
+[ext_resource type="Script" uid="uid://bafry42335jrg" path="res://scripts/DarknessManager.cs" id="1_gp54n"]
+[ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="1_tt3em"]
 [ext_resource type="Script" uid="uid://cpx3jfx2uu1uf" path="res://roni/MainCamera.cs" id="2_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
 [ext_resource type="PackedScene" uid="uid://b51pun1aqo473" path="res://scenes/Goal.tscn" id="4_tt3em"]
-[ext_resource type="PackedScene" uid="uid://n1wdnpoy61xh" path="res://tileMap/TileMapController.tscn" id="5_54rco"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
 
 [node name="World" type="Node" unique_id=1516675657]
+
+[node name="World" parent="." unique_id=577538569 instance=ExtResource("1_tt3em")]
 
 [node name="Darkness Manager" type="Node" parent="." unique_id=1658980287 node_paths=PackedStringArray("darknessOverlay")]
 script = ExtResource("1_gp54n")
@@ -36,5 +38,3 @@ script = ExtResource("2_tt3em")
 MainPlayer = NodePath("../Player")
 MaskPlayer = NodePath("../Mask")
 Speed = 200.0
-
-[node name="TileMapController" parent="." unique_id=859653363 instance=ExtResource("5_54rco")]

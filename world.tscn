@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://cnnjdatotjesg"]
+[gd_scene format=3 uid="uid://ceobmjjuqvo0f"]
+
+[ext_resource type="PackedScene" uid="uid://n1wdnpoy61xh" path="res://tileMap/TileMapController.tscn" id="1_f3sb7"]
 
 [node name="World" type="Node2D" unique_id=577538569]
 
-[node name="TileMap" type="TileMap" parent="." unique_id=2131636856]
-format = 2
+[node name="TileMapController" parent="." unique_id=859653363 instance=ExtResource("1_f3sb7")]
