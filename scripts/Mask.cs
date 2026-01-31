@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Mask : CharacterBody2D
+public partial class Mask : Node2D
 {
 	public const float Speed = 200.0f;
 
@@ -23,8 +23,8 @@ public partial class Mask : CharacterBody2D
 			velocity = direction * Speed;
 		}
 
-		Velocity = velocity;
-		MoveAndSlide();
+		//Velocity = velocity;
+		//MoveAndSlide();
 	}
 
 	public override void _Process(double delta)
