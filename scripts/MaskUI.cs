@@ -52,24 +52,20 @@ public partial class MaskUI : HBoxContainer
 	public void OnClickBasicMask()
 	{
 		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Basic);
-		GD.Print("Clicked");
 	}
 
 	public void OnClickFlashlite()
 	{
 		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Flashlite);
-		GD.Print("Clicked");
 	}
 
 	public void OnClickStrength()
 	{
 		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Strength);
-		GD.Print("Clicked");
 	}
 
 	public void OnClickXRay()
 	{
 		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.XRay);
-		GD.Print("Clicked");
 	}
 }
