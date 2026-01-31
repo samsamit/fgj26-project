@@ -10,7 +10,7 @@ public partial class MainCamera : Camera2D
 	public Mask MaskPlayer;
 
 	[Export]
-	public float Speed;
+	public float Speed = 100f;
 
 	[Export]
 	public float MinZoom = 0.5f;
@@ -29,9 +29,6 @@ public partial class MainCamera : Camera2D
 
 	[Export]
 	public float Close = 250;
-
-	private bool MainPlayerInsideArea;
-	private bool MaskPlayerInsideArea;
 
 	public override void _PhysicsProcess(double delta)
 	{

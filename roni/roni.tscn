@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dtn5cg0wqcy5w"]
 
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="1_tpiab"]
-[ext_resource type="Script" uid="uid://cpx3jfx2uu1uf" path="res://roni/MainCamera.cs" id="2_al2h5"]
+[ext_resource type="Script" uid="uid://cpx3jfx2uu1uf" path="res://scripts/MainCamera.cs" id="2_al2h5"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="4_2ieg0"]
 
 [node name="Roni" type="Node2D" unique_id=1209625075]

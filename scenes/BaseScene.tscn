@@ -1,11 +1,25 @@
-[gd_scene format=3 uid="uid://b6iqhr8s8v87j"]
+[gd_scene format=3 uid="uid://iv1onl6kbhyd"]
 
-[ext_resource type="Script" uid="uid://cpx3jfx2uu1uf" path="res://roni/MainCamera.cs" id="2_tt3em"]
+[ext_resource type="Script" uid="uid://bafry42335jrg" path="res://scripts/DarknessManager.cs" id="1_gp54n"]
+[ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="1_tt3em"]
+[ext_resource type="Script" uid="uid://cjt6ljd4qqsaa" path="res://Icon.cs" id="2_54rco"]
+[ext_resource type="Script" uid="uid://cpx3jfx2uu1uf" path="res://scripts/MainCamera.cs" id="2_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
-[ext_resource type="PackedScene" path="res://scenes/Goal.tscn" id="4_tt3em"]
+[ext_resource type="PackedScene" uid="uid://b51pun1aqo473" path="res://scenes/Goal.tscn" id="4_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
 
 [node name="World" type="Node" unique_id=1516675657]
+
+[node name="World" parent="." unique_id=577538569 instance=ExtResource("1_tt3em")]
+
+[node name="Darkness Manager" type="Node" parent="." unique_id=1658980287 node_paths=PackedStringArray("darknessOverlay")]
+script = ExtResource("1_gp54n")
+darknessOverlay = NodePath("../CanvasModulate")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1630761669]
+visible = false
+position = Vector2(11, 15)
+color = Color(0.029506557, 0.029506557, 0.029506572, 0.84313726)
 
 [node name="Goal" parent="." unique_id=1034903633 instance=ExtResource("4_tt3em")]
 position = Vector2(215, 9)
@@ -18,23 +32,7 @@ position = Vector2(353, 232)
 [node name="Mask" parent="." unique_id=1868398740 instance=ExtResource("6_3ubpw")]
 position = Vector2(669, 195)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1630761669]
-visible = false
-position = Vector2(11, 15)
-color = Color(0.029506557, 0.029506557, 0.029506572, 0.84313726)
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1387221867]
-visible = false
-offset_left = -1.0
-offset_top = 1.0
-offset_right = 1140.0
-offset_bottom = 661.0
-color = Color(0.5529412, 0.5529412, 0.5529412, 1)
-
 [node name="LightPuzzle" type="Node" parent="." unique_id=973306165]
-
-[node name="Area2D2" parent="." unique_id=935820845 instance=ExtResource("4_tt3em")]
-script = null
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=261253654 node_paths=PackedStringArray("MainPlayer", "MaskPlayer")]
 script = ExtResource("2_tt3em")
