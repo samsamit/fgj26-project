@@ -36,7 +36,7 @@ public partial class Mask : Node2D
 	public override void _Process(double delta)
 	{
 		Vector2 mousePosition = GetGlobalMousePosition();
-
+		
 		if (Input.IsMouseButtonPressed(MouseButton.Left))
 		{
 
