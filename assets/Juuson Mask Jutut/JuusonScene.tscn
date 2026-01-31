@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwya4ldrsmp4o"]
 
-[ext_resource type="Script" uid="uid://bk7d6j88oh40d" path="res://Scripts/GlobalStateManager.cs" id="1_5r7tr"]
+[ext_resource type="Script" uid="uid://bk7d6j88oh40d" path="res://scripts/GlobalStateManager.cs" id="1_5r7tr"]
 [ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="2_qhkdm"]
 [ext_resource type="Texture2D" uid="uid://cbdlt1fn6sce5" path="res://assets/Juuson Mask Jutut/Circle.png" id="3_c7ntc"]
 [ext_resource type="Script" uid="uid://dckuoy7shumxo" path="res://assets/Juuson Mask Jutut/MineMask.cs" id="4_0fufx"]
