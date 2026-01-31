@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dg6bnsnk7avne" path="res://maskTextures/starTexture.svg" id="4_2a672"]
 [ext_resource type="Texture2D" uid="uid://cd1m7hxv4cydc" path="res://maskTextures/triangleTexture.svg" id="5_8u57e"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_uscli"]
+
 [node name="Mask" type="Node2D" unique_id=1770994779]
 script = ExtResource("1_in0c2")
 Round = ExtResource("2_uscli")
@@ -19,3 +21,11 @@ texture_scale = 0.5
 
 [node name="MaskBackground" type="CanvasModulate" parent="." unique_id=405735703]
 color = Color(0.03137255, 0.03137255, 0.03137255, 0.42745098)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2099669510]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1754090856]
+shape = SubResource("CircleShape2D_uscli")
+
+[connection signal="body_entered" from="Area2D" to="." method="Area2DBodyEntered"]
+[connection signal="body_exited" from="Area2D" to="." method="Area2DBodyExited"]
