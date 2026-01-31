@@ -7,6 +7,15 @@
 [ext_resource type="Material" uid="uid://b0qw3cofrat17" path="res://assets/Juuson Mask Jutut/BoxMaskMaterial.tres" id="5_y8uk1"]
 [ext_resource type="Texture2D" uid="uid://cn3ock8an6at3" path="res://assets/laatikko.png" id="6_0v7be"]
 [ext_resource type="Script" uid="uid://vshet36c6n2y" path="res://assets/Juuson Mask Jutut/MaskSystem.cs" id="7_byq77"]
+[ext_resource type="Texture2D" uid="uid://bjdnjyhcin6uy" path="res://assets/Juuson Mask Jutut/pommi.png" id="7_c7ntc"]
+[ext_resource type="PackedScene" uid="uid://bb3d8ms8wak8w" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="7_y8uk1"]
+[ext_resource type="Texture2D" uid="uid://bb85kn7re6pfn" path="res://assets/Juuson Mask Jutut/Vipu0.png" id="8_0fufx"]
+[ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="9_0v7be"]
+[ext_resource type="Script" uid="uid://btgxiojec2gol" path="res://assets/Juuson Mask Jutut/BombSwitch.cs" id="9_byq77"]
+[ext_resource type="Texture2D" uid="uid://du0lbc0wxmdr7" path="res://assets/Juuson Mask Jutut/Vipu1.png" id="10_byq77"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_leigt"]
+size = Vector2(32, 34)
 
 [node name="World" type="Node2D" unique_id=1486223025]
 script = ExtResource("1_5r7tr")
@@ -26,11 +35,102 @@ material = ExtResource("5_y8uk1")
 position = Vector2(453, 149)
 texture = ExtResource("6_0v7be")
 
-[node name="Box2" type="Sprite2D" parent="." unique_id=2071361114]
+[node name="Bomb Ground" parent="." unique_id=324300176 instance=ExtResource("7_y8uk1")]
+position = Vector2(237, 45)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1712511885]
+material = ExtResource("5_y8uk1")
+position = Vector2(311, -24)
+points = PackedVector2Array(235, -60, 123, -80, 119, 12, -11, 3, 137, 238)
+width = 5.0
+texture = ExtResource("7_c7ntc")
+
+[node name="Line2D2" type="Line2D" parent="." unique_id=1678543641]
+material = ExtResource("5_y8uk1")
+position = Vector2(311, -24)
+points = PackedVector2Array(321, -63, 376, 8, 97, 45, -39, -66, -65, 58)
+width = 5.0
+texture = ExtResource("7_c7ntc")
+
+[node name="Line2D3" type="Line2D" parent="." unique_id=673788947]
+material = ExtResource("5_y8uk1")
+position = Vector2(311, -24)
+points = PackedVector2Array(382, -65, 332, 65, 215, -5, 93, -62, -65, 143)
+width = 5.0
+texture = ExtResource("7_c7ntc")
+
+[node name="Line2D4" type="Line2D" parent="." unique_id=136277428]
+material = ExtResource("5_y8uk1")
+position = Vector2(311, -24)
+points = PackedVector2Array(281, -64, 271, -14, 178, -3, 220, 74, 9, 119, 16, 196)
+width = 5.0
+texture = ExtResource("7_c7ntc")
+
+[node name="Box9" type="Sprite2D" parent="." unique_id=177869203]
 visibility_layer = 3
 material = ExtResource("5_y8uk1")
-position = Vector2(237, 45)
-texture = ExtResource("6_0v7be")
+position = Vector2(326, 173)
+texture = ExtResource("7_c7ntc")
+
+[node name="Box10" type="Sprite2D" parent="." unique_id=1671603139]
+visibility_layer = 3
+material = ExtResource("5_y8uk1")
+position = Vector2(445, 220)
+texture = ExtResource("7_c7ntc")
+
+[node name="Box11" type="Sprite2D" parent="." unique_id=1041020848]
+visibility_layer = 3
+material = ExtResource("5_y8uk1")
+position = Vector2(597, 228)
+texture = ExtResource("7_c7ntc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=686767949 node_paths=PackedStringArray("switchGreen", "switchRed", "bomb")]
+position = Vector2(554, -98)
+script = ExtResource("9_byq77")
+switchGreen = NodePath("SwitchGreen")
+switchRed = NodePath("SwitchRed")
+bomb = NodePath("../Bomb Ground")
+
+[node name="SwitchGreen" type="Sprite2D" parent="Area2D" unique_id=325200784]
+visibility_layer = 3
+material = ExtResource("5_y8uk1")
+texture = ExtResource("10_byq77")
+
+[node name="SwitchRed" type="Sprite2D" parent="Area2D" unique_id=915570974]
+visibility_layer = 3
+material = ExtResource("5_y8uk1")
+texture = ExtResource("8_0fufx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=411141204]
+shape = SubResource("RectangleShape2D_leigt")
+
+[node name="Box4" type="Sprite2D" parent="." unique_id=100094610]
+visibility_layer = 3
+material = ExtResource("5_y8uk1")
+position = Vector2(591, -99)
+texture = ExtResource("8_0fufx")
+
+[node name="Box5" type="Sprite2D" parent="." unique_id=218290144]
+visibility_layer = 3
+material = ExtResource("5_y8uk1")
+position = Vector2(626, -99)
+texture = ExtResource("8_0fufx")
+
+[node name="Box6" type="Sprite2D" parent="." unique_id=1248066452]
+visibility_layer = 3
+material = ExtResource("5_y8uk1")
+position = Vector2(659, -99)
+texture = ExtResource("8_0fufx")
+
+[node name="Box7" type="Sprite2D" parent="." unique_id=704115893]
+visibility_layer = 3
+material = ExtResource("5_y8uk1")
+position = Vector2(693, -100)
+texture = ExtResource("8_0fufx")
+
+[node name="Player" parent="." unique_id=380924559 instance=ExtResource("9_0v7be")]
+SpriteFrames = null
+CharacterRotationSpeed = 10.0
 
 [node name="MaskSystem" type="Node" parent="." unique_id=1425651829 node_paths=PackedStringArray("MaskViewport", "MaskCircleInViewport", "PlayerCircle", "MaskCamera")]
 script = ExtResource("7_byq77")
@@ -50,4 +150,4 @@ render_target_update_mode = 4
 [node name="Mask Circle" type="Sprite2D" parent="MaskSystem/SubViewport/Node2D" unique_id=751409629]
 texture = ExtResource("3_c7ntc")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=539428200]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=856543236]
