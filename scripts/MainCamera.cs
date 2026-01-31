@@ -3,35 +3,31 @@ using System;
 
 public partial class MainCamera : Camera2D
 {
-	[Export]
-	public Player MainPlayer;
+	[Export] public Player MainPlayer;
 
-	[Export]
-	public Mask MaskPlayer;
+	[Export] public Mask MaskPlayer;
 
-	[Export]
-	public float Speed = 100f;
+	[Export] public float Speed = 100f;
+	[Export] public float MinZoom = 0.5f;
+	[Export] public float MaxZoom = 1;
+	[Export] public float ZoomSpeed = 0.2f;
+	[Export] public float BeginCameraMove = 50;
+	[Export] public float TooFar = 310;
+	[Export] public float Close = 250;
 
-	[Export]
-	public float MinZoom = 0.5f;
+	bool snapToPoint = false;
+	Vector2 snapPosition;
+	float snapZoom;
 
-	[Export]
-	public float MaxZoom = 1;
-
-	[Export]
-	public float ZoomSpeed = 0.2f;
-
-	[Export]
-	public float BeginCameraMove = 50;
-
-	[Export]
-	public float TooFar = 310;
-
-	[Export]
-	public float Close = 250;
-
+public void SnapToOnePoint(Vector2 point, float zoom)
+	{
+		snapToPoint = true;
+		snapPosition = point;
+		snapZoom = zoom;
+	}
 	public override void _PhysicsProcess(double delta)
 	{
+		if (snapToPoint) return;
 		var middlePoint = (MainPlayer.GlobalPosition + MaskPlayer.GlobalPosition) / 2;
 		var middlePointDeviation = (GlobalPosition - middlePoint).Length();
 
@@ -55,6 +51,13 @@ public partial class MainCamera : Camera2D
 			Zoom = new Vector2(newZoom, newZoom);
 		}
 	}
+    public override void _Process(double delta)
+	{
+		if (!snapToPoint) return;
+	GlobalPosition = snapPosition;
+	Zoom = snapZoom * Vector2.One;
+	}
+
 
 	private bool IsTooFarFromCamera(Node2D node)
 	{

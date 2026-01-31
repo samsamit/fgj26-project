@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3naxm8s5bdyv"
-path="res://.godot/imported/tykki.png-c5b7173c87088120a23579ae17186966.ctex"
+uid="uid://bv0j8a67lf01k"
+path="res://.godot/imported/tykinkuula.png-07586341fa771619861bc9ba57f0281d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tykki.png"
-dest_files=["res://.godot/imported/tykki.png-c5b7173c87088120a23579ae17186966.ctex"]
+source_file="res://assets/tykinkuula.png"
+dest_files=["res://.godot/imported/tykinkuula.png-07586341fa771619861bc9ba57f0281d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3naxm8s5bdyv"
-path="res://.godot/imported/tykki.png-c5b7173c87088120a23579ae17186966.ctex"
+uid="uid://dhlmure0csyxa"
+path="res://.godot/imported/painelaattapainettu.png-ed4d564f83373a4caaee74edda2f61bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tykki.png"
-dest_files=["res://.godot/imported/tykki.png-c5b7173c87088120a23579ae17186966.ctex"]
+source_file="res://assets/painelaattapainettu.png"
+dest_files=["res://.godot/imported/painelaattapainettu.png-ed4d564f83373a4caaee74edda2f61bf.ctex"]
 
 [params]
 

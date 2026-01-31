@@ -22,7 +22,7 @@ public partial class MaskSystem : Node
         // Keep the viewport circle aligned with the real circle (screen-space match)
         // If you have a Camera2D, this is still fine as long as both are in same canvas/screen space.
         Vector2 size = GetViewport().GetVisibleRect().Size; // Screen size
-        MaskCircleInViewport.GlobalPosition =  PlayerCircle.GlobalPosition - MaskCamera.GlobalPosition + size / 2;
+        MaskCircleInViewport.GlobalPosition = PlayerCircle.GlobalPosition - MaskCamera.GlobalPosition + size / 2;
         MaskCircleInViewport.GlobalRotation = PlayerCircle.GlobalRotation;
         MaskCircleInViewport.GlobalScale    = PlayerCircle.GlobalScale;
     }

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dkvxjmneifwdj"]
+
+[ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="1_td5ss"]
+[ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_70a3o"]
+[ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="4_hrc7i"]
+[ext_resource type="PackedScene" uid="uid://dwqin8c06c2om" path="res://scenes/camera.tscn" id="5_g0o00"]
+
+[node name="Asamu" type="Node2D" unique_id=1225970114]
+
+[node name="World" parent="." unique_id=577538569 instance=ExtResource("1_td5ss")]
+
+[node name="Player" parent="." unique_id=380924559 instance=ExtResource("3_70a3o")]
+z_index = 101
+position = Vector2(426, 147)
+
+[node name="Mask" parent="." unique_id=1770994779 instance=ExtResource("4_hrc7i")]
+position = Vector2(458, 153)
+Round = null
+Square = null
+Star = null
+Triangle = null
+
+[node name="Camera" parent="." unique_id=947783170 node_paths=PackedStringArray("MainPlayer", "MaskPlayer") instance=ExtResource("5_g0o00")]
+position = Vector2(350, 222)
+zoom = Vector2(2, 2)
+MainPlayer = NodePath("../Player")
+MaskPlayer = NodePath("../Mask")
+Speed = 50.0
+MaxZoom = 2.0
+ZoomSpeed = 0.3
