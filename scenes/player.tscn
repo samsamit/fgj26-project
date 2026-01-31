@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dtrybckssowqk"]
 
 [ext_resource type="Texture2D" uid="uid://dllfupih74f4p" path="res://icon.svg" id="1_3vyb7"]
-[ext_resource type="Script" uid="uid://bs7am00adb144" path="res://Player.cs" id="1_g2els"]
+[ext_resource type="Script" uid="uid://bs7am00adb144" path="res://scripts/Player.cs" id="1_g2els"]
+[ext_resource type="AudioStream" uid="uid://b66xvasbalx7b" path="res://audio/effects/Wood_walking.mp3" id="3_qhqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 
@@ -15,3 +16,7 @@ texture = ExtResource("1_3vyb7")
 shape = SubResource("RectangleShape2D_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1682005105]
+
+[node name="AudioStreamPlayer2D_Walking" type="AudioStreamPlayer2D" parent="." unique_id=1745833923]
+stream = ExtResource("3_qhqgy")
+bus = &"Effects"

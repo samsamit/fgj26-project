@@ -2,11 +2,31 @@
 
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="1_dudvv"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="2_qfrji"]
+[ext_resource type="Script" uid="uid://cobrtnj7bp1uj" path="res://scripts/LightPuzzle.cs" id="3_5mpgw"]
+[ext_resource type="PackedScene" uid="uid://d3l1n6ced68u3" path="res://scenes/Goal.tscn" id="4_xwtsj"]
 
 [node name="Node2D" type="Node2D" unique_id=1277091583]
 
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("1_dudvv")]
-position = Vector2(818, 230)
+z_index = 101
+position = Vector2(353, 232)
 
 [node name="Mask" parent="." unique_id=1868398740 instance=ExtResource("2_qfrji")]
 position = Vector2(669, 195)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=384848205]
+position = Vector2(11, 15)
+color = Color(0.029506557, 0.029506557, 0.029506572, 0.84313726)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=809056905]
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 1140.0
+offset_bottom = 661.0
+color = Color(0.5529412, 0.5529412, 0.5529412, 1)
+
+[node name="LightPuzzle" type="Node" parent="." unique_id=895644048]
+script = ExtResource("3_5mpgw")
+
+[node name="Area2D2" parent="." unique_id=1034903633 instance=ExtResource("4_xwtsj")]
+
