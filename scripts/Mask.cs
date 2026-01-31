@@ -25,7 +25,7 @@ public partial class Mask : Node2D
 	public Texture2D Triangle;
 
 	private PointLight2D Light;
-
+	
 	public override void _Ready()
 	{
 		GD.Print("Mask script is active!");

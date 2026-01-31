@@ -39,9 +39,6 @@ public partial class Player : CharacterBody2D
 		_walkingSFXplayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_Walking");
 		_scrapingSFXPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_BoxScraping");
 		_groundLayer = GetNode<TileMapLayer>("../World/TileMapController/Ground");
-		
-		var spawnManager = GetNode<GlobalCoordinateManager>("/root/World/GlobalCoordinateManager");
-		SpawnAt(spawnManager.GetRandomSpawnPoint());
 	}
 
 	public override void _PhysicsProcess(double delta)
