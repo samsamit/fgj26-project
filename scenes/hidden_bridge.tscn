@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://bnaodtvgrp7ei"]
+[gd_scene format=3 uid="uid://j3eac2ufirxj"]
 
-[ext_resource type="Script" uid="uid://bot6p5ntvxilg" path="res://scripts/HiddenBridge.cs" id="1_7uqqq"]
+[ext_resource type="Script" path="res://scripts/HiddenBridge.cs" id="1_7uqqq"]
+[ext_resource type="Material" uid="uid://b0qw3cofrat17" path="res://assets/Juuson Mask Jutut/BoxMaskMaterial.tres" id="2_twqjv"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wyphu"]
 
@@ -14,6 +15,7 @@ size = Vector2(256, 5)
 script = ExtResource("1_7uqqq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=895720636]
+material = ExtResource("2_twqjv")
 scale = Vector2(256, 32)
 texture = SubResource("PlaceholderTexture2D_wyphu")
 

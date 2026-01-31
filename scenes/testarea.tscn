@@ -13,7 +13,6 @@ MaskPlayer = NodePath("../Mask")
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("1_dudvv")]
 z_index = 101
 position = Vector2(125, 129)
-Speed = 50.0
 
 [node name="Mask" parent="." unique_id=1868398740 instance=ExtResource("2_qfrji")]
 position = Vector2(385, 208)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwya4ldrsmp4o"]
 
-[ext_resource type="Script" uid="uid://bk7d6j88oh40d" path="res://Scripts/GlobalStateManager.cs" id="1_5r7tr"]
+[ext_resource type="Script" uid="uid://bk7d6j88oh40d" path="res://scripts/GlobalStateManager.cs" id="1_5r7tr"]
 [ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="2_qhkdm"]
 [ext_resource type="Texture2D" uid="uid://cbdlt1fn6sce5" path="res://assets/Juuson Mask Jutut/Circle.png" id="3_c7ntc"]
 [ext_resource type="Script" uid="uid://dckuoy7shumxo" path="res://assets/Juuson Mask Jutut/MineMask.cs" id="4_0fufx"]
@@ -11,8 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://bb3d8ms8wak8w" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="7_y8uk1"]
 [ext_resource type="Texture2D" uid="uid://bb85kn7re6pfn" path="res://assets/Juuson Mask Jutut/Vipu0.png" id="8_0fufx"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="9_0v7be"]
-[ext_resource type="Script" uid="uid://btgxiojec2gol" path="res://assets/Juuson Mask Jutut/BombSwitch.cs" id="9_byq77"]
+[ext_resource type="Script" path="res://assets/Juuson Mask Jutut/BombSwitch.cs" id="9_byq77"]
 [ext_resource type="Texture2D" uid="uid://du0lbc0wxmdr7" path="res://assets/Juuson Mask Jutut/Vipu1.png" id="10_byq77"]
+[ext_resource type="PackedScene" uid="uid://j3eac2ufirxj" path="res://scenes/hidden_bridge.tscn" id="14_leigt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_leigt"]
 size = Vector2(32, 34)
@@ -36,12 +37,12 @@ position = Vector2(453, 149)
 texture = ExtResource("6_0v7be")
 
 [node name="Bomb Ground" parent="." unique_id=324300176 instance=ExtResource("7_y8uk1")]
-position = Vector2(237, 45)
+position = Vector2(1051, -152)
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1712511885]
 material = ExtResource("5_y8uk1")
 position = Vector2(311, -24)
-points = PackedVector2Array(235, -60, 123, -80, 119, 12, -11, 3, 137, 238)
+points = PackedVector2Array(404, -149, 501, -29, 587, -255, 816, -262, 786, -146)
 width = 5.0
 texture = ExtResource("7_c7ntc")
 
@@ -85,7 +86,7 @@ position = Vector2(597, 228)
 texture = ExtResource("7_c7ntc")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=686767949 node_paths=PackedStringArray("switchGreen", "switchRed", "bomb")]
-position = Vector2(554, -98)
+position = Vector2(716, -191)
 script = ExtResource("9_byq77")
 switchGreen = NodePath("SwitchGreen")
 switchRed = NodePath("SwitchRed")
@@ -129,6 +130,9 @@ position = Vector2(693, -100)
 texture = ExtResource("8_0fufx")
 
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("9_0v7be")]
+position = Vector2(1044, 12)
+collision_layer = 1
+collision_mask = 1
 
 [node name="MaskSystem" type="Node" parent="." unique_id=1425651829 node_paths=PackedStringArray("MaskViewport", "MaskCircleInViewport", "PlayerCircle", "MaskCamera")]
 script = ExtResource("7_byq77")
@@ -149,3 +153,7 @@ render_target_update_mode = 4
 texture = ExtResource("3_c7ntc")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=856543236]
+position = Vector2(1066, -83)
+
+[node name="HiddenBridge" parent="." unique_id=1094509827 instance=ExtResource("14_leigt")]
+position = Vector2(1273, -67)

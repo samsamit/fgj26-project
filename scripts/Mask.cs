@@ -68,10 +68,10 @@ public partial class Mask : Node2D
 		Light.Color = maskColor;
 		Light.Texture = mask switch
 		{
-			MaskEnum.Round => Round,
-			MaskEnum.Square => Square,
-			MaskEnum.Star => Star,
-			MaskEnum.Triangle => Triangle,
+			MaskEnum.Flashlite => Round,
+			MaskEnum.Basic => Square,
+			MaskEnum.XRay => Star,
+			MaskEnum.Strength => Triangle,
 			_ => Round,
 		};
 

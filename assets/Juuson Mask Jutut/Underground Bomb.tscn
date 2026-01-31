@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://b0qw3cofrat17" path="res://assets/Juuson Mask Jutut/BoxMaskMaterial.tres" id="1_8d72e"]
 [ext_resource type="Texture2D" uid="uid://c1fre506akygw" path="res://assets/Juuson Mask Jutut/Dirt.png" id="2_6yvsu"]
-[ext_resource type="Script" uid="uid://cp0e7n1wrnp1c" path="res://assets/Juuson Mask Jutut/UndergroundBomb.cs" id="3_6yvsu"]
+[ext_resource type="Script" path="res://assets/Juuson Mask Jutut/UndergroundBomb.cs" id="3_6yvsu"]
 [ext_resource type="Texture2D" uid="uid://bjdnjyhcin6uy" path="res://assets/Juuson Mask Jutut/pommi.png" id="3_yohmc"]
 [ext_resource type="Texture2D" uid="uid://curuol7l1gmpn" path="res://assets/Juuson Mask Jutut/pommiblipred.png" id="4_73ky7"]
 [ext_resource type="Texture2D" uid="uid://btdfocuux8xuj" path="res://assets/Juuson Mask Jutut/Explosion.png" id="6_yohmc"]
