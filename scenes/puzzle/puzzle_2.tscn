@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://d3f7vny6bd8nb" path="res://scenes/PressurePlate.tscn" id="1_1tdta"]
 [ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="2_bak4j"]
-[ext_resource type="Script" uid="uid://3vuf1mjtipr" path="res://puzzles/Puzzle2.cs" id="3_bak4j"]
 
 [node name="Puzzle2" type="Node" unique_id=664420405]
 
@@ -15,10 +14,11 @@ position = Vector2(718, -173)
 [node name="PressurePlate" parent="." unique_id=130014758 instance=ExtResource("1_1tdta")]
 position = Vector2(1031, -215)
 
-[node name="StaticBox" parent="." unique_id=460677728 node_paths=PackedStringArray("Conditions") instance=ExtResource("2_bak4j")]
+[node name="StaticBox7" parent="." unique_id=1283738957 instance=ExtResource("2_bak4j")]
+position = Vector2(916, -209)
+
+[node name="StaticBox" parent="." unique_id=460677728 instance=ExtResource("2_bak4j")]
 position = Vector2(919, -246)
-script = ExtResource("3_bak4j")
-Conditions = []
 
 [node name="StaticBox2" parent="." unique_id=924547076 instance=ExtResource("2_bak4j")]
 position = Vector2(1033, -252)
