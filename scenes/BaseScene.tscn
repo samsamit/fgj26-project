@@ -7,10 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://d3l1n6ced68u3" path="res://scenes/Goal.tscn" id="4_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://bkyppfbrkinr2" path="res://scenes/camera.tscn" id="6_tt3em"]
-[ext_resource type="PackedScene" uid="uid://bhjqnnj8hi3sk" path="res://scenes/static_box.tscn" id="8_3ubpw"]
+[ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="8_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://sdnhw3s62pbc" path="res://scenes/movable_box.tscn" id="9_l3ckk"]
 [ext_resource type="PackedScene" uid="uid://bojdshqdxsu4v" path="res://scenes/puzzle/puzzle_1.tscn" id="11_a63bb"]
 [ext_resource type="PackedScene" uid="uid://cbt0rsob2udoe" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
+[ext_resource type="PackedScene" uid="uid://d3f7vny6bd8nb" path="res://scenes/PressurePlate.tscn" id="12_qsgjr"]
 
 [node name="World" type="Node" unique_id=1516675657]
 script = ExtResource("1_3ubpw")
@@ -104,6 +105,10 @@ position = Vector2(-15, 9)
 
 [node name="Puzzle2" type="Node" parent="." unique_id=1010493297]
 
+[node name="PressurePlate3" parent="Puzzle2" unique_id=1570528986 instance=ExtResource("12_qsgjr")]
+z_index = 0
+position = Vector2(709, -148)
+
 [node name="StaticBox7" parent="Puzzle2" unique_id=782728776 instance=ExtResource("8_3ubpw")]
 position = Vector2(916, -209)
 
@@ -136,3 +141,6 @@ position = Vector2(1122, -174)
 
 [node name="StaticBox11" parent="Puzzle2" unique_id=712419548 instance=ExtResource("8_3ubpw")]
 position = Vector2(1159, -173)
+
+[node name="PressurePlate" parent="Puzzle2" unique_id=1632399397 instance=ExtResource("12_qsgjr")]
+position = Vector2(767, -31)
