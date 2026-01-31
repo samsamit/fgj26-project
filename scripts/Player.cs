@@ -59,7 +59,19 @@ public partial class Player : CharacterBody2D
 			RandomizeAudioParams();
 			_frameCounter = 0; // Nollataan laskuri
 		}
-		MoveAndSlide();
+
+		if (MoveAndSlide())
+		{
+			for (int i = 0; i < GetSlideCollisionCount(); i++)
+			{
+				var collision = GetSlideCollision(i);
+				var collider = collision.GetCollider();
+				if (collider is RigidBody2D rigidBody2D)
+				{
+					rigidBody2D.ApplyForce(collision.GetNormal() * -10);
+				}
+			}
+		}
 	}
 
 	private void RandomizeAudioParams()
