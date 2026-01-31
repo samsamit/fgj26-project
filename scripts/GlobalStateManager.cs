@@ -6,14 +6,25 @@ public partial class GlobalStateManager : Node
 {
 	public HashSet<string> CompletedPuzzle = [];
 
+	[Export]
+	public Player Player;
+
+	[Export]
+	public Mask Mask;
+
+
 	public Vector2 PlayerPosition = Vector2.Zero;
 	public Vector2 MaskPosition = Vector2.Zero;
-	public Observable<MaskEnum> CurrentMask = new(MaskEnum.Round);
+	public Observable<List<MaskEnum>> AvailableMasks = new([]);
+	public Observable<MaskEnum> CurrentMask = new(MaskEnum.Flashlite);
+	public Observable<int> Health = new(3);
 
 	public static GlobalStateManager Instance;
 
 	public override void _Ready()
 	{
+		base._Ready();
+
 		PuzzleCompleted += puzzleName =>
 		{
 			GD.Print("hey");
@@ -31,8 +42,11 @@ public partial class GlobalStateManager : Node
 
 	}
 
-	public void ChangeMask(MaskEnum maskEnum)
+	public void AddMask(MaskEnum maskEnum)
 	{
+		var currentAvailableMasks = AvailableMasks.Get();
+		currentAvailableMasks.Add(maskEnum);
+		AvailableMasks.Set(currentAvailableMasks);
 		CurrentMask.Set(maskEnum);
 	}
 }

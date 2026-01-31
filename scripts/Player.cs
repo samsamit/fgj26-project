@@ -71,13 +71,12 @@ public partial class Player : CharacterBody2D
 		{
 			_walkingSFXplayer.Stop();
 			ResetAudioParams();
-
-			if (_animationController.ActiveAnimation != AnimationEnum.Idle)
-			{
-				_animationController.ChangeAnimation(AnimationEnum.Idle);
-			}
 		}
-
+		if (velocityNormalizedCombined == 0 && _animationController.ActiveAnimation != AnimationEnum.Idle)
+		{
+			_animationController.ChangeAnimation(AnimationEnum.Idle);
+		}
+		
 		// Jos X framea on kulunut, randomisoidaan arvot (materiaali huomioiden)
 		if (_frameCounter >= ModulationInterval)
 		{
@@ -100,6 +99,10 @@ public partial class Player : CharacterBody2D
 					if (!_scrapingSFXPlayer.Playing)
 					{
 						_scrapingSFXPlayer.Play();
+					}
+					if (_animationController.ActiveAnimation != AnimationEnum.Push && velocityNormalizedCombined > 0)
+					{
+						_animationController.ChangeAnimation(AnimationEnum.Push);
 					}
 				}
 			}

@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://dy8cye72lk8wq"]
+[gd_scene format=3 uid="uid://bkyppfbrkinr2"]
 
 [ext_resource type="Script" uid="uid://cpx3jfx2uu1uf" path="res://scripts/MainCamera.cs" id="1_kod1s"]
+[ext_resource type="PackedScene" uid="uid://clxgyjqpglkcr" path="res://scenes/ui.tscn" id="2_kod1s"]
 
 [node name="Camera" type="Camera2D" unique_id=947783170]
 script = ExtResource("1_kod1s")
+
+[node name="Ui" parent="." unique_id=770015140 instance=ExtResource("2_kod1s")]

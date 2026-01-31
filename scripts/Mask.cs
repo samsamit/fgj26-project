@@ -24,6 +24,12 @@ public partial class Mask : Node2D
 	[Export]
 	public Texture2D Triangle;
 
+	[Export]
+	public Area2D ViewArea;
+
+	[Export]
+	public CanvasModulate darkness;
+
 	private PointLight2D Light;
 	
 	public override void _Ready()
@@ -63,12 +69,14 @@ public partial class Mask : Node2D
 		Light.Color = maskColor;
 		Light.Texture = mask switch
 		{
-			MaskEnum.Round => Round,
-			MaskEnum.Square => Square,
-			MaskEnum.Star => Star,
-			MaskEnum.Triangle => Triangle,
+			MaskEnum.Flashlite => Round,
+			MaskEnum.Basic => Square,
+			MaskEnum.XRay => Star,
+			MaskEnum.Strength => Triangle,
 			_ => Round,
 		};
+
+		darkness.Visible = mask == MaskEnum.Flashlite;
 
 		// Dynamic scaling for the collision shape, so that it matches the mask
 		CollisionShape2D collisionShape = GetNode<CollisionShape2D>("./Area2D/CollisionShape2D");
