@@ -5,3 +5,4 @@
 [node name="World" type="Node2D" unique_id=577538569]
 
 [node name="TileMapController" parent="." unique_id=859653363 instance=ExtResource("1_nnsk1")]
+position = Vector2(424, 164)
