@@ -10,22 +10,15 @@ public partial class Mask : Node2D
 	public float FollowSpeed { get; set; } = 100.0f;
 
 	private GlobalStateManager _stateManager;
-	public const float Speed = 200.0f;
 
-	[Export]
-	public Texture2D Round;
+	// Sprites
+	[Export] public Texture2D Round;
+	[Export] public Texture2D Square;
+	[Export] public Texture2D Star;
+	[Export] public Texture2D Triangle;
 
-	[Export]
-	public Texture2D Square;
-
-	[Export]
-	public Texture2D Star;
-
-	[Export]
-	public Texture2D Triangle;
-
-	[Export]
-	public Area2D ViewArea;
+	bool fullySnapToMouse;
+	[Export] public Area2D ViewArea;
 
 
 	private PointLight2D Light;
