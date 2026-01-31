@@ -21,7 +21,7 @@ public partial class Player : CharacterBody2D
 	public override void _Ready()
 	{
 		GD.Print("Player script is active!");
-		_animationController = GetNode<AnimationController>("AnimationController");
+		//_animationController = GetNode<AnimationController>("AnimationController");
 		InitializeAnimation(AnimationEnum.Idle);
 		_stateManager = GetNode<GlobalStateManager>("/root/World");
 	    _walkingSFXplayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_Walking");
