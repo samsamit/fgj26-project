@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cnr555d4qafj0"]
 
-[ext_resource type="Script" uid="uid://dnat56qivx8fb" path="res://scripts/PickableMask.cs" id="1_854k4"]
+[ext_resource type="Script" path="res://scripts/PickableMask.cs" id="1_854k4"]
 [ext_resource type="Texture2D" uid="uid://dllfupih74f4p" path="res://icon.svg" id="2_ynkg0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmccl"]
