@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dtrybckssowqk"]
 
-[ext_resource type="Texture2D" uid="uid://dllfupih74f4p" path="res://icon.svg" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bs7am00adb144" path="res://scripts/Player.cs" id="1_g2els"]
 [ext_resource type="SpriteFrames" uid="uid://tni847h81xid" path="res://assets/resources/player_sprite_frames.tres" id="2_qlg0r"]
 [ext_resource type="AudioStream" uid="uid://b66xvasbalx7b" path="res://audio/effects/Wood_walking.mp3" id="3_qhqgy"]
@@ -15,11 +14,6 @@ collision_mask = 7
 script = ExtResource("1_g2els")
 SpriteFrames = ExtResource("2_qlg0r")
 CharacterSpriteScaleMultiplier = 0.25
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1525898870]
-visible = false
-scale = Vector2(0.165, 0.165)
-texture = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=90283918]
 shape = SubResource("CircleShape2D_qhqgy")
