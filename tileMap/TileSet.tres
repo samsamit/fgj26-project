@@ -1,12 +1,13 @@
 [gd_resource type="TileSet" format=3 uid="uid://cnjdxn34xoxhk"]
 
-[ext_resource type="Texture2D" uid="uid://df0ijw8w5ap6b" path="res://assets/asfaltti.png" id="1_nfle6"]
-[ext_resource type="Texture2D" uid="uid://diwh4pt3svvxg" path="res://assets/animoituvesiasfaltti.png" id="3_5uup0"]
-[ext_resource type="Texture2D" uid="uid://324qcd3sbahk" path="res://assets/lautalattia.png" id="3_2471l"]
-[ext_resource type="Texture2D" uid="uid://dqd6acqb4e6tg" path="res://assets/animoituasfalttivesi.png" id="4_2471l"]
+[ext_resource type="Texture2D" uid="uid://df0ijw8w5ap6b" path="res://assets/asfaltti.png" id="1_t41qq"]
+[ext_resource type="Texture2D" uid="uid://324qcd3sbahk" path="res://assets/lautalattia.png" id="2_x23h8"]
+[ext_resource type="Texture2D" uid="uid://diwh4pt3svvxg" path="res://assets/animoituvesiasfaltti.png" id="3_icj8b"]
+[ext_resource type="Texture2D" uid="uid://dqd6acqb4e6tg" path="res://assets/animoituasfalttivesi.png" id="4_ievcu"]
+[ext_resource type="Texture2D" uid="uid://cy7i8c15mui1s" path="res://assets/kattotuuletin.png" id="5_pur7r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j3stm"]
-texture = ExtResource("1_nfle6")
+texture = ExtResource("1_t41qq")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -21,13 +22,13 @@ texture_region_size = Vector2i(32, 32)
 0:0/0/terrains_peering_bit/top_right_corner = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u1npa"]
-texture = ExtResource("3_2471l")
+texture = ExtResource("2_x23h8")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/terrain_set = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08whx"]
-texture = ExtResource("3_5uup0")
+texture = ExtResource("3_icj8b")
 texture_region_size = Vector2i(32, 32)
 0:0/animation_columns = 4
 0:0/animation_separation = Vector2i(2, 0)
@@ -147,7 +148,7 @@ texture_region_size = Vector2i(32, 32)
 2:2/0/terrains_peering_bit/top_right_corner = 1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wlv8x"]
-texture = ExtResource("4_2471l")
+texture = ExtResource("4_ievcu")
 texture_region_size = Vector2i(32, 32)
 0:0/animation_columns = 4
 0:0/animation_separation = Vector2i(2, 0)
@@ -265,6 +266,15 @@ texture_region_size = Vector2i(32, 32)
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -16, 0, 0, -16, 0, -16, -16)
 2:2/0/terrains_peering_bit/top_left_corner = 1
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xgqg"]
+texture = ExtResource("5_pur7r")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_speed = 10.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
 [resource]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
@@ -277,3 +287,4 @@ sources/0 = SubResource("TileSetAtlasSource_j3stm")
 sources/2 = SubResource("TileSetAtlasSource_u1npa")
 sources/4 = SubResource("TileSetAtlasSource_08whx")
 sources/5 = SubResource("TileSetAtlasSource_wlv8x")
+sources/8 = SubResource("TileSetAtlasSource_5xgqg")
