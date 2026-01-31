@@ -27,30 +27,59 @@ public partial class Mask : Node2D
 	[Export]
 	public Area2D ViewArea;
 
-	[Export]
-	public CanvasModulate darkness;
 
 	private PointLight2D Light;
-	
+	private CanvasModulate Background;
+
+	// Tracks if the current mouse press started on a UI element
+	private bool _clickStartedOnUi = false;
+	private bool _wasMousePressed = false;
+
 	public override void _Ready()
 	{
 		GD.Print("Mask script is active!");
 		Light = (PointLight2D)GetNode("./Light");
+		Background = (CanvasModulate)GetNode("./MaskBackground");
+
 
 		GlobalStateManager.Instance.CurrentMask.RegisterObserver(
-			newMask => SetMask(newMask, 0.5f, new Color("white")));
+			newMask => SetMask(newMask, 0.2f, new Color("white")));
 	}
 
 	public override void _Process(double delta)
 	{
 		Vector2 mousePosition = GetGlobalMousePosition();
+		bool mousePressed = Input.IsMouseButtonPressed(MouseButton.Left);
 
-		if (Input.IsMouseButtonPressed(MouseButton.Left))
+		// Detect mouse button press start
+		if (mousePressed && !_wasMousePressed)
 		{
-			// Move towards the mouse position at the configured speed
+			// Mouse just pressed - check if it's over UI
+			_clickStartedOnUi = IsMouseOverGui();
+		}
+
+		// Detect mouse button release
+		if (!mousePressed)
+		{
+			_clickStartedOnUi = false;
+		}
+
+		_wasMousePressed = mousePressed;
+
+		// Only move mask if mouse is pressed and click didn't start on UI
+		if (mousePressed && !_clickStartedOnUi)
+		{
 			GlobalPosition = GlobalPosition.MoveToward(mousePosition, FollowSpeed * (float)delta);
 			GlobalStateManager.Instance.MaskPosition = GlobalPosition;
 		}
+	}
+
+	/// <summary>
+	/// Returns true if the mouse is currently hovering over a GUI control.
+	/// </summary>
+	private bool IsMouseOverGui()
+	{
+		return GetViewport().GuiGetHoveredControl() != null;
 	}
 
 	private void Area2DBodyEntered(Node body)
@@ -65,6 +94,8 @@ public partial class Mask : Node2D
 
 	public void SetMask(MaskEnum mask, float maskSize, Color maskColor)
 	{
+
+		GD.Print("MASK SET");
 		Light.TextureScale = maskSize;
 		Light.Color = maskColor;
 		Light.Texture = mask switch
@@ -76,7 +107,7 @@ public partial class Mask : Node2D
 			_ => Round,
 		};
 
-		darkness.Visible = mask == MaskEnum.Flashlite;
+		Background.Visible = mask == MaskEnum.Flashlite;
 
 		// Dynamic scaling for the collision shape, so that it matches the mask
 		CollisionShape2D collisionShape = GetNode<CollisionShape2D>("./Area2D/CollisionShape2D");
