@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://vaflrbnj0320"]
+
+[ext_resource type="Script" uid="uid://cjt6ljd4qqsaa" path="res://Icon.cs" id="2_epypp"]
+
+[node name="Node2D" type="Node2D" unique_id=1655138295]
+
+[node name="Icon" type="Node2D" parent="." unique_id=670987074]
+position = Vector2(386, 323)
+script = ExtResource("2_epypp")

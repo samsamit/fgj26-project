@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b56icfii2xx7j"]
+
+[ext_resource type="Script" path="res://Icon.cs" id="1_vkwlo"]
+
+[node name="Icon" type="Node2D" unique_id=1394071735]
+script = ExtResource("1_vkwlo")
