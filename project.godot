@@ -32,6 +32,7 @@ project/assembly_name="FGJ26-LPR"
 [global_group]
 
 spawn_points=""
+pressure_objects=""
 
 [input]
 
