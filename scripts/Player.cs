@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 using Godot;
 
 public partial class Player : CharacterBody2D
@@ -13,13 +14,15 @@ public partial class Player : CharacterBody2D
 	private const string MoveForward = "move_forward";
 	private AudioStreamPlayer2D _walkingSFXplayer;
 	private GlobalStateManager _stateManager;
+	private AnimationController _animationController;
 	public int ModulationInterval { get; set; } = 10;
 	private int _frameCounter = 0;
 
 	public override void _Ready()
 	{
 		GD.Print("Player script is active!");
-		this.SetAnimation(AnimationEnum.Idle);
+		//_animationController = GetNode<AnimationController>("AnimationController");
+		InitializeAnimation(AnimationEnum.Idle);
 		_stateManager = GetNode<GlobalStateManager>("/root/World");
 	    _walkingSFXplayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_Walking");
 	}
@@ -39,17 +42,34 @@ public partial class Player : CharacterBody2D
 		Velocity = direction.Normalized() * Speed;
 		var velocityNormalized = Velocity.Normalized();
 		var velocityNormalizedCombined = System.Math.Abs(velocityNormalized[0]) + System.Math.Abs(velocityNormalized[1]);
-		if (!_walkingSFXplayer.Playing && velocityNormalizedCombined > 0)
+		if (velocityNormalizedCombined > 0)
 		{
-			_walkingSFXplayer.Play();
-			//GD.Print("Audio Started");
+			if (!_walkingSFXplayer.Playing)
+			{
+				_walkingSFXplayer.Play();
+				//GD.Print("Audio Started");
+			}
+			if (_animationController.ActiveAnimation != AnimationEnum.Walk)
+			{
+				_animationController.ChangeAnimation(AnimationEnum.Walk);
+				//GD.Print("Walking...");
+			}
 
 		}
 		else if (_walkingSFXplayer.Playing && velocityNormalizedCombined == 0)
 		{
-			_walkingSFXplayer.Stop();
-			ResetAudioParams();
-			//GD.Print("Audio Stopped");
+			if (_walkingSFXplayer.Playing)
+			{
+				_walkingSFXplayer.Stop();
+				ResetAudioParams();
+				//GD.Print("Audio Stopped");
+			}
+			if (_animationController.ActiveAnimation != AnimationEnum.Idle)
+			{
+				_animationController.ChangeAnimation(AnimationEnum.Idle);
+				//GD.Print("Stopped walking");
+			}
+
 		}
 
 		if (velocityNormalizedCombined > 0)
@@ -77,6 +97,8 @@ public partial class Player : CharacterBody2D
 				}
 			}
 		}
+
+
 	}
 
 	private void RandomizeAudioParams()
@@ -101,16 +123,11 @@ public partial class Player : CharacterBody2D
 		_frameCounter = 0;
 	}
 
-	private void SetAnimation(AnimationEnum animationEnum)
+	private void InitializeAnimation(AnimationEnum animationEnum)
 	{
-		// TODO:
-		// Add animation controller functions to match what animation should play. If there is delay
-		// this function would return late, where it should be handled here. 
-		// For example, "ata", deal damage after animation finished.
-		// Can also be handled with Godot inbuilt signals.
-		// var animationController = GetNode<AnimationController>("AnimationController");
-		// animationController.InitiateSpriteFrames(spriteFrames);
-		// animationController.ChangeAnimation(animationEnum);
-		
+		_animationController = GetNode<AnimationController>("AnimationController");
+		_animationController.InitiateSpriteFrames(spriteFrames);
+		_animationController.ChangeAnimation(animationEnum);
+		_animationController.GlobalRotation = GlobalRotation;
 	}
 }
