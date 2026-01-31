@@ -38,7 +38,7 @@ public partial class Mask : Node2D
 		Light = (PointLight2D)GetNode("./Light");
 
 		GlobalStateManager.Instance.CurrentMask.RegisterObserver(
-			newMask => SetMask(newMask, 0.5f, new Color("white")));
+			newMask => SetMask(newMask, 0.2f, new Color("white")));
 	}
 
 	public override void _Process(double delta)

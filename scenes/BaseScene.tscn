@@ -27,14 +27,11 @@ z_index = 101
 position = Vector2(426, 147)
 
 [node name="Mask" parent="." unique_id=1868398740 instance=ExtResource("6_3ubpw")]
-visible = false
 position = Vector2(458, 153)
 Round = null
 Square = null
 Star = null
 Triangle = null
-
-[node name="LightPuzzle" type="Node" parent="." unique_id=973306165]
 
 [node name="Camera" parent="." unique_id=947783170 node_paths=PackedStringArray("MainPlayer", "MaskPlayer") instance=ExtResource("6_tt3em")]
 position = Vector2(350, 222)
@@ -78,13 +75,14 @@ position = Vector2(843, 113)
 position = Vector2(914, 146)
 
 [node name="StaticBox8" parent="Puzzle1" unique_id=2027636874 instance=ExtResource("8_3ubpw")]
-position = Vector2(842, -14)
+position = Vector2(841.0001, -10.9999695)
+rotation = 2.2776413
 
 [node name="StaticBox9" parent="Puzzle1" unique_id=1322826941 instance=ExtResource("8_3ubpw")]
 position = Vector2(879, 118)
 
 [node name="StaticBox10" parent="Puzzle1" unique_id=1248177568 instance=ExtResource("8_3ubpw")]
-position = Vector2(717, -31)
+position = Vector2(742, -41)
 
 [node name="StaticBox11" parent="Puzzle1" unique_id=1705632563 instance=ExtResource("8_3ubpw")]
 position = Vector2(877, 10)
@@ -117,10 +115,27 @@ position = Vector2(886, 91)
 scale = Vector2(0.54961634, 0.54961634)
 
 [node name="StaticBox19" parent="Puzzle1" unique_id=1759440473 instance=ExtResource("8_3ubpw")]
+z_index = 1
 position = Vector2(847, 55)
 scale = Vector2(-0.46458304, -0.46458304)
 
 [node name="StaticBox20" parent="Puzzle1" unique_id=2033445037 instance=ExtResource("8_3ubpw")]
+z_index = 1
 position = Vector2(762.00006, 36.000008)
 rotation = -0.6060619
 scale = Vector2(0.73437667, 0.73437667)
+
+[node name="StaticBox21" parent="Puzzle1" unique_id=1216155670 instance=ExtResource("8_3ubpw")]
+position = Vector2(791, 22)
+rotation = -0.5597721
+
+[node name="StaticBox22" parent="Puzzle1" unique_id=1236757729 instance=ExtResource("8_3ubpw")]
+z_index = 1
+position = Vector2(889, -4)
+rotation = -0.23692651
+scale = Vector2(0.6396769, 0.6396769)
+
+[node name="StaticBox23" parent="Puzzle1" unique_id=676325236 instance=ExtResource("8_3ubpw")]
+position = Vector2(863, 85)
+rotation = 2.4754386
+scale = Vector2(0.49096152, 0.49096152)
