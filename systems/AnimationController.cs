@@ -71,16 +71,28 @@ public partial class AnimationController : Node2D
 
 	public void HandleRotation(Vector2 direction, double delta, float rotationSpeed)
 	{
+		if (Rotation >= 2 * Math.PI)
+		{
+			Rotation -= (float)(2 * Math.PI);
+		}
+		if (Rotation <= -(2 * Math.PI))
+		{
+			Rotation += (float)(2 * Math.PI);
+		}
+		
 		var wantedRotation = direction.Angle();
 		var currentRotation = Rotation;
-		// var wantedDirection = wantedRotation - currentRotation;
-		// if (wantedDirection > Math.PI)
-		// {
+		var neededRotation = wantedRotation - currentRotation;
+		
+		if (neededRotation > Math.PI)
+		{
+			wantedRotation -= (float)(2 * Math.PI);
+		}
+		if (neededRotation < -Math.PI)
+		{
+			wantedRotation += (float)(2 * Math.PI);
+		}
 
-		// 	Rotation = currentRotation + (wantedDirection - (float)(2 * Math.PI)) * (float)delta * rotationSpeed;
-		// }
-		//GD.Print(wantedDirection);
 		Rotation = currentRotation + (wantedRotation - currentRotation) * (float)delta * rotationSpeed;
-		//Rotation = currentRotation + (wantedRotation - currentRotation) * (float)delta * rotationSpeed;
 	}
 }

@@ -1,10 +1,12 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class Puzzle1 : Puzzle
 {
     public override string puzzleId => nameof(Puzzle1);
 
+    
 
     public override void CompletePuzzle()
     {

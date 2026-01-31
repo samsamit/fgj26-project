@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://iv1onl6kbhyd"]
 
 [ext_resource type="Script" uid="uid://bejw0xx3r05qa" path="res://puzzles/Puzzle1.cs" id="1_3ubpw"]
-[ext_resource type="Script" uid="uid://bafry42335jrg" path="res://scripts/DarknessManager.cs" id="1_gp54n"]
 [ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="1_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
-[ext_resource type="PackedScene" uid="uid://d3l1n6ced68u3" path="res://scenes/Goal.tscn" id="4_tt3em"]
+[ext_resource type="PackedScene" uid="uid://b51pun1aqo473" path="res://scenes/Goal.tscn" id="4_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://bkyppfbrkinr2" path="res://scenes/camera.tscn" id="6_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="8_3ubpw"]
@@ -13,8 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://cbt0rsob2udoe" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
 [ext_resource type="PackedScene" uid="uid://d3f7vny6bd8nb" path="res://scenes/PressurePlate.tscn" id="12_qsgjr"]
 
-[node name="World" type="Node" unique_id=1516675657]
+[node name="World" type="Node" unique_id=1516675657 node_paths=PackedStringArray("Conditions")]
 script = ExtResource("1_3ubpw")
+Conditions = []
 
 [node name="World" parent="." unique_id=577538569 instance=ExtResource("1_tt3em")]
 
@@ -33,14 +33,7 @@ z_index = 101
 position = Vector2(426, 147)
 
 [node name="Mask" parent="." unique_id=1868398740 instance=ExtResource("6_3ubpw")]
-visible = false
 position = Vector2(458, 153)
-Round = null
-Square = null
-Star = null
-Triangle = null
-
-[node name="LightPuzzle" type="Node" parent="." unique_id=973306165]
 
 [node name="Camera" parent="." unique_id=947783170 node_paths=PackedStringArray("MainPlayer", "MaskPlayer") instance=ExtResource("6_tt3em")]
 position = Vector2(350, 222)
