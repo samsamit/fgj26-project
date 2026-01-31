@@ -186,4 +186,9 @@ public partial class Player : CharacterBody2D
 		_animationController.ChangeAnimation(animationEnum);
 		_animationController.GlobalRotation = GlobalRotation;
 	}
+	
+	public void SpawnAt(Vector2 position)
+	{
+		GlobalPosition = position;
+	}
 }
