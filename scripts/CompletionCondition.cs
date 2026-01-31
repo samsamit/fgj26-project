@@ -9,9 +9,16 @@ public partial class CompletionCondition : Node
     {
         if (IsCompleted) return;
         IsCompleted = true;
-        EmitSignal(SignalName.ConditionCompleted);
+        EmitSignal(SignalName.ConditionChanged, IsCompleted);
+    }
+
+    public void MarkUncompleted()
+    {
+        if (!IsCompleted) return;
+        IsCompleted = false;
+        EmitSignal(SignalName.ConditionChanged, IsCompleted);
     }
 
     [Signal]
-	public delegate void ConditionCompletedEventHandler();
+	public delegate void ConditionChangedEventHandler(bool isCompleted);
 }

@@ -5,11 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://bkyppfbrkinr2" path="res://scenes/camera.tscn" id="6_tt3em"]
-[ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="8_3ubpw"]
+[ext_resource type="PackedScene" uid="uid://d2qod3f41ge1g" path="res://scenes/puzzle/puzzle_2.tscn" id="8_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://bojdshqdxsu4v" path="res://scenes/puzzle/puzzle_1.tscn" id="11_a63bb"]
-[ext_resource type="PackedScene" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
+[ext_resource type="PackedScene" uid="uid://cbt0rsob2udoe" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
 [ext_resource type="PackedScene" uid="uid://bb3d8ms8wak8w" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="12_2ddkf"]
-[ext_resource type="PackedScene" uid="uid://d3f7vny6bd8nb" path="res://scenes/PressurePlate.tscn" id="12_qsgjr"]
 [ext_resource type="AudioStream" uid="uid://dh4ioay57ssis" path="res://audio/music/FGJ26MainBGLoopTempMusic.ogg" id="13_rp473"]
 [ext_resource type="PackedScene" uid="uid://bfq8p812a71jn" path="res://assets/Juuson Mask Jutut/Switch.tscn" id="13_si2s2"]
 [ext_resource type="Material" uid="uid://b0qw3cofrat17" path="res://assets/Juuson Mask Jutut/BoxMaskMaterial.tres" id="14_ec51t"]
@@ -51,49 +50,7 @@ Conditions = [NodePath("AreaReached")]
 [node name="AreaReached" parent="Puzzle1" index="20" unique_id=128534236]
 position = Vector2(1042, -29)
 
-[node name="Puzzle2" type="Node" parent="." unique_id=1010493297]
-
-[node name="PressurePlate3" parent="Puzzle2" unique_id=1570528986 instance=ExtResource("12_qsgjr")]
-position = Vector2(918, -354)
-
-[node name="PressurePlate2" parent="Puzzle2" unique_id=486739261 instance=ExtResource("12_qsgjr")]
-position = Vector2(718, -173)
-
-[node name="PressurePlate" parent="Puzzle2" unique_id=1842410292 instance=ExtResource("12_qsgjr")]
-position = Vector2(1031, -215)
-
-[node name="StaticBox7" parent="Puzzle2" unique_id=782728776 instance=ExtResource("8_3ubpw")]
-position = Vector2(916, -209)
-
-[node name="StaticBox" parent="Puzzle2" unique_id=831261941 instance=ExtResource("8_3ubpw")]
-position = Vector2(919, -246)
-
-[node name="StaticBox2" parent="Puzzle2" unique_id=513098996 instance=ExtResource("8_3ubpw")]
-position = Vector2(1033, -252)
-
-[node name="StaticBox3" parent="Puzzle2" unique_id=1774640426 instance=ExtResource("8_3ubpw")]
-position = Vector2(918, -174)
-
-[node name="StaticBox4" parent="Puzzle2" unique_id=1145891337 instance=ExtResource("8_3ubpw")]
-position = Vector2(955, -175)
-
-[node name="StaticBox5" parent="Puzzle2" unique_id=937147374 instance=ExtResource("8_3ubpw")]
-position = Vector2(1031, -177)
-
-[node name="StaticBox8" parent="Puzzle2" unique_id=1916861608 instance=ExtResource("8_3ubpw")]
-position = Vector2(1067, -213)
-
-[node name="StaticBox6" parent="Puzzle2" unique_id=1746917911 instance=ExtResource("8_3ubpw")]
-position = Vector2(1120, -244)
-
-[node name="StaticBox9" parent="Puzzle2" unique_id=786711554 instance=ExtResource("8_3ubpw")]
-position = Vector2(1121, -210)
-
-[node name="StaticBox10" parent="Puzzle2" unique_id=11602314 instance=ExtResource("8_3ubpw")]
-position = Vector2(1122, -174)
-
-[node name="StaticBox11" parent="Puzzle2" unique_id=712419548 instance=ExtResource("8_3ubpw")]
-position = Vector2(1159, -173)
+[node name="Puzzle2" parent="." unique_id=664420405 instance=ExtResource("8_2ddkf")]
 
 [node name="Puzzle3" type="Node" parent="." unique_id=1826246720]
 
@@ -217,3 +174,4 @@ scale = Vector2(0.25, 0.25)
 NewMask = 3
 
 [editable path="Puzzle1"]
+[editable path="Puzzle2"]
