@@ -1,23 +1,30 @@
 using Godot;
-using System;
 using System.Collections.Generic;
 
-public partial class MaskUI : HBoxContainer
+public partial class MaskUI : VBoxContainer
 {
 	private TextureButton BasicMask;
 	private TextureButton FlashliteMask;
 	private TextureButton StrengthMask;
 	private TextureButton XRayMask;
+	private Control PowerMinigame;
+	private ProgressBar MaskPower;
 
 	public override void _Ready()
 	{
-		BasicMask = (TextureButton)GetNode("./Basic");
-		FlashliteMask = (TextureButton)GetNode("./Flashlite");
-		StrengthMask = (TextureButton)GetNode("./Strength");
-		XRayMask = (TextureButton)GetNode("./XRay");
+		BasicMask = (TextureButton)GetNode("./MaskContainer/Basic");
+		FlashliteMask = (TextureButton)GetNode("./MaskContainer/Flashlite");
+		StrengthMask = (TextureButton)GetNode("./MaskContainer/Strength");
+		XRayMask = (TextureButton)GetNode("./MaskContainer/XRay");
+		PowerMinigame = (Control)GetNode("./PowerMiniGame");
+		MaskPower = (ProgressBar)GetNode("./MaskPower");
 
 		GlobalStateManager.Instance.AvailableMasks.RegisterObserver(
-			masks => UpdateAvailableMasks(masks));
+			UpdateAvailableMasks);
+		GlobalStateManager.Instance.MaskPower.RegisterObserver(
+			UpdateMaskPower);
+		GlobalStateManager.Instance.CurrentMask.RegisterObserver(SetMask);
+		SetMask(GlobalStateManager.Instance.CurrentMask.Get());
 	}
 
 	private void UpdateAvailableMasks(List<MaskEnum> masks)
@@ -47,6 +54,32 @@ public partial class MaskUI : HBoxContainer
 					break;
 			}
 		}
+	}
+
+	public void SetMask(MaskEnum mask)
+	{
+		if (mask == MaskEnum.Strength)
+		{
+			PowerMinigame.Visible = true;
+			PowerMinigame.ProcessMode = ProcessModeEnum.Always;
+			MaskPower.Visible = true;
+		}
+		else
+		{
+			PowerMinigame.Visible = false;
+			PowerMinigame.ProcessMode = ProcessModeEnum.Disabled;
+			foreach (var child in PowerMinigame.GetChildren())
+			{
+				PowerMinigame.RemoveChild(child);
+				child.QueueFree();
+			}
+			MaskPower.Visible = false;
+		}
+	}
+
+	private void UpdateMaskPower(float maskPower)
+	{
+		MaskPower.Value = maskPower;
 	}
 
 	public void OnClickBasicMask()

@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bw71jkryjliai"]
+
+[ext_resource type="Script" uid="uid://cwjscp8qkk4iw" path="res://scripts/PowerMiniGameCircle.cs" id="1_jlit6"]
+
+[sub_resource type="Gradient" id="Gradient_prvqs"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.5985577, 0.7043269)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dikpt"]
+gradient = SubResource("Gradient_prvqs")
+fill = 1
+fill_from = Vector2(0.49479166, 0.5017361)
+
+[sub_resource type="Gradient" id="Gradient_7yajm"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.64663464, 0.68028843)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ty513"]
+gradient = SubResource("Gradient_7yajm")
+fill = 1
+fill_from = Vector2(0.49479166, 0.5017361)
+
+[sub_resource type="Gradient" id="Gradient_1hixe"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.5985577, 0.64663464, 0.7043269)
+colors = PackedColorArray(0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_77vt3"]
+gradient = SubResource("Gradient_1hixe")
+fill = 1
+fill_from = Vector2(0.49479166, 0.5017361)
+
+[node name="PowerMiniGameCircle" type="TextureButton" unique_id=411975266]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jlit6")
+
+[node name="GoodCircle" type="TextureRect" parent="." unique_id=897447189]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.044000003
+anchor_right = 0.025
+anchor_bottom = 0.044000003
+offset_left = -32.0
+offset_top = -31.680002
+offset_right = 32.0
+offset_bottom = 32.32
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(32, 32)
+texture = SubResource("GradientTexture2D_dikpt")
+
+[node name="TooLateCircle" type="TextureRect" parent="." unique_id=1671312086]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.044000003
+anchor_right = 0.025
+anchor_bottom = 0.044000003
+offset_left = -32.0
+offset_top = -31.680002
+offset_right = 32.0
+offset_bottom = 32.32
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(32, 32)
+texture = SubResource("GradientTexture2D_ty513")
+
+[node name="GameCircle" type="TextureRect" parent="." unique_id=52383694]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.044000003
+anchor_right = 0.025
+anchor_bottom = 0.044000003
+offset_left = -32.0
+offset_top = -31.680002
+offset_right = 32.0
+offset_bottom = 32.32
+pivot_offset = Vector2(32, 32)
+texture = SubResource("GradientTexture2D_77vt3")
+
+[connection signal="pressed" from="." to="." method="OnClick"]
