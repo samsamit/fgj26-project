@@ -31,7 +31,11 @@ public partial class Mask : Node2D
 	public CanvasModulate darkness;
 
 	private PointLight2D Light;
-	
+
+	// Tracks if the current mouse press started on a UI element
+	private bool _clickStartedOnUi = false;
+	private bool _wasMousePressed = false;
+
 	public override void _Ready()
 	{
 		GD.Print("Mask script is active!");
@@ -44,13 +48,37 @@ public partial class Mask : Node2D
 	public override void _Process(double delta)
 	{
 		Vector2 mousePosition = GetGlobalMousePosition();
+		bool mousePressed = Input.IsMouseButtonPressed(MouseButton.Left);
 
-		if (Input.IsMouseButtonPressed(MouseButton.Left))
+		// Detect mouse button press start
+		if (mousePressed && !_wasMousePressed)
 		{
-			// Move towards the mouse position at the configured speed
+			// Mouse just pressed - check if it's over UI
+			_clickStartedOnUi = IsMouseOverGui();
+		}
+
+		// Detect mouse button release
+		if (!mousePressed)
+		{
+			_clickStartedOnUi = false;
+		}
+
+		_wasMousePressed = mousePressed;
+
+		// Only move mask if mouse is pressed and click didn't start on UI
+		if (mousePressed && !_clickStartedOnUi)
+		{
 			GlobalPosition = GlobalPosition.MoveToward(mousePosition, FollowSpeed * (float)delta);
 			GlobalStateManager.Instance.MaskPosition = GlobalPosition;
 		}
+	}
+
+	/// <summary>
+	/// Returns true if the mouse is currently hovering over a GUI control.
+	/// </summary>
+	private bool IsMouseOverGui()
+	{
+		return GetViewport().GuiGetHoveredControl() != null;
 	}
 
 	private void Area2DBodyEntered(Node body)

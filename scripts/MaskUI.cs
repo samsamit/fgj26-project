@@ -11,13 +11,34 @@ public partial class MaskUI : HBoxContainer
 
 	public override void _Ready()
 	{
-		BasicMask = (TextureButton)GetNode("./Basic");
-		FlashliteMask = (TextureButton)GetNode("./Flashlite");
-		StrengthMask = (TextureButton)GetNode("./Strength");
-		XRayMask = (TextureButton)GetNode("./XRay");
+		BasicMask = GetNode<TextureButton>("Basic");
+		FlashliteMask = GetNode<TextureButton>("Flashlite");
+		StrengthMask = GetNode<TextureButton>("Strength");
+		XRayMask = GetNode<TextureButton>("XRay");
+
+		// Connect button signals programmatically to ensure they work
+		BasicMask.Pressed += OnClickBasicMask;
+		FlashliteMask.Pressed += OnClickFlashlite;
+		StrengthMask.Pressed += OnClickStrength;
+		XRayMask.Pressed += OnClickXRay;
+
+		// Set mouse filter to Stop to prevent click-through to game objects
+		BasicMask.MouseFilter = Control.MouseFilterEnum.Stop;
+		FlashliteMask.MouseFilter = Control.MouseFilterEnum.Stop;
+		StrengthMask.MouseFilter = Control.MouseFilterEnum.Stop;
+		XRayMask.MouseFilter = Control.MouseFilterEnum.Stop;
 
 		GlobalStateManager.Instance.AvailableMasks.RegisterObserver(
 			masks => UpdateAvailableMasks(masks));
+	}
+
+	public override void _ExitTree()
+	{
+		// Clean up signal connections
+		BasicMask.Pressed -= OnClickBasicMask;
+		FlashliteMask.Pressed -= OnClickFlashlite;
+		StrengthMask.Pressed -= OnClickStrength;
+		XRayMask.Pressed -= OnClickXRay;
 	}
 
 	private void UpdateAvailableMasks(List<MaskEnum> masks)
@@ -49,22 +70,22 @@ public partial class MaskUI : HBoxContainer
 		}
 	}
 
-	public void OnClickBasicMask()
+	private void OnClickBasicMask()
 	{
 		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Basic);
 	}
 
-	public void OnClickFlashlite()
+	private void OnClickFlashlite()
 	{
 		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Flashlite);
 	}
 
-	public void OnClickStrength()
+	private void OnClickStrength()
 	{
 		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Strength);
 	}
 
-	public void OnClickXRay()
+	private void OnClickXRay()
 	{
 		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.XRay);
 	}

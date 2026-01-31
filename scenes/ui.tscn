@@ -73,8 +73,3 @@ texture_normal = ExtResource("4_8dubc")
 [node name="XRay" type="TextureButton" parent="Control/MaskContainer" unique_id=49305251]
 layout_mode = 2
 texture_normal = ExtResource("5_p7vwb")
-
-[connection signal="pressed" from="Control/MaskContainer/Basic" to="Control/MaskContainer" method="OnClickBasicMask"]
-[connection signal="pressed" from="Control/MaskContainer/Flashlite" to="Control/MaskContainer" method="OnClickFlashlite"]
-[connection signal="pressed" from="Control/MaskContainer/Strength" to="Control/MaskContainer" method="OnClickStrength"]
-[connection signal="pressed" from="Control/MaskContainer/XRay" to="Control/MaskContainer" method="OnClickXRay"]
