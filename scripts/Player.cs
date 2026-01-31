@@ -33,11 +33,6 @@ public partial class Player : CharacterBody2D
 		direction.Y = Input.GetActionStrength(MoveBack)
 			- Input.GetActionStrength(MoveForward);
 
-		if (direction != Vector2.Zero)
-		{
-			GD.Print("Player moving: ", direction);
-		}
-
 		Velocity = direction.Normalized() * Speed;
 		var velocityNormalized = Velocity.Normalized();
 		var velocityNormalizedCombined = System.Math.Abs(velocityNormalized[0]) + System.Math.Abs(velocityNormalized[1]);

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dbyxft01gwae3"]
+
+[node name="Ui" type="CanvasLayer" unique_id=770015140]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=896534072]
+visible = false
+color = Color(0.03137255, 0.03137255, 0.03137255, 0.9254902)
+
+[node name="Control" type="Control" parent="." unique_id=666134107]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1142194033]
+layout_mode = 0
+offset_right = 1141.0
+offset_bottom = 660.0
+color = Color(0.5529412, 0.5529412, 0.5529412, 1)
