@@ -18,12 +18,12 @@ public abstract partial class Puzzle : Node
 		{
 			if (condition != null)
 			{
-				condition.ConditionCompleted += OnConditionCompleted;
+				condition.ConditionChanged += OnConditionChanged;
 			} 
 		}
 	}
 
-	private void OnConditionCompleted()
+	private void OnConditionChanged(bool isCompleted)
 	{
 		GD.Print("Checking puzzle completion conditions");
 		if (Conditions == null) return;

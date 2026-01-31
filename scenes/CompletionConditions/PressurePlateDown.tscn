@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b8erdqmxs24ka"]
+
+[ext_resource type="Script" uid="uid://bjo41cv1nxm8x" path="res://scenes/CompletionConditions/PressurePlateDown.cs" id="1_kdqyc"]
+[ext_resource type="PackedScene" uid="uid://d3f7vny6bd8nb" path="res://scenes/PressurePlate.tscn" id="2_ai2f7"]
+
+[node name="PressurePlateDown" type="Node" unique_id=1750007365]
+script = ExtResource("1_kdqyc")
+
+[node name="PressurePlate" parent="." unique_id=1570528986 instance=ExtResource("2_ai2f7")]
