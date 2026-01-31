@@ -35,7 +35,7 @@ public partial class Player : CharacterBody2D
 		// Suosittelen käyttämään [Export]-muuttujia tai Scene Unique Nameja (%) tulevaisuudessa.
 		_walkingSFXplayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_Walking");
 		_scrapingSFXPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_BoxScraping");
-		_groundLayer = GetNode<TileMapLayer>("../World/TileMapController/BaseLayer");
+		_groundLayer = GetNode<TileMapLayer>("../World/TileMapController/Ground");
 	}
 
 	public override void _PhysicsProcess(double delta)
