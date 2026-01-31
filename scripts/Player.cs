@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 public partial class Player : CharacterBody2D
@@ -11,7 +12,7 @@ public partial class Player : CharacterBody2D
 	private AudioStreamPlayer2D _walkingSFXplayer;
 	public int ModulationInterval { get; set; } = 10;
 	private int _frameCounter = 0;
-	
+
 	public override void _Ready()
 	{
 		GD.Print("Player script is active!");
@@ -19,14 +20,14 @@ public partial class Player : CharacterBody2D
 
 
 
-	
+
 	public override void _PhysicsProcess(double delta)
 	{
 		_walkingSFXplayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_Walking");
 		Vector2 direction = Vector2.Zero;
 		direction.X = Input.GetActionStrength(MoveRight)
 					  - Input.GetActionStrength(MoveLeft);
-		
+
 		direction.Y = Input.GetActionStrength(MoveBack)
 			- Input.GetActionStrength(MoveForward);
 
@@ -42,7 +43,7 @@ public partial class Player : CharacterBody2D
 		{
 			_walkingSFXplayer.Play();
 			GD.Print("Audio Started");
-			
+
 		}
 		else if (_walkingSFXplayer.Playing && velocityNormalizedCombined == 0)
 		{
@@ -61,7 +62,7 @@ public partial class Player : CharacterBody2D
 			RandomizeAudioParams();
 			_frameCounter = 0; // Nollataan laskuri
 		}
-			MoveAndSlide();
+		MoveAndSlide();
 	}
 
 	private void RandomizeAudioParams()
@@ -84,4 +85,14 @@ public partial class Player : CharacterBody2D
 		_frameCounter = 0;
 	}
 
+	private void SetAnimation(string animationName)
+	{
+		// TODO:
+		// Add animation controller functions to match what animation should play. If there is delay
+		// this function would return late, where it should be handled here. 
+		// For example, "Attack", deal damage after animation finished.
+		// Can also be handled with Godot inbuilt signals.
+
+		throw new NotImplementedException();
+	}
 }
