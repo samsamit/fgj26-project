@@ -11,7 +11,7 @@ public partial class PickableMask : Node2D
 		if (body is Player)
 		{
 			QueueFree();
-			GlobalStateManager.Instance.ChangeMask(NewMask);
+			GlobalStateManager.Instance.AddMask(NewMask);
 		}
 	}
 }
