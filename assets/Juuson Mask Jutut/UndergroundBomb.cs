@@ -7,10 +7,14 @@ public partial class UndergroundBomb : Sprite2D
     private bool active = true;
     private async void _on_area_2d_body_entered(Node2D body)
     {
+        if (active)
+        {
+            
         GD.Print("boom");
         explosion.Visible = true;
         await ToSignal(GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
         explosion.Visible = false;
+        }
     }
 
     public void SetActive(bool state)
