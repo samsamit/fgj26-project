@@ -63,15 +63,17 @@ public partial class Player : CharacterBody2D
 			_frameCounter = 0; // Nollataan laskuri
 		}
 
+		var pushedBodies = new System.Collections.Generic.HashSet<RigidBody2D>();
 		if (MoveAndSlide())
 		{
 			for (int i = 0; i < GetSlideCollisionCount(); i++)
 			{
 				var collision = GetSlideCollision(i);
 				var collider = collision.GetCollider();
-				if (collider is RigidBody2D rigidBody2D)
+				if (collider is RigidBody2D rigidBody2D && !pushedBodies.Contains(rigidBody2D))
 				{
 					rigidBody2D.ApplyForce(collision.GetNormal() * -PushingPower);
+					pushedBodies.Add(rigidBody2D);
 				}
 			}
 		}
