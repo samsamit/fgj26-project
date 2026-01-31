@@ -6,17 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
 [ext_resource type="PackedScene" uid="uid://d3l1n6ced68u3" path="res://scenes/Goal.tscn" id="4_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
-[ext_resource type="PackedScene" uid="uid://dy8cye72lk8wq" path="res://scenes/camera.tscn" id="6_tt3em"]
-[ext_resource type="PackedScene" uid="uid://bhjqnnj8hi3sk" path="res://scenes/static_box.tscn" id="7_tt3em"]
-[ext_resource type="PackedScene" uid="uid://sdnhw3s62pbc" path="res://scenes/movable_box.tscn" id="9_l3ckk"]
-[ext_resource type="PackedScene" uid="uid://cbt0rsob2udoe" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
 [ext_resource type="PackedScene" uid="uid://bkyppfbrkinr2" path="res://scenes/camera.tscn" id="6_tt3em"]
-[ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="8_3ubpw"]
+[ext_resource type="PackedScene" uid="uid://bhjqnnj8hi3sk" path="res://scenes/static_box.tscn" id="8_3ubpw"]
+[ext_resource type="PackedScene" uid="uid://sdnhw3s62pbc" path="res://scenes/movable_box.tscn" id="9_l3ckk"]
+[ext_resource type="PackedScene" uid="uid://bojdshqdxsu4v" path="res://scenes/puzzle/puzzle_1.tscn" id="11_a63bb"]
+[ext_resource type="PackedScene" uid="uid://cbt0rsob2udoe" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
 
 [node name="World" type="Node" unique_id=1516675657]
 script = ExtResource("1_3ubpw")
 
 [node name="World" parent="." unique_id=577538569 instance=ExtResource("1_tt3em")]
+
+[node name="StaticBox3" parent="World" unique_id=1283738957 instance=ExtResource("8_3ubpw")]
+position = Vector2(1003, -213)
 
 [node name="Darkness Manager" type="Node" parent="." unique_id=1658980287]
 script = ExtResource("1_gp54n")
@@ -50,46 +52,46 @@ ZoomSpeed = 0.3
 
 [node name="BoxGroup" type="Node2D" parent="." unique_id=2102585491]
 
-[node name="StaticBox" parent="BoxGroup" unique_id=1111461137 instance=ExtResource("7_tt3em")]
+[node name="StaticBox" parent="BoxGroup" unique_id=1111461137 instance=ExtResource("8_3ubpw")]
 position = Vector2(280, 115)
 
-[node name="StaticBox2" parent="BoxGroup" unique_id=253603025 instance=ExtResource("7_tt3em")]
+[node name="StaticBox2" parent="BoxGroup" unique_id=253603025 instance=ExtResource("8_3ubpw")]
 position = Vector2(284, 150)
 
-[node name="StaticBox3" parent="BoxGroup" unique_id=513988298 instance=ExtResource("7_tt3em")]
+[node name="StaticBox3" parent="BoxGroup" unique_id=513988298 instance=ExtResource("8_3ubpw")]
 position = Vector2(270, 182)
 
-[node name="StaticBox7" parent="BoxGroup" unique_id=1725039119 instance=ExtResource("7_tt3em")]
+[node name="StaticBox7" parent="BoxGroup" unique_id=1725039119 instance=ExtResource("8_3ubpw")]
 position = Vector2(356, 152)
 
-[node name="StaticBox8" parent="BoxGroup" unique_id=456674107 instance=ExtResource("7_tt3em")]
+[node name="StaticBox8" parent="BoxGroup" unique_id=456674107 instance=ExtResource("8_3ubpw")]
 position = Vector2(382, 176)
 
-[node name="StaticBox9" parent="BoxGroup" unique_id=1705267287 instance=ExtResource("7_tt3em")]
+[node name="StaticBox9" parent="BoxGroup" unique_id=1705267287 instance=ExtResource("8_3ubpw")]
 position = Vector2(397, 208)
 
-[node name="StaticBox10" parent="BoxGroup" unique_id=1227587873 instance=ExtResource("7_tt3em")]
+[node name="StaticBox10" parent="BoxGroup" unique_id=1227587873 instance=ExtResource("8_3ubpw")]
 position = Vector2(393, 247)
 
-[node name="StaticBox11" parent="BoxGroup" unique_id=1803247039 instance=ExtResource("7_tt3em")]
+[node name="StaticBox11" parent="BoxGroup" unique_id=1803247039 instance=ExtResource("8_3ubpw")]
 position = Vector2(373, 279)
 
-[node name="StaticBox12" parent="BoxGroup" unique_id=1119898662 instance=ExtResource("7_tt3em")]
+[node name="StaticBox12" parent="BoxGroup" unique_id=1119898662 instance=ExtResource("8_3ubpw")]
 position = Vector2(363, 310)
 
-[node name="StaticBox14" parent="BoxGroup" unique_id=373064122 instance=ExtResource("7_tt3em")]
+[node name="StaticBox14" parent="BoxGroup" unique_id=373064122 instance=ExtResource("8_3ubpw")]
 position = Vector2(363, 310)
 
-[node name="StaticBox13" parent="BoxGroup" unique_id=1603177452 instance=ExtResource("7_tt3em")]
+[node name="StaticBox13" parent="BoxGroup" unique_id=1603177452 instance=ExtResource("8_3ubpw")]
 position = Vector2(388, 126)
 
-[node name="StaticBox4" parent="BoxGroup" unique_id=167619087 instance=ExtResource("7_tt3em")]
+[node name="StaticBox4" parent="BoxGroup" unique_id=167619087 instance=ExtResource("8_3ubpw")]
 position = Vector2(287, 209)
 
-[node name="StaticBox5" parent="BoxGroup" unique_id=896960539 instance=ExtResource("7_tt3em")]
+[node name="StaticBox5" parent="BoxGroup" unique_id=896960539 instance=ExtResource("8_3ubpw")]
 position = Vector2(269, 244)
 
-[node name="StaticBox6" parent="BoxGroup" unique_id=2042408827 instance=ExtResource("7_tt3em")]
+[node name="StaticBox6" parent="BoxGroup" unique_id=2042408827 instance=ExtResource("8_3ubpw")]
 position = Vector2(291, 275)
 
 [node name="MovableBox" parent="BoxGroup" unique_id=1071985089 instance=ExtResource("9_l3ckk")]
@@ -97,79 +99,40 @@ position = Vector2(332, 106)
 
 [node name="GlobalCoordinateManager" parent="." unique_id=1958662909 instance=ExtResource("11_qsgjr")]
 position = Vector2(-15, 9)
-[node name="Puzzle1" type="Node" parent="." unique_id=963432743]
-script = ExtResource("1_3ubpw")
 
-[node name="Goal 1" parent="Puzzle1" unique_id=1034903633 instance=ExtResource("4_tt3em")]
-position = Vector2(1050, -70)
-scale = Vector2(0.8710587, 1.668829)
+[node name="Puzzle1" parent="." unique_id=508225014 instance=ExtResource("11_a63bb")]
 
-[node name="StaticBox" parent="Puzzle1" unique_id=1283738957 instance=ExtResource("8_3ubpw")]
-position = Vector2(737, 114)
+[node name="Puzzle2" type="Node" parent="." unique_id=1010493297]
 
-[node name="StaticBox2" parent="Puzzle1" unique_id=1401218146 instance=ExtResource("8_3ubpw")]
-position = Vector2(750, 28)
+[node name="StaticBox7" parent="Puzzle2" unique_id=782728776 instance=ExtResource("8_3ubpw")]
+position = Vector2(916, -209)
 
-[node name="StaticBox3" parent="Puzzle1" unique_id=1505685729 instance=ExtResource("8_3ubpw")]
-position = Vector2(884.00006, -18.000002)
-scale = Vector2(0.627353, 0.627353)
+[node name="StaticBox" parent="Puzzle2" unique_id=831261941 instance=ExtResource("8_3ubpw")]
+position = Vector2(919, -246)
 
-[node name="StaticBox4" parent="Puzzle1" unique_id=1519241193 instance=ExtResource("8_3ubpw")]
-position = Vector2(772, 111)
+[node name="StaticBox2" parent="Puzzle2" unique_id=513098996 instance=ExtResource("8_3ubpw")]
+position = Vector2(1033, -247)
 
-[node name="StaticBox5" parent="Puzzle1" unique_id=932444702 instance=ExtResource("8_3ubpw")]
-position = Vector2(980, 118)
+[node name="StaticBox3" parent="Puzzle2" unique_id=1774640426 instance=ExtResource("8_3ubpw")]
+position = Vector2(918, -174)
 
-[node name="StaticBox6" parent="Puzzle1" unique_id=2043424916 instance=ExtResource("8_3ubpw")]
-position = Vector2(843, 113)
+[node name="StaticBox4" parent="Puzzle2" unique_id=1145891337 instance=ExtResource("8_3ubpw")]
+position = Vector2(955, -175)
 
-[node name="StaticBox7" parent="Puzzle1" unique_id=1902245152 instance=ExtResource("8_3ubpw")]
-position = Vector2(914, 146)
+[node name="StaticBox5" parent="Puzzle2" unique_id=937147374 instance=ExtResource("8_3ubpw")]
+position = Vector2(1031, -177)
 
-[node name="StaticBox8" parent="Puzzle1" unique_id=2027636874 instance=ExtResource("8_3ubpw")]
-position = Vector2(842, -14)
+[node name="StaticBox8" parent="Puzzle2" unique_id=1916861608 instance=ExtResource("8_3ubpw")]
+position = Vector2(1066, -212)
 
-[node name="StaticBox9" parent="Puzzle1" unique_id=1322826941 instance=ExtResource("8_3ubpw")]
-position = Vector2(879, 118)
+[node name="StaticBox6" parent="Puzzle2" unique_id=1746917911 instance=ExtResource("8_3ubpw")]
+position = Vector2(1120, -244)
 
-[node name="StaticBox10" parent="Puzzle1" unique_id=1248177568 instance=ExtResource("8_3ubpw")]
-position = Vector2(717, -31)
+[node name="StaticBox9" parent="Puzzle2" unique_id=786711554 instance=ExtResource("8_3ubpw")]
+position = Vector2(1121, -210)
 
-[node name="StaticBox11" parent="Puzzle1" unique_id=1705632563 instance=ExtResource("8_3ubpw")]
-position = Vector2(877, 10)
+[node name="StaticBox10" parent="Puzzle2" unique_id=11602314 instance=ExtResource("8_3ubpw")]
+position = Vector2(1122, -174)
 
-[node name="StaticBox12" parent="Puzzle1" unique_id=418605780 instance=ExtResource("8_3ubpw")]
-position = Vector2(884, 46)
-
-[node name="StaticBox13" parent="Puzzle1" unique_id=1546597395 instance=ExtResource("8_3ubpw")]
-position = Vector2(700, 106)
-
-[node name="StaticBox14" parent="Puzzle1" unique_id=854654675 instance=ExtResource("8_3ubpw")]
-position = Vector2(1045, 124)
-
-[node name="StaticBox15" parent="Puzzle1" unique_id=469090330 instance=ExtResource("8_3ubpw")]
-position = Vector2(890, 72)
-rotation = -3.1415927
-scale = Vector2(0.55030197, 0.55030197)
-
-[node name="StaticBox16" parent="Puzzle1" unique_id=1554175468 instance=ExtResource("8_3ubpw")]
-position = Vector2(850, 58)
-scale = Vector2(0.89423215, 0.89423215)
-
-[node name="StaticBox17" parent="Puzzle1" unique_id=1622253874 instance=ExtResource("8_3ubpw")]
-position = Vector2(801.99994, -17)
-rotation = -3.1415927
-scale = Vector2(0.7844032, 0.7844032)
-
-[node name="StaticBox18" parent="Puzzle1" unique_id=1911091687 instance=ExtResource("8_3ubpw")]
-position = Vector2(886, 91)
-scale = Vector2(0.54961634, 0.54961634)
-
-[node name="StaticBox19" parent="Puzzle1" unique_id=1759440473 instance=ExtResource("8_3ubpw")]
-position = Vector2(847, 55)
-scale = Vector2(-0.46458304, -0.46458304)
-
-[node name="StaticBox20" parent="Puzzle1" unique_id=2033445037 instance=ExtResource("8_3ubpw")]
-position = Vector2(762.00006, 36.000008)
-rotation = -0.6060619
-scale = Vector2(0.73437667, 0.73437667)
+[node name="StaticBox11" parent="Puzzle2" unique_id=712419548 instance=ExtResource("8_3ubpw")]
+position = Vector2(1159, -173)
