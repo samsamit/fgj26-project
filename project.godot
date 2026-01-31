@@ -23,6 +23,7 @@ GlobalStateManager="*uid://bk7d6j88oh40d"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+mouse_cursor/custom_image="uid://bg4xop287f233"
 
 [dotnet]
 
