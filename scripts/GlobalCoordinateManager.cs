@@ -20,6 +20,7 @@ public partial class GlobalCoordinateManager : Node2D
 	
 	public Vector2 GetRandomSpawnPoint()
 	{
+		GD.Print("RUNNING");
 		if (_spawnPoints.Count == 0)
 		{
 			GD.PushError("No spawn points found!");
@@ -27,6 +28,8 @@ public partial class GlobalCoordinateManager : Node2D
 		}
 
 	//	int randomIndex = (int)GD.Randi() % _spawnPoints.Count;
-		return _spawnPoints[0].GlobalPosition;
+		Vector2 SpawnPoint =  _spawnPoints[0].GlobalPosition;
+		GD.Print("Spawning at " + SpawnPoint);
+		return SpawnPoint;
 	}
 }
