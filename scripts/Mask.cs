@@ -46,6 +46,16 @@ public partial class Mask : Node2D
 			_stateManager.MaskPosition = GlobalPosition;
 		}
 	}
+	
+	private void Area2DBodyEntered(Node body)
+	{
+		GD.Print("Body entered: " + body.Name);
+	}
+
+	private void Area2DBodyExited(Node body)
+	{
+		GD.Print("Body exited: " + body.Name);
+	}
 
 	public void SetMask(MaskEnum mask, float maskSize, Color maskColor)
 	{
@@ -59,5 +69,6 @@ public partial class Mask : Node2D
 			MaskEnum.Triangle => Triangle,
 			_ => Round,
 		};
+
 	}
 }
