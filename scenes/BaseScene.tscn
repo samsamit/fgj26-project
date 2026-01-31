@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://bkyppfbrkinr2" path="res://scenes/camera.tscn" id="6_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="8_3ubpw"]
-[ext_resource type="PackedScene" uid="uid://sdnhw3s62pbc" path="res://scenes/movable_box.tscn" id="9_l3ckk"]
 [ext_resource type="PackedScene" uid="uid://bojdshqdxsu4v" path="res://scenes/puzzle/puzzle_1.tscn" id="11_a63bb"]
 [ext_resource type="PackedScene" uid="uid://cbt0rsob2udoe" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
 [ext_resource type="PackedScene" uid="uid://d3f7vny6bd8nb" path="res://scenes/PressurePlate.tscn" id="12_qsgjr"]
@@ -18,9 +17,6 @@ script = ExtResource("1_3ubpw")
 Conditions = []
 
 [node name="World" parent="." unique_id=577538569 instance=ExtResource("1_tt3em")]
-
-[node name="StaticBox3" parent="World" unique_id=1283738957 instance=ExtResource("8_3ubpw")]
-position = Vector2(993, -212)
 
 [node name="Darkness Manager" type="Node" parent="." unique_id=1658980287]
 script = ExtResource("13_darkness")
@@ -45,57 +41,14 @@ Speed = 50.0
 MaxZoom = 2.0
 ZoomSpeed = 0.3
 
-[node name="BoxGroup" type="Node2D" parent="." unique_id=2102585491]
-
-[node name="StaticBox" parent="BoxGroup" unique_id=1111461137 instance=ExtResource("8_3ubpw")]
-position = Vector2(280, 115)
-
-[node name="StaticBox2" parent="BoxGroup" unique_id=253603025 instance=ExtResource("8_3ubpw")]
-position = Vector2(284, 150)
-
-[node name="StaticBox3" parent="BoxGroup" unique_id=513988298 instance=ExtResource("8_3ubpw")]
-position = Vector2(270, 182)
-
-[node name="StaticBox7" parent="BoxGroup" unique_id=1725039119 instance=ExtResource("8_3ubpw")]
-position = Vector2(356, 152)
-
-[node name="StaticBox8" parent="BoxGroup" unique_id=456674107 instance=ExtResource("8_3ubpw")]
-position = Vector2(382, 176)
-
-[node name="StaticBox9" parent="BoxGroup" unique_id=1705267287 instance=ExtResource("8_3ubpw")]
-position = Vector2(397, 208)
-
-[node name="StaticBox10" parent="BoxGroup" unique_id=1227587873 instance=ExtResource("8_3ubpw")]
-position = Vector2(393, 247)
-
-[node name="StaticBox11" parent="BoxGroup" unique_id=1803247039 instance=ExtResource("8_3ubpw")]
-position = Vector2(373, 279)
-
-[node name="StaticBox12" parent="BoxGroup" unique_id=1119898662 instance=ExtResource("8_3ubpw")]
-position = Vector2(363, 310)
-
-[node name="StaticBox14" parent="BoxGroup" unique_id=373064122 instance=ExtResource("8_3ubpw")]
-position = Vector2(363, 310)
-
-[node name="StaticBox13" parent="BoxGroup" unique_id=1603177452 instance=ExtResource("8_3ubpw")]
-position = Vector2(388, 126)
-
-[node name="StaticBox4" parent="BoxGroup" unique_id=167619087 instance=ExtResource("8_3ubpw")]
-position = Vector2(287, 209)
-
-[node name="StaticBox5" parent="BoxGroup" unique_id=896960539 instance=ExtResource("8_3ubpw")]
-position = Vector2(269, 244)
-
-[node name="StaticBox6" parent="BoxGroup" unique_id=2042408827 instance=ExtResource("8_3ubpw")]
-position = Vector2(291, 275)
-
-[node name="MovableBox" parent="BoxGroup" unique_id=1071985089 instance=ExtResource("9_l3ckk")]
-position = Vector2(332, 106)
-
 [node name="GlobalCoordinateManager" parent="." unique_id=1958662909 instance=ExtResource("11_qsgjr")]
 position = Vector2(-15, 9)
 
-[node name="Puzzle1" parent="." unique_id=508225014 instance=ExtResource("11_a63bb")]
+[node name="Puzzle1" parent="." unique_id=508225014 node_paths=PackedStringArray("Conditions") instance=ExtResource("11_a63bb")]
+Conditions = [NodePath("AreaReached")]
+
+[node name="AreaReached" parent="Puzzle1" index="20" unique_id=128534236]
+position = Vector2(1054, -92)
 
 [node name="Puzzle2" type="Node" parent="." unique_id=1010493297]
 
@@ -140,3 +93,5 @@ position = Vector2(1122, -174)
 
 [node name="StaticBox11" parent="Puzzle2" unique_id=712419548 instance=ExtResource("8_3ubpw")]
 position = Vector2(1159, -173)
+
+[editable path="Puzzle1"]

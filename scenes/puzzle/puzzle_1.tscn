@@ -1,15 +1,12 @@
 [gd_scene format=3 uid="uid://bojdshqdxsu4v"]
 
 [ext_resource type="Script" uid="uid://bejw0xx3r05qa" path="res://puzzles/Puzzle1.cs" id="1_e1xx7"]
-[ext_resource type="PackedScene" uid="uid://d3l1n6ced68u3" path="res://scenes/Goal.tscn" id="2_4t2rg"]
-[ext_resource type="PackedScene" uid="uid://bhjqnnj8hi3sk" path="res://scenes/static_box.tscn" id="3_njjdt"]
+[ext_resource type="PackedScene" uid="uid://c3knvd6urqxyg" path="res://scenes/CompletionConditions/AreaReached.tscn" id="3_e1xx7"]
+[ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="3_njjdt"]
 
-[node name="Puzzle1" type="Node" unique_id=508225014]
+[node name="Puzzle1" type="Node" unique_id=508225014 node_paths=PackedStringArray("Conditions")]
 script = ExtResource("1_e1xx7")
-
-[node name="Goal 1" parent="." unique_id=1034903633 instance=ExtResource("2_4t2rg")]
-position = Vector2(1050, -70)
-scale = Vector2(0.8710587, 1.668829)
+Conditions = []
 
 [node name="StaticBox" parent="." unique_id=1283738957 instance=ExtResource("3_njjdt")]
 position = Vector2(737, 114)
@@ -80,3 +77,6 @@ scale = Vector2(-0.46458304, -0.46458304)
 position = Vector2(762.00006, 36.000008)
 rotation = -0.6060619
 scale = Vector2(0.73437667, 0.73437667)
+
+[node name="AreaReached" parent="." unique_id=128534236 instance=ExtResource("3_e1xx7")]
+position = Vector2(1088, -85)
