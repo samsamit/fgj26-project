@@ -10,12 +10,14 @@ public partial class Player : CharacterBody2D
 	private const string MoveBack = "move_back";
 	private const string MoveForward = "move_forward";
 	private AudioStreamPlayer2D _walkingSFXplayer;
+	private GlobalStateManager _stateManager;
 	public int ModulationInterval { get; set; } = 10;
 	private int _frameCounter = 0;
 
 	public override void _Ready()
 	{
 		GD.Print("Player script is active!");
+		_stateManager = GetNode<GlobalStateManager>("/root/World");
 	}
 
 
@@ -71,6 +73,8 @@ public partial class Player : CharacterBody2D
 		// 0 on normaali. Pieni vaihtelu esim. -2 ja 0 välillä tuo elävyyttä.
 		float randomVol = (float)GD.RandRange(-2.0, 0.0);
 		_walkingSFXplayer.VolumeDb = randomVol;
+
+		_stateManager.PlayerPosition = GlobalPosition;
 	}
 
 	private void ResetAudioParams()

@@ -17,7 +17,5 @@ texture = ExtResource("1_3vyb7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=90283918]
 shape = SubResource("RectangleShape2D_g2els")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1682005105]
-
 [node name="AudioStreamPlayer2D_Walking" type="AudioStreamPlayer2D" parent="." unique_id=1745833923]
 stream = ExtResource("3_qhqgy")

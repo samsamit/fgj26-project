@@ -5,9 +5,12 @@ public partial class Mask : Node2D
 {
 	public const float Speed = 200.0f;
 
+	private GlobalStateManager _stateManager;
+
 	public override void _Ready()
 	{
 		GD.Print("Player script is active!");
+		_stateManager = GetNode<GlobalStateManager>("/root/World");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -31,6 +34,7 @@ public partial class Mask : Node2D
 	{
 		base._Process(delta);
 		GlobalPosition = GetGlobalMousePosition();
+		_stateManager.MaskPosition = GlobalPosition;
 	}
 
 }
