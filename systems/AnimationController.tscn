@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://mq5e5ahpk48l"]
 
 [ext_resource type="Script" uid="uid://bnsc2mfmpp2ni" path="res://systems/AnimationController.cs" id="1_fdwva"]
-[ext_resource type="SpriteFrames" uid="uid://5qeg6mm1srtd" path="res://systems/player_animated_sprite_placeholder.tres" id="2_fdwva"]
+[ext_resource type="SpriteFrames" path="res://systems/player_animated_sprite_placeholder.tres" id="2_fdwva"]
 
 [node name="AnimationController" type="Node2D" unique_id=1487013025]
 script = ExtResource("1_fdwva")
