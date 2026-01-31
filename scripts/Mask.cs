@@ -30,23 +30,25 @@ public partial class Mask : Node2D
 	{
 		GD.Print("Mask script is active!");
 		Light = (PointLight2D)GetNode("./Light");
-		_stateManager = GetNode<GlobalStateManager>("/root/World");
+
+		GlobalStateManager.Instance.CurrentMask.RegisterObserver(
+			newMask => SetMask(newMask, 0.5f, new Color("white")));
 	}
 
 	public override void _Process(double delta)
 	{
 		Vector2 mousePosition = GetGlobalMousePosition();
-		
+
 		if (Input.IsMouseButtonPressed(MouseButton.Left))
 		{
 
 			// Move towards the mouse position at the configured speed
 			GlobalPosition = GlobalPosition.MoveToward(mousePosition, FollowSpeed * (float)delta);
 
-			_stateManager.MaskPosition = GlobalPosition;
+			GlobalStateManager.Instance.MaskPosition = GlobalPosition;
 		}
 	}
-	
+
 	private void Area2DBodyEntered(Node body)
 	{
 		GD.Print("Body entered: " + body.Name);
@@ -69,16 +71,16 @@ public partial class Mask : Node2D
 			MaskEnum.Triangle => Triangle,
 			_ => Round,
 		};
-		
+
 		// Dynamic scaling for the collision shape, so that it matches the mask
 		CollisionShape2D collisionShape = GetNode<CollisionShape2D>("./Area2D/CollisionShape2D");
-		
+
 		if (collisionShape?.Shape == null)
 		{
 			GD.PrintErr("CollisionShape or its Shape is null!");
 			return;
 		}
-		
+
 		switch (collisionShape.Shape)
 		{
 			case CircleShape2D circle:

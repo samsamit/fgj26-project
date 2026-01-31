@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 
+[autoload]
+
+GlobalStateManager="*uid://bk7d6j88oh40d"
+
 [dotnet]
 
 project/assembly_name="FGJ26-LPR"
