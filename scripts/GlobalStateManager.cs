@@ -9,7 +9,7 @@ public partial class GlobalStateManager : Node
 	public Vector2 PlayerPosition = Vector2.Zero;
 	public Vector2 MaskPosition = Vector2.Zero;
 	public Observable<List<MaskEnum>> AvailableMasks = new([]);
-	public Observable<MaskEnum> CurrentMask = new(MaskEnum.Round);
+	public Observable<MaskEnum> CurrentMask = new(MaskEnum.Flashlite);
 	public Observable<int> Health = new(3);
 
 	public static GlobalStateManager Instance;

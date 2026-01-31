@@ -2,7 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://dg6bnsnk7avne" path="res://maskTextures/starTexture.svg" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://ccu5wp4gg0xoa" path="res://scripts/Health.cs" id="1_x4jx1"]
-[ext_resource type="Texture2D" uid="uid://d3ac0iaierd1l" path="res://maskTextures/roundTexture.svg" id="3_yev5y"]
+[ext_resource type="Script" uid="uid://dunb1qcc1h7vr" path="res://scripts/MaskUI.cs" id="3_8dubc"]
+[ext_resource type="Texture2D" uid="uid://b8j14yqgv6dv5" path="res://assets/perusmaskielieimaskiaUI.png" id="3_wm3ai"]
+[ext_resource type="Texture2D" uid="uid://bd2kyp3xw0e0m" path="res://assets/StrengthMaskiUI.png" id="4_8dubc"]
+[ext_resource type="Texture2D" uid="uid://dofodv0g6flhf" path="res://assets/X-RayMaskiUI.png" id="5_p7vwb"]
 
 [node name="Ui" type="CanvasLayer" unique_id=770015140]
 
@@ -27,21 +30,55 @@ texture = ExtResource("1_nt7q6")
 layout_mode = 2
 texture = ExtResource("1_nt7q6")
 
-[node name="MaskContainer" type="HBoxContainer" parent="." unique_id=540153404]
+[node name="Control" type="Control" parent="." unique_id=1526336815]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="MaskContainer" type="HBoxContainer" parent="Control" unique_id=540153404]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1280.0
-offset_top = -720.0
-offset_right = -795.0
-offset_bottom = -235.0
+offset_left = -380.0
+offset_top = -100.0
+offset_right = -215.99976
+offset_bottom = -68.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.1, 0.1)
-theme_override_constants/separation = 128
+scale = Vector2(2, 2)
+theme_override_constants/separation = 12
+script = ExtResource("3_8dubc")
 
-[node name="TextureButton" type="TextureButton" parent="MaskContainer" unique_id=1562253941]
+[node name="Basic" type="TextureButton" parent="Control/MaskContainer" unique_id=1562253941]
+visible = false
 layout_mode = 2
-texture_normal = ExtResource("3_yev5y")
+texture_normal = ExtResource("3_wm3ai")
+
+[node name="Flashlite" type="TextureButton" parent="Control/MaskContainer" unique_id=1477309415]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("3_wm3ai")
+
+[node name="Strength" type="TextureButton" parent="Control/MaskContainer" unique_id=1273795298]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("4_8dubc")
+
+[node name="XRay" type="TextureButton" parent="Control/MaskContainer" unique_id=49305251]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("5_p7vwb")
+
+[connection signal="pressed" from="Control/MaskContainer/Basic" to="Control/MaskContainer" method="OnClickBasicMask"]
+[connection signal="pressed" from="Control/MaskContainer/Flashlite" to="Control/MaskContainer" method="OnClickFlashlite"]
+[connection signal="pressed" from="Control/MaskContainer/Strength" to="Control/MaskContainer" method="OnClickStrength"]
+[connection signal="pressed" from="Control/MaskContainer/XRay" to="Control/MaskContainer" method="OnClickXRay"]
