@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bkyppfbrkinr2" path="res://scenes/camera.tscn" id="6_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="8_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://bojdshqdxsu4v" path="res://scenes/puzzle/puzzle_1.tscn" id="11_a63bb"]
-[ext_resource type="PackedScene" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
+[ext_resource type="PackedScene" uid="uid://cbt0rsob2udoe" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
 [ext_resource type="PackedScene" uid="uid://bb3d8ms8wak8w" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="12_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://d3f7vny6bd8nb" path="res://scenes/PressurePlate.tscn" id="12_qsgjr"]
 [ext_resource type="AudioStream" uid="uid://dh4ioay57ssis" path="res://audio/music/FGJ26MainBGLoopTempMusic.ogg" id="13_rp473"]
@@ -48,7 +48,7 @@ position = Vector2(-15, 9)
 Conditions = [NodePath("AreaReached")]
 
 [node name="AreaReached" parent="Puzzle1" index="20" unique_id=128534236]
-position = Vector2(1053, -29)
+position = Vector2(1042, -29)
 
 [node name="Puzzle2" type="Node" parent="." unique_id=1010493297]
 
@@ -205,13 +205,13 @@ bus = &"Music"
 parameters/looping = true
 
 [node name="PickableStrengthMask" parent="." unique_id=955841723 instance=ExtResource("18_2ddkf")]
-position = Vector2(1052, -89.99997)
+position = Vector2(1039, -98)
 scale = Vector2(0.25, 0.25)
 NewMask = 2
 FlashliteMask = ExtResource("19_si2s2")
 
 [node name="PickableXRayMask" parent="." unique_id=1050133946 instance=ExtResource("18_2ddkf")]
-position = Vector2(1247, 100)
+position = Vector2(1209, 104)
 scale = Vector2(0.25, 0.25)
 NewMask = 3
 
