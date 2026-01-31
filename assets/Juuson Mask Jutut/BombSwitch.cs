@@ -36,7 +36,7 @@ public partial class BombSwitch : Area2D
             bomb.SetActive(false);
             switchGreen.Visible = true;
             switchRed.Visible = false;
-            await ToSignal(GetTree().CreateTimer(3.0), SceneTreeTimer.SignalName.Timeout);
+            await ToSignal(GetTree().CreateTimer(5.0), SceneTreeTimer.SignalName.Timeout);
             bomb.SetActive(true);
             switchGreen.Visible = false;
             switchRed.Visible = true;

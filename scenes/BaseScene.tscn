@@ -3,14 +3,22 @@
 [ext_resource type="Script" uid="uid://bejw0xx3r05qa" path="res://puzzles/Puzzle1.cs" id="1_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="1_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
-[ext_resource type="PackedScene" uid="uid://b51pun1aqo473" path="res://scenes/Goal.tscn" id="4_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://bkyppfbrkinr2" path="res://scenes/camera.tscn" id="6_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="8_3ubpw"]
-[ext_resource type="PackedScene" uid="uid://sdnhw3s62pbc" path="res://scenes/movable_box.tscn" id="9_l3ckk"]
 [ext_resource type="PackedScene" uid="uid://bojdshqdxsu4v" path="res://scenes/puzzle/puzzle_1.tscn" id="11_a63bb"]
-[ext_resource type="PackedScene" uid="uid://cbt0rsob2udoe" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
+[ext_resource type="PackedScene" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
+[ext_resource type="PackedScene" uid="uid://bb3d8ms8wak8w" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="12_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://d3f7vny6bd8nb" path="res://scenes/PressurePlate.tscn" id="12_qsgjr"]
+[ext_resource type="AudioStream" uid="uid://dh4ioay57ssis" path="res://audio/music/FGJ26MainBGLoopTempMusic.ogg" id="13_rp473"]
+[ext_resource type="PackedScene" uid="uid://bfq8p812a71jn" path="res://assets/Juuson Mask Jutut/Switch.tscn" id="13_si2s2"]
+[ext_resource type="Material" uid="uid://b0qw3cofrat17" path="res://assets/Juuson Mask Jutut/BoxMaskMaterial.tres" id="14_ec51t"]
+[ext_resource type="Texture2D" uid="uid://bd2kyp3xw0e0m" path="res://assets/StrengthMaskiUI.png" id="14_yysfs"]
+[ext_resource type="Script" uid="uid://vshet36c6n2y" path="res://assets/Juuson Mask Jutut/MaskSystem.cs" id="16_bfjpa"]
+[ext_resource type="Texture2D" uid="uid://dg6bnsnk7avne" path="res://maskTextures/starTexture.svg" id="17_vihhi"]
+[ext_resource type="PackedScene" path="res://scenes/pickableMask.tscn" id="18_2ddkf"]
+[ext_resource type="Script" uid="uid://dckuoy7shumxo" path="res://assets/Juuson Mask Jutut/MineMask.cs" id="18_50st4"]
+[ext_resource type="Texture2D" uid="uid://bg4xop287f233" path="res://assets/perusmaskielieimaskia.png" id="19_si2s2"]
 
 [node name="World" type="Node" unique_id=1516675657 node_paths=PackedStringArray("Conditions")]
 script = ExtResource("1_3ubpw")
@@ -18,83 +26,30 @@ Conditions = []
 
 [node name="World" parent="." unique_id=577538569 instance=ExtResource("1_tt3em")]
 
-[node name="StaticBox3" parent="World" unique_id=1283738957 instance=ExtResource("8_3ubpw")]
-position = Vector2(993, -212)
-
-[node name="Darkness Manager" type="Node" parent="." unique_id=1658980287]
-script = ExtResource("1_gp54n")
-
-[node name="Goal" parent="." unique_id=1034903633 instance=ExtResource("4_tt3em")]
-position = Vector2(234, 73)
-script = null
-
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("3_gp54n")]
 z_index = 101
 position = Vector2(426, 147)
 
-[node name="Mask" parent="." unique_id=1868398740 instance=ExtResource("6_3ubpw")]
+[node name="Mask" parent="." unique_id=1868398740 node_paths=PackedStringArray("xRayMaskSprite") instance=ExtResource("6_3ubpw")]
 position = Vector2(458, 153)
+xRayMaskSprite = NodePath("../Puzzle3/MaskSystem/SubViewport/Node2D/Mask Circle")
 
 [node name="Camera" parent="." unique_id=947783170 node_paths=PackedStringArray("MainPlayer", "MaskPlayer") instance=ExtResource("6_tt3em")]
 position = Vector2(350, 222)
-zoom = Vector2(2, 2)
 MainPlayer = NodePath("../Player")
 MaskPlayer = NodePath("../Mask")
 Speed = 50.0
 MaxZoom = 2.0
-ZoomSpeed = 0.3
-
-[node name="BoxGroup" type="Node2D" parent="." unique_id=2102585491]
-
-[node name="StaticBox" parent="BoxGroup" unique_id=1111461137 instance=ExtResource("8_3ubpw")]
-position = Vector2(280, 115)
-
-[node name="StaticBox2" parent="BoxGroup" unique_id=253603025 instance=ExtResource("8_3ubpw")]
-position = Vector2(284, 150)
-
-[node name="StaticBox3" parent="BoxGroup" unique_id=513988298 instance=ExtResource("8_3ubpw")]
-position = Vector2(270, 182)
-
-[node name="StaticBox7" parent="BoxGroup" unique_id=1725039119 instance=ExtResource("8_3ubpw")]
-position = Vector2(356, 152)
-
-[node name="StaticBox8" parent="BoxGroup" unique_id=456674107 instance=ExtResource("8_3ubpw")]
-position = Vector2(382, 176)
-
-[node name="StaticBox9" parent="BoxGroup" unique_id=1705267287 instance=ExtResource("8_3ubpw")]
-position = Vector2(397, 208)
-
-[node name="StaticBox10" parent="BoxGroup" unique_id=1227587873 instance=ExtResource("8_3ubpw")]
-position = Vector2(393, 247)
-
-[node name="StaticBox11" parent="BoxGroup" unique_id=1803247039 instance=ExtResource("8_3ubpw")]
-position = Vector2(373, 279)
-
-[node name="StaticBox12" parent="BoxGroup" unique_id=1119898662 instance=ExtResource("8_3ubpw")]
-position = Vector2(363, 310)
-
-[node name="StaticBox14" parent="BoxGroup" unique_id=373064122 instance=ExtResource("8_3ubpw")]
-position = Vector2(363, 310)
-
-[node name="StaticBox13" parent="BoxGroup" unique_id=1603177452 instance=ExtResource("8_3ubpw")]
-position = Vector2(388, 126)
-
-[node name="StaticBox4" parent="BoxGroup" unique_id=167619087 instance=ExtResource("8_3ubpw")]
-position = Vector2(287, 209)
-
-[node name="StaticBox5" parent="BoxGroup" unique_id=896960539 instance=ExtResource("8_3ubpw")]
-position = Vector2(269, 244)
-
-[node name="StaticBox6" parent="BoxGroup" unique_id=2042408827 instance=ExtResource("8_3ubpw")]
-position = Vector2(291, 275)
-
-[node name="MovableBox" parent="BoxGroup" unique_id=1071985089 instance=ExtResource("9_l3ckk")]
-position = Vector2(332, 106)
+ZoomSpeed = 0.0
 
 [node name="GlobalCoordinateManager" parent="." unique_id=1958662909 instance=ExtResource("11_qsgjr")]
 position = Vector2(-15, 9)
 
-[node name="Puzzle1" parent="." unique_id=508225014 instance=ExtResource("11_a63bb")]
+[node name="Puzzle1" parent="." unique_id=508225014 node_paths=PackedStringArray("Conditions") instance=ExtResource("11_a63bb")]
+Conditions = [NodePath("AreaReached")]
+
+[node name="AreaReached" parent="Puzzle1" index="20" unique_id=128534236]
+position = Vector2(1042, -29)
 
 [node name="Puzzle2" type="Node" parent="." unique_id=1010493297]
 
@@ -139,3 +94,126 @@ position = Vector2(1122, -174)
 
 [node name="StaticBox11" parent="Puzzle2" unique_id=712419548 instance=ExtResource("8_3ubpw")]
 position = Vector2(1159, -173)
+
+[node name="Puzzle3" type="Node" parent="." unique_id=1826246720]
+
+[node name="Bomb 1" parent="Puzzle3" unique_id=324300176 instance=ExtResource("12_2ddkf")]
+position = Vector2(1332.7917, 33)
+
+[node name="Bomb 2" parent="Puzzle3" unique_id=463929244 instance=ExtResource("12_2ddkf")]
+position = Vector2(1333.7917, -59)
+
+[node name="Bomb 3" parent="Puzzle3" unique_id=1729638790 instance=ExtResource("12_2ddkf")]
+position = Vector2(1332.7917, -155)
+
+[node name="Bomb 4" parent="Puzzle3" unique_id=488079563 instance=ExtResource("12_2ddkf")]
+position = Vector2(1331.7917, -241)
+
+[node name="Bomb 5" parent="Puzzle3" unique_id=805924731 instance=ExtResource("12_2ddkf")]
+position = Vector2(1424.7917, -239)
+
+[node name="Switch 1" parent="Puzzle3" unique_id=397120877 node_paths=PackedStringArray("bomb") instance=ExtResource("13_si2s2")]
+position = Vector2(1576.7917, -130)
+bomb = NodePath("../Bomb 1")
+
+[node name="Switch 2" parent="Puzzle3" unique_id=1097848340 node_paths=PackedStringArray("bomb") instance=ExtResource("13_si2s2")]
+position = Vector2(1634.7917, -21)
+bomb = NodePath("../Bomb 2")
+
+[node name="Switch 3" parent="Puzzle3" unique_id=81177368 node_paths=PackedStringArray("bomb") instance=ExtResource("13_si2s2")]
+position = Vector2(1634.7917, -89)
+bomb = NodePath("../Bomb 3")
+
+[node name="Switch 4" parent="Puzzle3" unique_id=778517762 node_paths=PackedStringArray("bomb") instance=ExtResource("13_si2s2")]
+position = Vector2(1519.7917, -89)
+bomb = NodePath("../Bomb 4")
+
+[node name="Switch 5" parent="Puzzle3" unique_id=753800211 node_paths=PackedStringArray("bomb") instance=ExtResource("13_si2s2")]
+position = Vector2(1581.7917, 22)
+bomb = NodePath("../Bomb 5")
+
+[node name="Line 1" type="Line2D" parent="Puzzle3" unique_id=107509265]
+z_index = 300
+material = ExtResource("14_ec51t")
+position = Vector2(592.7918, 155)
+points = PackedVector2Array(996, -273, 996.2082, -231, 907.2082, -172, 863, -206, 752, -132)
+width = 5.0
+texture = ExtResource("14_yysfs")
+
+[node name="Line 2" type="Line2D" parent="Puzzle3" unique_id=1788594493]
+z_index = 300
+material = ExtResource("14_ec51t")
+position = Vector2(593.7918, 69)
+points = PackedVector2Array(1053, -77, 1081, -145, 1090, -233, 947, -392, 674, -391, 669.2082, -281.95486, 726, -136)
+width = 5.0
+texture = ExtResource("14_yysfs")
+
+[node name="Line 3" type="Line2D" parent="Puzzle3" unique_id=12640360]
+z_index = 300
+material = ExtResource("14_ec51t")
+position = Vector2(592.7918, -27)
+points = PackedVector2Array(1032, -49, 904, 86, 681, 83, 675, -90, 728, -133)
+width = 5.0
+texture = ExtResource("14_yysfs")
+
+[node name="Line 4" type="Line2D" parent="Puzzle3" unique_id=310354204]
+z_index = 300
+material = ExtResource("14_ec51t")
+position = Vector2(591.7918, -113)
+points = PackedVector2Array(941, 36, 950, -64, 996, -100, 830, -192, 745, -140)
+width = 5.0
+texture = ExtResource("14_yysfs")
+
+[node name="Line 5" type="Line2D" parent="Puzzle3" unique_id=123588445]
+z_index = 300
+material = ExtResource("14_ec51t")
+position = Vector2(684.7918, -111)
+points = PackedVector2Array(887, 146, 741, 151, 715, -52, 825, -73, 751, -117)
+width = 5.0
+texture = ExtResource("14_yysfs")
+
+[node name="MaskSystem" type="Node" parent="Puzzle3" unique_id=1034076755 node_paths=PackedStringArray("MaskViewport", "MaskCircleInViewport", "PlayerCircle", "MaskCamera")]
+script = ExtResource("16_bfjpa")
+MaskViewport = NodePath("SubViewport")
+MaskCircleInViewport = NodePath("SubViewport/Node2D/Mask Circle")
+PlayerCircle = NodePath("Visible Circle")
+BoxesMaterial = ExtResource("14_ec51t")
+MaskCamera = NodePath("../../Camera")
+
+[node name="Visible Circle" type="Sprite2D" parent="Puzzle3/MaskSystem" unique_id=1504217537 node_paths=PackedStringArray("nodeToFollow")]
+modulate = Color(1, 0.895, 0.7, 0)
+visibility_layer = 2
+position = Vector2(472, 140)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_vihhi")
+script = ExtResource("18_50st4")
+nodeToFollow = NodePath("../../../Mask")
+
+[node name="SubViewport" type="SubViewport" parent="Puzzle3/MaskSystem" unique_id=799487837]
+transparent_bg = true
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="Node2D" type="Node2D" parent="Puzzle3/MaskSystem/SubViewport" unique_id=1925136823]
+
+[node name="Mask Circle" type="Sprite2D" parent="Puzzle3/MaskSystem/SubViewport/Node2D" unique_id=1816764381]
+texture = ExtResource("17_vihhi")
+
+[node name="AudioStreamPlayerMusic" type="AudioStreamPlayer" parent="." unique_id=75652265]
+stream = ExtResource("13_rp473")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="PickableStrengthMask" parent="." unique_id=955841723 instance=ExtResource("18_2ddkf")]
+position = Vector2(1039, -98)
+scale = Vector2(0.25, 0.25)
+NewMask = 2
+FlashliteMask = ExtResource("19_si2s2")
+
+[node name="PickableXRayMask" parent="." unique_id=1050133946 instance=ExtResource("18_2ddkf")]
+position = Vector2(1209, 104)
+scale = Vector2(0.25, 0.25)
+NewMask = 3
+
+[editable path="Puzzle1"]

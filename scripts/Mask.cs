@@ -23,10 +23,14 @@ public partial class Mask : Node2D
 
 	private PointLight2D Light;
 	private CanvasModulate Background;
+	[Export] public Node2D xRayMaskSprite;
 
 	// Tracks if the current mouse press started on a UI element
 	private bool _clickStartedOnUi = false;
 	private bool _wasMousePressed = false;
+	private AudioStreamPlayer2D _MaskMovingPlayer, _MaskSwitchPlayer;
+
+	private bool AKUNPURKKA = false;
 
 	public override void _Ready()
 	{
@@ -34,7 +38,8 @@ public partial class Mask : Node2D
 		Light = (PointLight2D)GetNode("./Light");
 		Background = (CanvasModulate)GetNode("./MaskBackground");
 
-
+		_MaskMovingPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_MaskMoving");
+		_MaskSwitchPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_MaskSwitch");
 		GlobalStateManager.Instance.CurrentMask.RegisterObserver(
 			newMask => SetMask(newMask, 0.2f, new Color("white")));
 	}
@@ -47,6 +52,19 @@ public partial class Mask : Node2D
 		// Detect mouse button press start
 		if (mousePressed && !_wasMousePressed)
 		{
+			GD.Print("mousePressed && !_wasMousePressed");
+			if (!_MaskMovingPlayer.Playing)
+			{
+				GD.Print("!_MaskMovingPlayer.Playing");
+
+				float audioLength = (float)_MaskMovingPlayer.Stream.GetLength();
+				// Arvotaan aloituskohta. 
+				// Varmuuden vuoksi vähennetään pieni siivu (esim 0.1s) lopusta,
+				// ettei se aloita aivan lopusta ja lopeta heti.
+				float randomStartTime = (float)GD.RandRange(0.0, Math.Max(0, audioLength - 0.1));
+				_MaskMovingPlayer.Play(randomStartTime);
+				GD.Print("_MaskMovingPlayer.Playing: ", _MaskMovingPlayer.Playing);
+			}
 			// Mouse just pressed - check if it's over UI
 			_clickStartedOnUi = IsMouseOverGui();
 		}
@@ -54,6 +72,10 @@ public partial class Mask : Node2D
 		// Detect mouse button release
 		if (!mousePressed)
 		{
+			if (_MaskMovingPlayer.Playing)
+			{
+				_MaskMovingPlayer.Stop();
+			}
 			_clickStartedOnUi = false;
 		}
 
@@ -87,6 +109,8 @@ public partial class Mask : Node2D
 
 	public void SetMask(MaskEnum mask, float maskSize, Color maskColor)
 	{
+		//Ekalla kiekalla ei toisteta ääniefektiä.
+		if (!AKUNPURKKA) AKUNPURKKA = true; else _MaskSwitchPlayer.Play();
 
 		GD.Print("MASK SET");
 		Light.TextureScale = maskSize;
@@ -101,7 +125,7 @@ public partial class Mask : Node2D
 		};
 
 		Background.Visible = mask == MaskEnum.Flashlite;
-
+		xRayMaskSprite.Visible = mask == MaskEnum.XRay;
 		// Dynamic scaling for the collision shape, so that it matches the mask
 		CollisionShape2D collisionShape = GetNode<CollisionShape2D>("./Area2D/CollisionShape2D");
 
@@ -135,7 +159,7 @@ public partial class Mask : Node2D
 				break;
 		}
 	}
-	
+
 	public void SpawnAt(Vector2 position)
 	{
 		GlobalPosition = position;
