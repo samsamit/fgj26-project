@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://dwqin8c06c2om" path="res://scenes/camera.tscn" id="6_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="7_tt3em"]
+[ext_resource type="Script" uid="uid://cpx3jfx2uu1uf" path="res://Scripts/MainCamera.cs" id="8_l3ckk"]
 
 [node name="World" type="Node" unique_id=1516675657]
 script = ExtResource("1_54rco")
@@ -32,16 +33,23 @@ z_index = 101
 position = Vector2(353, 232)
 
 [node name="Mask" parent="." unique_id=1868398740 instance=ExtResource("6_3ubpw")]
-position = Vector2(669, 195)
+position = Vector2(354, 234)
 
 [node name="LightPuzzle" type="Node" parent="." unique_id=973306165]
 
 [node name="Camera" parent="." unique_id=947783170 node_paths=PackedStringArray("MainPlayer", "MaskPlayer") instance=ExtResource("6_tt3em")]
+position = Vector2(350, 222)
+zoom = Vector2(2, 2)
+script = ExtResource("8_l3ckk")
 MainPlayer = NodePath("../Player")
 MaskPlayer = NodePath("../Mask")
 Speed = 50.0
+MinZoom = 0.5
 MaxZoom = 2.0
-ZoomSpeed = 1.0
+ZoomSpeed = 0.3
+BeginCameraMove = 50.0
+TooFar = 310.0
+Close = 250.0
 
 [node name="BoxGroup" type="Node2D" parent="." unique_id=2102585491]
 

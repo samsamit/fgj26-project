@@ -21,9 +21,13 @@ public partial class Mask : Node2D
 	{
 		Vector2 mousePosition = GetGlobalMousePosition();
 		
+		if (Input.IsMouseButtonPressed(MouseButton.Left))
+		{
+			
 		// Move towards the mouse position at the configured speed
 		GlobalPosition = GlobalPosition.MoveToward(mousePosition, FollowSpeed * (float)delta);
 		
 		_stateManager.MaskPosition = GlobalPosition;
+		}
 	}
 }
