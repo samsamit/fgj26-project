@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://6284sh1uywly"]
+
+[ext_resource type="PackedScene" uid="uid://dy8cye72lk8wq" path="res://scenes/camera.tscn" id="1_8j6ov"]
+[ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="1_dudvv"]
+[ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="2_qfrji"]
+
+[node name="Node2D" type="Node2D" unique_id=1277091583]
+
+[node name="Camera" parent="." unique_id=947783170 node_paths=PackedStringArray("MainPlayer", "MaskPlayer") instance=ExtResource("1_8j6ov")]
+MainPlayer = NodePath("../Player")
+MaskPlayer = NodePath("../Mask")
+
+[node name="Player" parent="." unique_id=380924559 instance=ExtResource("1_dudvv")]
+z_index = 101
+position = Vector2(125, 129)
+Speed = 50.0
+
+[node name="Mask" parent="." unique_id=1868398740 instance=ExtResource("2_qfrji")]
+position = Vector2(385, 208)
