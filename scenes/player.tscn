@@ -11,9 +11,11 @@
 
 [node name="Player" type="CharacterBody2D" unique_id=380924559]
 script = ExtResource("1_g2els")
-spriteFrames = ExtResource("2_qlg0r")
+SpriteFrames = ExtResource("2_qlg0r")
+CharacterSpriteScaleMultiplier = 0.25
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1525898870]
+visible = false
 scale = Vector2(0.165, 0.165)
 texture = ExtResource("1_3vyb7")
 

@@ -5,8 +5,11 @@ using Godot;
 public partial class Player : CharacterBody2D
 {
 	[Export] public float Speed = 50.0f;
-	[Export] SpriteFrames spriteFrames;
+	[Export] SpriteFrames SpriteFrames;
 	[Export] public float PushingPower = 100.0f;
+	[Export] public float CharacterSpriteScaleMultiplier = 0.125f;
+	[Export] public float CharacterRotationSpeed = 10.0f;
+
 	private const string MoveRight = "move_right";
 	private const string MoveLeft = "move_left";
 	private const string MoveBack = "move_back";
@@ -35,7 +38,7 @@ public partial class Player : CharacterBody2D
 		// Suosittelen käyttämään [Export]-muuttujia tai Scene Unique Nameja (%) tulevaisuudessa.
 		_walkingSFXplayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_Walking");
 		_scrapingSFXPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_BoxScraping");
-		_groundLayer = GetNode<TileMapLayer>("../World/TileMapController/BaseLayer");
+		_groundLayer = GetNode<TileMapLayer>("../World/TileMapController/Ground");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -50,6 +53,7 @@ public partial class Player : CharacterBody2D
 
 		if (velocityNormalizedCombined > 0)
 		{
+			_animationController.HandleRotation(direction, delta, CharacterRotationSpeed);
 			if (!_walkingSFXplayer.Playing)
 			{
 				_walkingSFXplayer.Play();
@@ -175,7 +179,7 @@ public partial class Player : CharacterBody2D
 	private void InitializeAnimation(AnimationEnum animationEnum)
 	{
 		_animationController = GetNode<AnimationController>("AnimationController");
-		_animationController.InitiateSpriteFrames(spriteFrames);
+		_animationController.InitiateSpriteFrames(SpriteFrames, CharacterSpriteScaleMultiplier);
 		_animationController.ChangeAnimation(animationEnum);
 		_animationController.GlobalRotation = GlobalRotation;
 	}
