@@ -18,7 +18,7 @@ darkness = NodePath("MaskBackground")
 
 [node name="Light" type="PointLight2D" parent="." unique_id=2145790926]
 texture = ExtResource("2_uscli")
-texture_scale = 0.3
+texture_scale = 0.25
 
 [node name="MaskBackground" type="CanvasModulate" parent="." unique_id=405735703]
 color = Color(0.03137255, 0.03137255, 0.03137255, 0.42745098)

@@ -12,7 +12,7 @@ config_version=5
 
 config/name="FGJ26-LPR"
 run/main_scene="uid://iv1onl6kbhyd"
-config/features=PackedStringArray("4.6", "C#", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -23,7 +23,7 @@ GlobalStateManager="*uid://bk7d6j88oh40d"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-mouse_cursor/custom_image="uid://bnogd6gvgyxg7"
+mouse_cursor/custom_image="uid://bg4xop287f233"
 
 [dotnet]
 

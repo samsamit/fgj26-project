@@ -1,17 +1,10 @@
 using Godot;
 using System;
 
-public partial class Goal : Area2D 
+public partial class Goal : Area2D
 {
-	private string puzzleId;
 	public override void _Ready()
 	{
-		Node parent = GetParent();
-		if (parent is not Puzzle)
-		{
-			GD.PrintErr("Goal must be a child of a Puzzle");
-		}
-		puzzleId = ((Puzzle)parent).puzzleId;
 		BodyEntered += OnPlayerEntered;
 	}
 
@@ -19,7 +12,10 @@ public partial class Goal : Area2D
 	{
 		if (body is not Player) return;
 		GD.Print("goal");
-		GlobalStateManager.Instance.EmitSignal(GlobalStateManager.SignalName.PuzzleCompleted, puzzleId);
+		EmitSignal(SignalName.PlayerEntered);
 		BodyEntered -= OnPlayerEntered;
 	}
+
+	[Signal]
+	public delegate void PlayerEnteredEventHandler();
 }

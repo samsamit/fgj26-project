@@ -7,10 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://dwqin8c06c2om" path="res://scenes/camera.tscn" id="6_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="8_3ubpw"]
+[ext_resource type="PackedScene" uid="uid://c3knvd6urqxyg" path="res://scenes/CompletionConditions/AreaReached.tscn" id="10_56wcu"]
+[ext_resource type="PackedScene" uid="uid://cbt0rsob2udoe" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
 [ext_resource type="PackedScene" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
 
-[node name="World" type="Node" unique_id=1516675657]
+[node name="World" type="Node" unique_id=1516675657 node_paths=PackedStringArray("Conditions")]
 script = ExtResource("1_3ubpw")
+Conditions = []
 
 [node name="World" parent="." unique_id=577538569 instance=ExtResource("1_tt3em")]
 
@@ -37,12 +40,9 @@ ZoomSpeed = 0.3
 [node name="GlobalCoordinateManager" parent="." unique_id=1958662909 instance=ExtResource("11_qsgjr")]
 position = Vector2(-15, 9)
 
-[node name="Puzzle1" type="Node" parent="." unique_id=963432743]
+[node name="Puzzle1" type="Node" parent="." unique_id=963432743 node_paths=PackedStringArray("Conditions")]
 script = ExtResource("1_3ubpw")
-
-[node name="Goal 1" parent="Puzzle1" unique_id=1880351566 instance=ExtResource("4_tt3em")]
-position = Vector2(1050, -70)
-scale = Vector2(0.8710587, 1.668829)
+Conditions = [NodePath("AreaReached"), null]
 
 [node name="StaticBox" parent="Puzzle1" unique_id=1283738957 instance=ExtResource("8_3ubpw")]
 position = Vector2(737, 114)
@@ -131,3 +131,7 @@ scale = Vector2(0.6396769, 0.6396769)
 position = Vector2(863, 85)
 rotation = 2.4754386
 scale = Vector2(0.49096152, 0.49096152)
+
+[node name="AreaReached" parent="Puzzle1" unique_id=128534236 instance=ExtResource("10_56wcu")]
+position = Vector2(606, 158)
+scale = Vector2(-1.7273408, 1)
