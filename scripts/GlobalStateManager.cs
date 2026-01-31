@@ -6,8 +6,8 @@ public partial class GlobalStateManager : Node
 {
 	public static HashSet<string> CompletedPuzzle = [];
 
-	public static Vector2 PlayerPosition = Vector2.Zero;
-	public static Vector2 MaskPosition = Vector2.Zero;
+	public Vector2 PlayerPosition = Vector2.Zero;
+	public Vector2 MaskPosition = Vector2.Zero;
 	public Observable<MaskEnum> CurrentMask = new(MaskEnum.Round);
 
 	public static GlobalStateManager Instance;

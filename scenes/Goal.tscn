@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://btpv1h2ue3vs" path="res://scripts/Goal.cs" id="1_grq7m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04qyp"]
-size = Vector2(222, 222)
+size = Vector2(60, 62)
 
 [node name="Goal" type="Area2D" unique_id=1034903633]
 script = ExtResource("1_grq7m")

@@ -8,7 +8,7 @@ public partial class DarknessManager : Node
 	public override void _Ready()
 	{
 		base._Ready();
-		//darknessOverlay.Visible = true;
+		darknessOverlay.Visible = true;
 	}
 
 }
