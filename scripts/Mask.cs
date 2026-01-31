@@ -23,6 +23,9 @@ public partial class Mask : Node2D
 	{
 		GD.Print("Player script is active!");
 		Light = (PointLight2D)GetNode("./Light");
+
+		GlobalStateManager.Instance.CurrentMask.RegisterObserver(
+			newMask => SetMask(newMask, 0.5f, new Color("white")));
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -33,10 +36,14 @@ public partial class Mask : Node2D
 		if (Input.IsMouseButtonPressed(MouseButton.Left))
 		{
 
-			Vector2 mousePosition = GetGlobalMousePosition();
-			Vector2 direction = (mousePosition - GlobalPosition).Normalized();
-			velocity = direction * Speed;
+			// Move towards the mouse position at the configured speed
+			//GlobalPosition = GlobalPosition.MoveToward(mousePosition, FollowSpeed * (float)delta);
+
+			//GlobalStateManager.Instance.MaskPosition = GlobalPosition;
 		}
+		Vector2 mousePosition = GetGlobalMousePosition();
+		Vector2 direction = (mousePosition - GlobalPosition).Normalized();
+		velocity = direction * Speed;
 	}
 
 	public override void _Process(double delta)

@@ -71,6 +71,8 @@ public partial class Player : CharacterBody2D
 		// 0 on normaali. Pieni vaihtelu esim. -2 ja 0 välillä tuo elävyyttä.
 		float randomVol = (float)GD.RandRange(-2.0, 0.0);
 		_walkingSFXplayer.VolumeDb = randomVol;
+
+		GlobalStateManager.PlayerPosition = GlobalPosition;
 	}
 
 	private void ResetAudioParams()
