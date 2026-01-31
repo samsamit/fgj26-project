@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://bjo41cv1nxm8x" path="res://scenes/CompletionConditions/PressurePlateDown.cs" id="1_kdqyc"]
 [ext_resource type="PackedScene" uid="uid://d3f7vny6bd8nb" path="res://scenes/PressurePlate.tscn" id="2_ai2f7"]
 
-[node name="PressurePlateDown" type="Node" unique_id=1750007365]
+[node name="PressurePlateDown" type="Node" unique_id=1750007365 node_paths=PackedStringArray("_pressurePlate")]
 script = ExtResource("1_kdqyc")
+_pressurePlate = NodePath("PressurePlate")
 
 [node name="PressurePlate" parent="." unique_id=1570528986 instance=ExtResource("2_ai2f7")]
