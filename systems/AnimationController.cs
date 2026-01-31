@@ -38,6 +38,7 @@ public partial class AnimationController : Node2D
 			return;
 		}
 
+		GD.Print("Applying: " + animationEnum);
 		switch (animationEnum)
 		{
 			case AnimationEnum.Idle:
@@ -51,6 +52,10 @@ public partial class AnimationController : Node2D
 			case AnimationEnum.Run:
 				ActiveAnimation = AnimationEnum.Run;
 				_animatedSprite2D.Play(nameof(AnimationEnum.Run));
+				break;
+			case AnimationEnum.Push:
+				ActiveAnimation = AnimationEnum.Push;
+				_animatedSprite2D.Play(nameof(AnimationEnum.Push));
 				break;
 			default:
 				Console.WriteLine("Animation Enum not defined");
@@ -68,10 +73,11 @@ public partial class AnimationController : Node2D
 	{
 		var wantedRotation = direction.Angle();
 		var currentRotation = Rotation;
-		// var wantedDirection = Math.Abs(wantedRotation - currentRotation);
+		// var wantedDirection = wantedRotation - currentRotation;
 		// if (wantedDirection > Math.PI)
 		// {
-			
+
+		// 	Rotation = currentRotation + (wantedDirection - (float)(2 * Math.PI)) * (float)delta * rotationSpeed;
 		// }
 		//GD.Print(wantedDirection);
 		Rotation = currentRotation + (wantedRotation - currentRotation) * (float)delta * rotationSpeed;

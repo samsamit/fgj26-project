@@ -27,8 +27,11 @@ public partial class Mask : Node2D
 	[Export]
 	public Area2D ViewArea;
 
-	private PointLight2D Light;
+	[Export]
+	public CanvasModulate darkness;
 
+	private PointLight2D Light;
+	
 	public override void _Ready()
 	{
 		GD.Print("Mask script is active!");
@@ -44,10 +47,8 @@ public partial class Mask : Node2D
 
 		if (Input.IsMouseButtonPressed(MouseButton.Left))
 		{
-
 			// Move towards the mouse position at the configured speed
 			GlobalPosition = GlobalPosition.MoveToward(mousePosition, FollowSpeed * (float)delta);
-
 			GlobalStateManager.Instance.MaskPosition = GlobalPosition;
 		}
 	}
@@ -74,6 +75,8 @@ public partial class Mask : Node2D
 			MaskEnum.Strength => Triangle,
 			_ => Round,
 		};
+
+		darkness.Visible = mask == MaskEnum.Flashlite;
 
 		// Dynamic scaling for the collision shape, so that it matches the mask
 		CollisionShape2D collisionShape = GetNode<CollisionShape2D>("./Area2D/CollisionShape2D");
@@ -107,6 +110,10 @@ public partial class Mask : Node2D
 				GD.Print("Unhandled shape type: " + collisionShape.Shape.GetType());
 				break;
 		}
-
+	}
+	
+	public void SpawnAt(Vector2 position)
+	{
+		GlobalPosition = position;
 	}
 }
