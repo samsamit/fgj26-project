@@ -16,7 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://dol7vajil2t1k" path="res://assets/rakennusseinät.png" id="15_pjbue"]
 [ext_resource type="Script" uid="uid://vshet36c6n2y" path="res://assets/Juuson Mask Jutut/MaskSystem.cs" id="16_bfjpa"]
 [ext_resource type="Texture2D" uid="uid://dg6bnsnk7avne" path="res://maskTextures/starTexture.svg" id="17_vihhi"]
+[ext_resource type="PackedScene" uid="uid://3djuvdff2kw7" path="res://scenes/pickableMask.tscn" id="18_2ddkf"]
 [ext_resource type="Script" uid="uid://dckuoy7shumxo" path="res://assets/Juuson Mask Jutut/MineMask.cs" id="18_50st4"]
+[ext_resource type="Texture2D" uid="uid://bg4xop287f233" path="res://assets/perusmaskielieimaskia.png" id="19_si2s2"]
 
 [node name="World" type="Node" unique_id=1516675657 node_paths=PackedStringArray("Conditions")]
 script = ExtResource("1_3ubpw")
@@ -47,7 +49,7 @@ position = Vector2(-15, 9)
 Conditions = [NodePath("AreaReached")]
 
 [node name="AreaReached" parent="Puzzle1" index="20" unique_id=128534236]
-position = Vector2(1053, -92)
+position = Vector2(1053, -29)
 
 [node name="Puzzle2" type="Node" parent="." unique_id=1010493297]
 
@@ -191,5 +193,16 @@ stream = ExtResource("13_rp473")
 autoplay = true
 bus = &"Music"
 parameters/looping = true
+
+[node name="PickableStrengthMask" parent="." unique_id=955841723 instance=ExtResource("18_2ddkf")]
+position = Vector2(1052, -89.99997)
+scale = Vector2(0.25, 0.25)
+NewMask = 2
+FlashliteMask = ExtResource("19_si2s2")
+
+[node name="PickableXRayMask" parent="." unique_id=1050133946 instance=ExtResource("18_2ddkf")]
+position = Vector2(1247, 100)
+scale = Vector2(0.25, 0.25)
+NewMask = 3
 
 [editable path="Puzzle1"]
