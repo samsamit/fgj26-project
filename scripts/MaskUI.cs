@@ -1,13 +1,14 @@
 using Godot;
-using System;
 using System.Collections.Generic;
 
-public partial class MaskUI : HBoxContainer
+public partial class MaskUI : VBoxContainer
 {
 	private TextureButton BasicMask;
 	private TextureButton FlashliteMask;
 	private TextureButton StrengthMask;
 	private TextureButton XRayMask;
+	private Control PowerMinigame;
+	private ProgressBar MaskPower;
 
 	// Visual styling for selection state
 	private static readonly Color SelectedColor = new Color(1f, 1f, 1f, 1f);      // Full brightness
@@ -17,10 +18,12 @@ public partial class MaskUI : HBoxContainer
 
 	public override void _Ready()
 	{
-		BasicMask = GetNode<TextureButton>("Basic");
-		FlashliteMask = GetNode<TextureButton>("Flashlite");
-		StrengthMask = GetNode<TextureButton>("Strength");
-		XRayMask = GetNode<TextureButton>("XRay");
+		BasicMask = (TextureButton)GetNode("./MaskContainer/Basic");
+		FlashliteMask = (TextureButton)GetNode("./MaskContainer/Flashlite");
+		StrengthMask = (TextureButton)GetNode("./MaskContainer/Strength");
+		XRayMask = (TextureButton)GetNode("./MaskContainer/XRay");
+		PowerMinigame = (Control)GetNode("./PowerMiniGame");
+		MaskPower = (ProgressBar)GetNode("./MaskPower");
 
 		// Connect button signals programmatically to ensure they work
 		BasicMask.Pressed += OnClickBasicMask;
@@ -29,17 +32,17 @@ public partial class MaskUI : HBoxContainer
 		XRayMask.Pressed += OnClickXRay;
 
 		// Set mouse filter to Stop to prevent click-through to game objects
-		BasicMask.MouseFilter = Control.MouseFilterEnum.Stop;
-		FlashliteMask.MouseFilter = Control.MouseFilterEnum.Stop;
-		StrengthMask.MouseFilter = Control.MouseFilterEnum.Stop;
-		XRayMask.MouseFilter = Control.MouseFilterEnum.Stop;
+		BasicMask.MouseFilter = MouseFilterEnum.Stop;
+		FlashliteMask.MouseFilter = MouseFilterEnum.Stop;
+		StrengthMask.MouseFilter = MouseFilterEnum.Stop;
+		XRayMask.MouseFilter = MouseFilterEnum.Stop;
 
 		GlobalStateManager.Instance.AvailableMasks.RegisterObserver(
-			masks => UpdateAvailableMasks(masks));
-
-		// Register observer for current mask selection
-		GlobalStateManager.Instance.CurrentMask.RegisterObserver(
-			mask => UpdateSelectedMask(mask));
+			UpdateAvailableMasks);
+		GlobalStateManager.Instance.MaskPower.RegisterObserver(
+			UpdateMaskPower);
+		GlobalStateManager.Instance.CurrentMask.RegisterObserver(SetMask);
+		SetMask(GlobalStateManager.Instance.CurrentMask.Get());
 	}
 
 	public override void _ExitTree()
@@ -74,20 +77,40 @@ public partial class MaskUI : HBoxContainer
 				case MaskEnum.XRay:
 					XRayMask.Visible = true;
 					break;
+				default:
+					break;
 			}
 		}
 
 		// Refresh selection styling after visibility changes
-		UpdateSelectedMask(GlobalStateManager.Instance.CurrentMask.Get());
+		SetMask(GlobalStateManager.Instance.CurrentMask.Get());
 	}
 
-	private void UpdateSelectedMask(MaskEnum selectedMask)
+	public void SetMask(MaskEnum mask)
 	{
+		if (mask == MaskEnum.Strength)
+		{
+			PowerMinigame.Visible = true;
+			PowerMinigame.ProcessMode = ProcessModeEnum.Always;
+			MaskPower.Visible = true;
+		}
+		else
+		{
+			PowerMinigame.Visible = false;
+			PowerMinigame.ProcessMode = ProcessModeEnum.Disabled;
+			foreach (var child in PowerMinigame.GetChildren())
+			{
+				PowerMinigame.RemoveChild(child);
+				child.QueueFree();
+			}
+			MaskPower.Visible = false;
+		}
+
 		// Apply visual styling to each button based on selection state
-		SetButtonSelectionState(BasicMask, selectedMask == MaskEnum.Basic);
-		SetButtonSelectionState(FlashliteMask, selectedMask == MaskEnum.Flashlite);
-		SetButtonSelectionState(StrengthMask, selectedMask == MaskEnum.Strength);
-		SetButtonSelectionState(XRayMask, selectedMask == MaskEnum.XRay);
+		SetButtonSelectionState(BasicMask, mask == MaskEnum.Basic);
+		SetButtonSelectionState(FlashliteMask, mask == MaskEnum.Flashlite);
+		SetButtonSelectionState(StrengthMask, mask == MaskEnum.Strength);
+		SetButtonSelectionState(XRayMask, mask == MaskEnum.XRay);
 	}
 
 	private void SetButtonSelectionState(TextureButton button, bool isSelected)
@@ -104,22 +127,27 @@ public partial class MaskUI : HBoxContainer
 		}
 	}
 
-	private void OnClickBasicMask()
+	private void UpdateMaskPower(float maskPower)
+	{
+		MaskPower.Value = maskPower;
+	}
+
+	public void OnClickBasicMask()
 	{
 		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Basic);
 	}
 
-	private void OnClickFlashlite()
+	public void OnClickFlashlite()
 	{
 		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Flashlite);
 	}
 
-	private void OnClickStrength()
+	public void OnClickStrength()
 	{
 		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Strength);
 	}
 
-	private void OnClickXRay()
+	public void OnClickXRay()
 	{
 		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.XRay);
 	}
