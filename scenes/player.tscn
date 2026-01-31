@@ -8,7 +8,6 @@
 
 [node name="Player" type="CharacterBody2D" unique_id=380924559]
 script = ExtResource("1_g2els")
-Speed = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1525898870]
 scale = Vector2(0.165, 0.165)

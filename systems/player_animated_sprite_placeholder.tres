@@ -1,41 +1,41 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://5qeg6mm1srtd"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://b1hvr42uwvm6p"]
 
-[ext_resource type="Texture2D" uid="uid://csvv12vem6nqp" path="res://assets/placeholder/f0419ba3919e0de6fe6fa93e4aafce5f-1168386543.png" id="1_ff1ws"]
+[ext_resource type="Texture2D" uid="uid://csvv12vem6nqp" path="res://assets/placeholder/f0419ba3919e0de6fe6fa93e4aafce5f-1168386543.png" id="1_jdvvv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mkx2n"]
-atlas = ExtResource("1_ff1ws")
+atlas = ExtResource("1_jdvvv")
 region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iq2h3"]
-atlas = ExtResource("1_ff1ws")
+atlas = ExtResource("1_jdvvv")
 region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q37nx"]
-atlas = ExtResource("1_ff1ws")
+atlas = ExtResource("1_jdvvv")
 region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ac6gj"]
-atlas = ExtResource("1_ff1ws")
+atlas = ExtResource("1_jdvvv")
 region = Rect2(200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jcy0t"]
-atlas = ExtResource("1_ff1ws")
+atlas = ExtResource("1_jdvvv")
 region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdwva"]
-atlas = ExtResource("1_ff1ws")
+atlas = ExtResource("1_jdvvv")
 region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gbiy"]
-atlas = ExtResource("1_ff1ws")
+atlas = ExtResource("1_jdvvv")
 region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b5drk"]
-atlas = ExtResource("1_ff1ws")
+atlas = ExtResource("1_jdvvv")
 region = Rect2(200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p0rju"]
-atlas = ExtResource("1_ff1ws")
+atlas = ExtResource("1_jdvvv")
 region = Rect2(300, 0, 100, 100)
 
 [resource]
@@ -45,7 +45,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_mkx2n")
 }],
 "loop": true,
-"name": &"player_idle_placeholder",
+"name": &"Idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -62,7 +62,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_jcy0t")
 }],
 "loop": true,
-"name": &"player_run_placeholder",
+"name": &"Run",
 "speed": 7.0
 }, {
 "frames": [{
@@ -79,6 +79,6 @@ animations = [{
 "texture": SubResource("AtlasTexture_p0rju")
 }],
 "loop": true,
-"name": &"player_walk_placeholder",
+"name": &"Walk",
 "speed": 4.0
 }]

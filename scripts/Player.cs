@@ -4,6 +4,7 @@ using Godot;
 public partial class Player : CharacterBody2D
 {
 	[Export] public float Speed = 50.0f;
+	[Export] SpriteFrames spriteFrames;
 
 	private const string MoveRight = "move_right";
 	private const string MoveLeft = "move_left";
@@ -17,6 +18,7 @@ public partial class Player : CharacterBody2D
 	public override void _Ready()
 	{
 		GD.Print("Player script is active!");
+		this.SetAnimation(AnimationEnum.Idle);
 		_stateManager = GetNode<GlobalStateManager>("/root/World");
 	}
 
@@ -39,14 +41,14 @@ public partial class Player : CharacterBody2D
 		if (!_walkingSFXplayer.Playing && velocityNormalizedCombined > 0)
 		{
 			_walkingSFXplayer.Play();
-			GD.Print("Audio Started");
+			//GD.Print("Audio Started");
 
 		}
 		else if (_walkingSFXplayer.Playing && velocityNormalizedCombined == 0)
 		{
 			_walkingSFXplayer.Stop();
 			ResetAudioParams();
-			GD.Print("Audio Stopped");
+			//GD.Print("Audio Stopped");
 		}
 
 		if (velocityNormalizedCombined > 0)
@@ -96,14 +98,16 @@ public partial class Player : CharacterBody2D
 		_frameCounter = 0;
 	}
 
-	private void SetAnimation(string animationName)
+	private void SetAnimation(AnimationEnum animationEnum)
 	{
 		// TODO:
 		// Add animation controller functions to match what animation should play. If there is delay
 		// this function would return late, where it should be handled here. 
 		// For example, "Attack", deal damage after animation finished.
 		// Can also be handled with Godot inbuilt signals.
-
-		throw new NotImplementedException();
+		var animationController = GetNode<AnimationController>("AnimationController");
+		animationController.InitiateSpriteFrames(spriteFrames);
+		animationController.ChangeAnimation(animationEnum);
+		
 	}
 }
