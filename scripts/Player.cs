@@ -41,14 +41,14 @@ public partial class Player : CharacterBody2D
 		if (!_walkingSFXplayer.Playing && velocityNormalizedCombined > 0)
 		{
 			_walkingSFXplayer.Play();
-			GD.Print("Audio Started");
+			//GD.Print("Audio Started");
 
 		}
 		else if (_walkingSFXplayer.Playing && velocityNormalizedCombined == 0)
 		{
 			_walkingSFXplayer.Stop();
 			ResetAudioParams();
-			GD.Print("Audio Stopped");
+			//GD.Print("Audio Stopped");
 		}
 
 		if (velocityNormalizedCombined > 0)
