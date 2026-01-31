@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cnr555d4qafj0"]
+
+[ext_resource type="Script" uid="uid://dnat56qivx8fb" path="res://scripts/PickableMask.cs" id="1_854k4"]
+[ext_resource type="Texture2D" uid="uid://dllfupih74f4p" path="res://icon.svg" id="2_ynkg0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmccl"]
+
+[node name="PickableMask" type="Node2D" unique_id=955841723]
+script = ExtResource("1_854k4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1818326259]
+texture = ExtResource("2_ynkg0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2037840553]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=555585525]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_nmccl")
+
+[connection signal="body_entered" from="Area2D" to="." method="OnAreaEntered"]

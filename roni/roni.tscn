@@ -1,16 +1,14 @@
 [gd_scene format=3 uid="uid://dtn5cg0wqcy5w"]
 
-[ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="1_o05lr"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="1_tpiab"]
 [ext_resource type="Script" uid="uid://bafry42335jrg" path="res://scripts/DarknessManager.cs" id="2_6kbre"]
-[ext_resource type="PackedScene" path="res://scenes/Goal.tscn" id="3_vr5k8"]
+[ext_resource type="PackedScene" uid="uid://b51pun1aqo473" path="res://scenes/Goal.tscn" id="3_vr5k8"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="4_2ieg0"]
+[ext_resource type="PackedScene" uid="uid://cnr555d4qafj0" path="res://scenes/pickableMask.tscn" id="5_6kbre"]
 [ext_resource type="PackedScene" uid="uid://bkyppfbrkinr2" path="res://scenes/camera.tscn" id="6_pos16"]
-[ext_resource type="PackedScene" uid="uid://bhjqnnj8hi3sk" path="res://scenes/static_box.tscn" id="7_gequu"]
+[ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="7_gequu"]
 
-[node name="Roni" type="Node" unique_id=1707730628]
-
-[node name="World" parent="." unique_id=577538569 instance=ExtResource("1_o05lr")]
+[node name="root" type="Node" unique_id=1707730628]
 
 [node name="Darkness Manager" type="Node" parent="." unique_id=1643244309]
 script = ExtResource("2_6kbre")
@@ -27,10 +25,14 @@ script = null
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("1_tpiab")]
 z_index = 101
 position = Vector2(353, 232)
-Speed = 50.0
+
+[node name="PickableMask" parent="." unique_id=955841723 instance=ExtResource("5_6kbre")]
+position = Vector2(334, 191)
+scale = Vector2(0.3, 0.3)
+NewMask = 3
 
 [node name="Mask" parent="." unique_id=1770994779 instance=ExtResource("4_2ieg0")]
-position = Vector2(669, 195)
+position = Vector2(340, 221)
 
 [node name="LightPuzzle" type="Node" parent="." unique_id=1129055640]
 
