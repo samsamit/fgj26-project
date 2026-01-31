@@ -5,6 +5,7 @@ public partial class Player : CharacterBody2D
 {
 	[Export] public float Speed = 50.0f;
 	[Export] SpriteFrames spriteFrames;
+	[Export] public float PushingPower = 100.0f;
 
 	private const string MoveRight = "move_right";
 	private const string MoveLeft = "move_left";
@@ -20,6 +21,7 @@ public partial class Player : CharacterBody2D
 		GD.Print("Player script is active!");
 		this.SetAnimation(AnimationEnum.Idle);
 		_stateManager = GetNode<GlobalStateManager>("/root/World");
+	    _walkingSFXplayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_Walking");
 	}
 
 
@@ -27,7 +29,6 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		_walkingSFXplayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_Walking");
 		Vector2 direction = Vector2.Zero;
 		direction.X = Input.GetActionStrength(MoveRight)
 					  - Input.GetActionStrength(MoveLeft);
@@ -70,7 +71,7 @@ public partial class Player : CharacterBody2D
 				var collider = collision.GetCollider();
 				if (collider is RigidBody2D rigidBody2D)
 				{
-					rigidBody2D.ApplyForce(collision.GetNormal() * -10);
+					rigidBody2D.ApplyForce(collision.GetNormal() * -PushingPower);
 				}
 			}
 		}
@@ -103,11 +104,11 @@ public partial class Player : CharacterBody2D
 		// TODO:
 		// Add animation controller functions to match what animation should play. If there is delay
 		// this function would return late, where it should be handled here. 
-		// For example, "Attack", deal damage after animation finished.
+		// For example, "ata", deal damage after animation finished.
 		// Can also be handled with Godot inbuilt signals.
-		var animationController = GetNode<AnimationController>("AnimationController");
-		animationController.InitiateSpriteFrames(spriteFrames);
-		animationController.ChangeAnimation(animationEnum);
+		// var animationController = GetNode<AnimationController>("AnimationController");
+		// animationController.InitiateSpriteFrames(spriteFrames);
+		// animationController.ChangeAnimation(animationEnum);
 		
 	}
 }

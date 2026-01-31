@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://vrirrln0ydm6"]
+[gd_scene format=3 uid="uid://sdnhw3s62pbc"]
 
 [ext_resource type="Texture2D" uid="uid://dwcfkg3ymc550" path="res://assets/liikuteltavalaatikko.png" id="1_psasx"]
 
@@ -7,6 +7,8 @@ size = Vector2(32, 32)
 
 [node name="MovableBox" type="RigidBody2D" unique_id=1071985089]
 gravity_scale = 0.0
+lock_rotation = true
+linear_damp = 5.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1418874018]
 texture = ExtResource("1_psasx")
