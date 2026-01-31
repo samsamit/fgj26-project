@@ -29,15 +29,15 @@ public abstract partial class Puzzle : Node
 		if (Conditions == null) return;
 		foreach (var condition in Conditions)
 		{
-            if (condition == null) continue;
+			if (condition == null) continue;
 			if (!condition.IsCompleted) return;
 		}
 		GD.Print($"puzzle {puzzleId} all conditions completed");
 		GD.Print($"puzzle {puzzleId} completed");
-        GlobalStateManager.Instance.EmitSignal(GlobalStateManager.SignalName.PuzzleCompleted, puzzleId);
+		GlobalStateManager.Instance.EmitSignal(GlobalStateManager.SignalName.PuzzleCompleted, puzzleId);
 	}
 
-    [Export] public CompletionCondition[] Conditions;
+	[Export] public CompletionCondition[] Conditions;
 
 
 
