@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bk7d6j88oh40d" path="res://scripts/GlobalStateManager.cs" id="1_5r7tr"]
 [ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="2_qhkdm"]
-[ext_resource type="Texture2D" uid="uid://cbdlt1fn6sce5" path="res://assets/Juuson Mask Jutut/Circle.png" id="3_c7ntc"]
+[ext_resource type="Texture2D" uid="uid://cd1m7hxv4cydc" path="res://maskTextures/triangleTexture.svg" id="3_0v7be"]
 [ext_resource type="Script" uid="uid://dckuoy7shumxo" path="res://assets/Juuson Mask Jutut/MineMask.cs" id="4_0fufx"]
 [ext_resource type="Material" uid="uid://b0qw3cofrat17" path="res://assets/Juuson Mask Jutut/BoxMaskMaterial.tres" id="5_y8uk1"]
 [ext_resource type="PackedScene" uid="uid://bfq8p812a71jn" path="res://assets/Juuson Mask Jutut/Switch.tscn" id="6_0v7be"]
@@ -25,70 +25,75 @@ modulate = Color(1, 0.895, 0.7, 0.23137255)
 visibility_layer = 2
 position = Vector2(472, 140)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_c7ntc")
+texture = ExtResource("3_0v7be")
 script = ExtResource("4_0fufx")
 
 [node name="Bomb 1" parent="." unique_id=324300176 instance=ExtResource("7_y8uk1")]
-position = Vector2(1051, -152)
+position = Vector2(1048, -163)
 
 [node name="Bomb 2" parent="." unique_id=89579428 instance=ExtResource("7_y8uk1")]
-position = Vector2(1052, -238)
+position = Vector2(1049, -249)
 
 [node name="Bomb 3" parent="." unique_id=216607634 instance=ExtResource("7_y8uk1")]
-position = Vector2(1051, -334)
+position = Vector2(1048, -345)
 
 [node name="Bomb 4" parent="." unique_id=1936141828 instance=ExtResource("7_y8uk1")]
-position = Vector2(1050, -420)
+position = Vector2(1047, -431)
 
 [node name="Bomb 5" parent="." unique_id=1580121550 instance=ExtResource("7_y8uk1")]
-position = Vector2(1143, -418)
+position = Vector2(1140, -429)
 
-[node name="Switch 1" parent="." unique_id=397120877 instance=ExtResource("6_0v7be")]
-position = Vector2(1295, -309)
+[node name="Switch 1" parent="." unique_id=397120877 node_paths=PackedStringArray("bomb") instance=ExtResource("6_0v7be")]
+position = Vector2(1292, -320)
+bomb = NodePath("../Bomb 1")
 
-[node name="Switch 2" parent="." unique_id=2100569233 instance=ExtResource("6_0v7be")]
-position = Vector2(1353, -200)
+[node name="Switch 2" parent="." unique_id=2100569233 node_paths=PackedStringArray("bomb") instance=ExtResource("6_0v7be")]
+position = Vector2(1350, -211)
+bomb = NodePath("../Bomb 2")
 
-[node name="Switch 3" parent="." unique_id=11496633 instance=ExtResource("6_0v7be")]
-position = Vector2(1353, -268)
+[node name="Switch 3" parent="." unique_id=11496633 node_paths=PackedStringArray("bomb") instance=ExtResource("6_0v7be")]
+position = Vector2(1350, -279)
+bomb = NodePath("../Bomb 3")
 
-[node name="Switch 4" parent="." unique_id=1380283364 instance=ExtResource("6_0v7be")]
-position = Vector2(1238, -268)
+[node name="Switch 4" parent="." unique_id=1380283364 node_paths=PackedStringArray("bomb") instance=ExtResource("6_0v7be")]
+position = Vector2(1235, -279)
+bomb = NodePath("../Bomb 4")
 
-[node name="Switch 5" parent="." unique_id=706598399 instance=ExtResource("6_0v7be")]
-position = Vector2(1300, -157)
+[node name="Switch 5" parent="." unique_id=706598399 node_paths=PackedStringArray("bomb") instance=ExtResource("6_0v7be")]
+position = Vector2(1297, -168)
+bomb = NodePath("../Bomb 5")
 
 [node name="Line 1" type="Line2D" parent="." unique_id=1712511885]
 material = ExtResource("5_y8uk1")
-position = Vector2(311, -24)
+position = Vector2(308, -35)
 points = PackedVector2Array(996, -273, 1125, -291, 1022, -30, 854, -280, 851, -164, 752, -136)
 width = 5.0
 texture = ExtResource("7_c7ntc")
 
 [node name="Line 2" type="Line2D" parent="." unique_id=803223544]
 material = ExtResource("5_y8uk1")
-position = Vector2(312, -110)
+position = Vector2(309, -121)
 points = PackedVector2Array(1053, -77, 1107.9839, -72.09186, 1090, -233, 947, -392, 626, -393, 726, -136)
 width = 5.0
 texture = ExtResource("7_c7ntc")
 
 [node name="Line 3" type="Line2D" parent="." unique_id=1091459920]
 material = ExtResource("5_y8uk1")
-position = Vector2(311, -206)
+position = Vector2(308, -217)
 points = PackedVector2Array(1032, -49, 880, 137, 634, 125, 636, -84, 728, -133)
 width = 5.0
 texture = ExtResource("7_c7ntc")
 
 [node name="Line 4" type="Line2D" parent="." unique_id=1946038753]
 material = ExtResource("5_y8uk1")
-position = Vector2(310, -292)
-points = PackedVector2Array(935, 9, 950, -64, 996, -100, 816, -262, 745, -140)
+position = Vector2(307, -303)
+points = PackedVector2Array(941, 36, 950, -64, 996, -100, 816, -262, 745, -140)
 width = 5.0
 texture = ExtResource("7_c7ntc")
 
 [node name="Line 5" type="Line2D" parent="." unique_id=1715733268]
 material = ExtResource("5_y8uk1")
-position = Vector2(403, -290)
+position = Vector2(400, -301)
 points = PackedVector2Array(887, 146, 741, 151, 715, -52, 825, -73, 754, -118)
 width = 5.0
 texture = ExtResource("7_c7ntc")
@@ -114,7 +119,7 @@ render_target_update_mode = 4
 [node name="Node2D" type="Node2D" parent="MaskSystem/SubViewport" unique_id=719553138]
 
 [node name="Mask Circle" type="Sprite2D" parent="MaskSystem/SubViewport/Node2D" unique_id=751409629]
-texture = ExtResource("3_c7ntc")
+texture = ExtResource("3_0v7be")
 
 [node name="Mask" parent="." unique_id=1770994779 instance=ExtResource("8_y8uk1")]
 position = Vector2(1040, 40)
