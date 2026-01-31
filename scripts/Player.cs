@@ -5,8 +5,11 @@ using Godot;
 public partial class Player : CharacterBody2D
 {
 	[Export] public float Speed = 50.0f;
-	[Export] SpriteFrames spriteFrames;
+	[Export] SpriteFrames SpriteFrames;
 	[Export] public float PushingPower = 100.0f;
+	[Export] public float CharacterSpriteScaleMultiplier = 0.125f;
+	[Export] public float CharacterRotationSpeed = 10.0f;
+
 	private const string MoveRight = "move_right";
 	private const string MoveLeft = "move_left";
 	private const string MoveBack = "move_back";
@@ -50,6 +53,7 @@ public partial class Player : CharacterBody2D
 
 		if (velocityNormalizedCombined > 0)
 		{
+			_animationController.HandleRotation(direction, delta, CharacterRotationSpeed);
 			if (!_walkingSFXplayer.Playing)
 			{
 				_walkingSFXplayer.Play();
@@ -175,7 +179,7 @@ public partial class Player : CharacterBody2D
 	private void InitializeAnimation(AnimationEnum animationEnum)
 	{
 		_animationController = GetNode<AnimationController>("AnimationController");
-		_animationController.InitiateSpriteFrames(spriteFrames);
+		_animationController.InitiateSpriteFrames(SpriteFrames, CharacterSpriteScaleMultiplier);
 		_animationController.ChangeAnimation(animationEnum);
 		_animationController.GlobalRotation = GlobalRotation;
 	}

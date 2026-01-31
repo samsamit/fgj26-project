@@ -13,9 +13,8 @@ script = ExtResource("1_54rco")
 
 [node name="World" parent="." unique_id=577538569 instance=ExtResource("1_tt3em")]
 
-[node name="Darkness Manager" type="Node" parent="." unique_id=1658980287 node_paths=PackedStringArray("darknessOverlay")]
+[node name="Darkness Manager" type="Node" parent="." unique_id=1658980287]
 script = ExtResource("1_gp54n")
-darknessOverlay = NodePath("")
 
 [node name="Goal" parent="." unique_id=1034903633 instance=ExtResource("4_tt3em")]
 position = Vector2(234, 73)

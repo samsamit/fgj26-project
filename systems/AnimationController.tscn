@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://mq5e5ahpk48l"]
 
 [ext_resource type="Script" uid="uid://bnsc2mfmpp2ni" path="res://systems/AnimationController.cs" id="1_fdwva"]
-[ext_resource type="SpriteFrames" uid="uid://tni847h81xid" path="res://assets/resources/player_sprite_frames.tres" id="2_fdwva"]
+[ext_resource type="SpriteFrames" uid="uid://ckedstqd2egp7" path="res://assets/resources/player_animated_sprite_placeholder.tres" id="2_fdwva"]
 
 [node name="AnimationController" type="Node2D" unique_id=1487013025]
 script = ExtResource("1_fdwva")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=328074781]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1510825577]
+rotation = 3.1415927
 sprite_frames = ExtResource("2_fdwva")
 animation = &"Idle"
