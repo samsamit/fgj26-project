@@ -23,7 +23,7 @@ texture = ExtResource("2_uscli")
 texture_scale = 0.25
 
 [node name="MaskBackground" type="CanvasModulate" parent="." unique_id=405735703]
-color = Color(0.03137255, 0.03137255, 0.03137255, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2099669510]
 collision_layer = 2
