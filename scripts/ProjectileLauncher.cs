@@ -9,7 +9,6 @@ public partial class ProjectileLauncher : Node2D
     [Export] public Node2D Turret;
     [Export] public PackedScene ProjectileBase;
     [Export] public double ProjectileSpeed;
-    [Export] public double ProjectileLifeTime;
     [Export] public double FireRate;
 
     private double _nextFire;
@@ -17,7 +16,7 @@ public partial class ProjectileLauncher : Node2D
     public override void _Ready()
     {
         Turret.Rotation = Angle;
-        _nextFire = new Random().NextDouble() * FireRate;
+        _nextFire = new Random().NextDouble() * 1 / FireRate;
     }
 
     public override void _PhysicsProcess(double delta)
@@ -35,9 +34,9 @@ public partial class ProjectileLauncher : Node2D
     {
         var projectile = (Projectile)ProjectileBase.Instantiate();
         projectile.Rotation = Angle;
-        projectile.Position += new Vector2(16, 0).Rotated(Angle);
+        projectile.Position += new Vector2(20, 0).Rotated(Angle);
         projectile.SpeedComponent.MovementSpeed = ProjectileSpeed;
         AddChild(projectile);
-        _nextFire += FireRate;
+        _nextFire += 1 / FireRate;
     }
 }
