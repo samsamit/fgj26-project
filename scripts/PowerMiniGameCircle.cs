@@ -28,6 +28,11 @@ public partial class PowerMiniGameCircle : TextureButton
 		TooLateCircle = (TextureRect)GetNode("./TooLateCircle");
 		GameCircle = (TextureRect)GetNode("./GameCircle");
 
+		// Ensure child TextureRects don't intercept mouse events
+		GoodCircle.MouseFilter = MouseFilterEnum.Ignore;
+		TooLateCircle.MouseFilter = MouseFilterEnum.Ignore;
+		GameCircle.MouseFilter = MouseFilterEnum.Ignore;
+
 		TooLateTime = GetRandomNumber(BeforeTimeMin, BeforeTimeMax);
 		AfterTime = GetRandomNumber(TooLateTime + LateDeviationMin, TooLateTime + LateDeviationMax);
 
@@ -52,6 +57,26 @@ public partial class PowerMiniGameCircle : TextureButton
 	public float GetRandomNumber(float minimum, float maximum)
 	{
 		return (float)Random.NextDouble() * (maximum - minimum) + minimum;
+	}
+
+	public override void _Input(InputEvent @event)
+	{
+		if (@event is InputEventMouseButton mouseButton && 
+			mouseButton.ButtonIndex == MouseButton.Left && 
+			mouseButton.Pressed)
+		{
+			// Check if click is within the GameCircle's bounds (the shrinking circle)
+			var circleCenter = GlobalPosition + GameCircle.Position + new Vector2(32, 32);
+			var circleRadius = 32 * GameCircle.Scale.X;
+			var mousePos = GetGlobalMousePosition();
+			var distance = circleCenter.DistanceTo(mousePos);
+			
+			if (distance <= circleRadius)
+			{
+				GetViewport().SetInputAsHandled(); // Prevent other nodes from receiving this event
+				OnClick();
+			}
+		}
 	}
 
 	public void OnClick()

@@ -121,6 +121,7 @@ public partial class Mask : Node2D
 			MaskEnum.Basic => Square,
 			MaskEnum.XRay => Star,
 			MaskEnum.Strength => Triangle,
+			MaskEnum.Slow => Round,
 			_ => Round,
 		};
 
@@ -138,18 +139,18 @@ public partial class Mask : Node2D
 		switch (collisionShape.Shape)
 		{
 			case CircleShape2D circle:
-				circle.Radius = maskSize / 2f;
+				circle.Radius = Light.Texture.GetSize().X * Light.TextureScale / 2f;
 				break;
 
 			case RectangleShape2D rect:
-				rect.Size = new Vector2(maskSize, maskSize);
+				rect.Size = Light.Texture.GetSize() * Light.TextureScale;
 				break;
 
 			case ConvexPolygonShape2D polygon:
 				Vector2[] points = polygon.Points;
 				for (int i = 0; i < points.Length; i++)
 				{
-					points[i] = points[i].Normalized() * (maskSize / 2f);
+					points[i] = points[i].Normalized() * (Light.Texture.GetSize().X * Light.TextureScale / 2f);
 				}
 				polygon.Points = points;
 				break;

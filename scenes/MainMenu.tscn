@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dl8jp2hnb81c0"]
+
+[ext_resource type="Script" uid="uid://ojhk13psdxpq" path="res://scripts/MainMenuScript.cs" id="1_0ykhv"]
+[ext_resource type="Texture2D" uid="uid://bxcjmulwhj3bl" path="res://assets/TitleScreen_Base.png" id="1_yqorp"]
+
+[node name="MainMenu" type="Control" unique_id=2065779490]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ykhv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=91703864]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yqorp")
+
+[node name="ButtonContainer" type="VBoxContainer" parent="." unique_id=1282015204]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = -5.0
+offset_right = 442.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonStart" type="Button" parent="ButtonContainer" unique_id=2141331897]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Start Game"
+
+[node name="ButtonOptions" type="Button" parent="ButtonContainer" unique_id=1250001927]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Options"
+
+[node name="ButtonCredits" type="Button" parent="ButtonContainer" unique_id=908497756]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Credits"
+
+[node name="ButtonExit" type="Button" parent="ButtonContainer" unique_id=94464644]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Exit"
+
+[connection signal="pressed" from="ButtonContainer/ButtonStart" to="." method="OnButtonStartPressed"]
+[connection signal="pressed" from="ButtonContainer/ButtonOptions" to="." method="OnButtonOptionsPressed"]
+[connection signal="pressed" from="ButtonContainer/ButtonCredits" to="." method="OnButtonCreditsPressed"]
+[connection signal="pressed" from="ButtonContainer/ButtonExit" to="." method="OnButtonExitPressed"]

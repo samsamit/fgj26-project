@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://3djuvdff2kw7"]
+[gd_scene format=3 uid="uid://cnr555d4qafj0"]
 
 [ext_resource type="Script" path="res://scripts/PickableMask.cs" id="1_854k4"]
 [ext_resource type="Texture2D" uid="uid://b8j14yqgv6dv5" path="res://assets/perusmaskielieimaskiaUI.png" id="2_nmccl"]
