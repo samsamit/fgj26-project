@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bfq8p812a71jn" path="res://assets/Juuson Mask Jutut/Switch.tscn" id="6_0v7be"]
 [ext_resource type="PackedScene" uid="uid://dy8cye72lk8wq" path="res://scenes/camera.tscn" id="7_0fufx"]
 [ext_resource type="Script" uid="uid://vshet36c6n2y" path="res://assets/Juuson Mask Jutut/MaskSystem.cs" id="7_byq77"]
-[ext_resource type="PackedScene" uid="uid://bb3d8ms8wak8w" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="7_y8uk1"]
+[ext_resource type="PackedScene" uid="uid://cbx8hncv8wpap" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="7_y8uk1"]
 [ext_resource type="Texture2D" uid="uid://dol7vajil2t1k" path="res://assets/rakennusseinät.png" id="8_0v7be"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="8_y8uk1"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="9_0v7be"]

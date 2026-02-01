@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c3sx3i1rpjkul"]
+
+[ext_resource type="Script" uid="uid://cvwvehiwgr2te" path="res://scripts/SceneTransition.cs" id="1_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trigger"]
+size = Vector2(64, 64)
+
+[node name="SceneTransition" type="Area2D" unique_id=1285050068]
+script = ExtResource("1_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746666923]
+shape = SubResource("RectangleShape2D_trigger")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1984897070]
+offset_right = 40.0
+offset_bottom = 40.0
+text = "END"
