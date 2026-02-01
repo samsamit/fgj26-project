@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://b3s6runcdg2t3"]
-
-[ext_resource type="Script" path="res://scripts/GlobalCoordinate.cs" id="1_cw1bj"]
-
-[node name="GlobalCoordinate" type="Node2D" unique_id=97524353 groups=["spawn_points"]]
-script = ExtResource("1_cw1bj")

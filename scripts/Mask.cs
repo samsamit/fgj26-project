@@ -7,7 +7,7 @@ public partial class Mask : Node2D
 	/// Speed at which the mask moves towards the mouse position (pixels per second).
 	/// </summary>
 	[Export]
-	public float FollowSpeed { get; set; } = 100.0f;
+	public float FollowSpeed { get; set; } = 125.0f;
 
 	private GlobalStateManager _stateManager;
 
@@ -40,20 +40,20 @@ public partial class Mask : Node2D
 
 		_MaskMovingPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_MaskMoving");
 		_MaskSwitchPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_MaskSwitch");
-		GlobalStateManager.Instance.CurrentMask.RegisterObserver(
-			newMask => SetMask(newMask, 0.2f, new Color("white")));
+		GlobalStateManager.Instance.CurrentMask.RegisterObserver(SetMask);
 	}
 
 	public override void _Process(double delta)
 	{
 		Vector2 mousePosition = GetGlobalMousePosition();
 		bool mousePressed = Input.IsMouseButtonPressed(MouseButton.Left);
+		var currentMask = GlobalStateManager.Instance.CurrentMask.Get();
 
 		// Detect mouse button press start
 		if (mousePressed && !_wasMousePressed)
 		{
 			GD.Print("mousePressed && !_wasMousePressed");
-			if (!_MaskMovingPlayer.Playing)
+			if (!_MaskMovingPlayer.Playing && currentMask != MaskEnum.Strength)
 			{
 				GD.Print("!_MaskMovingPlayer.Playing");
 
@@ -82,10 +82,14 @@ public partial class Mask : Node2D
 		_wasMousePressed = mousePressed;
 
 		// Only move mask if mouse is pressed and click didn't start on UI
-		if (mousePressed && !_clickStartedOnUi)
+		if (mousePressed && !_clickStartedOnUi && currentMask != MaskEnum.Strength)
 		{
 			GlobalPosition = GlobalPosition.MoveToward(mousePosition, FollowSpeed * (float)delta);
 			GlobalStateManager.Instance.MaskPosition = GlobalPosition;
+		}
+		else if (currentMask == MaskEnum.Strength)
+		{
+			GlobalPosition = GlobalStateManager.Instance.PlayerPosition;
 		}
 	}
 
@@ -107,23 +111,41 @@ public partial class Mask : Node2D
 		GD.Print("Body exited: " + body.Name);
 	}
 
-	public void SetMask(MaskEnum mask, float maskSize, Color maskColor)
+	public void SetMask(MaskEnum mask)
 	{
 		//Ekalla kiekalla ei toisteta ääniefektiä.
 		if (!AKUNPURKKA) AKUNPURKKA = true; else _MaskSwitchPlayer.Play();
 
-		GD.Print("MASK SET");
-		Light.TextureScale = maskSize;
-		Light.Color = maskColor;
-		Light.Texture = mask switch
+		Light.Visible = true;
+		switch (mask)
 		{
-			MaskEnum.Flashlite => Round,
-			MaskEnum.Basic => Square,
-			MaskEnum.XRay => Star,
-			MaskEnum.Strength => Triangle,
-			MaskEnum.Slow => Round,
-			_ => Round,
-		};
+			case MaskEnum.Flashlite:
+				Light.Texture = Round;
+				Light.Color = new Color("white");
+				Light.TextureScale = 0.4f;
+				break;
+			case MaskEnum.Basic:
+				Light.Texture = Square;
+				Light.Color = new Color("white");
+				Light.TextureScale = 0.5f;
+				break;
+			case MaskEnum.XRay:
+				Light.Visible = false;
+				break;
+			case MaskEnum.Strength:
+				Light.Visible = false;
+				break;
+			case MaskEnum.Slow:
+				Light.Texture = Round;
+				Light.Color = new Color("white");
+				Light.TextureScale = 0.5f;
+				break;
+			default:
+				Light.Texture = Round;
+				Light.Color = new Color("white");
+				Light.TextureScale = 0.5f;
+				break;
+		}
 
 		Background.Visible = mask == MaskEnum.Flashlite;
 		xRayMaskSprite.Visible = mask == MaskEnum.XRay;

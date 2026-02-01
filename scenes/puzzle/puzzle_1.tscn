@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bojdshqdxsu4v"]
 
 [ext_resource type="Script" uid="uid://bejw0xx3r05qa" path="res://puzzles/Puzzle1.cs" id="1_e1xx7"]
-[ext_resource type="PackedScene" uid="uid://c3knvd6urqxyg" path="res://scenes/CompletionConditions/AreaReached.tscn" id="3_e1xx7"]
+[ext_resource type="PackedScene" uid="uid://c3knvd6urqxyg" path="res://scenes/CompletionConditions/AreaReachedCondition.tscn" id="3_e1xx7"]
 [ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="3_njjdt"]
 
 [node name="Puzzle1" type="Node" unique_id=508225014 node_paths=PackedStringArray("Conditions")]

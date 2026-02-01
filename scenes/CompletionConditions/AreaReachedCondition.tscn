@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c3knvd6urqxyg"]
+
+[ext_resource type="Script" uid="uid://7fl0btid825i" path="res://scenes/CompletionConditions/AreaReachedCondition.cs" id="1_7pbjx"]
+[ext_resource type="PackedScene" uid="uid://b51pun1aqo473" path="res://scenes/Goal.tscn" id="2_ghcbe"]
+
+[node name="AreaReached" type="Node2D" unique_id=128534236 node_paths=PackedStringArray("goalArea")]
+script = ExtResource("1_7pbjx")
+goalArea = NodePath("Goal")
+
+[node name="Goal" parent="." unique_id=1034903633 instance=ExtResource("2_ghcbe")]

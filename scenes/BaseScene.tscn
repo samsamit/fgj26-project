@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dy8cye72lk8wq" path="res://scenes/camera.tscn" id="6_tt3em"]
 [ext_resource type="PackedScene" uid="uid://d2qod3f41ge1g" path="res://scenes/puzzle/puzzle_2.tscn" id="8_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://bojdshqdxsu4v" path="res://scenes/puzzle/puzzle_1.tscn" id="11_a63bb"]
-[ext_resource type="PackedScene" uid="uid://dlijf180fgwkb" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
+[ext_resource type="PackedScene" path="res://scenes/CheckpointManager.tscn" id="11_qsgjr"]
 [ext_resource type="PackedScene" uid="uid://bb3d8ms8wak8w" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="12_2ddkf"]
 [ext_resource type="AudioStream" uid="uid://dh4ioay57ssis" path="res://audio/music/FGJ26MainBGLoopTempMusic.ogg" id="13_rp473"]
 [ext_resource type="PackedScene" uid="uid://bfq8p812a71jn" path="res://assets/Juuson Mask Jutut/Switch.tscn" id="13_si2s2"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://dckuoy7shumxo" path="res://assets/Juuson Mask Jutut/MineMask.cs" id="18_50st4"]
 [ext_resource type="PackedScene" uid="uid://dt5ycbrcdyof0" path="res://scenes/projectile_launcher.tscn" id="19_ec51t"]
 [ext_resource type="Texture2D" uid="uid://bg4xop287f233" path="res://assets/perusmaskielieimaskia.png" id="19_si2s2"]
+[ext_resource type="PackedScene" path="res://scenes/Checkpoint.tscn" id="20_ec51t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec51t"]
 size = Vector2(64, 80)
@@ -32,14 +33,15 @@ Conditions = []
 
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("3_gp54n")]
 z_index = 101
-position = Vector2(-362, 522)
+position = Vector2(472, 148)
+Speed = 300.0
 
 [node name="Mask" parent="." unique_id=1868398740 node_paths=PackedStringArray("xRayMaskSprite") instance=ExtResource("6_3ubpw")]
-position = Vector2(-354, 528)
+position = Vector2(471, 154)
 xRayMaskSprite = NodePath("../Puzzle3/MaskSystem/SubViewport/Node2D/Mask Circle")
 
 [node name="Camera" parent="." unique_id=947783170 node_paths=PackedStringArray("MainPlayer", "MaskPlayer") instance=ExtResource("6_tt3em")]
-position = Vector2(-364, 541)
+position = Vector2(540, 133)
 zoom = Vector2(2, 2)
 MainPlayer = NodePath("../Player")
 MaskPlayer = NodePath("../Mask")
@@ -47,7 +49,7 @@ Speed = 50.0
 MaxZoom = 2.0
 ZoomSpeed = 0.0
 
-[node name="GlobalCoordinateManager" parent="." unique_id=1958662909 instance=ExtResource("11_qsgjr")]
+[node name="CheckpointManager" parent="." unique_id=1958662909 instance=ExtResource("11_qsgjr")]
 position = Vector2(-15, 9)
 
 [node name="Puzzle1" parent="." unique_id=508225014 node_paths=PackedStringArray("Conditions") instance=ExtResource("11_a63bb")]
@@ -56,8 +58,7 @@ Conditions = [NodePath("AreaReached")]
 [node name="AreaReached" parent="Puzzle1" index="20" unique_id=128534236]
 position = Vector2(1042, -29)
 
-[node name="Puzzle2" parent="." unique_id=664420405 node_paths=PackedStringArray("Conditions") instance=ExtResource("8_2ddkf")]
-Conditions = []
+[node name="Puzzle2" parent="." unique_id=664420405 instance=ExtResource("8_2ddkf")]
 
 [node name="Puzzle3" type="Node" parent="." unique_id=1826246720]
 
@@ -148,7 +149,7 @@ MaskCamera = NodePath("../../Camera")
 modulate = Color(1, 0.895, 0.7, 0)
 visibility_layer = 2
 position = Vector2(472, 140)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("17_vihhi")
 script = ExtResource("18_50st4")
 nodeToFollow = NodePath("../../../Mask")
@@ -161,6 +162,7 @@ render_target_update_mode = 4
 [node name="Node2D" type="Node2D" parent="Puzzle3/MaskSystem/SubViewport" unique_id=1925136823]
 
 [node name="Mask Circle" type="Sprite2D" parent="Puzzle3/MaskSystem/SubViewport/Node2D" unique_id=1816764381]
+scale = Vector2(2, 2)
 texture = ExtResource("17_vihhi")
 
 [node name="Area2D" type="Area2D" parent="Puzzle3" unique_id=1487203196]
@@ -192,6 +194,12 @@ position = Vector2(-487, 484)
 ProjectileSpeed = 100.0
 ProjectileLifeTime = 2.0
 FireRate = 1.0
+
+[node name="Checkpoint" parent="." unique_id=834512712 instance=ExtResource("20_ec51t")]
+position = Vector2(1041, -29)
+
+[node name="Checkpoint2" parent="." unique_id=2133986926 instance=ExtResource("20_ec51t")]
+position = Vector2(1263, 101)
 
 [editable path="Puzzle1"]
 [editable path="Puzzle2"]
