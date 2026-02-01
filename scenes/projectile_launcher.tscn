@@ -12,8 +12,7 @@ size = Vector2(32, 32)
 script = ExtResource("1_0nsru")
 Turret = NodePath("Turret")
 ProjectileBase = ExtResource("2_ip57c")
-ProjectileSpeed = 100.0
-FireRate = 1.0
+ProjectileSpeed = 1000.0
 
 [node name="BaseSprite" type="Sprite2D" parent="." unique_id=582157551]
 texture = ExtResource("2_0ffta")

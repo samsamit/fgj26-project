@@ -9,7 +9,7 @@ public partial class ProjectileLauncher : Node2D
     [Export] public Node2D Turret;
     [Export] public PackedScene ProjectileBase;
     [Export] public double ProjectileSpeed;
-    [Export] public double FireRate;
+    [Export] public double FireRate = 1;
 
     private double _nextFire;
 
