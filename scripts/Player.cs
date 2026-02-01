@@ -6,7 +6,7 @@ public partial class Player : CharacterBody2D
 {
 	[Export] public float Speed = 50.0f;
 	[Export] SpriteFrames SpriteFrames;
-	[Export] public float PushingPower = 100.0f;
+	[Export] public float PushingPower = 0.0f;
 	[Export] public float CharacterSpriteScaleMultiplier = 0.125f;
 	[Export] public float CharacterRotationSpeed = 10.0f;
 	[Export] public SpeedComponent SpeedComponent;
@@ -47,6 +47,12 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		PushingPower = 0.0f;
+		if (GlobalStateManager.Instance.CurrentMask.Get().Equals(MaskEnum.Strength))
+		{
+			PushingPower = GlobalStateManager.Instance.MaskPower.Get() * 100;
+		}
+		
 		Vector2 direction = Vector2.Zero;
 		if (canMove)
 		{

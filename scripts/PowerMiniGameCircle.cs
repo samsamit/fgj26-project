@@ -84,7 +84,7 @@ public partial class PowerMiniGameCircle : TextureButton
 		if (MaxTime - CurrentTime < AfterTime && MaxTime - CurrentTime > TooLateTime)
 		{
 			var maskPower = GlobalStateManager.Instance.MaskPower.Get();
-			var newMaskPower = Math.Min(maskPower += 0.05f, 1);
+			var newMaskPower = Math.Min(maskPower += 0.09f, 1);
 			GD.Print(newMaskPower);
 			GlobalStateManager.Instance.MaskPower.Set(newMaskPower);
 		}
