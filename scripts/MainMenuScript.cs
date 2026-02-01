@@ -44,6 +44,7 @@ public partial class MainMenuScript : Control
 
     public void OnButtonCreditsPressed()
     {
+
         GD.Print("Credits pressed");
     }
 
@@ -71,8 +72,12 @@ public partial class MainMenuScript : Control
         _timerToStartFlicker.Start();
     }
 
-    public void OnAnimatedTextureVisibilityChanged()
+    public void OnCreditsEnded()
     {
-        
+        return;
+    }
+    public void OnCreditsChanged()
+    {
+        return;
     }
 }

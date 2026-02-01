@@ -35,6 +35,18 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_826wr"]
+bg_color = Color(0.0361, 0.054055024, 0.19, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0, 0.96862745, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow34m"]
 bg_color = Color(0.0627451, 0.09411765, 0.3372549, 1)
 border_width_left = 2
@@ -100,6 +112,7 @@ theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("3_2wh52")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_2wh52")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_826wr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
 text = "Start Game"
 
@@ -111,6 +124,7 @@ theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("3_2wh52")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_2wh52")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_826wr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
 text = "Options"
 
@@ -122,6 +136,7 @@ theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("3_2wh52")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_2wh52")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_826wr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
 text = "Credits"
 
@@ -133,6 +148,7 @@ theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("3_2wh52")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_2wh52")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_826wr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
 text = "Exit"
 
@@ -145,6 +161,11 @@ autoplay = true
 [node name="FlickerTimeout" type="Timer" parent="." unique_id=1326591878]
 wait_time = 2.456
 
+[node name="CreditsTimeoutMaster" type="Timer" parent="." unique_id=1223722060]
+wait_time = 10.0
+
+[node name="CreditsFlickerTimeout" type="Timer" parent="." unique_id=373709424]
+
 [connection signal="visibility_changed" from="AnimatedTexture" to="." method="OnAnimatedTextureVisibilityChanged"]
 [connection signal="pressed" from="ButtonContainer/ButtonStart" to="." method="OnButtonStartPressed"]
 [connection signal="pressed" from="ButtonContainer/ButtonOptions" to="." method="OnButtonOptionsPressed"]
@@ -152,3 +173,5 @@ wait_time = 2.456
 [connection signal="pressed" from="ButtonContainer/ButtonExit" to="." method="OnButtonExitPressed"]
 [connection signal="timeout" from="FlickerStartTimer" to="." method="OnTimerTimeout"]
 [connection signal="timeout" from="FlickerTimeout" to="." method="OnFlickerComplete"]
+[connection signal="timeout" from="CreditsTimeoutMaster" to="." method="OnCreditsEnded"]
+[connection signal="timeout" from="CreditsFlickerTimeout" to="." method="OnCreditsChange"]
