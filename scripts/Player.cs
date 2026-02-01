@@ -76,7 +76,7 @@ public partial class Player : CharacterBody2D
 		{
 			_animationController.ChangeAnimation(AnimationEnum.Idle);
 		}
-		
+
 		// Jos X framea on kulunut, randomisoidaan arvot (materiaali huomioiden)
 		if (_frameCounter >= ModulationInterval)
 		{
@@ -111,6 +111,8 @@ public partial class Player : CharacterBody2D
 		{
 			_scrapingSFXPlayer.Stop();
 		}
+
+		GlobalStateManager.Instance.PlayerPosition = GlobalPosition;
 	}
 
 	public void CheckCurrentTile()
@@ -168,8 +170,6 @@ public partial class Player : CharacterBody2D
 		// Volume vaihtelee vähän (-2db ja 0db välillä suhteessa baseVolumeen)
 		float randomVol = baseVolume + (float)GD.RandRange(-2.0, 0.0);
 		_walkingSFXplayer.VolumeDb = randomVol;
-
-		GlobalStateManager.Instance.PlayerPosition = GlobalPosition;
 	}
 
 	private void ResetAudioParams()
@@ -186,7 +186,7 @@ public partial class Player : CharacterBody2D
 		_animationController.ChangeAnimation(animationEnum);
 		_animationController.GlobalRotation = GlobalRotation;
 	}
-	
+
 	public void SpawnAt(Vector2 position)
 	{
 		GlobalPosition = position;

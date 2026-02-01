@@ -8,14 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://d2qod3f41ge1g" path="res://scenes/puzzle/puzzle_2.tscn" id="8_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://bojdshqdxsu4v" path="res://scenes/puzzle/puzzle_1.tscn" id="11_a63bb"]
 [ext_resource type="PackedScene" uid="uid://cbt0rsob2udoe" path="res://scenes/GlobalCoordinateManager.tscn" id="11_qsgjr"]
-[ext_resource type="PackedScene" uid="uid://bb3d8ms8wak8w" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="12_2ddkf"]
+[ext_resource type="PackedScene" uid="uid://cbx8hncv8wpap" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="12_2ddkf"]
 [ext_resource type="AudioStream" uid="uid://dh4ioay57ssis" path="res://audio/music/FGJ26MainBGLoopTempMusic.ogg" id="13_rp473"]
 [ext_resource type="PackedScene" uid="uid://bfq8p812a71jn" path="res://assets/Juuson Mask Jutut/Switch.tscn" id="13_si2s2"]
 [ext_resource type="Material" uid="uid://b0qw3cofrat17" path="res://assets/Juuson Mask Jutut/BoxMaskMaterial.tres" id="14_ec51t"]
 [ext_resource type="Texture2D" uid="uid://bd2kyp3xw0e0m" path="res://assets/StrengthMaskiUI.png" id="14_yysfs"]
 [ext_resource type="Script" uid="uid://vshet36c6n2y" path="res://assets/Juuson Mask Jutut/MaskSystem.cs" id="16_bfjpa"]
 [ext_resource type="Texture2D" uid="uid://dg6bnsnk7avne" path="res://maskTextures/starTexture.svg" id="17_vihhi"]
-[ext_resource type="PackedScene" path="res://scenes/pickableMask.tscn" id="18_2ddkf"]
+[ext_resource type="PackedScene" uid="uid://3djuvdff2kw7" path="res://scenes/pickableMask.tscn" id="18_2ddkf"]
 [ext_resource type="Script" uid="uid://dckuoy7shumxo" path="res://assets/Juuson Mask Jutut/MineMask.cs" id="18_50st4"]
 [ext_resource type="Texture2D" uid="uid://bg4xop287f233" path="res://assets/perusmaskielieimaskia.png" id="19_si2s2"]
 
@@ -50,7 +50,8 @@ Conditions = [NodePath("AreaReached")]
 [node name="AreaReached" parent="Puzzle1" index="20" unique_id=128534236]
 position = Vector2(1042, -29)
 
-[node name="Puzzle2" parent="." unique_id=664420405 instance=ExtResource("8_2ddkf")]
+[node name="Puzzle2" parent="." unique_id=664420405 node_paths=PackedStringArray("Conditions") instance=ExtResource("8_2ddkf")]
+Conditions = []
 
 [node name="Puzzle3" type="Node" parent="." unique_id=1826246720]
 
@@ -141,7 +142,7 @@ MaskCamera = NodePath("../../Camera")
 modulate = Color(1, 0.895, 0.7, 0)
 visibility_layer = 2
 position = Vector2(472, 140)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("17_vihhi")
 script = ExtResource("18_50st4")
 nodeToFollow = NodePath("../../../Mask")
@@ -154,6 +155,7 @@ render_target_update_mode = 4
 [node name="Node2D" type="Node2D" parent="Puzzle3/MaskSystem/SubViewport" unique_id=1925136823]
 
 [node name="Mask Circle" type="Sprite2D" parent="Puzzle3/MaskSystem/SubViewport/Node2D" unique_id=1816764381]
+scale = Vector2(2, 2)
 texture = ExtResource("17_vihhi")
 
 [node name="AudioStreamPlayerMusic" type="AudioStreamPlayer" parent="." unique_id=75652265]
