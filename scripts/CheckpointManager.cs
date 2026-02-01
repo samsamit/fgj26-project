@@ -97,6 +97,7 @@ public partial class CheckpointManager : Node2D
 	/// </summary>
 	private void PlayRespawnAnimation()
 	{
+		_player.canMove = false;
 		// Create the CanvasLayer for the animation (renders on top of everything)
 		_respawnAnimationLayer = new CanvasLayer();
 		_respawnAnimationLayer.Layer = 100; // High layer to be on top
@@ -195,6 +196,7 @@ public partial class CheckpointManager : Node2D
 		if (_player != null)
 		{
 			_player.SpawnAt(_latestCheckpointPosition);
+			_player.canMove = true;
 		}
 		
 		if (_mask != null)

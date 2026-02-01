@@ -29,6 +29,8 @@ public partial class Player : CharacterBody2D
 	private const int TileStone = 0;
 	private const int TileWood = 2;
 
+	public bool canMove = true;
+
 	public override void _Ready()
 	{
 		GD.Print("Player script is active!");
@@ -44,8 +46,11 @@ public partial class Player : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 direction = Vector2.Zero;
-		direction.X = Input.GetActionStrength(MoveRight) - Input.GetActionStrength(MoveLeft);
-		direction.Y = Input.GetActionStrength(MoveBack) - Input.GetActionStrength(MoveForward);
+		if (canMove)
+		{
+			direction.X = Input.GetActionStrength(MoveRight) - Input.GetActionStrength(MoveLeft);
+			direction.Y = Input.GetActionStrength(MoveBack) - Input.GetActionStrength(MoveForward);
+		}
 
 		Velocity = direction.Normalized() * Speed;
 		var velocityNormalized = Velocity.Normalized();
@@ -76,7 +81,7 @@ public partial class Player : CharacterBody2D
 		{
 			_animationController.ChangeAnimation(AnimationEnum.Idle);
 		}
-		
+
 		// Jos X framea on kulunut, randomisoidaan arvot (materiaali huomioiden)
 		if (_frameCounter >= ModulationInterval)
 		{
@@ -186,7 +191,7 @@ public partial class Player : CharacterBody2D
 		_animationController.ChangeAnimation(animationEnum);
 		_animationController.GlobalRotation = GlobalRotation;
 	}
-	
+
 	public void SpawnAt(Vector2 position)
 	{
 		GlobalPosition = position;
