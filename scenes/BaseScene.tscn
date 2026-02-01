@@ -36,6 +36,7 @@ size = Vector2(26, 80)
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("3_gp54n")]
 z_index = 101
 position = Vector2(472, 148)
+scale = Vector2(1.0358996, 0.9782269)
 Speed = 50.0
 
 [node name="Mask" parent="." unique_id=1868398740 node_paths=PackedStringArray("xRayMaskSprite") instance=ExtResource("6_3ubpw")]
@@ -224,36 +225,36 @@ position = Vector2(539, -301)
 
 [node name="ProjectileLauncher3" parent="Puzzle4" unique_id=541340159 instance=ExtResource("19_ec51t")]
 position = Vector2(851, -621)
-Angle = 5.141739976375296
+Angle = 5.585053606381854
 FireRate = 2.0
 
 [node name="ProjectileLauncher4" parent="Puzzle4" unique_id=419203085 instance=ExtResource("19_ec51t")]
 position = Vector2(1192, -714)
+Angle = 1.2217304763960306
 FireRate = 2.0
 
 [node name="ProjectileLauncher5" parent="Puzzle4" unique_id=41696841 instance=ExtResource("19_ec51t")]
 position = Vector2(918, -690)
-Angle = 4.106759729942658
+Angle = 1.5707963267948966
 FireRate = 2.0
 
 [node name="ProjectileLauncher6" parent="Puzzle4" unique_id=332097417 instance=ExtResource("19_ec51t")]
-position = Vector2(1091, -767)
-Angle = 0.4590215932745087
+position = Vector2(1037, -701)
+Angle = 1.5707963267948966
 FireRate = 2.0
 
 [node name="ProjectileLauncher7" parent="Puzzle4" unique_id=597179290 instance=ExtResource("19_ec51t")]
 position = Vector2(1273, -522)
-Angle = 4.694935687864747
 FireRate = 2.0
 
 [node name="ProjectileLauncher8" parent="Puzzle4" unique_id=1890662692 instance=ExtResource("19_ec51t")]
 position = Vector2(1218, -613)
-Angle = 3.16428193386572
+Angle = 0.3490658503988659
 FireRate = 2.0
 
 [node name="ProjectileLauncher9" parent="Puzzle4" unique_id=1043954241 instance=ExtResource("19_ec51t")]
 position = Vector2(1123, -472)
-Angle = 4.78918346747244
+Angle = 4.014257279586958
 FireRate = 2.0
 
 [node name="ProjectileLauncher10" parent="Puzzle4" unique_id=1162862964 instance=ExtResource("19_ec51t")]
@@ -265,8 +266,17 @@ FireRate = 2.0
 position = Vector2(979, -411)
 
 [node name="SceneTransition" parent="Puzzle4" unique_id=595025416 instance=ExtResource("23_kt07b")]
-position = Vector2(1279, -756)
+position = Vector2(1290, -744)
+scale = Vector2(1.2411398, 1.4788749)
 TargetScene = "uid://dq7q3vcunrcb3"
+
+[node name="ProjectileLauncher11" parent="Puzzle4" unique_id=1476672139 instance=ExtResource("19_ec51t")]
+position = Vector2(1293, -402)
+Angle = 0.3490658503988659
+
+[node name="ProjectileLauncher12" parent="Puzzle4" unique_id=1928669575 instance=ExtResource("19_ec51t")]
+position = Vector2(1289, -463)
+Angle = 0.3490658503988659
 
 [node name="PickableStrengthMask" parent="." unique_id=955841723 node_paths=PackedStringArray("puzzleToUnlock") instance=ExtResource("18_2ddkf")]
 position = Vector2(1039, -98)
