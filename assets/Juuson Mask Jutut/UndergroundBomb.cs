@@ -8,7 +8,7 @@ public partial class UndergroundBomb : Sprite2D
     private bool playerIsInside = false;
     private async void _on_area_2d_body_entered(Node2D body)
     {
-            playerIsInside = true;
+        playerIsInside = true;
     }
 
     private void _on_area_2d_body_exited(Node2D body)
@@ -33,6 +33,7 @@ public partial class UndergroundBomb : Sprite2D
     {
         GD.Print("boom");
         explosion.Visible = true;
+        GlobalStateManager.Instance.EmitSignal(GlobalStateManager.SignalName.PlayerHit);
         await ToSignal(GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
         explosion.Visible = false;
     }

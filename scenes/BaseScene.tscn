@@ -14,11 +14,15 @@
 [ext_resource type="Material" uid="uid://b0qw3cofrat17" path="res://assets/Juuson Mask Jutut/BoxMaskMaterial.tres" id="14_ec51t"]
 [ext_resource type="Texture2D" uid="uid://bd2kyp3xw0e0m" path="res://assets/StrengthMaskiUI.png" id="14_yysfs"]
 [ext_resource type="Script" uid="uid://vshet36c6n2y" path="res://assets/Juuson Mask Jutut/MaskSystem.cs" id="16_bfjpa"]
+[ext_resource type="Script" uid="uid://cs5rs5nli2unw" path="res://scenes/MinefieldGoal.cs" id="16_si2s2"]
 [ext_resource type="Texture2D" uid="uid://dg6bnsnk7avne" path="res://maskTextures/starTexture.svg" id="17_vihhi"]
 [ext_resource type="PackedScene" uid="uid://cnr555d4qafj0" path="res://scenes/pickableMask.tscn" id="18_2ddkf"]
 [ext_resource type="Script" uid="uid://dckuoy7shumxo" path="res://assets/Juuson Mask Jutut/MineMask.cs" id="18_50st4"]
 [ext_resource type="PackedScene" uid="uid://dt5ycbrcdyof0" path="res://scenes/projectile_launcher.tscn" id="19_ec51t"]
 [ext_resource type="Texture2D" uid="uid://bg4xop287f233" path="res://assets/perusmaskielieimaskia.png" id="19_si2s2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ec51t"]
+size = Vector2(64, 80)
 
 [node name="World" type="Node" unique_id=1516675657 node_paths=PackedStringArray("Conditions")]
 script = ExtResource("1_3ubpw")
@@ -52,7 +56,8 @@ Conditions = [NodePath("AreaReached")]
 [node name="AreaReached" parent="Puzzle1" index="20" unique_id=128534236]
 position = Vector2(1042, -29)
 
-[node name="Puzzle2" parent="." unique_id=664420405 instance=ExtResource("8_2ddkf")]
+[node name="Puzzle2" parent="." unique_id=664420405 node_paths=PackedStringArray("Conditions") instance=ExtResource("8_2ddkf")]
+Conditions = []
 
 [node name="Puzzle3" type="Node" parent="." unique_id=1826246720]
 
@@ -157,6 +162,13 @@ render_target_update_mode = 4
 
 [node name="Mask Circle" type="Sprite2D" parent="Puzzle3/MaskSystem/SubViewport/Node2D" unique_id=1816764381]
 texture = ExtResource("17_vihhi")
+
+[node name="Area2D" type="Area2D" parent="Puzzle3" unique_id=1487203196]
+position = Vector2(1526, -234)
+script = ExtResource("16_si2s2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puzzle3/Area2D" unique_id=816726667]
+shape = SubResource("RectangleShape2D_ec51t")
 
 [node name="AudioStreamPlayerMusic" type="AudioStreamPlayer" parent="." unique_id=75652265]
 stream = ExtResource("13_rp473")
