@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b2mbu43jxrkx2" path="res://assets/TitleScreenPuolivalo.png" id="3_826wr"]
 [ext_resource type="AudioStream" uid="uid://c51y56dw64io1" path="res://audio/music/Mask Game song V1.0.wav" id="4_ow34m"]
 [ext_resource type="Texture2D" uid="uid://dh5wvdhc2rlf5" path="res://assets/TitleScreenPimeys.png" id="4_ucygd"]
+[ext_resource type="AudioStream" uid="uid://brgrsux5hpv6r" path="res://audio/effects/lights-flicker.mp3" id="7_ucygd"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_mipys"]
 frames = 6
@@ -164,6 +165,10 @@ wait_time = 2.456
 wait_time = 10.0
 
 [node name="CreditsFlickerTimeout" type="Timer" parent="." unique_id=373709424]
+
+[node name="AudioStreamPlayerLightFlicker" type="AudioStreamPlayer" parent="." unique_id=1657342985]
+stream = ExtResource("7_ucygd")
+bus = &"Effects"
 
 [connection signal="visibility_changed" from="AnimatedTexture" to="." method="OnAnimatedTextureVisibilityChanged"]
 [connection signal="pressed" from="ButtonContainer/ButtonStart" to="." method="OnButtonStartPressed"]

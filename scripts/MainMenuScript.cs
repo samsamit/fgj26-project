@@ -14,12 +14,15 @@ public partial class MainMenuScript : Control
 
 	private PackedScene OptionsScene;
 
+    private AudioStreamPlayer _AudioStreamPlayerLightFlicker;
+
 	public override void _Ready()
 	{
 		_staticTexture = GetNode<TextureRect>("StaticTexture");
 		_animatedTexture = GetNode<TextureRect>("AnimatedTexture");
 		_timerToStartFlicker = GetNode<Timer>("FlickerStartTimer");
 		_timerToStopFlicker = GetNode<Timer>("FlickerTimeout");
+        _AudioStreamPlayerLightFlicker = GetNode<AudioStreamPlayer>("AudioStreamPlayerLightFlicker");
 		_timerToStartFlicker.Start();
 		_animatedTexture.Visible = false;
 		OptionsScene = ResourceLoader.Load<PackedScene>("res://scenes/OptionsMenu.tscn");
@@ -60,6 +63,7 @@ public partial class MainMenuScript : Control
 	public void OnTimerTimeout()
 	{
 		_timerToStartFlicker.Stop();
+        _AudioStreamPlayerLightFlicker.Play();
 		_animatedTexture.Visible = true;
 		_staticTexture.Visible = false;
 		_timerToStopFlicker.Start();
