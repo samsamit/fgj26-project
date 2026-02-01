@@ -12,8 +12,3 @@ script = ExtResource("1_script")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746666923]
 shape = SubResource("RectangleShape2D_trigger")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1984897070]
-offset_right = 40.0
-offset_bottom = 40.0
-text = "END"
