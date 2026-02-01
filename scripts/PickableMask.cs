@@ -15,6 +15,11 @@ public partial class PickableMask : Node2D
 	[Export]
 	private Texture2D XRayMask;
 
+	[Export]
+	private Puzzle puzzleToUnlock;
+
+	private bool isUnlocked = false;
+
 	public override void _Ready()
 	{
 		var sprite = (Sprite2D)GetNode("./Sprite2D");
@@ -33,11 +38,24 @@ public partial class PickableMask : Node2D
 				sprite.Texture = XRayMask;
 				break;
 		}
+		Visible = false;
+		isUnlocked = false;
+
+		GlobalStateManager.Instance.PuzzleCompleted += OnPuzzleCompleted;
 	}
 
-	public void OnAreaEntered(Node2D body)
+    private void OnPuzzleCompleted(string puzzleId)
+    {
+        if (puzzleToUnlock != null && puzzleId == puzzleToUnlock.puzzleId)
+		{
+			Visible = true;
+			isUnlocked = true;
+		}
+    }
+
+    public void OnAreaEntered(Node2D body)
 	{
-		if (body is Player)
+		if (body is Player && isUnlocked)
 		{
 			QueueFree();
 			GlobalStateManager.Instance.AddMask(NewMask);
