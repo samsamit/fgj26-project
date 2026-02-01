@@ -10,7 +10,6 @@ size = Vector2(32, 32)
 
 [node name="ProjectileLauncher" type="Node2D" unique_id=413058064 node_paths=PackedStringArray("Turret")]
 script = ExtResource("1_0nsru")
-Angle = 3.728023282259888
 Turret = NodePath("Turret")
 ProjectileBase = ExtResource("2_ip57c")
 ProjectileSpeed = 10.0

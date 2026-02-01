@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://eghp021vmtwg"]
 
-[ext_resource type="Script" uid="uid://dej4u6fje6en3" path="res://scripts/PowerMiniGame.cs" id="1_dikpt"]
+[ext_resource type="Script" path="res://scripts/PowerMiniGame.cs" id="1_dikpt"]
 
 [node name="PowerMiniGame" type="Control" unique_id=591894907]
 layout_mode = 3

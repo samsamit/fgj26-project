@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2qod3f41ge1g"]
 
-[ext_resource type="Script" uid="uid://ccrbot2xfsy4p" path="res://puzzles/Puzzle2.cs" id="1_fr6yp"]
+[ext_resource type="Script" path="res://puzzles/Puzzle2.cs" id="1_fr6yp"]
 [ext_resource type="PackedScene" uid="uid://b8erdqmxs24ka" path="res://scenes/CompletionConditions/PressurePlateDown.tscn" id="2_0d3ae"]
 [ext_resource type="PackedScene" uid="uid://sdnhw3s62pbc" path="res://scenes/movable_box.tscn" id="2_1tdta"]
 
