@@ -4,7 +4,7 @@ using Godot;
 
 public partial class Player : CharacterBody2D
 {
-	[Export] public float Speed = 50.0f;
+	[Export] public float Speed = 10.0f;
 	[Export] SpriteFrames SpriteFrames;
 	[Export] public float PushingPower = 0.0f;
 	[Export] public float CharacterSpriteScaleMultiplier = 0.125f;

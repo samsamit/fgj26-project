@@ -13,6 +13,7 @@
 collision_layer = 8
 collision_mask = 7
 script = ExtResource("1_g2els")
+Speed = 10.0
 SpriteFrames = ExtResource("2_qlg0r")
 CharacterSpriteScaleMultiplier = 0.25
 SpeedComponent = NodePath("SpeedComponent")
