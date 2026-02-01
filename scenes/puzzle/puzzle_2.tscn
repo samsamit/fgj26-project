@@ -58,13 +58,10 @@ position = Vector2(887, -357)
 position = Vector2(780, -141)
 
 [node name="StaticBox2" parent="." unique_id=246933602 instance=ExtResource("4_fr6yp")]
-position = Vector2(830, -202)
+position = Vector2(829, -212)
 
 [node name="StaticBox3" parent="." unique_id=1082165433 instance=ExtResource("4_fr6yp")]
 position = Vector2(887, -300)
-
-[node name="StaticBox4" parent="." unique_id=83138818 instance=ExtResource("4_fr6yp")]
-position = Vector2(974, -359)
 
 [node name="StaticBox5" parent="." unique_id=475312844 instance=ExtResource("4_fr6yp")]
 position = Vector2(712, -141)
