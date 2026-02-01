@@ -34,7 +34,7 @@ public partial class ProjectileLauncher : Node2D
     {
         var projectile = (Projectile)ProjectileBase.Instantiate();
         projectile.Rotation = Angle;
-        projectile.Position += new Vector2(20, 0).Rotated(Angle);
+        projectile.Position += new Vector2(24, 0).Rotated(Angle);
         projectile.SpeedComponent.MovementSpeed = ProjectileSpeed;
         AddChild(projectile);
         _nextFire += 1 / FireRate;

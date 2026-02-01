@@ -4,6 +4,7 @@ using System;
 public partial class Projectile : Area2D
 {
     [Export] public SpeedComponent SpeedComponent;
+    [Export] public AnimatableBody2D Body;
 
     public override void _Ready()
     {
@@ -14,6 +15,11 @@ public partial class Projectile : Area2D
     public override void _PhysicsProcess(double delta)
     {
         Position += new Vector2((float)(SpeedComponent.CurrentSpeed * delta), 0).Rotated(Rotation);
+
+        if (Body.MoveAndCollide(Vector2.Zero) is not null)
+        {
+            QueueFree();
+        }
     }
 
     private void OnPlayerHit(Node2D body)
