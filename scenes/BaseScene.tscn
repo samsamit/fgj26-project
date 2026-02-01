@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dy8cye72lk8wq" path="res://scenes/camera.tscn" id="6_tt3em"]
 [ext_resource type="PackedScene" uid="uid://d2qod3f41ge1g" path="res://scenes/puzzle/puzzle_2.tscn" id="8_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://bojdshqdxsu4v" path="res://scenes/puzzle/puzzle_1.tscn" id="11_a63bb"]
-[ext_resource type="PackedScene" uid="uid://dlijf180fgwkb" path="res://scenes/CheckpointManager.tscn" id="11_qsgjr"]
-[ext_resource type="PackedScene" uid="uid://bb3d8ms8wak8w" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="12_2ddkf"]
+[ext_resource type="PackedScene" path="res://scenes/CheckpointManager.tscn" id="11_qsgjr"]
+[ext_resource type="PackedScene" uid="uid://cbx8hncv8wpap" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="12_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://bfq8p812a71jn" path="res://assets/Juuson Mask Jutut/Switch.tscn" id="13_si2s2"]
 [ext_resource type="Texture2D" uid="uid://cbdlt1fn6sce5" path="res://assets/Juuson Mask Jutut/Circle.png" id="14_bfjpa"]
 [ext_resource type="Material" uid="uid://b0qw3cofrat17" path="res://assets/Juuson Mask Jutut/BoxMaskMaterial.tres" id="14_ec51t"]
@@ -16,13 +16,13 @@
 [ext_resource type="Script" uid="uid://cs5rs5nli2unw" path="res://scenes/MinefieldGoal.cs" id="16_si2s2"]
 [ext_resource type="PackedScene" uid="uid://12r07ldgunk7" path="res://scenes/puzzle/puzzle_4.tscn" id="17_50st4"]
 [ext_resource type="Script" uid="uid://xo50k656mwjo" path="res://scenes/CameraSettingsChanger.cs" id="17_bfjpa"]
-[ext_resource type="PackedScene" uid="uid://3djuvdff2kw7" path="res://scenes/pickableMask.tscn" id="18_2ddkf"]
+[ext_resource type="PackedScene" uid="uid://cnr555d4qafj0" path="res://scenes/pickableMask.tscn" id="18_2ddkf"]
 [ext_resource type="Script" uid="uid://dckuoy7shumxo" path="res://assets/Juuson Mask Jutut/MineMask.cs" id="18_50st4"]
 [ext_resource type="PackedScene" uid="uid://b8erdqmxs24ka" path="res://scenes/CompletionConditions/PressurePlateDownCondition.tscn" id="19_50st4"]
 [ext_resource type="PackedScene" uid="uid://dt5ycbrcdyof0" path="res://scenes/projectile_launcher.tscn" id="19_ec51t"]
-[ext_resource type="PackedScene" uid="uid://b3s6runcdg2t3" path="res://scenes/Checkpoint.tscn" id="20_ec51t"]
+[ext_resource type="PackedScene" path="res://scenes/Checkpoint.tscn" id="20_ec51t"]
 [ext_resource type="PackedScene" uid="uid://c3knvd6urqxyg" path="res://scenes/CompletionConditions/AreaReachedCondition.tscn" id="20_kt07b"]
-[ext_resource type="PackedScene" uid="uid://ccs4na6xky6wu" path="res://scenes/BackgroundMusic.tscn" id="21_pjbue"]
+[ext_resource type="PackedScene" path="res://scenes/BackgroundMusic.tscn" id="21_pjbue"]
 [ext_resource type="PackedScene" uid="uid://sdnhw3s62pbc" path="res://scenes/movable_box.tscn" id="21_vem8k"]
 [ext_resource type="PackedScene" uid="uid://c3sx3i1rpjkul" path="res://scenes/SceneTransition.tscn" id="23_kt07b"]
 
@@ -36,7 +36,6 @@ size = Vector2(26, 80)
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("3_gp54n")]
 z_index = 101
 position = Vector2(472, 148)
-Speed = 50.0
 
 [node name="Mask" parent="." unique_id=1868398740 node_paths=PackedStringArray("xRayMaskSprite") instance=ExtResource("6_3ubpw")]
 position = Vector2(471, 154)
@@ -275,7 +274,7 @@ NewMask = 2
 puzzleToUnlock = NodePath("../Puzzle1")
 
 [node name="PickableXRayMask" parent="." unique_id=1050133946 node_paths=PackedStringArray("puzzleToUnlock") instance=ExtResource("18_2ddkf")]
-position = Vector2(1209, 104)
+position = Vector2(1157, 5)
 scale = Vector2(0.25, 0.25)
 NewMask = 3
 puzzleToUnlock = NodePath("../Puzzle2")

@@ -137,39 +137,42 @@ public partial class Mask : Node2D
 				Light.Color = new Color("white");
 				Light.TextureScale = 0.15f;
 				collisionShape.Modulate = new Color("#ffffff00");
-
+				Background.Color = new Color("#000000");
 				break;
 			case MaskEnum.Basic:
 				Light.Texture = Square;
 				Light.Color = new Color("white");
 				Light.TextureScale = 0.5f;
 				collisionShape.Modulate = new Color("#ffffff00");
-
+				Background.Color = new Color("#000000");
 				break;
 			case MaskEnum.XRay:
 				Light.Texture = Round;
 				Light.Color = new Color("white");
 				Light.TextureScale = 0.7f;
 				collisionShape.Modulate = new Color("#ffffff00");
+				Background.Color = new Color("#404040");
 				break;
 			case MaskEnum.Strength:
 				Light.Texture = Round;
 				Light.Color = new Color("white");
 				Light.TextureScale = 0.5f;
 				collisionShape.Modulate = new Color("#ffffff00");
+				Background.Color = new Color("#000000");
 				break;
 			case MaskEnum.Slow:
 				Light.Texture = Round;
 				Light.Color = new Color("white");
 				Light.TextureScale = 0.7f;
 				collisionShape.Modulate = new Color("#04c1fa67");
+				Background.Color = new Color("#000000");
 				break;
 			default:
 				Light.Texture = Round;
 				Light.Color = new Color("white");
 				Light.TextureScale = 0.5f;
 				collisionShape.Modulate = new Color("#ffffff00");
-
+				Background.Color = new Color("#000000");
 				break;
 		}
 

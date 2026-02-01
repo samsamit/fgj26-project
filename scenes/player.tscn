@@ -28,6 +28,7 @@ bus = &"Effects"
 
 [node name="AudioStreamPlayer2D_BoxScraping" type="AudioStreamPlayer2D" parent="." unique_id=1546406888]
 stream = ExtResource("6_tuyoq")
+volume_db = 1.529
 bus = &"Effects"
 
 [node name="SpeedComponent" parent="." unique_id=89834571 instance=ExtResource("6_fjrip")]
