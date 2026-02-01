@@ -3,11 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="1_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
-[ext_resource type="PackedScene" uid="uid://dy8cye72lk8wq" path="res://scenes/camera.tscn" id="6_tt3em"]
+[ext_resource type="PackedScene" uid="uid://bkyppfbrkinr2" path="res://scenes/camera.tscn" id="6_tt3em"]
 [ext_resource type="PackedScene" uid="uid://d2qod3f41ge1g" path="res://scenes/puzzle/puzzle_2.tscn" id="8_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://bojdshqdxsu4v" path="res://scenes/puzzle/puzzle_1.tscn" id="11_a63bb"]
 [ext_resource type="PackedScene" uid="uid://dlijf180fgwkb" path="res://scenes/CheckpointManager.tscn" id="11_qsgjr"]
-[ext_resource type="PackedScene" uid="uid://cbx8hncv8wpap" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="12_2ddkf"]
+[ext_resource type="PackedScene" uid="uid://bb3d8ms8wak8w" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="12_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://bfq8p812a71jn" path="res://assets/Juuson Mask Jutut/Switch.tscn" id="13_si2s2"]
 [ext_resource type="Texture2D" uid="uid://cbdlt1fn6sce5" path="res://assets/Juuson Mask Jutut/Circle.png" id="14_bfjpa"]
 [ext_resource type="Material" uid="uid://b0qw3cofrat17" path="res://assets/Juuson Mask Jutut/BoxMaskMaterial.tres" id="14_ec51t"]
@@ -169,6 +169,8 @@ texture = ExtResource("14_bfjpa")
 
 [node name="Bomb Defuser" type="Area2D" parent="Puzzle3" unique_id=1487203196]
 position = Vector2(1526, -234)
+collision_layer = 11
+collision_mask = 11
 script = ExtResource("16_si2s2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puzzle3/Bomb Defuser" unique_id=816726667]
@@ -176,6 +178,8 @@ shape = SubResource("RectangleShape2D_ec51t")
 
 [node name="Camera Settings Changer" type="Area2D" parent="Puzzle3" unique_id=1328567532 node_paths=PackedStringArray("mainCamera")]
 position = Vector2(1222, 100)
+collision_layer = 11
+collision_mask = 11
 script = ExtResource("17_bfjpa")
 mainCamera = NodePath("../../Camera")
 zoom = 1.0
@@ -186,6 +190,8 @@ shape = SubResource("RectangleShape2D_ec51t")
 [node name="Camera Settings Changer2" type="Area2D" parent="Puzzle3" unique_id=1355740690 node_paths=PackedStringArray("mainCamera")]
 position = Vector2(1156, 44)
 rotation = 1.5707964
+collision_layer = 11
+collision_mask = 11
 script = ExtResource("17_bfjpa")
 mainCamera = NodePath("../../Camera")
 zoomSpeed = 0.5

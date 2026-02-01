@@ -6,8 +6,8 @@
 radius = 32.0
 
 [node name="Checkpoint" type="Area2D" unique_id=1553874372 groups=["spawn_points"]]
-collision_layer = 0
-collision_mask = 2
+collision_layer = 10
+collision_mask = 10
 script = ExtResource("1_cw1bj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=412641732]

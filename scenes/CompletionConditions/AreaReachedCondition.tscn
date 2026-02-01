@@ -8,3 +8,5 @@ script = ExtResource("1_7pbjx")
 goalArea = NodePath("Goal")
 
 [node name="Goal" parent="." unique_id=1034903633 instance=ExtResource("2_ghcbe")]
+collision_layer = 9
+collision_mask = 9
