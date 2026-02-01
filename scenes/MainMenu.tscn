@@ -155,6 +155,7 @@ text = "Exit"
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=693344626]
 stream = ExtResource("4_ow34m")
 autoplay = true
+bus = &"Music"
 
 [node name="FlickerStartTimer" type="Timer" parent="." unique_id=2136819632]
 
