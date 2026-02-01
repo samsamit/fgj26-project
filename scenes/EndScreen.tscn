@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dq7q3vcunrcb3"]
 
 [ext_resource type="Script" uid="uid://ccyt3r3purtro" path="res://scripts/EndScreen.cs" id="1_hvipn"]
-[ext_resource type="Texture2D" uid="uid://dh5wvdhc2rlf5" path="res://assets/TitleScreenPimeys.png" id="2_olkmo"]
+[ext_resource type="Texture2D" uid="uid://f4lj81xdwvsq" path="res://assets/EndScreen.png" id="2_0gmhx"]
 [ext_resource type="FontFile" uid="uid://bq5rdgh3ywwup" path="res://assets/ARCADECLASSIC.TTF" id="3_hxmv1"]
 [ext_resource type="StyleBox" uid="uid://cnsrvjnnwjuuv" path="res://assets/resources/BaseButton.tres" id="4_0gmhx"]
 [ext_resource type="StyleBox" uid="uid://d2ws4twkee0" path="res://assets/resources/OnPressedButton.tres" id="5_oipxo"]
@@ -23,20 +23,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_olkmo")
+texture = ExtResource("2_0gmhx")
 
 [node name="BackToMenu" type="Button" parent="." unique_id=694273940]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -439.0
-offset_top = -169.0
-offset_right = -108.0
-offset_bottom = -81.0
-grow_horizontal = 0
+offset_left = -196.5
+offset_top = -124.0
+offset_right = 196.5
+offset_bottom = -36.0
+grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0, 0.96862745, 1)
 theme_override_constants/outline_size = 5
