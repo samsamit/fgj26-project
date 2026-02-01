@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c7evpobotrb0b" path="res://assets/viistokattorakennusmoduuli.png" id="4_pur7r"]
 [ext_resource type="Texture2D" uid="uid://cy7i8c15mui1s" path="res://assets/kattotuuletin.png" id="5_pur7r"]
 [ext_resource type="Texture2D" uid="uid://dol7vajil2t1k" path="res://assets/rakennusseinät.png" id="7_5xgqg"]
+[ext_resource type="Texture2D" uid="uid://bxovxdaocojop" path="res://assets/puu.png" id="8_pur7r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j3stm"]
 texture = ExtResource("1_t41qq")
@@ -513,6 +514,11 @@ texture_region_size = Vector2i(32, 32)
 2:2/0/terrains_peering_bit/top_side = 4
 2:2/0/terrains_peering_bit/top_right_corner = 4
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xk5yh"]
+texture = ExtResource("8_pur7r")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xgqg"]
 texture = ExtResource("5_pur7r")
 texture_region_size = Vector2i(32, 32)
@@ -544,3 +550,4 @@ sources/8 = SubResource("TileSetAtlasSource_5xgqg")
 sources/1 = SubResource("TileSetAtlasSource_jrf5u")
 sources/3 = SubResource("TileSetAtlasSource_ghcrs")
 sources/6 = SubResource("TileSetAtlasSource_dthax")
+sources/7 = SubResource("TileSetAtlasSource_xk5yh")
