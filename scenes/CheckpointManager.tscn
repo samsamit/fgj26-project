@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://dlijf180fgwkb"]
 
-[ext_resource type="Script" path="res://scripts/CheckpointManager.cs" id="1_ypsrk"]
+[ext_resource type="Script" uid="uid://2fl177cufga6" path="res://scripts/CheckpointManager.cs" id="1_ypsrk"]
+[ext_resource type="AudioStream" uid="uid://b8l5e831vbw1x" path="res://audio/effects/logoSpin.mp3" id="2_sv80e"]
 
-[node name="CheckpointManager" type="Node2D"]
+[node name="CheckpointManager" type="Node2D" unique_id=1435994040]
 script = ExtResource("1_ypsrk")
+
+[node name="AudioStreamPlayerLogoSpin" type="AudioStreamPlayer" parent="." unique_id=1850610087]
+stream = ExtResource("2_sv80e")
+volume_db = 2.655
+bus = &"Effects"
