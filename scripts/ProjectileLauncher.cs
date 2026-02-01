@@ -12,9 +12,11 @@ public partial class ProjectileLauncher : Node2D
     [Export] public double FireRate = 1;
 
     private double _nextFire;
+    private AudioStreamPlayer2D _AudioStreamPlayerFire;
 
     public override void _Ready()
     {
+        _AudioStreamPlayerFire =  GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2DFire");
         Turret.Rotation = Angle;
         _nextFire = new Random().NextDouble() * 1 / FireRate;
     }
@@ -32,6 +34,7 @@ public partial class ProjectileLauncher : Node2D
 
     private void Fire()
     {
+        _AudioStreamPlayerFire.Play();
         var projectile = (Projectile)ProjectileBase.Instantiate();
         projectile.Rotation = Angle;
         projectile.Position += new Vector2(20, 0).Rotated(Angle);
