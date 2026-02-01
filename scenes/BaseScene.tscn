@@ -146,7 +146,7 @@ BoxesMaterial = ExtResource("14_ec51t")
 MaskCamera = NodePath("../../Camera")
 
 [node name="Visible Circle" type="Sprite2D" parent="Puzzle3/MaskSystem" unique_id=1504217537 node_paths=PackedStringArray("nodeToFollow")]
-modulate = Color(1, 0.895, 0.7, 0)
+modulate = Color(0.6784314, 0.011764706, 0, 0)
 visibility_layer = 2
 position = Vector2(472, 140)
 scale = Vector2(0.3, 0.3)
