@@ -4,26 +4,27 @@
 [ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="1_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
-[ext_resource type="PackedScene" uid="uid://dy8cye72lk8wq" path="res://scenes/camera.tscn" id="6_tt3em"]
+[ext_resource type="PackedScene" uid="uid://bkyppfbrkinr2" path="res://scenes/camera.tscn" id="6_tt3em"]
 [ext_resource type="PackedScene" uid="uid://d2qod3f41ge1g" path="res://scenes/puzzle/puzzle_2.tscn" id="8_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://bojdshqdxsu4v" path="res://scenes/puzzle/puzzle_1.tscn" id="11_a63bb"]
 [ext_resource type="PackedScene" uid="uid://dlijf180fgwkb" path="res://scenes/CheckpointManager.tscn" id="11_qsgjr"]
-[ext_resource type="PackedScene" uid="uid://cbx8hncv8wpap" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="12_2ddkf"]
+[ext_resource type="PackedScene" uid="uid://bb3d8ms8wak8w" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="12_2ddkf"]
+[ext_resource type="AudioStream" uid="uid://dh4ioay57ssis" path="res://audio/music/FGJ26MainBGLoopTempMusic.ogg" id="13_rp473"]
 [ext_resource type="PackedScene" uid="uid://bfq8p812a71jn" path="res://assets/Juuson Mask Jutut/Switch.tscn" id="13_si2s2"]
 [ext_resource type="Material" uid="uid://b0qw3cofrat17" path="res://assets/Juuson Mask Jutut/BoxMaskMaterial.tres" id="14_ec51t"]
 [ext_resource type="Texture2D" uid="uid://bd2kyp3xw0e0m" path="res://assets/StrengthMaskiUI.png" id="14_yysfs"]
 [ext_resource type="Script" uid="uid://vshet36c6n2y" path="res://assets/Juuson Mask Jutut/MaskSystem.cs" id="16_bfjpa"]
 [ext_resource type="Script" uid="uid://cs5rs5nli2unw" path="res://scenes/MinefieldGoal.cs" id="16_si2s2"]
+[ext_resource type="Script" uid="uid://xo50k656mwjo" path="res://scenes/CameraSettingsChanger.cs" id="17_bfjpa"]
 [ext_resource type="Texture2D" uid="uid://dg6bnsnk7avne" path="res://maskTextures/starTexture.svg" id="17_vihhi"]
-[ext_resource type="PackedScene" uid="uid://cnr555d4qafj0" path="res://scenes/pickableMask.tscn" id="18_2ddkf"]
+[ext_resource type="PackedScene" uid="uid://3djuvdff2kw7" path="res://scenes/pickableMask.tscn" id="18_2ddkf"]
 [ext_resource type="Script" uid="uid://dckuoy7shumxo" path="res://assets/Juuson Mask Jutut/MineMask.cs" id="18_50st4"]
 [ext_resource type="PackedScene" path="res://scenes/projectile_launcher.tscn" id="19_ec51t"]
 [ext_resource type="Texture2D" uid="uid://bg4xop287f233" path="res://assets/perusmaskielieimaskia.png" id="19_si2s2"]
 [ext_resource type="PackedScene" uid="uid://b3s6runcdg2t3" path="res://scenes/Checkpoint.tscn" id="20_ec51t"]
-[ext_resource type="PackedScene" uid="uid://ccs4na6xky6wu" path="res://scenes/BackgroundMusic.tscn" id="21_pjbue"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec51t"]
-size = Vector2(64, 80)
+size = Vector2(26, 80)
 
 [node name="World" type="Node" unique_id=1516675657 node_paths=PackedStringArray("Conditions")]
 script = ExtResource("1_3ubpw")
@@ -37,6 +38,7 @@ position = Vector2(472, 148)
 Speed = 300.0
 
 [node name="Mask" parent="." unique_id=1868398740 node_paths=PackedStringArray("xRayMaskSprite") instance=ExtResource("6_3ubpw")]
+visible = false
 position = Vector2(471, 154)
 xRayMaskSprite = NodePath("../Puzzle3/MaskSystem/SubViewport/Node2D/Mask Circle")
 
@@ -47,7 +49,7 @@ MainPlayer = NodePath("../Player")
 MaskPlayer = NodePath("../Mask")
 Speed = 50.0
 MaxZoom = 2.0
-ZoomSpeed = 0.0
+ZoomSpeed = 0.5
 
 [node name="CheckpointManager" parent="." unique_id=1958662909 instance=ExtResource("11_qsgjr")]
 position = Vector2(-15, 9)
@@ -165,23 +167,51 @@ render_target_update_mode = 4
 scale = Vector2(2, 2)
 texture = ExtResource("17_vihhi")
 
-[node name="Area2D" type="Area2D" parent="Puzzle3" unique_id=1487203196]
+[node name="Bomb Defuser" type="Area2D" parent="Puzzle3" unique_id=1487203196]
 position = Vector2(1526, -234)
 script = ExtResource("16_si2s2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Puzzle3/Area2D" unique_id=816726667]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puzzle3/Bomb Defuser" unique_id=816726667]
 shape = SubResource("RectangleShape2D_ec51t")
 
-[node name="PickableStrengthMask" parent="." unique_id=955841723 instance=ExtResource("18_2ddkf")]
+[node name="Camera Settings Changer" type="Area2D" parent="Puzzle3" unique_id=1328567532 node_paths=PackedStringArray("mainCamera")]
+position = Vector2(1222, 100)
+script = ExtResource("17_bfjpa")
+mainCamera = NodePath("../../Camera")
+zoom = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puzzle3/Camera Settings Changer" unique_id=1486336922]
+shape = SubResource("RectangleShape2D_ec51t")
+
+[node name="Camera Settings Changer2" type="Area2D" parent="Puzzle3" unique_id=1355740690 node_paths=PackedStringArray("mainCamera")]
+position = Vector2(1156, 44)
+rotation = 1.5707964
+script = ExtResource("17_bfjpa")
+mainCamera = NodePath("../../Camera")
+zoomSpeed = 0.5
+zoom = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puzzle3/Camera Settings Changer2" unique_id=1518294891]
+shape = SubResource("RectangleShape2D_ec51t")
+
+[node name="AudioStreamPlayerMusic" type="AudioStreamPlayer" parent="." unique_id=75652265]
+stream = ExtResource("13_rp473")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="PickableStrengthMask" parent="." unique_id=955841723 node_paths=PackedStringArray("puzzleToUnlock") instance=ExtResource("18_2ddkf")]
 position = Vector2(1039, -98)
 scale = Vector2(0.25, 0.25)
 NewMask = 2
 FlashliteMask = ExtResource("19_si2s2")
+puzzleToUnlock = NodePath("../Puzzle1")
 
-[node name="PickableXRayMask" parent="." unique_id=1050133946 instance=ExtResource("18_2ddkf")]
+[node name="PickableXRayMask" parent="." unique_id=1050133946 node_paths=PackedStringArray("puzzleToUnlock") instance=ExtResource("18_2ddkf")]
 position = Vector2(1209, 104)
 scale = Vector2(0.25, 0.25)
 NewMask = 3
+puzzleToUnlock = NodePath("../Puzzle2")
 
 [node name="ProjectileLauncher" parent="." unique_id=413058064 instance=ExtResource("19_ec51t")]
 position = Vector2(-487, 484)

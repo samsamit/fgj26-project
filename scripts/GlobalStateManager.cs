@@ -36,13 +36,15 @@ public partial class GlobalStateManager : Node
 	{
 		base._Ready();
 
-		PuzzleCompleted += puzzleName =>
-		{
-			GD.Print("hey");
-			CompletedPuzzle.Add(puzzleName);
-		};
+		PuzzleCompleted += OnPuzzleCompleted;
 		Instance = this;
 		CurrentMask.Set(MaskEnum.Flashlite);
+	}
+
+	private void OnPuzzleCompleted(string puzzleName)
+	{
+		GD.Print("Puzzle completed: " + puzzleName);
+		CompletedPuzzle.Add(puzzleName);
 	}
 
 	public override void _PhysicsProcess(double delta)

@@ -9,6 +9,7 @@ public partial class Player : CharacterBody2D
 	[Export] public float PushingPower = 100.0f;
 	[Export] public float CharacterSpriteScaleMultiplier = 0.125f;
 	[Export] public float CharacterRotationSpeed = 10.0f;
+	[Export] public SpeedComponent SpeedComponent;
 
 	private const string MoveRight = "move_right";
 	private const string MoveLeft = "move_left";
@@ -33,6 +34,7 @@ public partial class Player : CharacterBody2D
 
 	public override void _Ready()
 	{
+		SpeedComponent.MovementSpeed = Speed;
 		GD.Print("Player script is active!");
 		InitializeAnimation(AnimationEnum.Idle);
 
@@ -52,7 +54,7 @@ public partial class Player : CharacterBody2D
 			direction.Y = Input.GetActionStrength(MoveBack) - Input.GetActionStrength(MoveForward);
 		}
 
-		Velocity = direction.Normalized() * Speed;
+		Velocity = direction.Normalized() * (float)SpeedComponent.CurrentSpeed;
 		var velocityNormalized = Velocity.Normalized();
 		var velocityNormalizedCombined = System.Math.Abs(velocityNormalized.X) + System.Math.Abs(velocityNormalized.Y);
 
