@@ -67,18 +67,14 @@ public partial class Mask : Node2D
 		// Detect mouse button press start
 		if (mousePressed && !_wasMousePressed)
 		{
-			GD.Print("mousePressed && !_wasMousePressed");
 			if (!_MaskMovingPlayer.Playing && currentMask != MaskEnum.Strength)
 			{
-				GD.Print("!_MaskMovingPlayer.Playing");
-
 				float audioLength = (float)_MaskMovingPlayer.Stream.GetLength();
 				// Arvotaan aloituskohta. 
 				// Varmuuden vuoksi vähennetään pieni siivu (esim 0.1s) lopusta,
 				// ettei se aloita aivan lopusta ja lopeta heti.
 				float randomStartTime = (float)GD.RandRange(0.0, Math.Max(0, audioLength - 0.1));
 				_MaskMovingPlayer.Play(randomStartTime);
-				GD.Print("_MaskMovingPlayer.Playing: ", _MaskMovingPlayer.Playing);
 			}
 			// Mouse just pressed - check if it's over UI
 			_clickStartedOnUi = IsMouseOverGui();
