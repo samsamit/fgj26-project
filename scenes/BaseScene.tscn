@@ -272,11 +272,11 @@ TargetScene = "uid://dq7q3vcunrcb3"
 
 [node name="ProjectileLauncher11" parent="Puzzle4" unique_id=1476672139 instance=ExtResource("19_ec51t")]
 position = Vector2(1293, -402)
-Angle = 0.3490658503988659
+Angle = 3.490658503988659
 
 [node name="ProjectileLauncher12" parent="Puzzle4" unique_id=1928669575 instance=ExtResource("19_ec51t")]
 position = Vector2(1289, -463)
-Angle = 0.3490658503988659
+Angle = 3.490658503988659
 
 [node name="PickableStrengthMask" parent="." unique_id=955841723 node_paths=PackedStringArray("puzzleToUnlock") instance=ExtResource("18_2ddkf")]
 position = Vector2(1039, -98)
