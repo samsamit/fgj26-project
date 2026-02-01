@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dt5ycbrcdyof0"]
+
+[ext_resource type="Script" uid="uid://7hrppfe0l7l2" path="res://scripts/ProjectileLauncher.cs" id="1_0nsru"]
+[ext_resource type="Texture2D" uid="uid://bnpbh0de0jkqb" path="res://assets/tykinjalusta.png" id="2_0ffta"]
+[ext_resource type="PackedScene" uid="uid://dsfdca1tb2pw2" path="res://scenes/projectile.tscn" id="2_ip57c"]
+[ext_resource type="Texture2D" uid="uid://d3naxm8s5bdyv" path="res://assets/tykki.png" id="3_ip57c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ip57c"]
+size = Vector2(32, 32)
+
+[node name="ProjectileLauncher" type="Node2D" unique_id=413058064 node_paths=PackedStringArray("Turret")]
+script = ExtResource("1_0nsru")
+Turret = NodePath("Turret")
+ProjectileBase = ExtResource("2_ip57c")
+ProjectileSpeed = 10.0
+ProjectileLifeTime = 1.0
+FireRate = 10.0
+
+[node name="BaseSprite" type="Sprite2D" parent="." unique_id=582157551]
+texture = ExtResource("2_0ffta")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=887802840]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=984704156]
+shape = SubResource("RectangleShape2D_ip57c")
+
+[node name="Turret" type="Node2D" parent="." unique_id=1192367745]
+
+[node name="TurretSprite" type="Sprite2D" parent="Turret" unique_id=713033688]
+texture = ExtResource("3_ip57c")

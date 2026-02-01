@@ -7,7 +7,6 @@ size = Vector2(60, 62)
 
 [node name="Goal" type="Area2D" unique_id=1034903633]
 script = ExtResource("1_grq7m")
-puzzleId = "starttt"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=949011887]
 shape = SubResource("RectangleShape2D_04qyp")

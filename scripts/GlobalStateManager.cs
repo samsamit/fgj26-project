@@ -12,11 +12,16 @@ public partial class GlobalStateManager : Node
 	[Export]
 	public Mask Mask;
 
+	private double NextPowerDecreaseTime = 0;
+	private double CurrentTime = 0;
+	private const double DecreaseSpeed = 0.5f;
+	private const float DecreaseAmount = 0.02f;
 
 	public Vector2 PlayerPosition = Vector2.Zero;
 	public Vector2 MaskPosition = Vector2.Zero;
-	public Observable<List<MaskEnum>> AvailableMasks = new([MaskEnum.Flashlite]);
+	public Observable<List<MaskEnum>> AvailableMasks = new([MaskEnum.Flashlite, MaskEnum.Slow]);
 	public Observable<MaskEnum> CurrentMask = new(MaskEnum.Flashlite);
+	public Observable<float> MaskPower = new(1f);
 	public Observable<int> Health = new(3);
 
 	public static GlobalStateManager Instance;
@@ -36,16 +41,40 @@ public partial class GlobalStateManager : Node
 			GD.Print("hey");
 			CompletedPuzzle.Add(puzzleName);
 		};
+		Instance = this;
+		CurrentMask.Set(MaskEnum.Flashlite);
+	}
+
+	public override void _PhysicsProcess(double delta)
+	{
+		CurrentTime += delta;
+		if (NextPowerDecreaseTime == 0)
+		{
+			NextPowerDecreaseTime = delta + DecreaseSpeed;
+		}
+
+		if (CurrentTime > NextPowerDecreaseTime)
+		{
+			NextPowerDecreaseTime = CurrentTime + DecreaseSpeed;
+			var maskPower = MaskPower.Get();
+			if (CurrentMask.Get() == MaskEnum.Strength)
+			{
+				var newMaskPower = Math.Max(maskPower -= DecreaseAmount, 0);
+				MaskPower.Set(newMaskPower);
+			}
+			else
+			{
+				var newMaskPower = Math.Min(maskPower += DecreaseAmount, 1);
+				MaskPower.Set(newMaskPower);
+			}
+		}
 	}
 
 	[Signal]
 	public delegate void PuzzleCompletedEventHandler(string puzzleName);
 
-	public static Action<string> onPuzzleCompleted;
-	public static void OnPuzzleCompleted()
-	{
-
-	}
+	[Signal]
+	public delegate void PlayerHitEventHandler();
 
 	public void AddMask(MaskEnum maskEnum)
 	{
