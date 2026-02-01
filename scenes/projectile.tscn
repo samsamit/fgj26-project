@@ -8,8 +8,8 @@
 radius = 3.0
 
 [node name="Projectile" type="Area2D" unique_id=1352101008 node_paths=PackedStringArray("SpeedComponent", "Body")]
-collision_layer = 10
-collision_mask = 10
+collision_layer = 2
+collision_mask = 8
 script = ExtResource("1_q3m7n")
 SpeedComponent = NodePath("SpeedComponent")
 Body = NodePath("AnimatableBody2D")
@@ -25,7 +25,7 @@ shape = SubResource("CircleShape2D_q3m7n")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=337578323]
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=214823966]
-collision_layer = 2
+collision_layer = 16
 collision_mask = 3
 sync_to_physics = false
 
