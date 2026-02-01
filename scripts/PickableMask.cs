@@ -50,23 +50,23 @@ public partial class PickableMask : Node2D
 		}
 		else
 		{
-		    Visible = false;
-		    isUnlocked = false;	
+			Visible = false;
+			isUnlocked = false;	
 		}
 
 		GlobalStateManager.Instance.PuzzleCompleted += OnPuzzleCompleted;
 	}
 
-    private void OnPuzzleCompleted(string puzzleId)
-    {
-        if (puzzleToUnlock != null && puzzleId == puzzleToUnlock.puzzleId)
+	private void OnPuzzleCompleted(string puzzleId)
+	{
+		if (puzzleToUnlock != null && puzzleId == puzzleToUnlock.puzzleId)
 		{
 			Visible = true;
 			isUnlocked = true;
 		}
-    }
+	}
 
-    public void OnAreaEntered(Node2D body)
+	public void OnAreaEntered(Node2D body)
 	{
 		if (body is Player && isUnlocked)
 		{
