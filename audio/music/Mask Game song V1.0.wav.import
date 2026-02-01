@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c51y56dw64io1"
+path="res://.godot/imported/Mask Game song V1.0.wav-e2894e9db476276a2af3f0ba88710592.sample"
+
+[deps]
+
+source_file="res://audio/music/Mask Game song V1.0.wav"
+dest_files=["res://.godot/imported/Mask Game song V1.0.wav-e2894e9db476276a2af3f0ba88710592.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

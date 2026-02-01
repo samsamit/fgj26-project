@@ -51,7 +51,7 @@ public void SnapToOnePoint(Vector2 point, float zoom)
 			Zoom = new Vector2(newZoom, newZoom);
 		}
 	}
-    public override void _Process(double delta)
+	public override void _Process(double delta)
 	{
 		if (!snapToPoint) return;
 	GlobalPosition = snapPosition;
