@@ -37,6 +37,7 @@ position = Vector2(472, 148)
 Speed = 300.0
 
 [node name="Mask" parent="." unique_id=1868398740 node_paths=PackedStringArray("xRayMaskSprite") instance=ExtResource("6_3ubpw")]
+visible = false
 position = Vector2(471, 154)
 xRayMaskSprite = NodePath("../Puzzle3/MaskSystem/SubViewport/Node2D/Mask Circle")
 
@@ -185,10 +186,11 @@ NewMask = 2
 FlashliteMask = ExtResource("19_si2s2")
 puzzleToUnlock = NodePath("../Puzzle1")
 
-[node name="PickableXRayMask" parent="." unique_id=1050133946 instance=ExtResource("18_2ddkf")]
+[node name="PickableXRayMask" parent="." unique_id=1050133946 node_paths=PackedStringArray("puzzleToUnlock") instance=ExtResource("18_2ddkf")]
 position = Vector2(1209, 104)
 scale = Vector2(0.25, 0.25)
 NewMask = 3
+puzzleToUnlock = NodePath("../Puzzle2")
 
 [node name="ProjectileLauncher" parent="." unique_id=413058064 instance=ExtResource("19_ec51t")]
 position = Vector2(-487, 484)
