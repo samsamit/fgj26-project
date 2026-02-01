@@ -13,9 +13,9 @@
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_g2els")
-SpeedComponent = NodePath("SpeedComponent")
 SpriteFrames = ExtResource("2_qlg0r")
 CharacterSpriteScaleMultiplier = 0.25
+SpeedComponent = NodePath("SpeedComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=90283918]
 shape = SubResource("CircleShape2D_qhqgy")
@@ -24,6 +24,7 @@ shape = SubResource("CircleShape2D_qhqgy")
 
 [node name="AudioStreamPlayer2D_Walking" type="AudioStreamPlayer2D" parent="." unique_id=1745833923]
 stream = ExtResource("3_qhqgy")
+bus = &"Effects"
 
 [node name="AudioStreamPlayer2D_BoxScraping" type="AudioStreamPlayer2D" parent="." unique_id=1546406888]
 stream = ExtResource("6_tuyoq")

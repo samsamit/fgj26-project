@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://iv1onl6kbhyd"]
 
-[ext_resource type="Script" uid="uid://bejw0xx3r05qa" path="res://puzzles/Puzzle1.cs" id="1_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="1_tt3em"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
@@ -15,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bd2kyp3xw0e0m" path="res://assets/StrengthMaskiUI.png" id="14_yysfs"]
 [ext_resource type="Script" uid="uid://vshet36c6n2y" path="res://assets/Juuson Mask Jutut/MaskSystem.cs" id="16_bfjpa"]
 [ext_resource type="Script" uid="uid://cs5rs5nli2unw" path="res://scenes/MinefieldGoal.cs" id="16_si2s2"]
+[ext_resource type="PackedScene" uid="uid://12r07ldgunk7" path="res://scenes/puzzle/puzzle_4.tscn" id="17_50st4"]
 [ext_resource type="Script" uid="uid://xo50k656mwjo" path="res://scenes/CameraSettingsChanger.cs" id="17_bfjpa"]
 [ext_resource type="PackedScene" uid="uid://3djuvdff2kw7" path="res://scenes/pickableMask.tscn" id="18_2ddkf"]
 [ext_resource type="Script" uid="uid://dckuoy7shumxo" path="res://assets/Juuson Mask Jutut/MineMask.cs" id="18_50st4"]
@@ -25,9 +25,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec51t"]
 size = Vector2(26, 80)
 
-[node name="World" type="Node" unique_id=1516675657 node_paths=PackedStringArray("Conditions")]
-script = ExtResource("1_3ubpw")
-Conditions = []
+[node name="World" type="Node" unique_id=1516675657]
 
 [node name="World" parent="." unique_id=577538569 instance=ExtResource("1_tt3em")]
 
@@ -146,7 +144,7 @@ BoxesMaterial = ExtResource("14_ec51t")
 MaskCamera = NodePath("../../Camera")
 
 [node name="Visible Circle" type="Sprite2D" parent="Puzzle3/MaskSystem" unique_id=1504217537 node_paths=PackedStringArray("nodeToFollow")]
-modulate = Color(1, 0.895, 0.7, 0)
+modulate = Color(0.6784314, 0.011764706, 0, 0)
 visibility_layer = 2
 position = Vector2(472, 140)
 scale = Vector2(0.3, 0.3)
@@ -192,6 +190,16 @@ zoom = 2.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puzzle3/Camera Settings Changer2" unique_id=1518294891]
 shape = SubResource("RectangleShape2D_ec51t")
 
+[node name="Puzzle4" parent="." unique_id=801700866 instance=ExtResource("17_50st4")]
+
+[node name="ProjectileLauncher" parent="Puzzle4" unique_id=413058064 instance=ExtResource("19_ec51t")]
+position = Vector2(725, -299)
+Angle = 4.71238898038469
+
+[node name="ProjectileLauncher2" parent="Puzzle4" unique_id=393282719 instance=ExtResource("19_ec51t")]
+position = Vector2(533, -267)
+Angle = 5.497787143782138
+
 [node name="PickableStrengthMask" parent="." unique_id=955841723 node_paths=PackedStringArray("puzzleToUnlock") instance=ExtResource("18_2ddkf")]
 position = Vector2(1039, -98)
 scale = Vector2(0.25, 0.25)
@@ -209,12 +217,6 @@ position = Vector2(1636, -240)
 scale = Vector2(0.25, 0.25)
 NewMask = 4
 
-[node name="ProjectileLauncher" parent="." unique_id=413058064 instance=ExtResource("19_ec51t")]
-position = Vector2(-487, 484)
-ProjectileSpeed = 100.0
-ProjectileLifeTime = 2.0
-FireRate = 1.0
-
 [node name="Checkpoint" parent="." unique_id=834512712 instance=ExtResource("20_ec51t")]
 position = Vector2(1041, -29)
 
@@ -225,3 +227,4 @@ position = Vector2(1263, 101)
 
 [editable path="Puzzle1"]
 [editable path="Puzzle2"]
+[editable path="Puzzle4"]
