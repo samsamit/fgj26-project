@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class AreaReached : CompletionCondition
+public partial class AreaReachedCondition : CompletionCondition
 {
 	[Export] private Goal goalArea;
 
