@@ -2,7 +2,7 @@ using Godot;
 
 namespace FGJ26LPR.scenes.CompletionConditions;
 
-public partial class PressurePlateDown : CompletionCondition
+public partial class PressurePlateDownCondition : CompletionCondition
 {
 	[Export] private PressurePlate _pressurePlate;
 
@@ -17,10 +17,12 @@ public partial class PressurePlateDown : CompletionCondition
 	private void OnPressed()
 	{
 		_isPressed = true;
+		MarkCompleted();
 	}
 	
 	private void OnReleased()
 	{
 		_isPressed = false;
+		MarkUncompleted();
 	}
 }

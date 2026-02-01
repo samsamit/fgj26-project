@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bw71jkryjliai"]
 
-[ext_resource type="Script" uid="uid://cwjscp8qkk4iw" path="res://scripts/PowerMiniGameCircle.cs" id="1_jlit6"]
+[ext_resource type="Script" path="res://scripts/PowerMiniGameCircle.cs" id="1_jlit6"]
 
 [sub_resource type="Gradient" id="Gradient_prvqs"]
 interpolation_mode = 1

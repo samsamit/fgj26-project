@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://j3eac2ufirxj"]
 
-[ext_resource type="Script" path="res://scripts/HiddenBridge.cs" id="1_7uqqq"]
+[ext_resource type="Script" uid="uid://bot6p5ntvxilg" path="res://scripts/HiddenBridge.cs" id="1_7uqqq"]
 [ext_resource type="Material" uid="uid://b0qw3cofrat17" path="res://assets/Juuson Mask Jutut/BoxMaskMaterial.tres" id="2_twqjv"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wyphu"]

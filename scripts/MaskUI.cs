@@ -1,3 +1,4 @@
+using System;
 using Godot;
 using System.Collections.Generic;
 
@@ -7,6 +8,7 @@ public partial class MaskUI : VBoxContainer
 	private TextureButton FlashliteMask;
 	private TextureButton StrengthMask;
 	private TextureButton XRayMask;
+	private TextureButton SlowMask;
 	private Control PowerMinigame;
 	private ProgressBar MaskPower;
 
@@ -18,10 +20,11 @@ public partial class MaskUI : VBoxContainer
 
 	public override void _Ready()
 	{
-		BasicMask = (TextureButton)GetNode("./MaskContainer/Basic");
-		FlashliteMask = (TextureButton)GetNode("./MaskContainer/Flashlite");
-		StrengthMask = (TextureButton)GetNode("./MaskContainer/Strength");
-		XRayMask = (TextureButton)GetNode("./MaskContainer/XRay");
+		BasicMask = GetNode<TextureButton>("./MaskContainer/Basic");
+		FlashliteMask = GetNode<TextureButton>("./MaskContainer/Flashlite");
+		StrengthMask = GetNode<TextureButton>("./MaskContainer/Strength");
+		XRayMask = GetNode<TextureButton>("./MaskContainer/XRay");
+		SlowMask = GetNode<TextureButton>("./MaskContainer/Slow");
 		PowerMinigame = (Control)GetNode("./PowerMiniGame");
 		MaskPower = (ProgressBar)GetNode("./MaskPower");
 
@@ -30,12 +33,14 @@ public partial class MaskUI : VBoxContainer
 		FlashliteMask.Pressed += OnClickFlashlite;
 		StrengthMask.Pressed += OnClickStrength;
 		XRayMask.Pressed += OnClickXRay;
+		SlowMask.Pressed += OnClickSlow;
 
 		// Set mouse filter to Stop to prevent click-through to game objects
 		BasicMask.MouseFilter = MouseFilterEnum.Stop;
 		FlashliteMask.MouseFilter = MouseFilterEnum.Stop;
 		StrengthMask.MouseFilter = MouseFilterEnum.Stop;
 		XRayMask.MouseFilter = MouseFilterEnum.Stop;
+		SlowMask.MouseFilter = MouseFilterEnum.Stop;
 
 		GlobalStateManager.Instance.AvailableMasks.RegisterObserver(
 			UpdateAvailableMasks);
@@ -52,6 +57,7 @@ public partial class MaskUI : VBoxContainer
 		FlashliteMask.Pressed -= OnClickFlashlite;
 		StrengthMask.Pressed -= OnClickStrength;
 		XRayMask.Pressed -= OnClickXRay;
+		SlowMask.Pressed -= OnClickSlow;
 	}
 
 	private void UpdateAvailableMasks(List<MaskEnum> masks)
@@ -60,6 +66,7 @@ public partial class MaskUI : VBoxContainer
 		FlashliteMask.Visible = false;
 		StrengthMask.Visible = false;
 		XRayMask.Visible = false;
+		SlowMask.Visible = false;
 
 		foreach (var mask in masks)
 		{
@@ -77,8 +84,11 @@ public partial class MaskUI : VBoxContainer
 				case MaskEnum.XRay:
 					XRayMask.Visible = true;
 					break;
-				default:
+				case MaskEnum.Slow:
+					SlowMask.Visible = true;
 					break;
+				default:
+					throw new ArgumentException("Unknown enum value: " + nameof(mask));
 			}
 		}
 
@@ -111,6 +121,7 @@ public partial class MaskUI : VBoxContainer
 		SetButtonSelectionState(FlashliteMask, mask == MaskEnum.Flashlite);
 		SetButtonSelectionState(StrengthMask, mask == MaskEnum.Strength);
 		SetButtonSelectionState(XRayMask, mask == MaskEnum.XRay);
+		SetButtonSelectionState(SlowMask, mask == MaskEnum.Slow);
 	}
 
 	private void SetButtonSelectionState(TextureButton button, bool isSelected)
@@ -132,23 +143,28 @@ public partial class MaskUI : VBoxContainer
 		MaskPower.Value = maskPower;
 	}
 
-	public void OnClickBasicMask()
+	private void OnClickBasicMask()
 	{
 		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Basic);
 	}
 
-	public void OnClickFlashlite()
+	private void OnClickFlashlite()
 	{
 		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Flashlite);
 	}
 
-	public void OnClickStrength()
+	private void OnClickStrength()
 	{
 		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Strength);
 	}
 
-	public void OnClickXRay()
+	private void OnClickXRay()
 	{
 		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.XRay);
+	}
+
+	private void OnClickSlow()
+	{
+		GlobalStateManager.Instance.CurrentMask.Set(MaskEnum.Slow);
 	}
 }

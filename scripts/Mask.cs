@@ -137,6 +137,11 @@ public partial class Mask : Node2D
 			case MaskEnum.Strength:
 				Light.Visible = false;
 				break;
+			case MaskEnum.Slow:
+				Light.Texture = Round;
+				Light.Color = new Color("white");
+				Light.TextureScale = 0.5f;
+				break;
 			default:
 				Light.Texture = Round;
 				Light.Color = new Color("white");
@@ -158,18 +163,18 @@ public partial class Mask : Node2D
 		switch (collisionShape.Shape)
 		{
 			case CircleShape2D circle:
-				circle.Radius = Light.TextureScale / 2f;
+				circle.Radius = Light.Texture.GetSize().X * Light.TextureScale / 2f;
 				break;
 
 			case RectangleShape2D rect:
-				rect.Size = new Vector2(Light.TextureScale, Light.TextureScale);
+				rect.Size = Light.Texture.GetSize() * Light.TextureScale;
 				break;
 
 			case ConvexPolygonShape2D polygon:
 				Vector2[] points = polygon.Points;
 				for (int i = 0; i < points.Length; i++)
 				{
-					points[i] = points[i].Normalized() * (Light.TextureScale / 2f);
+					points[i] = points[i].Normalized() * (Light.Texture.GetSize().X * Light.TextureScale / 2f);
 				}
 				polygon.Points = points;
 				break;

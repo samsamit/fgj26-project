@@ -17,6 +17,7 @@ public partial class PowerMiniGame : Control
 	public override void _Ready()
 	{
 		PowerMiniGameCircle = ResourceLoader.Load<PackedScene>("res://scenes/PowerMiniGameCircle.tscn");
+		MouseFilter = MouseFilterEnum.Stop;
 	}
 
 	public override void _PhysicsProcess(double delta)

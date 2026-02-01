@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="1_td5ss"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_70a3o"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="4_hrc7i"]
-[ext_resource type="PackedScene" uid="uid://dwqin8c06c2om" path="res://scenes/camera.tscn" id="5_g0o00"]
+[ext_resource type="PackedScene" uid="uid://dy8cye72lk8wq" path="res://scenes/camera.tscn" id="5_g0o00"]
 
 [node name="Asamu" type="Node2D" unique_id=1225970114]
 
