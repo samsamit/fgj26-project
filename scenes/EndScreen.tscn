@@ -45,6 +45,6 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = ExtResource("4_0gmhx")
 theme_override_styles/pressed = ExtResource("5_oipxo")
 theme_override_styles/hover = ExtResource("6_jwmxs")
-text = "Back to Main Menu"
+text = "Main Menu"
 
 [connection signal="pressed" from="BackToMenu" to="." method="OnBackToMenuPressed"]
