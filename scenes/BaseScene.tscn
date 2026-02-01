@@ -33,6 +33,7 @@ Conditions = []
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("3_gp54n")]
 z_index = 101
 position = Vector2(472, 148)
+Speed = 300.0
 
 [node name="Mask" parent="." unique_id=1868398740 node_paths=PackedStringArray("xRayMaskSprite") instance=ExtResource("6_3ubpw")]
 position = Vector2(471, 154)
@@ -56,8 +57,7 @@ Conditions = [NodePath("AreaReached")]
 [node name="AreaReached" parent="Puzzle1" index="20" unique_id=128534236]
 position = Vector2(1042, -29)
 
-[node name="Puzzle2" parent="." unique_id=664420405 node_paths=PackedStringArray("Conditions") instance=ExtResource("8_2ddkf")]
-Conditions = []
+[node name="Puzzle2" parent="." unique_id=664420405 instance=ExtResource("8_2ddkf")]
 
 [node name="Puzzle3" type="Node" parent="." unique_id=1826246720]
 
