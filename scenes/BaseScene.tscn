@@ -7,9 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dy8cye72lk8wq" path="res://scenes/camera.tscn" id="6_tt3em"]
 [ext_resource type="PackedScene" uid="uid://d2qod3f41ge1g" path="res://scenes/puzzle/puzzle_2.tscn" id="8_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://bojdshqdxsu4v" path="res://scenes/puzzle/puzzle_1.tscn" id="11_a63bb"]
-[ext_resource type="PackedScene" path="res://scenes/CheckpointManager.tscn" id="11_qsgjr"]
-[ext_resource type="PackedScene" uid="uid://bb3d8ms8wak8w" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="12_2ddkf"]
-[ext_resource type="AudioStream" uid="uid://dh4ioay57ssis" path="res://audio/music/FGJ26MainBGLoopTempMusic.ogg" id="13_rp473"]
+[ext_resource type="PackedScene" uid="uid://dlijf180fgwkb" path="res://scenes/CheckpointManager.tscn" id="11_qsgjr"]
+[ext_resource type="PackedScene" uid="uid://cbx8hncv8wpap" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="12_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://bfq8p812a71jn" path="res://assets/Juuson Mask Jutut/Switch.tscn" id="13_si2s2"]
 [ext_resource type="Material" uid="uid://b0qw3cofrat17" path="res://assets/Juuson Mask Jutut/BoxMaskMaterial.tres" id="14_ec51t"]
 [ext_resource type="Texture2D" uid="uid://bd2kyp3xw0e0m" path="res://assets/StrengthMaskiUI.png" id="14_yysfs"]
@@ -18,9 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://dg6bnsnk7avne" path="res://maskTextures/starTexture.svg" id="17_vihhi"]
 [ext_resource type="PackedScene" uid="uid://cnr555d4qafj0" path="res://scenes/pickableMask.tscn" id="18_2ddkf"]
 [ext_resource type="Script" uid="uid://dckuoy7shumxo" path="res://assets/Juuson Mask Jutut/MineMask.cs" id="18_50st4"]
-[ext_resource type="PackedScene" uid="uid://dt5ycbrcdyof0" path="res://scenes/projectile_launcher.tscn" id="19_ec51t"]
+[ext_resource type="PackedScene" path="res://scenes/projectile_launcher.tscn" id="19_ec51t"]
 [ext_resource type="Texture2D" uid="uid://bg4xop287f233" path="res://assets/perusmaskielieimaskia.png" id="19_si2s2"]
-[ext_resource type="PackedScene" path="res://scenes/Checkpoint.tscn" id="20_ec51t"]
+[ext_resource type="PackedScene" uid="uid://b3s6runcdg2t3" path="res://scenes/Checkpoint.tscn" id="20_ec51t"]
+[ext_resource type="PackedScene" uid="uid://ccs4na6xky6wu" path="res://scenes/BackgroundMusic.tscn" id="21_pjbue"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec51t"]
 size = Vector2(64, 80)
@@ -172,12 +172,6 @@ script = ExtResource("16_si2s2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puzzle3/Area2D" unique_id=816726667]
 shape = SubResource("RectangleShape2D_ec51t")
 
-[node name="AudioStreamPlayerMusic" type="AudioStreamPlayer" parent="." unique_id=75652265]
-stream = ExtResource("13_rp473")
-autoplay = true
-bus = &"Music"
-parameters/looping = true
-
 [node name="PickableStrengthMask" parent="." unique_id=955841723 instance=ExtResource("18_2ddkf")]
 position = Vector2(1039, -98)
 scale = Vector2(0.25, 0.25)
@@ -200,6 +194,8 @@ position = Vector2(1041, -29)
 
 [node name="Checkpoint2" parent="." unique_id=2133986926 instance=ExtResource("20_ec51t")]
 position = Vector2(1263, 101)
+
+[node name="BackgroundMusic" parent="." unique_id=169496851 instance=ExtResource("21_pjbue")]
 
 [editable path="Puzzle1"]
 [editable path="Puzzle2"]
