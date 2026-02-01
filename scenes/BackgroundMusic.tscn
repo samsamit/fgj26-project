@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ccs4na6xky6wu"]
+
+[ext_resource type="AudioStream" uid="uid://d2m8ybeml47tk" path="res://audio/music/Mask song 2 - Ilman rumpuja.wav" id="1_he5gw"]
+[ext_resource type="Script" uid="uid://b26hiwodr10i3" path="res://scripts/BackgroundMusic.cs" id="2_li0io"]
+[ext_resource type="AudioStream" uid="uid://c51y56dw64io1" path="res://audio/music/Mask Game song V1.0.wav" id="3_b1xqs"]
+[ext_resource type="AudioStream" uid="uid://cb5krerd8bm0m" path="res://audio/music/Mask song 2 - Rummuilla.wav" id="4_8chuc"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" unique_id=819150622]
+stream = ExtResource("1_he5gw")
+autoplay = true
+bus = &"Music"
+script = ExtResource("2_li0io")
+MainTheme = ExtResource("3_b1xqs")
+Drums = ExtResource("4_8chuc")
+WithoutDrums = ExtResource("1_he5gw")
+
+[connection signal="finished" from="." to="." method="OnFinished"]

@@ -143,10 +143,14 @@ public partial class Mask : Node2D
 				Light.TextureScale = 0.5f;
 				break;
 			case MaskEnum.XRay:
-				Light.Visible = false;
+				Light.Texture = Round;
+				Light.Color = new Color("white");
+				Light.TextureScale = 0.7f;
 				break;
 			case MaskEnum.Strength:
-				Light.Visible = false;
+				Light.Texture = Round;
+				Light.Color = new Color("white");
+				Light.TextureScale = 0.5f;
 				break;
 			case MaskEnum.Slow:
 				Light.Texture = Round;
@@ -160,7 +164,7 @@ public partial class Mask : Node2D
 				break;
 		}
 
-		Background.Visible = mask == MaskEnum.Flashlite;
+		//Background.Visible = mask == MaskEnum.Flashlite;
 		xRayMaskSprite.Visible = mask == MaskEnum.XRay;
 		// Dynamic scaling for the collision shape, so that it matches the mask
 		CollisionShape2D collisionShape = GetNode<CollisionShape2D>("./Area2D/CollisionShape2D");
