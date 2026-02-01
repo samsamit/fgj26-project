@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://bngouthxpk05a"]
+
+[ext_resource type="Script" path="res://scripts/OptionsMenu.cs" id="1_ggbxl"]
+[ext_resource type="Texture2D" uid="uid://bxcjmulwhj3bl" path="res://assets/TitleScreen_Base.png" id="2_t2yp5"]
+[ext_resource type="Texture2D" uid="uid://b2mbu43jxrkx2" path="res://assets/TitleScreenPuolivalo.png" id="3_quf82"]
+[ext_resource type="Texture2D" uid="uid://dh5wvdhc2rlf5" path="res://assets/TitleScreenPimeys.png" id="4_y0nvv"]
+[ext_resource type="FontFile" uid="uid://bq5rdgh3ywwup" path="res://assets/ARCADECLASSIC.TTF" id="5_5q3au"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_mipys"]
+frames = 6
+speed_scale = 4.0
+frame_0/texture = ExtResource("3_quf82")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("2_t2yp5")
+frame_1/duration = 1.5
+frame_2/texture = ExtResource("3_quf82")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("2_t2yp5")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("4_y0nvv")
+frame_4/duration = 3.0
+frame_5/texture = ExtResource("3_quf82")
+frame_5/duration = 0.5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_q7fmt"]
+color = Color(0.09280001, 0.38511994, 0.58, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wh52"]
+bg_color = Color(0.0627451, 0.09411765, 0.3372549, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0, 0.96862745, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_826wr"]
+bg_color = Color(0.0361, 0.054055024, 0.19, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0, 0.96862745, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow34m"]
+bg_color = Color(0.0627451, 0.09411765, 0.3372549, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0, 0.96862745, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 12
+
+[node name="OptionsMenu" type="Control" unique_id=2065779490]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ggbxl")
+
+[node name="StaticTexture" type="TextureRect" parent="." unique_id=91703864]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_t2yp5")
+
+[node name="AnimatedTexture" type="TextureRect" parent="." unique_id=629209687]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_mipys")
+
+[node name="BackgroundMusicLabel" type="Label" parent="." unique_id=721000964]
+layout_mode = 0
+offset_left = 897.0
+offset_top = 309.0
+offset_right = 1119.0
+offset_bottom = 354.0
+theme_override_colors/font_color = Color(1, 0, 0.96862745, 1)
+theme_override_fonts/font = ExtResource("5_5q3au")
+theme_override_font_sizes/font_size = 32
+text = "Music volume:"
+
+[node name="BackgroundMusic" type="HSlider" parent="." unique_id=492762954]
+layout_mode = 0
+offset_left = 899.0
+offset_top = 357.0
+offset_right = 1132.0
+offset_bottom = 389.0
+theme_override_styles/slider = SubResource("StyleBoxLine_q7fmt")
+max_value = 4.0
+step = 0.1
+value = 1.0
+
+[node name="SFXLabel" type="Label" parent="." unique_id=938456646]
+layout_mode = 0
+offset_left = 899.0
+offset_top = 408.0
+offset_right = 1121.0
+offset_bottom = 453.0
+theme_override_colors/font_color = Color(1, 0, 0.96862745, 1)
+theme_override_fonts/font = ExtResource("5_5q3au")
+theme_override_font_sizes/font_size = 32
+text = "SFX volume:"
+
+[node name="SFX" type="HSlider" parent="." unique_id=1682348456]
+layout_mode = 0
+offset_left = 901.0
+offset_top = 457.0
+offset_right = 1137.0
+offset_bottom = 489.0
+theme_override_styles/slider = SubResource("StyleBoxLine_q7fmt")
+max_value = 4.0
+step = 0.1
+value = 1.0
+
+[node name="ButtonContainer" type="VBoxContainer" parent="." unique_id=1282015204]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 260.0
+offset_top = 163.0
+offset_right = 460.0
+offset_bottom = 269.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="Back" type="Button" parent="ButtonContainer" unique_id=94464644]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 0, 0.96862745, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_5q3au")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_2wh52")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_826wr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
+text = "Back"
+
+[node name="FlickerStartTimer" type="Timer" parent="." unique_id=2136819632]
+
+[node name="FlickerTimeout" type="Timer" parent="." unique_id=1326591878]
+wait_time = 2.456
+
+[connection signal="visibility_changed" from="AnimatedTexture" to="." method="OnAnimatedTextureVisibilityChanged"]
+[connection signal="value_changed" from="BackgroundMusic" to="." method="OnMusicVolumeChanged"]
+[connection signal="value_changed" from="SFX" to="." method="OnSFXVolumeChanged"]
+[connection signal="pressed" from="ButtonContainer/Back" to="." method="OnBackButton"]
+[connection signal="timeout" from="FlickerStartTimer" to="." method="OnTimerTimeout"]
+[connection signal="timeout" from="FlickerTimeout" to="." method="OnFlickerComplete"]
