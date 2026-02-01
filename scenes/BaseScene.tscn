@@ -32,7 +32,7 @@ Conditions = []
 
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("3_gp54n")]
 z_index = 101
-position = Vector2(-362, 522)
+position = Vector2(472, 148)
 
 [node name="Mask" parent="." unique_id=1868398740 node_paths=PackedStringArray("xRayMaskSprite") instance=ExtResource("6_3ubpw")]
 position = Vector2(-354, 528)
