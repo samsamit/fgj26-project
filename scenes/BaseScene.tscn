@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://3djuvdff2kw7" path="res://scenes/pickableMask.tscn" id="18_2ddkf"]
 [ext_resource type="Script" uid="uid://dckuoy7shumxo" path="res://assets/Juuson Mask Jutut/MineMask.cs" id="18_50st4"]
 [ext_resource type="PackedScene" uid="uid://dt5ycbrcdyof0" path="res://scenes/projectile_launcher.tscn" id="19_ec51t"]
-[ext_resource type="Texture2D" uid="uid://bg4xop287f233" path="res://assets/perusmaskielieimaskia.png" id="19_si2s2"]
 [ext_resource type="PackedScene" uid="uid://b3s6runcdg2t3" path="res://scenes/Checkpoint.tscn" id="20_ec51t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec51t"]
@@ -204,7 +203,6 @@ parameters/looping = true
 position = Vector2(1039, -98)
 scale = Vector2(0.25, 0.25)
 NewMask = 2
-FlashliteMask = ExtResource("19_si2s2")
 puzzleToUnlock = NodePath("../Puzzle1")
 
 [node name="PickableXRayMask" parent="." unique_id=1050133946 node_paths=PackedStringArray("puzzleToUnlock") instance=ExtResource("18_2ddkf")]
@@ -212,6 +210,11 @@ position = Vector2(1209, 104)
 scale = Vector2(0.25, 0.25)
 NewMask = 3
 puzzleToUnlock = NodePath("../Puzzle2")
+
+[node name="PickableSlowMask" parent="." unique_id=1259980722 instance=ExtResource("18_2ddkf")]
+position = Vector2(1636, -240)
+scale = Vector2(0.25, 0.25)
+NewMask = 4
 
 [node name="ProjectileLauncher" parent="." unique_id=413058064 instance=ExtResource("19_ec51t")]
 position = Vector2(-487, 484)
