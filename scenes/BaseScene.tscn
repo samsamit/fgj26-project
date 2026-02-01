@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://c3knvd6urqxyg" path="res://scenes/CompletionConditions/AreaReachedCondition.tscn" id="20_kt07b"]
 [ext_resource type="PackedScene" uid="uid://ccs4na6xky6wu" path="res://scenes/BackgroundMusic.tscn" id="21_pjbue"]
 [ext_resource type="PackedScene" uid="uid://sdnhw3s62pbc" path="res://scenes/movable_box.tscn" id="21_vem8k"]
-[ext_resource type="PackedScene" path="res://scenes/SceneTransition.tscn" id="23_kt07b"]
+[ext_resource type="PackedScene" uid="uid://c3sx3i1rpjkul" path="res://scenes/SceneTransition.tscn" id="23_kt07b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec51t"]
 size = Vector2(26, 80)
@@ -261,7 +261,7 @@ position = Vector2(979, -411)
 
 [node name="SceneTransition" parent="Puzzle4" unique_id=595025416 instance=ExtResource("23_kt07b")]
 position = Vector2(1279, -756)
-TargetScene = "uid://dl8jp2hnb81c0"
+TargetScene = "uid://dq7q3vcunrcb3"
 
 [node name="PickableStrengthMask" parent="." unique_id=955841723 node_paths=PackedStringArray("puzzleToUnlock") instance=ExtResource("18_2ddkf")]
 position = Vector2(1039, -98)
