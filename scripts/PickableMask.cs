@@ -50,8 +50,8 @@ public partial class PickableMask : Node2D
 		}
 		else
 		{
-		    Visible = false;
-		    isUnlocked = false;	
+			Visible = false;
+			isUnlocked = false;	
 		}
 
 		GlobalStateManager.Instance.PuzzleCompleted += OnPuzzleCompleted;
