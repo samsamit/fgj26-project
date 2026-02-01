@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b3s6runcdg2t3"]
+
+[ext_resource type="Script" path="res://scripts/Checkpoint.cs" id="1_cw1bj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_checkpoint"]
+radius = 32.0
+
+[node name="Checkpoint" type="Area2D" groups=["spawn_points"]]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_cw1bj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_checkpoint")
