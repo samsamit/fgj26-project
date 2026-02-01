@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dg6bnsnk7avne" path="res://maskTextures/starTexture.svg" id="17_vihhi"]
 [ext_resource type="PackedScene" uid="uid://cnr555d4qafj0" path="res://scenes/pickableMask.tscn" id="18_2ddkf"]
 [ext_resource type="Script" uid="uid://dckuoy7shumxo" path="res://assets/Juuson Mask Jutut/MineMask.cs" id="18_50st4"]
-[ext_resource type="PackedScene" path="res://scenes/projectile_launcher.tscn" id="19_ec51t"]
+[ext_resource type="PackedScene" uid="uid://dt5ycbrcdyof0" path="res://scenes/projectile_launcher.tscn" id="19_ec51t"]
 [ext_resource type="PackedScene" uid="uid://b3s6runcdg2t3" path="res://scenes/Checkpoint.tscn" id="20_ec51t"]
 [ext_resource type="PackedScene" uid="uid://ccs4na6xky6wu" path="res://scenes/BackgroundMusic.tscn" id="21_pjbue"]
 
@@ -37,7 +37,6 @@ position = Vector2(472, 148)
 Speed = 300.0
 
 [node name="Mask" parent="." unique_id=1868398740 node_paths=PackedStringArray("xRayMaskSprite") instance=ExtResource("6_3ubpw")]
-visible = false
 position = Vector2(471, 154)
 xRayMaskSprite = NodePath("../Puzzle3/MaskSystem/SubViewport/Node2D/Mask Circle")
 
@@ -197,11 +196,13 @@ shape = SubResource("RectangleShape2D_ec51t")
 position = Vector2(1039, -98)
 scale = Vector2(0.25, 0.25)
 NewMask = 2
+puzzleToUnlock = NodePath("../Puzzle1")
 
 [node name="PickableXRayMask" parent="." unique_id=1050133946 instance=ExtResource("18_2ddkf")]
 position = Vector2(1209, 104)
 scale = Vector2(0.25, 0.25)
 NewMask = 3
+puzzleToUnlock = NodePath("../Puzzle2")
 
 [node name="PickableSlowMask" parent="." unique_id=1259980722 instance=ExtResource("18_2ddkf")]
 position = Vector2(1636, -240)

@@ -14,6 +14,8 @@ public partial class PickableMask : Node2D
 	private Texture2D StrengthMask;
 	[Export]
 	private Texture2D XRayMask;
+	[Export]
+	private Texture2D SlowMask;
 
 	[Export]
 	private Puzzle puzzleToUnlock;
@@ -37,9 +39,20 @@ public partial class PickableMask : Node2D
 			case MaskEnum.XRay:
 				sprite.Texture = XRayMask;
 				break;
+			case MaskEnum.Slow:
+				sprite.Texture = SlowMask;
+				break;
 		}
-		Visible = false;
-		isUnlocked = false;
+		if (puzzleToUnlock == null)
+		{
+			Visible = true;
+			isUnlocked = true;
+		}
+		else
+		{
+		    Visible = false;
+		    isUnlocked = false;	
+		}
 
 		GlobalStateManager.Instance.PuzzleCompleted += OnPuzzleCompleted;
 	}
