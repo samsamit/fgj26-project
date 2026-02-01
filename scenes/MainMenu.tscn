@@ -3,6 +3,25 @@
 [ext_resource type="Script" uid="uid://ojhk13psdxpq" path="res://scripts/MainMenuScript.cs" id="1_0ykhv"]
 [ext_resource type="Texture2D" uid="uid://bxcjmulwhj3bl" path="res://assets/TitleScreen_Base.png" id="1_yqorp"]
 [ext_resource type="FontFile" uid="uid://bq5rdgh3ywwup" path="res://assets/ARCADECLASSIC.TTF" id="3_2wh52"]
+[ext_resource type="Texture2D" uid="uid://b2mbu43jxrkx2" path="res://assets/TitleScreenPuolivalo.png" id="3_826wr"]
+[ext_resource type="AudioStream" uid="uid://c51y56dw64io1" path="res://audio/music/Mask Game song V1.0.wav" id="4_ow34m"]
+[ext_resource type="Texture2D" uid="uid://dh5wvdhc2rlf5" path="res://assets/TitleScreenPimeys.png" id="4_ucygd"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_mipys"]
+frames = 6
+speed_scale = 4.0
+frame_0/texture = ExtResource("3_826wr")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("1_yqorp")
+frame_1/duration = 1.5
+frame_2/texture = ExtResource("3_826wr")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("1_yqorp")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("4_ucygd")
+frame_4/duration = 3.0
+frame_5/texture = ExtResource("3_826wr")
+frame_5/duration = 0.5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wh52"]
 bg_color = Color(0.0627451, 0.09411765, 0.3372549, 1)
@@ -37,8 +56,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0ykhv")
+MinTimeBetweenFlickers = 2
+MaxTimeBetweenFlickers = 7
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=91703864]
+[node name="StaticTexture" type="TextureRect" parent="." unique_id=91703864]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,6 +67,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_yqorp")
+
+[node name="AnimatedTexture" type="TextureRect" parent="." unique_id=629209687]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_mipys")
 
 [node name="ButtonContainer" type="VBoxContainer" parent="." unique_id=1282015204]
 layout_mode = 1
@@ -106,7 +136,19 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2wh52")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
 text = "Exit"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=693344626]
+stream = ExtResource("4_ow34m")
+autoplay = true
+
+[node name="FlickerStartTimer" type="Timer" parent="." unique_id=2136819632]
+
+[node name="FlickerTimeout" type="Timer" parent="." unique_id=1326591878]
+wait_time = 2.456
+
+[connection signal="visibility_changed" from="AnimatedTexture" to="." method="OnAnimatedTextureVisibilityChanged"]
 [connection signal="pressed" from="ButtonContainer/ButtonStart" to="." method="OnButtonStartPressed"]
 [connection signal="pressed" from="ButtonContainer/ButtonOptions" to="." method="OnButtonOptionsPressed"]
 [connection signal="pressed" from="ButtonContainer/ButtonCredits" to="." method="OnButtonCreditsPressed"]
 [connection signal="pressed" from="ButtonContainer/ButtonExit" to="." method="OnButtonExitPressed"]
+[connection signal="timeout" from="FlickerStartTimer" to="." method="OnTimerTimeout"]
+[connection signal="timeout" from="FlickerTimeout" to="." method="OnFlickerComplete"]
