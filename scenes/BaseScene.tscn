@@ -206,7 +206,7 @@ Conditions = [NodePath("AreaReached")]
 
 [node name="ProjectileLauncher" parent="Puzzle4" unique_id=413058064 instance=ExtResource("19_ec51t")]
 position = Vector2(725, -299)
-Angle = 3.134611336581816
+Angle = 4.71238898038469
 FireRate = 2.0
 
 [node name="ProjectileLauncher2" parent="Puzzle4" unique_id=393282719 instance=ExtResource("19_ec51t")]
@@ -249,8 +249,8 @@ Angle = 2.9670597283903604
 FireRate = 2.0
 
 [node name="ProjectileLauncher8" parent="Puzzle4" unique_id=1890662692 instance=ExtResource("19_ec51t")]
-position = Vector2(1218, -613)
-Angle = 0.3490658503988659
+position = Vector2(1288, -614)
+Angle = 3.490658503988659
 FireRate = 2.0
 
 [node name="ProjectileLauncher9" parent="Puzzle4" unique_id=1043954241 instance=ExtResource("19_ec51t")]
