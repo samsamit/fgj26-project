@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://b2mbu43jxrkx2" path="res://assets/TitleScreenPuolivalo.png" id="3_826wr"]
 [ext_resource type="AudioStream" uid="uid://c51y56dw64io1" path="res://audio/music/Mask Game song V1.0.wav" id="4_ow34m"]
 [ext_resource type="Texture2D" uid="uid://dh5wvdhc2rlf5" path="res://assets/TitleScreenPimeys.png" id="4_ucygd"]
+[ext_resource type="StyleBox" uid="uid://cnsrvjnnwjuuv" path="res://assets/resources/BaseButton.tres" id="6_7la6k"]
+[ext_resource type="StyleBox" uid="uid://d2ws4twkee0" path="res://assets/resources/OnPressedButton.tres" id="7_2nypq"]
 [ext_resource type="AudioStream" uid="uid://brgrsux5hpv6r" path="res://audio/effects/lights-flicker.mp3" id="7_ucygd"]
+[ext_resource type="StyleBox" uid="uid://n3ru0pfytx3f" path="res://assets/resources/OnHoverButton.tres" id="8_bky6r"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_mipys"]
 frames = 6
@@ -23,43 +26,6 @@ frame_4/texture = ExtResource("4_ucygd")
 frame_4/duration = 3.0
 frame_5/texture = ExtResource("3_826wr")
 frame_5/duration = 0.5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wh52"]
-bg_color = Color(0.0627451, 0.09411765, 0.3372549, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 0, 0.96862745, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_826wr"]
-bg_color = Color(0.0361, 0.054055024, 0.19, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 0, 0.96862745, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow34m"]
-bg_color = Color(0.0627451, 0.09411765, 0.3372549, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 0, 0.96862745, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_size = 12
 
 [node name="MainMenu" type="Control" unique_id=2065779490]
 layout_mode = 3
@@ -110,9 +76,9 @@ theme_override_colors/font_color = Color(1, 0, 0.96862745, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("3_2wh52")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxFlat_2wh52")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_826wr")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
+theme_override_styles/normal = ExtResource("6_7la6k")
+theme_override_styles/pressed = ExtResource("7_2nypq")
+theme_override_styles/hover = ExtResource("8_bky6r")
 text = "Start Game"
 
 [node name="ButtonOptions" type="Button" parent="ButtonContainer" unique_id=1250001927]
@@ -122,9 +88,9 @@ theme_override_colors/font_color = Color(1, 0, 0.96862745, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("3_2wh52")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxFlat_2wh52")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_826wr")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
+theme_override_styles/normal = ExtResource("6_7la6k")
+theme_override_styles/pressed = ExtResource("7_2nypq")
+theme_override_styles/hover = ExtResource("8_bky6r")
 text = "Options"
 
 [node name="ButtonCredits" type="Button" parent="ButtonContainer" unique_id=908497756]
@@ -134,9 +100,9 @@ theme_override_colors/font_color = Color(1, 0, 0.96862745, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("3_2wh52")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxFlat_2wh52")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_826wr")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
+theme_override_styles/normal = ExtResource("6_7la6k")
+theme_override_styles/pressed = ExtResource("7_2nypq")
+theme_override_styles/hover = ExtResource("8_bky6r")
 text = "Credits"
 
 [node name="ButtonExit" type="Button" parent="ButtonContainer" unique_id=94464644]
@@ -146,9 +112,9 @@ theme_override_colors/font_color = Color(1, 0, 0.96862745, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("3_2wh52")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxFlat_2wh52")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_826wr")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
+theme_override_styles/normal = ExtResource("6_7la6k")
+theme_override_styles/pressed = ExtResource("7_2nypq")
+theme_override_styles/hover = ExtResource("8_bky6r")
 text = "Exit"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=693344626]
