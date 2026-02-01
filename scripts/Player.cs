@@ -6,9 +6,10 @@ public partial class Player : CharacterBody2D
 {
 	[Export] public float Speed = 50.0f;
 	[Export] SpriteFrames SpriteFrames;
-	[Export] public float PushingPower = 100.0f;
+	[Export] public float PushingPower = 0.0f;
 	[Export] public float CharacterSpriteScaleMultiplier = 0.125f;
 	[Export] public float CharacterRotationSpeed = 10.0f;
+	[Export] public SpeedComponent SpeedComponent;
 
 	private const string MoveRight = "move_right";
 	private const string MoveLeft = "move_left";
@@ -33,6 +34,7 @@ public partial class Player : CharacterBody2D
 
 	public override void _Ready()
 	{
+		SpeedComponent.MovementSpeed = Speed;
 		GD.Print("Player script is active!");
 		InitializeAnimation(AnimationEnum.Idle);
 
@@ -45,6 +47,12 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		PushingPower = 0.0f;
+		if (GlobalStateManager.Instance.CurrentMask.Get().Equals(MaskEnum.Strength))
+		{
+			PushingPower = GlobalStateManager.Instance.MaskPower.Get() * 100;
+		}
+		
 		Vector2 direction = Vector2.Zero;
 		if (canMove)
 		{
@@ -52,7 +60,7 @@ public partial class Player : CharacterBody2D
 			direction.Y = Input.GetActionStrength(MoveBack) - Input.GetActionStrength(MoveForward);
 		}
 
-		Velocity = direction.Normalized() * Speed;
+		Velocity = direction.Normalized() * (float)SpeedComponent.CurrentSpeed;
 		var velocityNormalized = Velocity.Normalized();
 		var velocityNormalizedCombined = System.Math.Abs(velocityNormalized.X) + System.Math.Abs(velocityNormalized.Y);
 

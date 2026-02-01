@@ -2,15 +2,23 @@
 
 [ext_resource type="Texture2D" uid="uid://bv0j8a67lf01k" path="res://assets/tykinkuula.png" id="1_c8fcr"]
 [ext_resource type="Script" uid="uid://cii54iww1ny40" path="res://scripts/Projectile.cs" id="1_q3m7n"]
+[ext_resource type="PackedScene" uid="uid://oi5l0r30xfs2" path="res://scenes/components/speed_component.tscn" id="3_softn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q3m7n"]
 radius = 3.0
 
-[node name="Projectile" type="Area2D" unique_id=1352101008]
+[node name="Projectile" type="Area2D" unique_id=1352101008 node_paths=PackedStringArray("SpeedComponent")]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_q3m7n")
+SpeedComponent = NodePath("SpeedComponent")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=806277164]
 texture = ExtResource("1_c8fcr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=375356636]
 shape = SubResource("CircleShape2D_q3m7n")
+
+[node name="SpeedComponent" parent="." unique_id=89834571 instance=ExtResource("3_softn")]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=337578323]

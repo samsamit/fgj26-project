@@ -9,6 +9,8 @@ public partial class Mask : Node2D
 	[Export]
 	public float FollowSpeed { get; set; } = 125.0f;
 
+	[Export] public float SlownessModifier { get; set; } = 0.2f;
+
 	private GlobalStateManager _stateManager;
 
 	// Sprites
@@ -41,6 +43,17 @@ public partial class Mask : Node2D
 		_MaskMovingPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_MaskMoving");
 		_MaskSwitchPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_MaskSwitch");
 		GlobalStateManager.Instance.CurrentMask.RegisterObserver(SetMask);
+
+		ApplySlownessToObjectsInArea();
+
+		GlobalStateManager.Instance.CurrentMask.RegisterObserver(_ => ApplySlownessToObjectsInArea());
+		GlobalStateManager.Instance.CurrentMask.RegisterObserver(_ => RemoveSlownessFromObjectsInArea());
+
+		ViewArea.AreaEntered += OnSlowAreaEntered;
+		ViewArea.AreaExited += OnSlowAreaExited;
+
+		ViewArea.BodyEntered += OnSlowBodyEntered;
+		ViewArea.BodyExited += OnSlowBodyExited;
 	}
 
 	public override void _Process(double delta)
@@ -130,10 +143,14 @@ public partial class Mask : Node2D
 				Light.TextureScale = 0.5f;
 				break;
 			case MaskEnum.XRay:
-				Light.Visible = false;
+				Light.Texture = Round;
+				Light.Color = new Color("white");
+				Light.TextureScale = 0.7f;
 				break;
 			case MaskEnum.Strength:
-				Light.Visible = false;
+				Light.Texture = Round;
+				Light.Color = new Color("white");
+				Light.TextureScale = 0.5f;
 				break;
 			case MaskEnum.Slow:
 				Light.Texture = Round;
@@ -147,7 +164,7 @@ public partial class Mask : Node2D
 				break;
 		}
 
-		Background.Visible = mask == MaskEnum.Flashlite;
+		//Background.Visible = mask == MaskEnum.Flashlite;
 		xRayMaskSprite.Visible = mask == MaskEnum.XRay;
 		// Dynamic scaling for the collision shape, so that it matches the mask
 		CollisionShape2D collisionShape = GetNode<CollisionShape2D>("./Area2D/CollisionShape2D");
@@ -186,5 +203,71 @@ public partial class Mask : Node2D
 	public void SpawnAt(Vector2 position)
 	{
 		GlobalPosition = position;
+	}
+
+	private void ApplySlownessToObjectsInArea()
+	{
+		if (GlobalStateManager.Instance.CurrentMask.Get() != MaskEnum.Slow) return;
+
+		foreach (var body in ViewArea.GetOverlappingBodies())
+		{
+			OnSlowBodyEntered(body);
+		}
+
+		foreach (var area in ViewArea.GetOverlappingAreas())
+		{
+			OnSlowAreaEntered(area);
+		}
+	}
+
+	private void RemoveSlownessFromObjectsInArea()
+	{
+		if (GlobalStateManager.Instance.CurrentMask.Get() == MaskEnum.Slow) return;
+
+		foreach (var body in ViewArea.GetOverlappingBodies())
+		{
+			OnSlowBodyExited(body);
+		}
+
+		foreach (var area in ViewArea.GetOverlappingAreas())
+		{
+			OnSlowAreaExited(area);
+		}
+	}
+
+	private void OnSlowAreaEntered(Area2D area)
+	{
+		if (GlobalStateManager.Instance.CurrentMask.Get() != MaskEnum.Slow) return;
+
+		var speedComponent = area.GetNode<SpeedComponent>("SpeedComponent");
+		if (speedComponent == null) return;
+
+		speedComponent.SlownessModifier = SlownessModifier;
+	}
+
+	private void OnSlowAreaExited(Area2D area)
+	{
+		var speedComponent = area.GetNode<SpeedComponent>("SpeedComponent");
+		if (speedComponent == null) return;
+
+		speedComponent.SlownessModifier = 1f;
+	}
+
+	private void OnSlowBodyEntered(Node2D area)
+	{
+		if (GlobalStateManager.Instance.CurrentMask.Get() != MaskEnum.Slow) return;
+
+		var speedComponent = area.GetNode<SpeedComponent>("SpeedComponent");
+		if (speedComponent == null) return;
+
+		speedComponent.SlownessModifier = SlownessModifier;
+	}
+
+	private void OnSlowBodyExited(Node2D area)
+	{
+		var speedComponent = area.GetNode<SpeedComponent>("SpeedComponent");
+		if (speedComponent == null) return;
+
+		speedComponent.SlownessModifier = 1f;
 	}
 }

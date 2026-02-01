@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dvnputg18yecj"
+path="res://.godot/imported/Mask song 2 - Ilman rumpuja.wav-ea837f4ece7910e13f78b9c3795a715b.sample"
+
+[deps]
+
+source_file="res://assets/Juuson Mask Jutut/Mask song 2 - Ilman rumpuja.wav"
+dest_files=["res://.godot/imported/Mask song 2 - Ilman rumpuja.wav-ea837f4ece7910e13f78b9c3795a715b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

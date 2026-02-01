@@ -16,6 +16,8 @@ public partial class CheckpointManager : Node2D
 	private CanvasLayer _respawnAnimationLayer;
 	private TextureRect _cursorSprite;
 	private Tween _animationTween;
+
+	private AudioStreamPlayer _AudioStreamPlayerLogoSpin;
 	
 	// Cursor texture path
 	private const string CursorTexturePath = "res://assets/kursori.png";
@@ -39,6 +41,7 @@ public partial class CheckpointManager : Node2D
 		_player = GetNode<Player>("/root/World/Player");
 		_mask = GetNode<Mask>("/root/World/Mask");
 		_camera = GetNode<MainCamera>("/root/World/Camera");
+		_AudioStreamPlayerLogoSpin = GetNode<AudioStreamPlayer>("AudioStreamPlayerLogoSpin");
 		
 		// Set initial checkpoint position to the first checkpoint or player's start position
 		if (_checkpoints.Count > 0)
@@ -98,6 +101,8 @@ public partial class CheckpointManager : Node2D
 	private void PlayRespawnAnimation()
 	{
 		_player.canMove = false;
+		_AudioStreamPlayerLogoSpin.Play();
+
 		// Create the CanvasLayer for the animation (renders on top of everything)
 		_respawnAnimationLayer = new CanvasLayer();
 		_respawnAnimationLayer.Layer = 100; // High layer to be on top
