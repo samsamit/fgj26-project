@@ -79,6 +79,7 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = ExtResource("6_7la6k")
 theme_override_styles/pressed = ExtResource("7_2nypq")
 theme_override_styles/hover = ExtResource("8_bky6r")
+theme_override_styles/disabled = ExtResource("7_2nypq")
 text = "Start Game"
 
 [node name="ButtonOptions" type="Button" parent="ButtonContainer" unique_id=1250001927]
@@ -91,6 +92,7 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = ExtResource("6_7la6k")
 theme_override_styles/pressed = ExtResource("7_2nypq")
 theme_override_styles/hover = ExtResource("8_bky6r")
+theme_override_styles/disabled = ExtResource("7_2nypq")
 text = "Options"
 
 [node name="ButtonCredits" type="Button" parent="ButtonContainer" unique_id=908497756]
@@ -103,6 +105,8 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = ExtResource("6_7la6k")
 theme_override_styles/pressed = ExtResource("7_2nypq")
 theme_override_styles/hover = ExtResource("8_bky6r")
+theme_override_styles/disabled = ExtResource("7_2nypq")
+disabled = true
 text = "Credits"
 
 [node name="ButtonExit" type="Button" parent="ButtonContainer" unique_id=94464644]
@@ -115,6 +119,7 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = ExtResource("6_7la6k")
 theme_override_styles/pressed = ExtResource("7_2nypq")
 theme_override_styles/hover = ExtResource("8_bky6r")
+theme_override_styles/disabled = ExtResource("7_2nypq")
 text = "Exit"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=693344626]
