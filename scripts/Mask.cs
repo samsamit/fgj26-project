@@ -7,7 +7,7 @@ public partial class Mask : Node2D
 	/// Speed at which the mask moves towards the mouse position (pixels per second).
 	/// </summary>
 	[Export]
-	public float FollowSpeed { get; set; } = 100.0f;
+	public float FollowSpeed { get; set; } = 125.0f;
 
 	private GlobalStateManager _stateManager;
 
@@ -122,7 +122,7 @@ public partial class Mask : Node2D
 			case MaskEnum.Flashlite:
 				Light.Texture = Round;
 				Light.Color = new Color("white");
-				Light.TextureScale = 0.5f;
+				Light.TextureScale = 0.4f;
 				break;
 			case MaskEnum.Basic:
 				Light.Texture = Square;
@@ -130,9 +130,7 @@ public partial class Mask : Node2D
 				Light.TextureScale = 0.5f;
 				break;
 			case MaskEnum.XRay:
-				Light.Texture = Star;
-				Light.Color = new Color("green");
-				Light.TextureScale = 0.5f;
+				Light.Visible = false;
 				break;
 			case MaskEnum.Strength:
 				Light.Visible = false;
