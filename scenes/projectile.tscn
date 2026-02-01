@@ -27,6 +27,7 @@ shape = SubResource("CircleShape2D_q3m7n")
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=214823966]
 collision_layer = 2
 collision_mask = 3
+sync_to_physics = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1772050115]
 shape = SubResource("CircleShape2D_q3m7n")
