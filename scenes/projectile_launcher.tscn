@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bnpbh0de0jkqb" path="res://assets/tykinjalusta.png" id="2_0ffta"]
 [ext_resource type="PackedScene" uid="uid://dsfdca1tb2pw2" path="res://scenes/projectile.tscn" id="2_ip57c"]
 [ext_resource type="Texture2D" uid="uid://d3naxm8s5bdyv" path="res://assets/tykki.png" id="3_ip57c"]
+[ext_resource type="AudioStream" uid="uid://baak57qa5yiux" path="res://audio/effects/cannon_explosion_sound.mp3" id="5_htbxe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ip57c"]
 size = Vector2(32, 32)
@@ -27,3 +28,9 @@ shape = SubResource("RectangleShape2D_ip57c")
 
 [node name="TurretSprite" type="Sprite2D" parent="Turret" unique_id=713033688]
 texture = ExtResource("3_ip57c")
+
+[node name="AudioStreamPlayer2DFire" type="AudioStreamPlayer2D" parent="." unique_id=1943150266]
+stream = ExtResource("5_htbxe")
+max_distance = 700.0
+max_polyphony = 5
+bus = &"Effects"

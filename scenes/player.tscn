@@ -32,3 +32,6 @@ stream = ExtResource("6_tuyoq")
 bus = &"Effects"
 
 [node name="SpeedComponent" parent="." unique_id=89834571 instance=ExtResource("6_fjrip")]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1807921812]
+current = true
