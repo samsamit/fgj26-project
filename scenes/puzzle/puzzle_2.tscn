@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://d2qod3f41ge1g"]
 
 [ext_resource type="Script" uid="uid://ccrbot2xfsy4p" path="res://puzzles/Puzzle2.cs" id="1_fr6yp"]
-[ext_resource type="PackedScene" uid="uid://b8erdqmxs24ka" path="res://scenes/CompletionConditions/PressurePlateDownConditionCondition.tscn" id="2_0d3ae"]
+[ext_resource type="PackedScene" uid="uid://b8erdqmxs24ka" path="res://scenes/CompletionConditions/PressurePlateDownCondition.tscn" id="2_0d3ae"]
 [ext_resource type="PackedScene" uid="uid://sdnhw3s62pbc" path="res://scenes/movable_box.tscn" id="2_1tdta"]
+[ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="4_fr6yp"]
 
 [node name="Puzzle2" type="Node" unique_id=664420405 node_paths=PackedStringArray("Conditions")]
 script = ExtResource("1_fr6yp")
@@ -52,3 +53,18 @@ position = Vector2(1031, -215)
 
 [node name="PressurePlateDownCondition3" parent="." unique_id=565024762 instance=ExtResource("2_0d3ae")]
 position = Vector2(887, -357)
+
+[node name="StaticBox" parent="." unique_id=1283738957 instance=ExtResource("4_fr6yp")]
+position = Vector2(780, -141)
+
+[node name="StaticBox2" parent="." unique_id=246933602 instance=ExtResource("4_fr6yp")]
+position = Vector2(830, -202)
+
+[node name="StaticBox3" parent="." unique_id=1082165433 instance=ExtResource("4_fr6yp")]
+position = Vector2(887, -300)
+
+[node name="StaticBox4" parent="." unique_id=83138818 instance=ExtResource("4_fr6yp")]
+position = Vector2(974, -359)
+
+[node name="StaticBox5" parent="." unique_id=475312844 instance=ExtResource("4_fr6yp")]
+position = Vector2(712, -141)
