@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://drn5yylol0xfl"]
+
+[ext_resource type="Script" uid="uid://bl7mlucm4kl7u" path="res://scenes/puzzle/Puzzle4.cs" id="1_rjvj6"]
+
+[node name="Puzzle4" type="Node" unique_id=801700866 node_paths=PackedStringArray("Conditions")]
+script = ExtResource("1_rjvj6")
+Conditions = []

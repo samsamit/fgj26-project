@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://db43psykkxsdo"]
+
+[ext_resource type="PackedScene" uid="uid://bb3d8ms8wak8w" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="1_mufyr"]
+[ext_resource type="PackedScene" uid="uid://bfq8p812a71jn" path="res://assets/Juuson Mask Jutut/Switch.tscn" id="2_yuylf"]
+[ext_resource type="Material" uid="uid://b0qw3cofrat17" path="res://assets/Juuson Mask Jutut/BoxMaskMaterial.tres" id="3_pdfjg"]
+[ext_resource type="Texture2D" uid="uid://bd2kyp3xw0e0m" path="res://assets/StrengthMaskiUI.png" id="4_uvl0d"]
+[ext_resource type="Script" uid="uid://vshet36c6n2y" path="res://assets/Juuson Mask Jutut/MaskSystem.cs" id="5_ossvg"]
+[ext_resource type="Texture2D" uid="uid://cbdlt1fn6sce5" path="res://assets/Juuson Mask Jutut/Circle.png" id="6_3hpks"]
+[ext_resource type="Script" uid="uid://dckuoy7shumxo" path="res://assets/Juuson Mask Jutut/MineMask.cs" id="7_bwhav"]
+[ext_resource type="Script" uid="uid://cs5rs5nli2unw" path="res://scenes/MinefieldGoal.cs" id="8_k88h5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ec51t"]
+size = Vector2(26, 80)
+
+[node name="Puzzle3" type="Node" unique_id=2096375134]
+
+[node name="Bomb 1" parent="." unique_id=324300176 instance=ExtResource("1_mufyr")]
+position = Vector2(1332.7917, 33)
+
+[node name="Bomb 2" parent="." unique_id=2012613700 instance=ExtResource("1_mufyr")]
+position = Vector2(1333.7917, -59)
+
+[node name="Bomb 3" parent="." unique_id=1413310753 instance=ExtResource("1_mufyr")]
+position = Vector2(1332.7917, -155)
+
+[node name="Bomb 4" parent="." unique_id=1862367923 instance=ExtResource("1_mufyr")]
+position = Vector2(1331.7917, -241)
+
+[node name="Bomb 5" parent="." unique_id=1283064661 instance=ExtResource("1_mufyr")]
+position = Vector2(1424.7917, -239)
+
+[node name="Switch 1" parent="." unique_id=397120877 node_paths=PackedStringArray("bomb") instance=ExtResource("2_yuylf")]
+position = Vector2(1576.7917, -130)
+bomb = NodePath("../Bomb 1")
+
+[node name="Switch 2" parent="." unique_id=876718754 node_paths=PackedStringArray("bomb") instance=ExtResource("2_yuylf")]
+position = Vector2(1634.7917, -21)
+bomb = NodePath("../Bomb 2")
+
+[node name="Switch 3" parent="." unique_id=977159148 node_paths=PackedStringArray("bomb") instance=ExtResource("2_yuylf")]
+position = Vector2(1634.7917, -89)
+bomb = NodePath("../Bomb 3")
+
+[node name="Switch 4" parent="." unique_id=975650538 node_paths=PackedStringArray("bomb") instance=ExtResource("2_yuylf")]
+position = Vector2(1519.7917, -89)
+bomb = NodePath("../Bomb 4")
+
+[node name="Switch 5" parent="." unique_id=731846722 node_paths=PackedStringArray("bomb") instance=ExtResource("2_yuylf")]
+position = Vector2(1581.7917, 22)
+bomb = NodePath("../Bomb 5")
+
+[node name="Line 1" type="Line2D" parent="." unique_id=1993023291]
+z_index = 300
+material = ExtResource("3_pdfjg")
+position = Vector2(592.7918, 155)
+points = PackedVector2Array(996, -273, 996.2082, -231, 907.2082, -172, 863, -206, 752, -132)
+width = 5.0
+texture = ExtResource("4_uvl0d")
+
+[node name="Line 2" type="Line2D" parent="." unique_id=928668103]
+z_index = 300
+material = ExtResource("3_pdfjg")
+position = Vector2(593.7918, 69)
+points = PackedVector2Array(1053, -77, 1081, -145, 1090, -233, 947, -392, 674, -391, 669.2082, -281.95486, 726, -136)
+width = 5.0
+texture = ExtResource("4_uvl0d")
+
+[node name="Line 3" type="Line2D" parent="." unique_id=1363642380]
+z_index = 300
+material = ExtResource("3_pdfjg")
+position = Vector2(592.7918, -27)
+points = PackedVector2Array(1032, -49, 904, 86, 681, 83, 675, -90, 728, -133)
+width = 5.0
+texture = ExtResource("4_uvl0d")
+
+[node name="Line 4" type="Line2D" parent="." unique_id=1740226475]
+z_index = 300
+material = ExtResource("3_pdfjg")
+position = Vector2(591.7918, -113)
+points = PackedVector2Array(941, 36, 950, -64, 996, -100, 830, -192, 745, -140)
+width = 5.0
+texture = ExtResource("4_uvl0d")
+
+[node name="Line 5" type="Line2D" parent="." unique_id=834030055]
+z_index = 300
+material = ExtResource("3_pdfjg")
+position = Vector2(684.7918, -111)
+points = PackedVector2Array(887, 146, 741, 151, 715, -52, 825, -73, 751, -117)
+width = 5.0
+texture = ExtResource("4_uvl0d")
+
+[node name="MaskSystem" type="Node" parent="." unique_id=772410016 node_paths=PackedStringArray("MaskViewport", "MaskCircleInViewport", "PlayerCircle")]
+script = ExtResource("5_ossvg")
+MaskViewport = NodePath("SubViewport")
+MaskCircleInViewport = NodePath("SubViewport/Node2D/Mask Circle")
+PlayerCircle = NodePath("Visible Circle")
+BoxesMaterial = ExtResource("3_pdfjg")
+
+[node name="Visible Circle" type="Sprite2D" parent="MaskSystem" unique_id=1162982682]
+modulate = Color(1, 1, 1, 0)
+visibility_layer = 2
+position = Vector2(472, 140)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_3hpks")
+script = ExtResource("7_bwhav")
+
+[node name="SubViewport" type="SubViewport" parent="MaskSystem" unique_id=1570707184]
+transparent_bg = true
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="Node2D" type="Node2D" parent="MaskSystem/SubViewport" unique_id=1552466760]
+
+[node name="Mask Circle" type="Sprite2D" parent="MaskSystem/SubViewport/Node2D" unique_id=553326091]
+scale = Vector2(2, 2)
+texture = ExtResource("6_3hpks")
+
+[node name="Bomb Defuser" type="Area2D" parent="." unique_id=1781581830]
+position = Vector2(1526, -234)
+collision_layer = 0
+collision_mask = 11
+script = ExtResource("8_k88h5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bomb Defuser" unique_id=1578898364]
+shape = SubResource("RectangleShape2D_ec51t")

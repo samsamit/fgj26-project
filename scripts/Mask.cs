@@ -32,7 +32,9 @@ public partial class Mask : Node2D
 
 	private PointLight2D Light;
 	private CanvasModulate Background;
-	[Export] public Node2D xRayMaskSprite;
+	
+	[Export] 
+	public Node2D xRayMaskSprite;
 
 	// Tracks if the current mouse press started on a UI element
 	private bool _clickStartedOnUi = false;
