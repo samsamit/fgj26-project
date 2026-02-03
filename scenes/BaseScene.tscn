@@ -15,16 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://bd2kyp3xw0e0m" path="res://assets/StrengthMaskiUI.png" id="14_yysfs"]
 [ext_resource type="Script" uid="uid://vshet36c6n2y" path="res://assets/Juuson Mask Jutut/MaskSystem.cs" id="16_bfjpa"]
 [ext_resource type="Script" uid="uid://cs5rs5nli2unw" path="res://scenes/MinefieldGoal.cs" id="16_si2s2"]
-[ext_resource type="PackedScene" uid="uid://12r07ldgunk7" path="res://scenes/puzzle/puzzle_4.tscn" id="17_50st4"]
 [ext_resource type="PackedScene" uid="uid://3djuvdff2kw7" path="res://scenes/pickableMask.tscn" id="18_2ddkf"]
 [ext_resource type="Script" uid="uid://dckuoy7shumxo" path="res://assets/Juuson Mask Jutut/MineMask.cs" id="18_50st4"]
-[ext_resource type="PackedScene" uid="uid://b8erdqmxs24ka" path="res://scenes/CompletionConditions/PressurePlateDownCondition.tscn" id="19_50st4"]
-[ext_resource type="PackedScene" uid="uid://dt5ycbrcdyof0" path="res://scenes/projectile_launcher.tscn" id="19_ec51t"]
 [ext_resource type="PackedScene" uid="uid://b3s6runcdg2t3" path="res://scenes/Checkpoint.tscn" id="20_ec51t"]
-[ext_resource type="PackedScene" uid="uid://c3knvd6urqxyg" path="res://scenes/CompletionConditions/AreaReachedCondition.tscn" id="20_kt07b"]
 [ext_resource type="PackedScene" uid="uid://ccs4na6xky6wu" path="res://scenes/BackgroundMusic.tscn" id="21_pjbue"]
-[ext_resource type="PackedScene" uid="uid://sdnhw3s62pbc" path="res://scenes/movable_box.tscn" id="21_vem8k"]
-[ext_resource type="PackedScene" uid="uid://c3sx3i1rpjkul" path="res://scenes/SceneTransition.tscn" id="23_kt07b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec51t"]
 size = Vector2(26, 80)
@@ -36,9 +30,9 @@ script = ExtResource("1_vem8k")
 
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("3_gp54n")]
 z_index = 101
-position = Vector2(472, 148)
+position = Vector2(1043, 18.00003)
 scale = Vector2(1.0358996, 0.9782269)
-Speed = 60.0
+Speed = 70.0
 
 [node name="Camera" parent="." unique_id=947783170 node_paths=PackedStringArray("MainPlayer", "MaskPlayer") instance=ExtResource("6_tt3em")]
 position = Vector2(540, 133)
@@ -50,6 +44,7 @@ MaxZoom = 1.5
 ZoomSpeed = 0.5
 
 [node name="Mask" parent="." unique_id=1868398740 node_paths=PackedStringArray("mainCamera", "xRayMaskSprite") instance=ExtResource("6_3ubpw")]
+visible = false
 position = Vector2(471, 154)
 mainCamera = NodePath("../Camera")
 xRayMaskSprite = NodePath("../Puzzle3/MaskSystem/SubViewport/Node2D/Mask Circle")
@@ -179,92 +174,6 @@ script = ExtResource("16_si2s2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puzzle3/Bomb Defuser" unique_id=816726667]
 shape = SubResource("RectangleShape2D_ec51t")
 
-[node name="Puzzle4" parent="." unique_id=801700866 node_paths=PackedStringArray("Conditions") instance=ExtResource("17_50st4")]
-Conditions = [NodePath("AreaReached")]
-
-[node name="ProjectileLauncher" parent="Puzzle4" unique_id=413058064 instance=ExtResource("19_ec51t")]
-position = Vector2(725, -299)
-Angle = 4.71238898038469
-FireRate = 2.0
-
-[node name="ProjectileLauncher2" parent="Puzzle4" unique_id=393282719 instance=ExtResource("19_ec51t")]
-position = Vector2(942, -769)
-Angle = 5.497787143782138
-FireRate = 2.0
-
-[node name="PressurePlateDownCondition" parent="Puzzle4" unique_id=1788132455 instance=ExtResource("19_50st4")]
-position = Vector2(537.2009, -266.9438)
-
-[node name="AreaReached" parent="Puzzle4" unique_id=1230939768 instance=ExtResource("20_kt07b")]
-position = Vector2(1280, -755)
-
-[node name="MovableBox" parent="Puzzle4" unique_id=1071985089 instance=ExtResource("21_vem8k")]
-position = Vector2(539, -301)
-
-[node name="ProjectileLauncher3" parent="Puzzle4" unique_id=541340159 instance=ExtResource("19_ec51t")]
-position = Vector2(851, -621)
-Angle = 5.585053606381854
-FireRate = 2.0
-
-[node name="ProjectileLauncher4" parent="Puzzle4" unique_id=419203085 instance=ExtResource("19_ec51t")]
-position = Vector2(1190, -735)
-Angle = 1.2217304763960306
-FireRate = 2.0
-
-[node name="ProjectileLauncher5" parent="Puzzle4" unique_id=41696841 instance=ExtResource("19_ec51t")]
-position = Vector2(918, -690)
-Angle = 1.5707963267948966
-FireRate = 2.0
-
-[node name="ProjectileLauncher6" parent="Puzzle4" unique_id=332097417 instance=ExtResource("19_ec51t")]
-position = Vector2(1037, -701)
-Angle = 1.5707963267948966
-FireRate = 2.0
-
-[node name="ProjectileLauncher7" parent="Puzzle4" unique_id=597179290 instance=ExtResource("19_ec51t")]
-position = Vector2(1286, -517)
-Angle = 2.9670597283903604
-FireRate = 2.0
-
-[node name="ProjectileLauncher8" parent="Puzzle4" unique_id=1890662692 instance=ExtResource("19_ec51t")]
-position = Vector2(1288, -614)
-Angle = 3.490658503988659
-FireRate = 2.0
-
-[node name="ProjectileLauncher9" parent="Puzzle4" unique_id=1043954241 instance=ExtResource("19_ec51t")]
-position = Vector2(1127, -484)
-Angle = 4.014257279586958
-FireRate = 2.0
-
-[node name="ProjectileLauncher10" parent="Puzzle4" unique_id=1162862964 instance=ExtResource("19_ec51t")]
-position = Vector2(707, -749)
-Angle = 0.6230825429619757
-FireRate = 2.0
-
-[node name="Checkpoint" parent="Puzzle4" unique_id=1615379244 instance=ExtResource("20_ec51t")]
-position = Vector2(979, -411)
-
-[node name="SceneTransition" parent="Puzzle4" unique_id=595025416 instance=ExtResource("23_kt07b")]
-position = Vector2(1290, -744)
-scale = Vector2(1.2411398, 1.4788749)
-TargetScene = "uid://dq7q3vcunrcb3"
-
-[node name="ProjectileLauncher11" parent="Puzzle4" unique_id=1476672139 instance=ExtResource("19_ec51t")]
-position = Vector2(1293, -402)
-Angle = 3.665191429188092
-
-[node name="ProjectileLauncher12" parent="Puzzle4" unique_id=1928669575 instance=ExtResource("19_ec51t")]
-position = Vector2(1289, -463)
-Angle = 3.490658503988659
-
-[node name="ProjectileLauncher13" parent="Puzzle4" unique_id=1146051243 instance=ExtResource("19_ec51t")]
-position = Vector2(1290, -563)
-Angle = 3.141592653589793
-
-[node name="ProjectileLauncher14" parent="Puzzle4" unique_id=1313026799 instance=ExtResource("19_ec51t")]
-position = Vector2(1121, -730)
-Angle = 1.2217304763960306
-
 [node name="PickableStrengthMask" parent="." unique_id=955841723 node_paths=PackedStringArray("puzzleToUnlock") instance=ExtResource("18_2ddkf")]
 position = Vector2(1039, -98)
 scale = Vector2(0.25, 0.25)
@@ -292,4 +201,3 @@ position = Vector2(1263, 101)
 
 [editable path="Puzzle1"]
 [editable path="Puzzle2"]
-[editable path="Puzzle4"]

@@ -4,7 +4,10 @@ public abstract partial class Puzzle : Node
 {
 	public abstract string puzzleId { get; }
 	public bool isActive;
-	public abstract void CompletePuzzle();
+	public void CompletePuzzle()
+	{
+		GlobalStateManager.Instance.EmitSignal(GlobalStateManager.SignalName.PuzzleCompleted, puzzleId);
+	}
 
 	public override void _Ready()
 	{
