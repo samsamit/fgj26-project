@@ -11,6 +11,8 @@ public partial class ProjectileLauncher : Node2D
     [Export] public double ProjectileSpeed;
     [Export] public double FireRate = 1;
 
+    private static Random _random = new Random();
+
     private double _nextFire;
     private AudioStreamPlayer2D _AudioStreamPlayerFire;
 
@@ -18,7 +20,7 @@ public partial class ProjectileLauncher : Node2D
     {
         _AudioStreamPlayerFire =  GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2DFire");
         Turret.Rotation = Angle;
-        _nextFire = new Random().NextDouble() * 1 / FireRate;
+        _nextFire = _random.NextDouble() * 1 / FireRate;
     }
 
     public override void _PhysicsProcess(double delta)
@@ -40,6 +42,6 @@ public partial class ProjectileLauncher : Node2D
         projectile.Position += new Vector2(24, 0).Rotated(Angle);
         projectile.SpeedComponent.MovementSpeed = ProjectileSpeed;
         AddChild(projectile);
-        _nextFire += 1 / FireRate;
+        _nextFire += _random.NextDouble() * 1 / FireRate;
     }
 }

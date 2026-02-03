@@ -30,7 +30,7 @@ texture = ExtResource("3_ip57c")
 
 [node name="AudioStreamPlayer2DFire" type="AudioStreamPlayer2D" parent="." unique_id=1943150266]
 stream = ExtResource("5_htbxe")
-volume_db = -2.039
+volume_db = -6.908
 max_distance = 375.0
 attenuation = 1.7411014
 max_polyphony = 5
