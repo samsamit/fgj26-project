@@ -37,7 +37,6 @@ size = Vector2(26, 80)
 z_index = 101
 position = Vector2(472, 148)
 scale = Vector2(1.0358996, 0.9782269)
-Speed = 50.0
 
 [node name="Mask" parent="." unique_id=1868398740 node_paths=PackedStringArray("xRayMaskSprite") instance=ExtResource("6_3ubpw")]
 position = Vector2(471, 154)
