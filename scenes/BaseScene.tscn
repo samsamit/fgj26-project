@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://iv1onl6kbhyd"]
 
 [ext_resource type="PackedScene" uid="uid://clf0d5od1cdh1" path="res://scenes/world.tscn" id="1_tt3em"]
+[ext_resource type="Script" uid="uid://xt3j56wup7ea" path="res://scripts/BaseScene.cs" id="1_vem8k"]
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://bkyppfbrkinr2" path="res://scenes/camera.tscn" id="6_tt3em"]
@@ -30,6 +31,7 @@
 size = Vector2(26, 80)
 
 [node name="World" type="Node" unique_id=1516675657]
+script = ExtResource("1_vem8k")
 
 [node name="World" parent="." unique_id=577538569 instance=ExtResource("1_tt3em")]
 
@@ -308,8 +310,6 @@ position = Vector2(1041, -29)
 
 [node name="Checkpoint2" parent="." unique_id=2133986926 instance=ExtResource("20_ec51t")]
 position = Vector2(1263, 101)
-collision_layer = 1
-collision_mask = 8
 
 [node name="BackgroundMusic" parent="." unique_id=819150622 instance=ExtResource("21_pjbue")]
 

@@ -41,6 +41,8 @@ public partial class MainMenuScript : Control
 		_timerToStartFlicker.Start();
 		_animatedTexture.Visible = false;
 		OptionsScene = ResourceLoader.Load<PackedScene>("res://scenes/OptionsMenu.tscn");
+
+		GlobalStateManager.Instance.PauseGame();
 	}
 
 	public override void _Process(double delta)
@@ -71,7 +73,7 @@ public partial class MainMenuScript : Control
         _creditsPlaying = true;
         _buttonContainer.Visible = false;
 
-        _timerToStartFlicker.WaitTime = 0;
+        _timerToStartFlicker.WaitTime = 0.01f;
         _timerToStartFlicker.Start();
 		GD.Print("Credits pressed");
 	}

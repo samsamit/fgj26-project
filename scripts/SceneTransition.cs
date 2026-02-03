@@ -21,6 +21,6 @@ public partial class SceneTransition : Area2D
         }
 
         GD.Print($"Transitioning to scene: {TargetScene}");
-        GetTree().ChangeSceneToFile(TargetScene);
+        GetTree().CallDeferred("change_scene_to_file", TargetScene);
     }
 }

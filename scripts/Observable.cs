@@ -41,4 +41,10 @@ public class Observable<T>
 	{
 		BeforeChangeObservers.Add(observer);
 	}
+
+	public void DeregisterAllObservers()
+	{
+		AfterChangeObservers.Clear();
+		BeforeChangeObservers.Clear();
+	}
 }
