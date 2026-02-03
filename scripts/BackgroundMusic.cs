@@ -15,7 +15,7 @@ public partial class BackgroundMusic : AudioStreamPlayer
 
 	public override void _Ready()
 	{
-		GlobalStateManager.Instance.AvailableMasks.RegisterObserver(UpdateMusic);
+		GlobalStateManager.Instance.AvailableMasks.RegisterAfterChangeObserver(UpdateMusic);
 	}
 
 	private void UpdateMusic(List<MaskEnum> masks)

@@ -13,7 +13,7 @@ public partial class Health : HBoxContainer
 		health2 = (TextureRect)GetNode("./Health2");
 		health3 = (TextureRect)GetNode("./Health3");
 
-		GlobalStateManager.Instance.Health.RegisterObserver(
+		GlobalStateManager.Instance.Health.RegisterAfterChangeObserver(
 			health => UpdateHealth(health));
 	}
 

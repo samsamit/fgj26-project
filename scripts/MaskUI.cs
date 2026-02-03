@@ -42,11 +42,11 @@ public partial class MaskUI : VBoxContainer
 		XRayMask.MouseFilter = MouseFilterEnum.Stop;
 		SlowMask.MouseFilter = MouseFilterEnum.Stop;
 
-		GlobalStateManager.Instance.AvailableMasks.RegisterObserver(
+		GlobalStateManager.Instance.AvailableMasks.RegisterAfterChangeObserver(
 			UpdateAvailableMasks);
-		GlobalStateManager.Instance.MaskPower.RegisterObserver(
+		GlobalStateManager.Instance.MaskPower.RegisterAfterChangeObserver(
 			UpdateMaskPower);
-		GlobalStateManager.Instance.CurrentMask.RegisterObserver(SetMask);
+		GlobalStateManager.Instance.CurrentMask.RegisterAfterChangeObserver(SetMask);
 		SetMask(GlobalStateManager.Instance.CurrentMask.Get());
 	}
 

@@ -44,12 +44,13 @@ public partial class Mask : Node2D
 
 		_MaskMovingPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_MaskMoving");
 		_MaskSwitchPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_MaskSwitch");
-		GlobalStateManager.Instance.CurrentMask.RegisterObserver(SetMask);
+		GlobalStateManager.Instance.CurrentMask.RegisterAfterChangeObserver(SetMask);
 
 		ApplySlownessToObjectsInArea();
 
-		GlobalStateManager.Instance.CurrentMask.RegisterObserver(_ => ApplySlownessToObjectsInArea());
-		GlobalStateManager.Instance.CurrentMask.RegisterObserver(_ => RemoveSlownessFromObjectsInArea());
+		GlobalStateManager.Instance.CurrentMask.RegisterAfterChangeObserver(_ => ApplySlownessToObjectsInArea());
+		GlobalStateManager.Instance.CurrentMask.RegisterAfterChangeObserver(_ => RemoveSlownessFromObjectsInArea());
+		GlobalStateManager.Instance.CurrentMask.RegisterBeforeChangeObserver(_ => SavePreviousMask(_));
 
 		ViewArea.AreaEntered += OnSlowAreaEntered;
 		ViewArea.AreaExited += OnSlowAreaExited;
@@ -120,6 +121,11 @@ public partial class Mask : Node2D
 	private void Area2DBodyExited(Node body)
 	{
 		GD.Print("Body exited: " + body.Name);
+	}
+
+	public void SavePreviousMask(MaskEnum currentMask)
+	{
+		GlobalStateManager.Instance.PreviousMask = currentMask;
 	}
 
 	public void SetMask(MaskEnum mask)
@@ -235,7 +241,7 @@ public partial class Mask : Node2D
 
 	private void RemoveSlownessFromObjectsInArea()
 	{
-		if (GlobalStateManager.Instance.CurrentMask.Get() == MaskEnum.Slow) return;
+		if (GlobalStateManager.Instance.PreviousMask == MaskEnum.Slow && GlobalStateManager.Instance.CurrentMask.Get() != MaskEnum.Slow) return;
 
 		foreach (var body in ViewArea.GetOverlappingBodies())
 		{

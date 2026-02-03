@@ -273,7 +273,7 @@ TargetScene = "uid://dq7q3vcunrcb3"
 
 [node name="ProjectileLauncher11" parent="Puzzle4" unique_id=1476672139 instance=ExtResource("19_ec51t")]
 position = Vector2(1293, -402)
-Angle = 3.6651914291880923
+Angle = 3.665191429188092
 
 [node name="ProjectileLauncher12" parent="Puzzle4" unique_id=1928669575 instance=ExtResource("19_ec51t")]
 position = Vector2(1289, -463)
@@ -309,6 +309,8 @@ position = Vector2(1041, -29)
 
 [node name="Checkpoint2" parent="." unique_id=2133986926 instance=ExtResource("20_ec51t")]
 position = Vector2(1263, 101)
+collision_layer = 1
+collision_mask = 8
 
 [node name="BackgroundMusic" parent="." unique_id=819150622 instance=ExtResource("21_pjbue")]
 

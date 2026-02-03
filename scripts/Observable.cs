@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 public class Observable<T>
 {
-	private List<Action<T>> Observers = [];
+	private List<Action<T>> AfterChangeObservers = [];
+	private List<Action<T>> BeforeChangeObservers = [];
 
 	private T value;
 
@@ -19,16 +20,25 @@ public class Observable<T>
 
 	public void Set(T value)
 	{
+		foreach (var observer in BeforeChangeObservers)
+		{
+			observer.Invoke(value);
+		}
 		this.value = value;
-		foreach (var observer in Observers)
+		foreach (var observer in AfterChangeObservers)
 		{
 			observer.Invoke(value);
 		}
 	}
 
-	public void RegisterObserver(Action<T> observer)
+	public void RegisterAfterChangeObserver(Action<T> observer)
 	{
-		Observers.Add(observer);
+		AfterChangeObservers.Add(observer);
 		observer.Invoke(value);  // Invoke immediately with current value
+	}
+
+	public void RegisterBeforeChangeObserver(Action<T> observer)
+	{
+		BeforeChangeObservers.Add(observer);
 	}
 }
