@@ -22,7 +22,7 @@ public class Observable<T>
 	{
 		foreach (var observer in BeforeChangeObservers)
 		{
-			observer.Invoke(value);
+			observer.Invoke(this.value);
 		}
 		this.value = value;
 		foreach (var observer in AfterChangeObservers)

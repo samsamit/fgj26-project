@@ -39,10 +39,7 @@ script = ExtResource("1_vem8k")
 z_index = 101
 position = Vector2(472, 148)
 scale = Vector2(1.0358996, 0.9782269)
-
-[node name="Mask" parent="." unique_id=1868398740 node_paths=PackedStringArray("xRayMaskSprite") instance=ExtResource("6_3ubpw")]
-position = Vector2(471, 154)
-xRayMaskSprite = NodePath("../Puzzle3/MaskSystem/SubViewport/Node2D/Mask Circle")
+Speed = 60.0
 
 [node name="Camera" parent="." unique_id=947783170 node_paths=PackedStringArray("MainPlayer", "MaskPlayer") instance=ExtResource("6_tt3em")]
 position = Vector2(540, 133)

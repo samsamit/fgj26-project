@@ -10,14 +10,6 @@ public partial class MineMask : Sprite2D
 		GlobalPosition = nodeToFollow.GlobalPosition;
 		//GlobalPosition = GetGlobalMousePosition();
 
-		if (GlobalStateManager.Instance.CurrentMask.Get() == MaskEnum.XRay)
-		{
-			Modulate = new Color("#ad030038");
-		}
-		else
-		{
-			Modulate = new Color("#00000000");
-		}
 	}
 
 }

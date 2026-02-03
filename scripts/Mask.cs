@@ -11,7 +11,12 @@ public partial class Mask : Node2D
 
 	[Export] public float SlownessModifier { get; set; } = 0.2f;
 
-	private GlobalStateManager _stateManager;
+
+	[Export]
+	public MainCamera mainCamera;
+	[Export] public float MineMaskZoom = 1f;
+
+	private float _restoreZoomSpeedTo;
 
 	// Sprites
 	[Export] public Texture2D Round;
@@ -157,7 +162,12 @@ public partial class Mask : Node2D
 				Light.Color = new Color("white");
 				Light.TextureScale = 0.7f;
 				collisionShape.Modulate = new Color("#ffffff00");
-				Background.Color = new Color("#404040");
+				Background.Color = new Color("#000000");
+
+				_restoreZoomSpeedTo = mainCamera.ZoomSpeed;
+				mainCamera.ZoomSpeed = 0;
+				mainCamera.Zoom = MineMaskZoom * Vector2.One;
+
 				break;
 			case MaskEnum.Strength:
 				Light.Texture = Round;
@@ -179,6 +189,23 @@ public partial class Mask : Node2D
 				Light.TextureScale = 0.5f;
 				collisionShape.Modulate = new Color("#ffffff00");
 				Background.Color = new Color("#000000");
+				break;
+		}
+
+		switch (GlobalStateManager.Instance.PreviousMask)
+		{
+			case MaskEnum.Flashlite:
+				break;
+			case MaskEnum.Basic:
+				break;
+			case MaskEnum.XRay:
+				mainCamera.ZoomSpeed = _restoreZoomSpeedTo;
+				break;
+			case MaskEnum.Strength:
+				break;
+			case MaskEnum.Slow:
+				break;
+			default:
 				break;
 		}
 
@@ -241,17 +268,19 @@ public partial class Mask : Node2D
 
 	private void RemoveSlownessFromObjectsInArea()
 	{
-		if (GlobalStateManager.Instance.PreviousMask == MaskEnum.Slow && GlobalStateManager.Instance.CurrentMask.Get() != MaskEnum.Slow) return;
-
-		foreach (var body in ViewArea.GetOverlappingBodies())
+		if (GlobalStateManager.Instance.PreviousMask == MaskEnum.Slow && GlobalStateManager.Instance.CurrentMask.Get() != MaskEnum.Slow)
 		{
-			OnSlowBodyExited(body);
+			foreach (var body in ViewArea.GetOverlappingBodies())
+			{
+				OnSlowBodyExited(body);
+			}
+
+			foreach (var area in ViewArea.GetOverlappingAreas())
+			{
+				OnSlowAreaExited(area);
+			}
 		}
 
-		foreach (var area in ViewArea.GetOverlappingAreas())
-		{
-			OnSlowAreaExited(area);
-		}
 	}
 
 	private void OnSlowAreaEntered(Area2D area)

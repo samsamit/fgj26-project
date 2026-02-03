@@ -19,7 +19,7 @@ public partial class MainCamera : Camera2D
 	Vector2 snapPosition;
 	float snapZoom;
 
-public void SnapToOnePoint(Vector2 point, float zoom)
+	public void SnapToOnePoint(Vector2 point, float zoom)
 	{
 		snapToPoint = true;
 		snapPosition = point;
@@ -54,8 +54,8 @@ public void SnapToOnePoint(Vector2 point, float zoom)
 	public override void _Process(double delta)
 	{
 		if (!snapToPoint) return;
-	GlobalPosition = snapPosition;
-	Zoom = snapZoom * Vector2.One;
+		GlobalPosition = snapPosition;
+		Zoom = snapZoom * Vector2.One;
 	}
 
 
