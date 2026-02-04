@@ -6,6 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://cnsrvjnnwjuuv" path="res://assets/resources/BaseButton.tres" id="4_0gmhx"]
 [ext_resource type="StyleBox" uid="uid://d2ws4twkee0" path="res://assets/resources/OnPressedButton.tres" id="5_oipxo"]
 [ext_resource type="StyleBox" uid="uid://n3ru0pfytx3f" path="res://assets/resources/OnHoverButton.tres" id="6_jwmxs"]
+[ext_resource type="AudioStream" uid="uid://c51y56dw64io1" path="res://audio/music/Mask Game song V1.0.wav" id="7_oipxo"]
 
 [node name="EndScreen" type="Control" unique_id=1789055121]
 layout_mode = 3
@@ -46,5 +47,8 @@ theme_override_styles/normal = ExtResource("4_0gmhx")
 theme_override_styles/pressed = ExtResource("5_oipxo")
 theme_override_styles/hover = ExtResource("6_jwmxs")
 text = "Main Menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=708291793]
+stream = ExtResource("7_oipxo")
 
 [connection signal="pressed" from="BackToMenu" to="." method="OnBackToMenuPressed"]
