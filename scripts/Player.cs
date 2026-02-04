@@ -20,6 +20,8 @@ public partial class Player : CharacterBody2D
 	private AnimationController _animationController;
 	private TileMapLayer _groundLayer;
 
+	private CollisionShape2D _collisionShape2D;
+
 	public int ModulationInterval { get; set; } = 20;
 	private int _frameCounter = 0;
 
@@ -43,6 +45,7 @@ public partial class Player : CharacterBody2D
 		_walkingSFXplayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_Walking");
 		_scrapingSFXPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D_BoxScraping");
 		_groundLayer = GetNode<TileMapLayer>("../World/TileMapController/Ground");
+		_collisionShape2D = GetNode<CollisionShape2D>("CollisionShape2D");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -66,7 +69,8 @@ public partial class Player : CharacterBody2D
 
 		if (velocityNormalizedCombined > 0)
 		{
-			_animationController.HandleRotation(direction, delta, CharacterRotationSpeed);
+			float rotation = _animationController.HandleRotation(direction, delta, CharacterRotationSpeed);
+			_collisionShape2D.Rotation = rotation;
 			if (!_walkingSFXplayer.Playing)
 			{
 				_walkingSFXplayer.Play();

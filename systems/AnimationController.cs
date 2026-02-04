@@ -54,7 +54,7 @@ public partial class AnimationController : Node2D
 		return;
 	}
 
-	public void HandleRotation(Vector2 direction, double delta, float rotationSpeed)
+	public float HandleRotation(Vector2 direction, double delta, float rotationSpeed)
 	{
 		if (Rotation >= 2 * Math.PI)
 		{
@@ -79,5 +79,6 @@ public partial class AnimationController : Node2D
 		}
 
 		Rotation = currentRotation + (wantedRotation - currentRotation) * (float)delta * rotationSpeed;
+		return Rotation;
 	}
 }

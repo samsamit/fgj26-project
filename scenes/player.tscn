@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://oi5l0r30xfs2" path="res://scenes/components/speed_component.tscn" id="6_fjrip"]
 [ext_resource type="AudioStream" uid="uid://dmd3vke7eniyb" path="res://audio/effects/WoodenBoxScrapingOnWood.ogg" id="6_tuyoq"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tuyoq"]
+radius = 19.0
+height = 80.0
 
 [node name="Player" type="CharacterBody2D" unique_id=380924559 node_paths=PackedStringArray("SpeedComponent")]
 collision_layer = 8
@@ -18,7 +20,8 @@ CharacterSpriteScaleMultiplier = 0.25
 SpeedComponent = NodePath("SpeedComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=90283918]
-shape = SubResource("CircleShape2D_qhqgy")
+scale = Vector2(0.25, 0.25)
+shape = SubResource("CapsuleShape2D_tuyoq")
 
 [node name="AnimationController" parent="." unique_id=1487013025 instance=ExtResource("4_dqkch")]
 
