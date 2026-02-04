@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://rp42fhtwg6t3" path="res://scripts/FinalPuzzle.cs" id="1_w1fao"]
 [ext_resource type="PackedScene" uid="uid://d11eleqqhcxu7" path="res://scenes/CompletionConditions/PressurePlateUpCondition.tscn" id="2_mkjje"]
+[ext_resource type="PackedScene" uid="uid://sdnhw3s62pbc" path="res://scenes/movable_box.tscn" id="3_7fefj"]
 
-[node name="FinalPuzzle" type="Node2D" unique_id=1446954805 node_paths=PackedStringArray("Conditions")]
+[node name="FinalPuzzle" type="Node" unique_id=853061862 node_paths=PackedStringArray("Conditions")]
 script = ExtResource("1_w1fao")
-Conditions = [NodePath("PressurePlateDownCondition")]
+Conditions = [NodePath("")]
 
-[node name="PressurePlateDownCondition" parent="." unique_id=1788132455 instance=ExtResource("2_mkjje")]
+[node name="PressurePlateUpCondition" parent="." unique_id=1788132455 instance=ExtResource("2_mkjje")]
+position = Vector2(-2.9049988, 9.881813)
+
+[node name="MovableBox" parent="." unique_id=1071985089 instance=ExtResource("3_7fefj")]

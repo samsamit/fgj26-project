@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://df0ijw8w5ap6b" path="res://assets/asfaltti.png" id="1_t41qq"]
 [ext_resource type="Texture2D" uid="uid://dnf5d07l7xj6g" path="res://assets/tasakattorakennusmoduuli.png" id="2_ievcu"]
 [ext_resource type="Texture2D" uid="uid://324qcd3sbahk" path="res://assets/lautalattia.png" id="2_x23h8"]
-[ext_resource type="Texture2D" uid="uid://b7atfxyy1l367" path="res://assets/vene.png" id="3_5xgqg"]
 [ext_resource type="Texture2D" uid="uid://diwh4pt3svvxg" path="res://assets/animoituvesiasfaltti.png" id="3_icj8b"]
 [ext_resource type="Texture2D" uid="uid://dqd6acqb4e6tg" path="res://assets/animoituasfalttivesi.png" id="4_ievcu"]
 [ext_resource type="Texture2D" uid="uid://c7evpobotrb0b" path="res://assets/viistokattorakennusmoduuli.png" id="4_pur7r"]
@@ -105,22 +104,6 @@ texture_region_size = Vector2i(32, 32)
 2:2/0/terrains_peering_bit/left_side = 2
 2:2/0/terrains_peering_bit/top_left_corner = 2
 2:2/0/terrains_peering_bit/top_side = 2
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfmr4"]
-texture = ExtResource("3_5xgqg")
-texture_region_size = Vector2i(32, 32)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -8, -16, 16, 16, 16, 16, -8, 8, -8)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, 8, 0, -8, -16, -8)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 8, 16, -16, -16, -16, -16, 0, -8, 8)
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 8, 16, -16, -16, -16, -16, 8, -8, 8)
-2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 8, -8, 8, 0, 0, 8, 0, 16, -8, 16, -16, -16, -16)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -16, 0, -16, 16, 16, 16, 16, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u1npa"]
 texture = ExtResource("2_x23h8")
@@ -643,5 +626,4 @@ sources/1 = SubResource("TileSetAtlasSource_jrf5u")
 sources/3 = SubResource("TileSetAtlasSource_ghcrs")
 sources/6 = SubResource("TileSetAtlasSource_dthax")
 sources/7 = SubResource("TileSetAtlasSource_xk5yh")
-sources/10 = SubResource("TileSetAtlasSource_vfmr4")
 sources/9 = SubResource("TileSetAtlasSource_s2udg")

@@ -75,6 +75,12 @@ public partial class GlobalStateManager : Node
 		ResumeGame();
 	}
 
+	public void EndGame()
+	{
+		PauseGame();
+		ResetState();
+	}
+
 	public void PauseGame()
 	{
 		this.SetPhysicsProcess(false);

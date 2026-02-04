@@ -8,15 +8,38 @@ public partial class Projectile : Area2D
 
     private VisibleOnScreenNotifier2D _screenNotifier;
 
+    [Export]
+    public float MaxTimeOutOfScreenSeconds = 3f;
+    private float _timeOutOfScreen = 0f;
+
     public override void _Ready()
     {
         BodyEntered += OnPlayerHit;
         _screenNotifier = GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
         _screenNotifier.ScreenExited += QueueFree;
     }
+
+    public override void _ExitTree()
+    {
+        BodyEntered -= OnPlayerHit;
+        _screenNotifier.ScreenExited -= QueueFree;
+    }
+
     public override void _PhysicsProcess(double delta)
     {
-        if (!_screenNotifier.IsOnScreen()) QueueFree();
+        if (_screenNotifier.IsOnScreen())
+        {
+            _timeOutOfScreen = 0f;
+        }
+        else
+        {
+            _timeOutOfScreen += (float)delta;
+            if (_timeOutOfScreen > MaxTimeOutOfScreenSeconds)
+            {
+                QueueFree();
+                return;
+            }
+        }
         Position += new Vector2((float)(SpeedComponent.CurrentSpeed * delta), 0).Rotated(Rotation);
 
         if (Body.MoveAndCollide(Vector2.Zero) is not null)

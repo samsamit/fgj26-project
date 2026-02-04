@@ -22,6 +22,11 @@ public partial class PickableMask : Node2D
 
 	private bool isUnlocked = false;
 
+	public override void _ExitTree()
+	{
+		GlobalStateManager.Instance.PuzzleCompleted -= OnPuzzleCompleted;
+	}
+
 	public override void _Ready()
 	{
 		var sprite = (Sprite2D)GetNode("./Sprite2D");

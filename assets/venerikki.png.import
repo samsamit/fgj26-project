@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7atfxyy1l367"
-path="res://.godot/imported/vene.png-7ba82e440bce2d788178d493419bfd25.ctex"
+uid="uid://c6fqmlfw6tmm6"
+path="res://.godot/imported/venerikki.png-a8067c59dcd9ff3ac1d76455abe49625.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vene.png"
-dest_files=["res://.godot/imported/vene.png-7ba82e440bce2d788178d493419bfd25.ctex"]
+source_file="res://assets/venerikki.png"
+dest_files=["res://.godot/imported/venerikki.png-a8067c59dcd9ff3ac1d76455abe49625.ctex"]
 
 [params]
 

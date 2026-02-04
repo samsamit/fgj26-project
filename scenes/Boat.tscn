@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bjh6wo4xwodft"]
+
+[ext_resource type="Script" uid="uid://dkoker18hhcfk" path="res://scenes/Boat.cs" id="1_mlulb"]
+[ext_resource type="Texture2D" uid="uid://c6fqmlfw6tmm6" path="res://assets/venerikki.png" id="2_mlulb"]
+
+[node name="Boat" type="RigidBody2D" unique_id=989801167]
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_mlulb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=835628587]
+texture = ExtResource("2_mlulb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1323576774]
+polygon = PackedVector2Array(-48, -21, -44, -25, -1, -25, -6, -28, -1, -32, 4, -25, 30, -25, 48, -7, 48, 7, 37, 17, 28, 25, 1, 25, 0, 26, 0, 31, -9, 31, -9, 25, -44, 25, -48, 21)
