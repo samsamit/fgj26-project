@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d11eleqqhcxu7"]
+
+[ext_resource type="Script" uid="uid://dr3uya4coa23e" path="res://scenes/CompletionConditions/PressurePlateUpCondition.cs" id="1_yni14"]
+[ext_resource type="PackedScene" uid="uid://d3f7vny6bd8nb" path="res://scenes/PressurePlate.tscn" id="2_jdplj"]
+
+[node name="PressurePlateUpCondition" type="Node2D" unique_id=1788132455 node_paths=PackedStringArray("_pressurePlate")]
+script = ExtResource("1_yni14")
+_pressurePlate = NodePath("PressurePlate")
+
+[node name="PressurePlate" parent="." unique_id=1570528986 instance=ExtResource("2_jdplj")]

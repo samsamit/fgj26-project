@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://db43psykkxsdo"]
 
 [ext_resource type="PackedScene" uid="uid://bb3d8ms8wak8w" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="1_mufyr"]
+[ext_resource type="Script" uid="uid://byoixv5utmao1" path="res://puzzles/Puzzle3.cs" id="1_ntma5"]
 [ext_resource type="PackedScene" uid="uid://bfq8p812a71jn" path="res://assets/Juuson Mask Jutut/Switch.tscn" id="2_yuylf"]
 [ext_resource type="Material" uid="uid://b0qw3cofrat17" path="res://assets/Juuson Mask Jutut/BoxMaskMaterial.tres" id="3_pdfjg"]
 [ext_resource type="Texture2D" uid="uid://bd2kyp3xw0e0m" path="res://assets/StrengthMaskiUI.png" id="4_uvl0d"]
@@ -13,6 +14,7 @@
 size = Vector2(26, 80)
 
 [node name="Puzzle3" type="Node" unique_id=2096375134]
+script = ExtResource("1_ntma5")
 
 [node name="Bomb 1" parent="." unique_id=324300176 instance=ExtResource("1_mufyr")]
 position = Vector2(1332.7917, 33)

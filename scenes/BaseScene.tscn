@@ -5,11 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://dtrybckssowqk" path="res://scenes/player.tscn" id="3_gp54n"]
 [ext_resource type="PackedScene" uid="uid://dm6mlowkc7k5o" path="res://scenes/mask.tscn" id="6_3ubpw"]
 [ext_resource type="PackedScene" uid="uid://bkyppfbrkinr2" path="res://scenes/camera.tscn" id="6_tt3em"]
-[ext_resource type="PackedScene" uid="uid://d2qod3f41ge1g" path="res://scenes/puzzle/puzzle_2.tscn" id="8_2ddkf"]
+[ext_resource type="PackedScene" uid="uid://d2qod3f41ge1g" path="res://puzzles/puzzle_2.tscn" id="8_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://db43psykkxsdo" path="res://puzzles/puzzle_3.tscn" id="9_rp473"]
-[ext_resource type="Script" uid="uid://byoixv5utmao1" path="res://scripts/Puzzle3.cs" id="10_acass"]
-[ext_resource type="PackedScene" uid="uid://bojdshqdxsu4v" path="res://scenes/puzzle/puzzle_1.tscn" id="11_a63bb"]
+[ext_resource type="PackedScene" uid="uid://bojdshqdxsu4v" path="res://puzzles/puzzle_1.tscn" id="11_a63bb"]
 [ext_resource type="PackedScene" uid="uid://dlijf180fgwkb" path="res://scenes/CheckpointManager.tscn" id="11_qsgjr"]
+[ext_resource type="PackedScene" uid="uid://dm5si532i1b18" path="res://puzzles/FinalPuzzle.tscn" id="11_r0kii"]
+[ext_resource type="PackedScene" uid="uid://sdnhw3s62pbc" path="res://scenes/movable_box.tscn" id="12_yysfs"]
+[ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="13_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://3djuvdff2kw7" path="res://scenes/pickableMask.tscn" id="18_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://b3s6runcdg2t3" path="res://scenes/Checkpoint.tscn" id="20_ec51t"]
 [ext_resource type="PackedScene" uid="uid://c3knvd6urqxyg" path="res://scenes/CompletionConditions/AreaReachedCondition.tscn" id="20_kt07b"]
@@ -22,7 +24,7 @@ script = ExtResource("1_vem8k")
 
 [node name="Player" parent="." unique_id=380924559 instance=ExtResource("3_gp54n")]
 z_index = 101
-position = Vector2(402.00003, 166.00002)
+position = Vector2(402, 150.00002)
 scale = Vector2(1.0358996, 0.9782269)
 Speed = 70.0
 
@@ -36,7 +38,8 @@ MaxZoom = 1.5
 ZoomSpeed = 0.5
 
 [node name="Mask" parent="." unique_id=1868398740 node_paths=PackedStringArray("mainCamera", "xRayMaskSprite") instance=ExtResource("6_3ubpw")]
-position = Vector2(380, 161)
+visible = false
+position = Vector2(381, 147)
 mainCamera = NodePath("../Camera")
 xRayMaskSprite = NodePath("../Puzzle3/MaskSystem/SubViewport/Node2D")
 
@@ -52,8 +55,7 @@ position = Vector2(1042, -29)
 [node name="Puzzle2" parent="." unique_id=664420405 instance=ExtResource("8_2ddkf")]
 
 [node name="Puzzle3" parent="." unique_id=2096375134 node_paths=PackedStringArray("Conditions") instance=ExtResource("9_rp473")]
-script = ExtResource("10_acass")
-Conditions = [NodePath("AreaReached")]
+Conditions = []
 
 [node name="Line 1" parent="Puzzle3" index="10" unique_id=1993023291]
 width = 2.0
@@ -78,6 +80,18 @@ nodeToFollow = NodePath("../../../Mask")
 
 [node name="AreaReached" parent="Puzzle3" unique_id=191945247 instance=ExtResource("20_kt07b")]
 position = Vector2(1631, -237)
+
+[node name="FinalPuzzle" parent="." unique_id=1446954805 node_paths=PackedStringArray("Conditions") instance=ExtResource("11_r0kii")]
+Conditions = []
+
+[node name="PressurePlateDownCondition" parent="FinalPuzzle" index="0" unique_id=1788132455]
+position = Vector2(532, 183)
+
+[node name="MovableBox" parent="FinalPuzzle" unique_id=1071985089 instance=ExtResource("12_yysfs")]
+position = Vector2(532, 180)
+
+[node name="StaticBox" parent="FinalPuzzle" unique_id=1283738957 instance=ExtResource("13_2ddkf")]
+position = Vector2(532, 118)
 
 [node name="PickableStrengthMask" parent="." unique_id=955841723 node_paths=PackedStringArray("puzzleToUnlock") instance=ExtResource("18_2ddkf")]
 position = Vector2(1039, -98)
@@ -107,3 +121,4 @@ position = Vector2(1263, 101)
 [editable path="Puzzle1"]
 [editable path="Puzzle2"]
 [editable path="Puzzle3"]
+[editable path="FinalPuzzle"]

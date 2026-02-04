@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://sdnhw3s62pbc"]
 
-[ext_resource type="Texture2D" uid="uid://dwcfkg3ymc550" path="res://assets/liikuteltavalaatikko.png" id="1_psasx"]
+[ext_resource type="Texture2D" uid="uid://cn3ock8an6at3" path="res://assets/laatikko.png" id="1_psasx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oufvn"]
 size = Vector2(32, 32)

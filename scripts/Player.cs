@@ -98,9 +98,9 @@ public partial class Player : CharacterBody2D
 		}
 
 		var pushedBodies = new System.Collections.Generic.HashSet<RigidBody2D>();
-		if (MoveAndSlide())
+	    bool canPush = GlobalStateManager.Instance.CurrentMask.Get().Equals(MaskEnum.Strength) && PushingPower > 0.0f;
+		if (MoveAndSlide() && canPush)
 		{
-
 			for (int i = 0; i < GetSlideCollisionCount(); i++)
 			{
 				var collision = GetSlideCollision(i);

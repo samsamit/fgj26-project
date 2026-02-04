@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dm5si532i1b18"]
+
+[ext_resource type="Script" uid="uid://rp42fhtwg6t3" path="res://scripts/FinalPuzzle.cs" id="1_w1fao"]
+[ext_resource type="PackedScene" uid="uid://d11eleqqhcxu7" path="res://scenes/CompletionConditions/PressurePlateUpCondition.tscn" id="2_mkjje"]
+
+[node name="FinalPuzzle" type="Node2D" unique_id=1446954805 node_paths=PackedStringArray("Conditions")]
+script = ExtResource("1_w1fao")
+Conditions = [NodePath("PressurePlateDownCondition")]
+
+[node name="PressurePlateDownCondition" parent="." unique_id=1788132455 instance=ExtResource("2_mkjje")]
