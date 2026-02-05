@@ -53,7 +53,6 @@ MaxZoom = 1.5
 ZoomSpeed = 0.5
 
 [node name="Mask" parent="." unique_id=1868398740 node_paths=PackedStringArray("mainCamera", "xRayMaskSprite") instance=ExtResource("6_3ubpw")]
-visible = false
 position = Vector2(381, 147)
 mainCamera = NodePath("../Camera")
 xRayMaskSprite = NodePath("../Puzzle3/MaskSystem/SubViewport/Node2D")
