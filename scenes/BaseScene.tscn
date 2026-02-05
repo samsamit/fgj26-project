@@ -105,37 +105,47 @@ position = Vector2(1032, -216)
 position = Vector2(1000, -184)
 
 [node name="PressurePlateDownCondition" parent="Puzzle2" index="5" unique_id=1788132455]
-position = Vector2(712, -176)
+position = Vector2(728, -176)
+
+[node name="PressurePlateDownCondition2" parent="Puzzle2" index="6" unique_id=573583263]
+position = Vector2(1032, -216)
 
 [node name="StaticBox2" parent="Puzzle2" index="9" unique_id=246933602]
 position = Vector2(1064, -248)
 
 [node name="StaticBox6" parent="Puzzle2" index="12" unique_id=1526559854]
-position = Vector2(1000, -248)
+position = Vector2(992, -248)
 
 [node name="StaticBox7" parent="Puzzle2" index="13" unique_id=1957647231]
 position = Vector2(848, -160)
 
 [node name="StaticBox8" parent="Puzzle2" index="14" unique_id=785912794]
-position = Vector2(1032, -184)
+position = Vector2(1032, -176)
 
 [node name="StaticBox9" parent="Puzzle2" index="15" unique_id=1268836224]
-position = Vector2(1064, -184)
+position = Vector2(1064, -176)
 
 [node name="StaticBox10" parent="Puzzle2" index="16" unique_id=79145091]
-position = Vector2(960, -176)
+position = Vector2(976, -168)
+scale = Vector2(0.479837, 0.479837)
 
 [node name="StaticBox11" parent="Puzzle2" index="17" unique_id=2064830411]
-position = Vector2(792, -240)
+position = Vector2(848, -328)
 
 [node name="StaticBox12" parent="Puzzle2" index="18" unique_id=1919321725]
-position = Vector2(840, -208)
+position = Vector2(848, -192)
 
 [node name="StaticBox13" parent="Puzzle2" index="19" unique_id=1950976148]
-position = Vector2(960, -232)
+position = Vector2(960.00006, -224.00002)
+scale = Vector2(0.9687966, 0.9687966)
+
+[node name="StaticBox14" parent="Puzzle2" unique_id=923687789 instance=ExtResource("13_2ddkf")]
+position = Vector2(960.00006, -256)
+rotation = 0.30806065
+scale = Vector2(0.6867854, 0.6867854)
 
 [node name="PressurePlateDownCondition4" parent="Puzzle2" unique_id=523040702 instance=ExtResource("10_pjbue")]
-position = Vector2(760, -280)
+position = Vector2(760, -264)
 
 [node name="Puzzle3" parent="." unique_id=2096375134 node_paths=PackedStringArray("Conditions") instance=ExtResource("9_rp473")]
 Conditions = [NodePath("AreaReached")]
@@ -214,10 +224,10 @@ position = Vector2(337, 151)
 rotation = -0.73652893
 
 [node name="ConditionalFadingText" parent="." unique_id=756106121 node_paths=PackedStringArray("Condition") instance=ExtResource("18_si2s2")]
-offset_left = 965.0
-offset_top = -149.0
-offset_right = 1131.0
-offset_bottom = -122.0
+offset_left = 960.0
+offset_top = -152.0
+offset_right = 1126.0
+offset_bottom = -125.0
 text = "Minkä taakseen jättää sen edestään löytää."
 Condition = NodePath("../Puzzle1/AreaReached")
 

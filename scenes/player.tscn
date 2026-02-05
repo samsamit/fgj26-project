@@ -16,11 +16,11 @@ collision_layer = 8
 collision_mask = 7
 script = ExtResource("1_g2els")
 SpriteFrames = ExtResource("2_qlg0r")
-CharacterSpriteScaleMultiplier = 0.25
+CharacterSpriteScaleMultiplier = 0.3
 SpeedComponent = NodePath("SpeedComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=90283918]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.3, 0.3)
 shape = SubResource("CapsuleShape2D_tuyoq")
 
 [node name="AnimationController" parent="." unique_id=1487013025 instance=ExtResource("4_dqkch")]
