@@ -15,8 +15,6 @@ ProjectileSpeed = 120.0
 
 [node name="ProjectileLauncher3" parent="." unique_id=587932600 instance=ExtResource("2_wg7lx")]
 
-[node name="ProjectileLauncher4" parent="." unique_id=1771580337 instance=ExtResource("2_wg7lx")]
-
 [node name="ProjectileLauncher5" parent="." unique_id=1647210438 instance=ExtResource("2_wg7lx")]
 
 [node name="ProjectileLauncher6" parent="." unique_id=1566484085 instance=ExtResource("2_wg7lx")]
@@ -29,7 +27,5 @@ ProjectileSpeed = 120.0
 FireRate = 1.1
 
 [node name="ProjectileLauncher10" parent="." unique_id=1225269331 instance=ExtResource("2_wg7lx")]
-
-[node name="ProjectileLauncher11" parent="." unique_id=196224906 instance=ExtResource("2_wg7lx")]
 
 [node name="AreaReached" parent="." unique_id=128534236 instance=ExtResource("3_y04pc")]
