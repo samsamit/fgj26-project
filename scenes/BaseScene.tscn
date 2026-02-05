@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c3sx3i1rpjkul" path="res://scenes/SceneTransition.tscn" id="13_yysfs"]
 [ext_resource type="PackedScene" uid="uid://bjh6wo4xwodft" path="res://scenes/Boat.tscn" id="16_r0kii"]
 [ext_resource type="PackedScene" uid="uid://3djuvdff2kw7" path="res://scenes/pickableMask.tscn" id="18_2ddkf"]
+[ext_resource type="PackedScene" uid="uid://djggf8onyxbv2" path="res://scenes/ConditionalFadingText.tscn" id="18_si2s2"]
 [ext_resource type="PackedScene" uid="uid://b3s6runcdg2t3" path="res://scenes/Checkpoint.tscn" id="20_ec51t"]
 [ext_resource type="PackedScene" uid="uid://c3knvd6urqxyg" path="res://scenes/CompletionConditions/AreaReachedCondition.tscn" id="20_kt07b"]
 [ext_resource type="PackedScene" uid="uid://ccs4na6xky6wu" path="res://scenes/BackgroundMusic.tscn" id="21_pjbue"]
@@ -129,6 +130,14 @@ position = Vector2(1263, 101)
 [node name="Boat" parent="." unique_id=989801167 instance=ExtResource("16_r0kii")]
 position = Vector2(337, 151)
 rotation = -0.73652893
+
+[node name="ConditionalFadingText" parent="." unique_id=756106121 node_paths=PackedStringArray("Condition") instance=ExtResource("18_si2s2")]
+offset_left = 965.0
+offset_top = -149.0
+offset_right = 1131.0
+offset_bottom = -122.0
+text = "Minkä taakseen jättää sen edestään löytää."
+Condition = NodePath("../Puzzle1/AreaReached")
 
 [editable path="Puzzle1"]
 [editable path="Puzzle2"]
