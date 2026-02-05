@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://dm5si532i1b18" path="res://puzzles/FinalPuzzle.tscn" id="11_r0kii"]
 [ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="13_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://c3sx3i1rpjkul" path="res://scenes/SceneTransition.tscn" id="13_yysfs"]
+[ext_resource type="PackedScene" uid="uid://drn5yylol0xfl" path="res://puzzles/puzzle_4.tscn" id="14_bfjpa"]
+[ext_resource type="PackedScene" uid="uid://dt5ycbrcdyof0" path="res://scenes/projectile_launcher.tscn" id="15_vihhi"]
 [ext_resource type="PackedScene" uid="uid://bjh6wo4xwodft" path="res://scenes/Boat.tscn" id="16_r0kii"]
 [ext_resource type="PackedScene" uid="uid://3djuvdff2kw7" path="res://scenes/pickableMask.tscn" id="18_2ddkf"]
 [ext_resource type="PackedScene" uid="uid://djggf8onyxbv2" path="res://scenes/ConditionalFadingText.tscn" id="18_si2s2"]
@@ -175,6 +177,67 @@ nodeToFollow = NodePath("../../../Mask")
 
 [node name="AreaReached" parent="Puzzle3" unique_id=191945247 instance=ExtResource("20_kt07b")]
 position = Vector2(1631, -237)
+
+[node name="Puzzle4" parent="." unique_id=801700866 node_paths=PackedStringArray("Conditions") instance=ExtResource("14_bfjpa")]
+Conditions = [NodePath("AreaReached")]
+
+[node name="ProjectileLauncher" parent="Puzzle4" index="0" unique_id=413058064]
+position = Vector2(1168, -592)
+
+[node name="ProjectileLauncher2" parent="Puzzle4" index="1" unique_id=969216361]
+position = Vector2(728, -720)
+Angle = 1.5707963267948966
+
+[node name="ProjectileLauncher3" parent="Puzzle4" index="2" unique_id=587932600]
+position = Vector2(1040, -720)
+
+[node name="ProjectileLauncher4" parent="Puzzle4" index="3" unique_id=1771580337]
+position = Vector2(1088, -584)
+
+[node name="ProjectileLauncher5" parent="Puzzle4" index="4" unique_id=1647210438]
+position = Vector2(1136, -664)
+
+[node name="ProjectileLauncher6" parent="Puzzle4" index="5" unique_id=1566484085]
+position = Vector2(1168, -752)
+
+[node name="ProjectileLauncher7" parent="Puzzle4" index="6" unique_id=43771280]
+position = Vector2(1240, -784)
+
+[node name="ProjectileLauncher8" parent="Puzzle4" index="7" unique_id=753019997]
+position = Vector2(1152, -392)
+
+[node name="ProjectileLauncher9" parent="Puzzle4" index="8" unique_id=538760903]
+position = Vector2(1304, -392)
+
+[node name="ProjectileLauncher10" parent="Puzzle4" index="9" unique_id=1225269331]
+position = Vector2(1304, -528)
+
+[node name="ProjectileLauncher11" parent="Puzzle4" index="10" unique_id=196224906]
+position = Vector2(1304, -584)
+
+[node name="ProjectileLauncher12" parent="Puzzle4" unique_id=1457010984 instance=ExtResource("15_vihhi")]
+position = Vector2(1304, -648)
+
+[node name="ProjectileLauncher13" parent="Puzzle4" unique_id=649997740 instance=ExtResource("15_vihhi")]
+position = Vector2(792, -552)
+
+[node name="ProjectileLauncher14" parent="Puzzle4" unique_id=1816586724 instance=ExtResource("15_vihhi")]
+position = Vector2(856, -520)
+
+[node name="ProjectileLauncher15" parent="Puzzle4" unique_id=1540520283 instance=ExtResource("15_vihhi")]
+position = Vector2(912, -712)
+
+[node name="ProjectileLauncher16" parent="Puzzle4" unique_id=1020540856 instance=ExtResource("15_vihhi")]
+position = Vector2(952, -648)
+
+[node name="AreaReached" parent="Puzzle4" index="16" unique_id=128534236]
+position = Vector2(1296, -760)
+
+[node name="Checkpoint" parent="Puzzle4" unique_id=1553874372 instance=ExtResource("20_ec51t")]
+position = Vector2(984, -416)
+
+[node name="Checkpoint2" parent="Puzzle4" unique_id=1659747252 instance=ExtResource("20_ec51t")]
+position = Vector2(712, -520)
 
 [node name="FinalPuzzle" parent="." unique_id=1446954805 node_paths=PackedStringArray("Conditions") instance=ExtResource("11_r0kii")]
 Conditions = [NodePath("PressurePlateUpCondition")]
@@ -347,6 +410,7 @@ rotation = 0.8258012
 [editable path="Puzzle1"]
 [editable path="Puzzle2"]
 [editable path="Puzzle3"]
+[editable path="Puzzle4"]
 [editable path="FinalPuzzle"]
 [editable path="HouseArea"]
 [editable path="HouseArea2"]
