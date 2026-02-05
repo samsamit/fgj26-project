@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b8e6hina7rfr"]
+
+[ext_resource type="Script" uid="uid://dry6yjwk0rfu2" path="res://scripts/HouseArea.cs" id="1_km6ne"]
+
+[node name="HouseArea" type="Area2D" unique_id=296168182]
+collision_mask = 8
+script = ExtResource("1_km6ne")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1391378730]
+polygon = PackedVector2Array(-11, -11, -11, 11, 12, 11, 12, -12)

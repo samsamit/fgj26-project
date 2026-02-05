@@ -21,29 +21,8 @@ position = Vector2(918, -174)
 [node name="MovableBox4" parent="." unique_id=353546268 instance=ExtResource("2_1tdta")]
 position = Vector2(952, -174)
 
-[node name="MovableBox5" parent="." unique_id=1664553926 instance=ExtResource("2_1tdta")]
-position = Vector2(1031, -180)
-
-[node name="MovableBox6" parent="." unique_id=99571108 instance=ExtResource("2_1tdta")]
-position = Vector2(997, -215)
-
-[node name="MovableBox7" parent="." unique_id=1142550260 instance=ExtResource("2_1tdta")]
-position = Vector2(1032, -249)
-
-[node name="MovableBox8" parent="." unique_id=197314419 instance=ExtResource("2_1tdta")]
-position = Vector2(1065, -215)
-
-[node name="MovableBox9" parent="." unique_id=926540557 instance=ExtResource("2_1tdta")]
-position = Vector2(1118, -249)
-
-[node name="MovableBox10" parent="." unique_id=466124368 instance=ExtResource("2_1tdta")]
-position = Vector2(1119, -215)
-
-[node name="MovableBox11" parent="." unique_id=1873363421 instance=ExtResource("2_1tdta")]
-position = Vector2(1119, -180)
-
-[node name="MovableBox12" parent="." unique_id=79443814 instance=ExtResource("2_1tdta")]
-position = Vector2(1155, -180)
+[node name="MovableBox5" parent="." unique_id=1907086804 instance=ExtResource("2_1tdta")]
+position = Vector2(952, -174)
 
 [node name="PressurePlateDownCondition" parent="." unique_id=1788132455 instance=ExtResource("2_0d3ae")]
 position = Vector2(726, -178)
@@ -64,4 +43,28 @@ position = Vector2(829, -212)
 position = Vector2(887, -300)
 
 [node name="StaticBox5" parent="." unique_id=475312844 instance=ExtResource("4_fr6yp")]
+position = Vector2(712, -141)
+
+[node name="StaticBox6" parent="." unique_id=1526559854 instance=ExtResource("4_fr6yp")]
+position = Vector2(712, -141)
+
+[node name="StaticBox7" parent="." unique_id=1957647231 instance=ExtResource("4_fr6yp")]
+position = Vector2(712, -141)
+
+[node name="StaticBox8" parent="." unique_id=785912794 instance=ExtResource("4_fr6yp")]
+position = Vector2(712, -141)
+
+[node name="StaticBox9" parent="." unique_id=1268836224 instance=ExtResource("4_fr6yp")]
+position = Vector2(712, -141)
+
+[node name="StaticBox10" parent="." unique_id=79145091 instance=ExtResource("4_fr6yp")]
+position = Vector2(712, -141)
+
+[node name="StaticBox11" parent="." unique_id=2064830411 instance=ExtResource("4_fr6yp")]
+position = Vector2(712, -141)
+
+[node name="StaticBox12" parent="." unique_id=1919321725 instance=ExtResource("4_fr6yp")]
+position = Vector2(712, -141)
+
+[node name="StaticBox13" parent="." unique_id=1950976148 instance=ExtResource("4_fr6yp")]
 position = Vector2(712, -141)
