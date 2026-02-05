@@ -2,8 +2,39 @@
 
 [ext_resource type="Script" uid="uid://ckjadey1qs0uk" path="res://puzzles/Puzzle5.cs" id="1_w2tad"]
 [ext_resource type="PackedScene" uid="uid://b3s6runcdg2t3" path="res://scenes/Checkpoint.tscn" id="2_e1rrk"]
+[ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="3_ef6vw"]
+[ext_resource type="PackedScene" uid="uid://sdnhw3s62pbc" path="res://scenes/movable_box.tscn" id="4_5n64g"]
+[ext_resource type="PackedScene" uid="uid://dt5ycbrcdyof0" path="res://scenes/projectile_launcher.tscn" id="5_5n64g"]
 
-[node name="Puzzle5" type="Node" unique_id=1868221776]
+[node name="Puzzle5" type="Node" unique_id=1868221776 node_paths=PackedStringArray("Conditions")]
 script = ExtResource("1_w2tad")
+Conditions = []
 
 [node name="Checkpoint" parent="." unique_id=1553874372 instance=ExtResource("2_e1rrk")]
+
+[node name="StaticBox" parent="." unique_id=1283738957 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox2" parent="." unique_id=1440831463 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox3" parent="." unique_id=1491827186 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox4" parent="." unique_id=48755056 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox5" parent="." unique_id=186703950 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox6" parent="." unique_id=1895171020 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox7" parent="." unique_id=1073793241 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox8" parent="." unique_id=894037105 instance=ExtResource("3_ef6vw")]
+
+[node name="MovableBox" parent="." unique_id=1071985089 instance=ExtResource("4_5n64g")]
+position = Vector2(1524.1105, -639.32324)
+
+[node name="MovableBox2" parent="." unique_id=1591851378 instance=ExtResource("4_5n64g")]
+position = Vector2(1524.1105, -639.32324)
+
+[node name="MovableBox3" parent="." unique_id=1263474482 instance=ExtResource("4_5n64g")]
+position = Vector2(1524.1105, -639.32324)
+
+[node name="ProjectileLauncher" parent="." unique_id=413058064 instance=ExtResource("5_5n64g")]
