@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://caksextf8tecu"]
+
+[ext_resource type="Script" uid="uid://ckjadey1qs0uk" path="res://puzzles/Puzzle5.cs" id="1_w2tad"]
+[ext_resource type="PackedScene" uid="uid://b3s6runcdg2t3" path="res://scenes/Checkpoint.tscn" id="2_e1rrk"]
+
+[node name="Puzzle5" type="Node" unique_id=1868221776]
+script = ExtResource("1_w2tad")
+
+[node name="Checkpoint" parent="." unique_id=1553874372 instance=ExtResource("2_e1rrk")]
