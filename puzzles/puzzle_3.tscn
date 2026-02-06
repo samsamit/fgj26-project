@@ -13,23 +13,29 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec51t"]
 size = Vector2(26, 80)
 
-[node name="Puzzle3" type="Node" unique_id=2096375134]
+[node name="Puzzle3" type="Node" unique_id=2096375134 node_paths=PackedStringArray("Conditions")]
 script = ExtResource("1_ntma5")
+Conditions = []
 
-[node name="Bomb 1" parent="." unique_id=324300176 instance=ExtResource("1_mufyr")]
+[node name="Bomb 1" parent="." unique_id=324300176 node_paths=PackedStringArray("defuseConditions") instance=ExtResource("1_mufyr")]
 position = Vector2(1332.7917, 33)
+defuseConditions = []
 
-[node name="Bomb 2" parent="." unique_id=2012613700 instance=ExtResource("1_mufyr")]
+[node name="Bomb 2" parent="." unique_id=2012613700 node_paths=PackedStringArray("defuseConditions") instance=ExtResource("1_mufyr")]
 position = Vector2(1333.7917, -59)
+defuseConditions = []
 
-[node name="Bomb 3" parent="." unique_id=1413310753 instance=ExtResource("1_mufyr")]
+[node name="Bomb 3" parent="." unique_id=1413310753 node_paths=PackedStringArray("defuseConditions") instance=ExtResource("1_mufyr")]
 position = Vector2(1332.7917, -155)
+defuseConditions = []
 
-[node name="Bomb 4" parent="." unique_id=1862367923 instance=ExtResource("1_mufyr")]
+[node name="Bomb 4" parent="." unique_id=1862367923 node_paths=PackedStringArray("defuseConditions") instance=ExtResource("1_mufyr")]
 position = Vector2(1331.7917, -241)
+defuseConditions = []
 
-[node name="Bomb 5" parent="." unique_id=1283064661 instance=ExtResource("1_mufyr")]
+[node name="Bomb 5" parent="." unique_id=1283064661 node_paths=PackedStringArray("defuseConditions") instance=ExtResource("1_mufyr")]
 position = Vector2(1424.7917, -239)
+defuseConditions = []
 
 [node name="Switch 1" parent="." unique_id=397120877 node_paths=PackedStringArray("bomb") instance=ExtResource("2_yuylf")]
 position = Vector2(1576.7917, -130)
