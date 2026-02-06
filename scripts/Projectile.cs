@@ -9,7 +9,7 @@ public partial class Projectile : Area2D
     private VisibleOnScreenNotifier2D _screenNotifier;
 
     [Export]
-    public float MaxTimeOutOfScreenSeconds = 3f;
+    public float MaxTimeOutOfScreenSeconds = 2f;
     private float _timeOutOfScreen = 0f;
 
     public override void _Ready()
@@ -40,9 +40,15 @@ public partial class Projectile : Area2D
                 return;
             }
         }
-        Position += new Vector2((float)(SpeedComponent.CurrentSpeed * delta), 0).Rotated(Rotation);
 
-        if (Body.MoveAndCollide(Vector2.Zero) is not null)
+        var movementVector = new Vector2((float)(SpeedComponent.CurrentSpeed * delta), 0).Rotated(Rotation);
+
+        var collision = Body.MoveAndCollide(movementVector);
+        // Sync parent Area2D position to where the Body moved, then reset Body to center
+        GlobalPosition = Body.GlobalPosition;
+        Body.Position = Vector2.Zero;
+        
+        if (collision is not null)
         {
             QueueFree();
         }

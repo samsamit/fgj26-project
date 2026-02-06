@@ -11,10 +11,59 @@ public partial class ProjectileLauncher : Node2D
     [Export] public double ProjectileSpeed;
     [Export] public double FireRate = 1;
 
+    [Export] public CompletionCondition[] ActivationConditions;
+
     private static Random _random = new Random();
 
     private double _nextFire;
     private AudioStreamPlayer2D _AudioStreamPlayerFire;
+
+    private bool isActive = true;
+
+    public override void _EnterTree()
+    {
+        if (ActivationConditions != null)
+        {
+            bool allCompleted = true;
+            foreach (var condition in ActivationConditions)
+            {
+                condition.ConditionChanged += handleActivationConditionChanged;
+                allCompleted &= condition.IsCompleted;
+            }
+            isActive = allCompleted;
+        }
+        if (!isActive)
+        {
+            GD.Print($"Projectile launcher {Name} inactive");
+            Visible = false;
+        }
+    }
+
+    public override void _ExitTree()
+    {
+        base._ExitTree();
+        if (ActivationConditions != null)
+        {
+            foreach (var condition in ActivationConditions)
+            {
+                condition.ConditionChanged -= handleActivationConditionChanged;
+            }
+        }
+    }
+
+    private void handleActivationConditionChanged(bool isCompleted)
+    {
+        if (!isCompleted) return;
+        foreach (var condition in ActivationConditions)
+        {
+            if (!condition.IsCompleted) return;
+        }
+        isActive = true;
+        if (isActive)
+        {
+            Visible = true;
+        }
+    }
 
     public override void _Ready()
     {
@@ -25,6 +74,7 @@ public partial class ProjectileLauncher : Node2D
 
     public override void _PhysicsProcess(double delta)
     {
+        if (!isActive) return;
         _nextFire -= delta;
 
         if (_nextFire <= 0)

@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://brtwm0b3bkhtr"]
+
+[ext_resource type="Script" uid="uid://b2aw75gudvmx8" path="res://puzzles/Puzzle6.cs" id="1_3av40"]
+[ext_resource type="PackedScene" uid="uid://dt5ycbrcdyof0" path="res://scenes/projectile_launcher.tscn" id="2_vfgcf"]
+[ext_resource type="PackedScene" uid="uid://c3knvd6urqxyg" path="res://scenes/CompletionConditions/AreaReachedCondition.tscn" id="3_vfgcf"]
+[ext_resource type="PackedScene" uid="uid://b3s6runcdg2t3" path="res://scenes/Checkpoint.tscn" id="4_8eh8c"]
+[ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="5_m0d1l"]
+[ext_resource type="PackedScene" uid="uid://sdnhw3s62pbc" path="res://scenes/movable_box.tscn" id="6_k7wvd"]
+
+[node name="Puzzle6" type="Node" unique_id=1411711270 node_paths=PackedStringArray("Conditions")]
+script = ExtResource("1_3av40")
+Conditions = []
+
+[node name="ProjectileLauncher" parent="." unique_id=413058064 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("2_vfgcf")]
+ProjectileSpeed = 150.0
+FireRate = 2.0
+ActivationConditions = [NodePath("../Area reached activate turrets")]
+
+[node name="ProjectileLauncher2" parent="." unique_id=981569960 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("2_vfgcf")]
+ProjectileSpeed = 150.0
+FireRate = 2.0
+ActivationConditions = [NodePath("../Area reached activate turrets")]
+
+[node name="ProjectileLauncher3" parent="." unique_id=61681073 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("2_vfgcf")]
+ProjectileSpeed = 150.0
+FireRate = 2.0
+ActivationConditions = [NodePath("../Area reached activate turrets")]
+
+[node name="ProjectileLauncher4" parent="." unique_id=2001445823 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("2_vfgcf")]
+ProjectileSpeed = 150.0
+FireRate = 2.0
+ActivationConditions = [NodePath("../Area reached activate turrets")]
+
+[node name="ProjectileLauncher5" parent="." unique_id=503102119 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("2_vfgcf")]
+ProjectileSpeed = 150.0
+FireRate = 2.0
+ActivationConditions = [NodePath("../Area reached activate turrets")]
+
+[node name="ProjectileLauncher6" parent="." unique_id=1031475846 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("2_vfgcf")]
+ProjectileSpeed = 150.0
+FireRate = 2.0
+ActivationConditions = [NodePath("../Area reached activate turrets")]
+
+[node name="ProjectileLauncher7" parent="." unique_id=437489262 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("2_vfgcf")]
+ProjectileSpeed = 150.0
+FireRate = 2.0
+ActivationConditions = [NodePath("../Area reached activate turrets")]
+
+[node name="ProjectileLauncherPuzzle6_8" parent="." unique_id=1598414742 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("2_vfgcf")]
+ProjectileSpeed = 150.0
+FireRate = 2.0
+ActivationConditions = [NodePath("../Area reached activate turrets")]
+
+[node name="Area reached activate turrets" parent="." unique_id=128534236 instance=ExtResource("3_vfgcf")]
+
+[node name="Checkpoint" parent="." unique_id=1553874372 instance=ExtResource("4_8eh8c")]
+
+[node name="StaticBox" parent="." unique_id=1283738957 instance=ExtResource("5_m0d1l")]
+
+[node name="StaticBox2" parent="." unique_id=481220175 instance=ExtResource("5_m0d1l")]
+
+[node name="StaticBox3" parent="." unique_id=805135628 instance=ExtResource("5_m0d1l")]
+
+[node name="StaticBox4" parent="." unique_id=1807108034 instance=ExtResource("5_m0d1l")]
+
+[node name="StaticBox5" parent="." unique_id=1985718747 instance=ExtResource("5_m0d1l")]
+
+[node name="StaticBox6" parent="." unique_id=261826807 instance=ExtResource("5_m0d1l")]
+
+[node name="StaticBox7" parent="." unique_id=2062924841 instance=ExtResource("5_m0d1l")]
+
+[node name="StaticBox8" parent="." unique_id=1539077955 instance=ExtResource("5_m0d1l")]
+
+[node name="StaticBox9" parent="." unique_id=1857201167 instance=ExtResource("5_m0d1l")]
+
+[node name="StaticBox10" parent="." unique_id=1066140107 instance=ExtResource("5_m0d1l")]
+
+[node name="StaticBox11" parent="." unique_id=1217300679 instance=ExtResource("5_m0d1l")]
+
+[node name="StaticBox12" parent="." unique_id=186450074 instance=ExtResource("5_m0d1l")]
+
+[node name="StaticBox13" parent="." unique_id=1076113755 instance=ExtResource("5_m0d1l")]
+
+[node name="StaticBox14" parent="." unique_id=923169548 instance=ExtResource("5_m0d1l")]
+
+[node name="StaticBox15" parent="." unique_id=1659306653 instance=ExtResource("5_m0d1l")]
+
+[node name="MovableBox" parent="." unique_id=1071985089 instance=ExtResource("6_k7wvd")]
