@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dq5glmdp4ivaa" path="res://scenes/static_box.tscn" id="3_ef6vw"]
 [ext_resource type="PackedScene" uid="uid://sdnhw3s62pbc" path="res://scenes/movable_box.tscn" id="4_5n64g"]
 [ext_resource type="PackedScene" uid="uid://dt5ycbrcdyof0" path="res://scenes/projectile_launcher.tscn" id="5_5n64g"]
+[ext_resource type="PackedScene" uid="uid://b8erdqmxs24ka" path="res://scenes/CompletionConditions/PressurePlateDownCondition.tscn" id="6_qpdu5"]
+[ext_resource type="PackedScene" uid="uid://bb3d8ms8wak8w" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="7_601fq"]
+[ext_resource type="PackedScene" uid="uid://c3knvd6urqxyg" path="res://scenes/CompletionConditions/AreaReachedCondition.tscn" id="8_4d1pp"]
 
 [node name="Puzzle5" type="Node" unique_id=1868221776 node_paths=PackedStringArray("Conditions")]
 script = ExtResource("1_w2tad")
@@ -28,6 +31,38 @@ Conditions = []
 
 [node name="StaticBox8" parent="." unique_id=894037105 instance=ExtResource("3_ef6vw")]
 
+[node name="StaticBox9" parent="." unique_id=72149921 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox10" parent="." unique_id=1144925450 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox11" parent="." unique_id=235912937 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox12" parent="." unique_id=234112703 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox13" parent="." unique_id=1103070360 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox14" parent="." unique_id=1829173649 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox15" parent="." unique_id=849028287 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox16" parent="." unique_id=732963692 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox17" parent="." unique_id=654053272 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox18" parent="." unique_id=2138785774 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox19" parent="." unique_id=1811214187 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox20" parent="." unique_id=1387781636 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox21" parent="." unique_id=590239650 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox22" parent="." unique_id=1998430742 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox23" parent="." unique_id=1440371347 instance=ExtResource("3_ef6vw")]
+
+[node name="StaticBox24" parent="." unique_id=588254202 instance=ExtResource("3_ef6vw")]
+
 [node name="MovableBox" parent="." unique_id=1071985089 instance=ExtResource("4_5n64g")]
 position = Vector2(1524.1105, -639.32324)
 
@@ -38,3 +73,10 @@ position = Vector2(1524.1105, -639.32324)
 position = Vector2(1524.1105, -639.32324)
 
 [node name="ProjectileLauncher" parent="." unique_id=413058064 instance=ExtResource("5_5n64g")]
+
+[node name="PressurePlateDownCondition" parent="." unique_id=1788132455 instance=ExtResource("6_qpdu5")]
+
+[node name="Bomb Ground" parent="." unique_id=324300176 node_paths=PackedStringArray("defuseConditions") instance=ExtResource("7_601fq")]
+defuseConditions = []
+
+[node name="AreaReached" parent="." unique_id=128534236 instance=ExtResource("8_4d1pp")]
