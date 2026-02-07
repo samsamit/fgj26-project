@@ -53,7 +53,7 @@ public partial class Player : CharacterBody2D
 		PushingPower = 0.0f;
 		if (GlobalStateManager.Instance.CurrentMask.Get().Equals(MaskEnum.Strength))
 		{
-			PushingPower = GlobalStateManager.Instance.MaskPower.Get() * 160;
+			PushingPower = GlobalStateManager.Instance.MaskPower.Get() * 180;
 		}
 		
 		Vector2 direction = Vector2.Zero;
