@@ -8,24 +8,33 @@
 script = ExtResource("1_x6i6y")
 Conditions = []
 
-[node name="ProjectileLauncher" parent="." unique_id=413058064 instance=ExtResource("2_wg7lx")]
+[node name="ProjectileLauncher" parent="." unique_id=413058064 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("2_wg7lx")]
 ProjectileSpeed = 120.0
+ActivationConditions = []
 
-[node name="ProjectileLauncher2" parent="." unique_id=969216361 instance=ExtResource("2_wg7lx")]
+[node name="ProjectileLauncher2" parent="." unique_id=969216361 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("2_wg7lx")]
+ActivationConditions = []
 
-[node name="ProjectileLauncher3" parent="." unique_id=587932600 instance=ExtResource("2_wg7lx")]
+[node name="ProjectileLauncher3" parent="." unique_id=587932600 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("2_wg7lx")]
+ActivationConditions = []
 
-[node name="ProjectileLauncher5" parent="." unique_id=1647210438 instance=ExtResource("2_wg7lx")]
+[node name="ProjectileLauncher5" parent="." unique_id=1647210438 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("2_wg7lx")]
+ActivationConditions = []
 
-[node name="ProjectileLauncher6" parent="." unique_id=1566484085 instance=ExtResource("2_wg7lx")]
+[node name="ProjectileLauncher6" parent="." unique_id=1566484085 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("2_wg7lx")]
+ActivationConditions = []
 
-[node name="ProjectileLauncher7" parent="." unique_id=43771280 instance=ExtResource("2_wg7lx")]
+[node name="ProjectileLauncher7" parent="." unique_id=43771280 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("2_wg7lx")]
+ActivationConditions = []
 
-[node name="ProjectileLauncher8" parent="." unique_id=753019997 instance=ExtResource("2_wg7lx")]
+[node name="ProjectileLauncher8" parent="." unique_id=1122293219 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("2_wg7lx")]
+ActivationConditions = []
 
-[node name="ProjectileLauncher9" parent="." unique_id=538760903 instance=ExtResource("2_wg7lx")]
+[node name="ProjectileLauncher9" parent="." unique_id=538760903 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("2_wg7lx")]
 FireRate = 1.1
+ActivationConditions = []
 
-[node name="ProjectileLauncher10" parent="." unique_id=1225269331 instance=ExtResource("2_wg7lx")]
+[node name="ProjectileLauncher10" parent="." unique_id=1225269331 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("2_wg7lx")]
+ActivationConditions = []
 
 [node name="AreaReached" parent="." unique_id=128534236 instance=ExtResource("3_y04pc")]

@@ -74,7 +74,8 @@ position = Vector2(1524.1105, -639.32324)
 [node name="MovableBox3" parent="." unique_id=1263474482 instance=ExtResource("4_5n64g")]
 position = Vector2(1524.1105, -639.32324)
 
-[node name="ProjectileLauncher" parent="." unique_id=413058064 instance=ExtResource("5_5n64g")]
+[node name="ProjectileLauncher" parent="." unique_id=413058064 node_paths=PackedStringArray("ActivationConditions") instance=ExtResource("5_5n64g")]
+ActivationConditions = []
 
 [node name="PressurePlateDownCondition" parent="." unique_id=1788132455 instance=ExtResource("6_qpdu5")]
 

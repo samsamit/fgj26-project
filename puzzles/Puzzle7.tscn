@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bwkh04ppgxam4"]
+
+[ext_resource type="Script" uid="uid://ctucugm0vk3on" path="res://puzzles/Puzzle7.cs" id="1_3qb4x"]
+[ext_resource type="PackedScene" uid="uid://b8erdqmxs24ka" path="res://scenes/CompletionConditions/PressurePlateDownCondition.tscn" id="2_btasw"]
+[ext_resource type="PackedScene" uid="uid://bb3d8ms8wak8w" path="res://assets/Juuson Mask Jutut/Underground Bomb.tscn" id="3_b6mg0"]
+[ext_resource type="Material" uid="uid://b0qw3cofrat17" path="res://assets/Juuson Mask Jutut/BoxMaskMaterial.tres" id="4_nig5p"]
+[ext_resource type="Texture2D" uid="uid://bd2kyp3xw0e0m" path="res://assets/StrengthMaskiUI.png" id="5_qiw76"]
+
+[node name="Puzzle7" type="Node" unique_id=771330070 node_paths=PackedStringArray("Conditions")]
+script = ExtResource("1_3qb4x")
+Conditions = []
+
+[node name="PressurePlateDownCondition" parent="." unique_id=1788132455 instance=ExtResource("2_btasw")]
+position = Vector2(489.39804, -263.23596)
+
+[node name="PressurePlateDownCondition2" parent="." unique_id=1284096448 instance=ExtResource("2_btasw")]
+position = Vector2(489.39804, -263.23596)
+
+[node name="PressurePlateDownCondition3" parent="." unique_id=76900276 instance=ExtResource("2_btasw")]
+position = Vector2(489.39804, -263.23596)
+
+[node name="PressurePlateDownCondition5" parent="." unique_id=1471375046 instance=ExtResource("2_btasw")]
+position = Vector2(489.39804, -263.23596)
+
+[node name="Bomb Ground" parent="." unique_id=324300176 instance=ExtResource("3_b6mg0")]
+
+[node name="Line 2" type="Line2D" parent="." unique_id=909994974]
+z_index = 300
+material = ExtResource("4_nig5p")
+position = Vector2(593.7918, 69)
+points = PackedVector2Array(894.2082, -213, 886.2082, -221, 886.2082, -221, 894.2082, -229, 894.2082, -229, 902.2082, -221, 902.2082, -221, 894.2082, -213)
+width = 2.0
+texture = ExtResource("5_qiw76")

@@ -8,14 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://btdfocuux8xuj" path="res://assets/Juuson Mask Jutut/Explosion.png" id="6_yohmc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yohmc"]
-size = Vector2(78, 72)
+size = Vector2(84, 78)
 
-[node name="Bomb Ground" type="Sprite2D" unique_id=324300176 node_paths=PackedStringArray("explosion")]
+[node name="Bomb Ground" type="Sprite2D" unique_id=324300176 node_paths=PackedStringArray("explosion", "defuseConditions")]
 visibility_layer = 3
 material = ExtResource("1_8d72e")
 texture = ExtResource("2_6yvsu")
 script = ExtResource("3_6yvsu")
 explosion = NodePath("Explosion")
+defuseConditions = []
 
 [node name="Underground" type="Sprite2D" parent="." unique_id=775525416]
 visibility_layer = 3
