@@ -6,14 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://d3naxm8s5bdyv" path="res://assets/tykki.png" id="3_ip57c"]
 [ext_resource type="AudioStream" uid="uid://baak57qa5yiux" path="res://audio/effects/cannon_explosion_sound.mp3" id="5_htbxe"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ip57c"]
-size = Vector2(32, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_htbxe"]
+radius = 16.0
 
-[node name="ProjectileLauncher" type="Node2D" unique_id=413058064 node_paths=PackedStringArray("Turret")]
+[node name="ProjectileLauncher" type="Node2D" unique_id=413058064 node_paths=PackedStringArray("Turret", "ActivationConditions")]
 script = ExtResource("1_0nsru")
 Turret = NodePath("Turret")
 ProjectileBase = ExtResource("2_ip57c")
 ProjectileSpeed = 100.0
+ActivationConditions = []
 
 [node name="BaseSprite" type="Sprite2D" parent="." unique_id=582157551]
 texture = ExtResource("2_0ffta")
@@ -21,7 +22,7 @@ texture = ExtResource("2_0ffta")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=887802840]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=984704156]
-shape = SubResource("RectangleShape2D_ip57c")
+shape = SubResource("CircleShape2D_htbxe")
 
 [node name="Turret" type="Node2D" parent="." unique_id=1192367745]
 

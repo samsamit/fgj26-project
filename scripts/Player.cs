@@ -16,6 +16,8 @@ public partial class Player : CharacterBody2D
 	private const string MoveBack = "move_back";
 	private const string MoveForward = "move_forward";
 
+	private const string KillYourselfAction = "kill_yourself";
+
 	private AudioStreamPlayer2D _walkingSFXplayer, _scrapingSFXPlayer;
 	private AnimationController _animationController;
 	private TileMapLayer _groundLayer;
@@ -61,6 +63,11 @@ public partial class Player : CharacterBody2D
 		{
 			direction.X = Input.GetActionStrength(MoveRight) - Input.GetActionStrength(MoveLeft);
 			direction.Y = Input.GetActionStrength(MoveBack) - Input.GetActionStrength(MoveForward);
+		}
+
+		if (Input.IsActionJustPressed(KillYourselfAction))
+		{
+			GlobalStateManager.Instance.EmitSignal(GlobalStateManager.SignalName.PlayerHit);
 		}
 
 		Velocity = direction.Normalized() * (float)SpeedComponent.CurrentSpeed;
