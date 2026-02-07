@@ -85,4 +85,8 @@ ActivationConditions = [NodePath("../Area reached activate turrets")]
 
 [node name="StaticBox15" parent="." unique_id=1659306653 instance=ExtResource("5_m0d1l")]
 
+[node name="StaticBox16" parent="." unique_id=1572905219 instance=ExtResource("5_m0d1l")]
+
 [node name="MovableBox" parent="." unique_id=1071985089 instance=ExtResource("6_k7wvd")]
+
+[node name="MovableBox2" parent="." unique_id=214292972 instance=ExtResource("6_k7wvd")]
