@@ -948,7 +948,7 @@ position = Vector2(504, -248)
 rotation = 0.8258012
 
 [node name="Checkpoint3" parent="." unique_id=2023546277 instance=ExtResource("20_ec51t")]
-position = Vector2(416, 152)
+position = Vector2(424, 152)
 
 [editable path="World"]
 [editable path="World/TileMapController"]
