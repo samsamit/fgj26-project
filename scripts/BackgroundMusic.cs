@@ -26,21 +26,26 @@ public partial class BackgroundMusic : AudioStreamPlayer
 
 	private void UpdateMusicAfterAddingNewMask(List<MaskEnum> masks)
 	{
-		if (masks.Contains(MaskEnum.XRay))
+		if (masks == null || masks.Count == 0)
 		{
-			Stream = WithoutDrums;
+			return;
 		}
-		else if (masks.Contains(MaskEnum.Strength))
+		MaskEnum lastAddedMask = masks[masks.Count - 1];
+
+		switch (lastAddedMask)
 		{
-			Stream = Drums;
-		}
-		else if (masks.Contains(MaskEnum.Slow))
-		{
-			Stream = Drums;
-		}
-		else
-		{
-			Stream = WithoutDrums;
+			case MaskEnum.XRay:
+				Stream = WithoutDrums;
+				break;
+			case MaskEnum.Strength:
+				Stream = Drums;
+				break;
+			case MaskEnum.Slow:
+				Stream = Drums;
+				break;
+			default:
+				Stream = WithoutDrums;
+				break;
 		}
 
 		FadeOutInMusic();
